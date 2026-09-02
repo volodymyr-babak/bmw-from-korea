@@ -339,6 +339,16 @@ col.hl { background: var(--accent-soft); }
 .car-link:hover { text-decoration: underline; text-decoration-color: var(--accent); }
 .model-tag { margin-right: 6px; }
 
+/* 48V — не галочка в ряду опцій, а ознака іншого двигуна, тому стоїть біля року */
+.tag-mhev {
+  margin-left: 6px;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--yes);
+  vertical-align: 1px;
+}
+
 .c-car-meta {
   display: block;
   margin-top: 2px;
