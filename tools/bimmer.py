@@ -8,6 +8,7 @@ Trial-доступ прив'язаний до акаунта користува�
 
     BIMMER_TOKEN=… python3 tools/bimmer.py            # усі недекодовані з VIN
     BIMMER_TOKEN=… python3 tools/bimmer.py <VIN> …     # конкретні VIN, без запису
+    BIMMER_TOKEN=… python3 tools/bimmer.py --images    # рендери заводської конфігурації
 
 Відповідь: список з одним об'єктом; `status` = OKAY / IN PROGRESS / FAILED.
 Поля: model, ecode, type, chassis, market, engine, color, upholstery, date,
@@ -174,11 +175,69 @@ def bad_trim(name: str) -> str | None:
     return None
 
 
+RENDERS = ROOT / 'assets' / 'renders'
+RENDER_WIDTH = 1000          # 1280×768 оригінал → 1000 px достатньо для сторінки авто
+RENDER_BG = '#ffffff'        # PNG прозорий; кладемо на біле, як і фото з оголошення
+
+
+def save_render(url: str, token: str, dest: Path) -> bool:
+    """Завантажити PNG-рендер і покласти як JPEG (оригінал ~0,4–0,9 МБ → ~50 КБ)."""
+    tmp = dest.with_suffix('.png')
+    r = subprocess.run(['curl', '-sS', '-m', '90', '-w', '%{http_code}',
+                        '-o', str(tmp), f'{url}?token={token}'],
+                       capture_output=True, text=True)
+    if r.stdout.strip() != '200' or not tmp.exists() or tmp.stat().st_size < 5000:
+        tmp.unlink(missing_ok=True)
+        return False
+    conv = subprocess.run(['convert', str(tmp), '-resize', f'{RENDER_WIDTH}x',
+                           '-background', RENDER_BG, '-flatten', '-strip',
+                           '-quality', '84', str(dest)], capture_output=True, text=True)
+    tmp.unlink(missing_ok=True)
+    return conv.returncode == 0 and dest.exists()
+
+
+def images_mode(token: str) -> int:
+    """Рендери заводської конфігурації за VIN — еталон кольору кузова й салону."""
+    RENDERS.mkdir(parents=True, exist_ok=True)
+    index = json.loads(INDEX.read_text())
+    todo = [c for c in index['cars'] if c.get('vin')]
+    print(f'авто з VIN: {len(todo)}')
+    for car in todo:
+        lid, vin = car['listingId'], car['vin']
+        path = CARS / f'{lid}.json'
+        data = json.loads(path.read_text()) if path.exists() else {'listingId': lid}
+        item = fetch(vin, token)
+        urls = item.get('images') or {}
+        if item.get('status') != 'OKAY' or not urls:
+            print(f'  {lid} {vin} — {item.get("status")}, рендерів немає')
+            continue
+        got = {}
+        for kind, short in (('exterior', 'ext'), ('interior', 'int')):
+            if not urls.get(kind):
+                continue
+            rel = f'assets/renders/{vin}-{short}.jpg'
+            dest = ROOT / rel
+            if dest.exists() or save_render(urls[kind], token, dest):
+                got[kind] = rel
+        if got:
+            data['renders'] = got
+            with path.open('w') as fh:
+                json.dump(data, fh, ensure_ascii=False, indent=2)
+                fh.write('\n')
+        sizes = ' '.join(f'{k[:3]} {(ROOT / v).stat().st_size // 1024} КБ'
+                         for k, v in got.items())
+        print(f'  {lid} {vin} — {sizes or "нічого не зберегли"}')
+    return 0
+
+
 def main(argv: list[str]) -> int:
     token = os.environ.get('BIMMER_TOKEN')
     if not token:
         print('немає BIMMER_TOKEN у оточенні', file=sys.stderr)
         return 2
+    if argv and argv[0] == '--images':
+        return images_mode(token)
+
     descs = corpus_descs()
 
     if argv:                                     # пробний режим: лише показати

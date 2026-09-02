@@ -1,6 +1,6 @@
 import {
   usd, km, krwM, KEY_FEATURES, featureState, encarUrl, MARKS, photoUrl,
-  initTheme, esc, BUDGET_CAP, LADDER_FLOOR,
+  initTheme, esc, swatch, BUDGET_CAP, LADDER_FLOOR,
 } from './common.js';
 
 const $ = (sel) => document.querySelector(sel);
@@ -24,6 +24,7 @@ async function init() {
   cars = data.cars;
   meta = data.meta;
   renderFigures(meta, cars);
+  fillColors(cars);
   $('#controls').addEventListener('change', render);
   $('#state').hidden = true;
   $('#ladder').hidden = false;
@@ -51,6 +52,21 @@ function renderFigures(meta, list) {
   ).join('');
 }
 
+/** Варіанти для фільтра кольору — з самих даних, від найчастішого. */
+function fillColors(list) {
+  const counts = new Map();
+  for (const c of list) {
+    if (!c.exterior) continue;
+    counts.set(c.exterior, (counts.get(c.exterior) || 0) + 1);
+  }
+  const sel = $('#f-color');
+  const unknown = list.filter((c) => !c.exterior).length;
+  sel.insertAdjacentHTML('beforeend', [...counts.entries()]
+    .sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0], 'uk'))
+    .map(([name, n]) => `<option value="${esc(name)}">${esc(name)} — ${n}</option>`)
+    .join('') + (unknown ? `<option value="\u0000">колір невідомий — ${unknown}</option>` : ''));
+}
+
 /** Пневмо: білд-лист за VIN → інакше слова продавця → інакше невідомо (null).
     Ретрофіт нереальний, тому це властивість авто, а не опція, яку доберуть. */
 function airState(c) {
@@ -67,6 +83,7 @@ function render() {
   const maxPrice = Number(f.get('price')) || Infinity;
   const onlyDecoded = f.get('decoded') === 'on';
   const onlyAir = f.get('air') === 'on';
+  const color = f.get('color');
 
   let view = cars.filter((c) =>
     (!model || c.model.startsWith(model)) &&
@@ -74,6 +91,7 @@ function render() {
     c.mileageKm <= maxKm &&
     c.priceUSD <= maxPrice &&
     (!onlyDecoded || c.decoded) &&
+    (!color || (color === '\u0000' ? !c.exterior : c.exterior === color)) &&
     // невідоме ховаємо разом із «немає»: краще недобрати кандидата, ніж
     // порахувати пневмо там, де її не перевіряли
     (!onlyAir || airState(c) === true)
@@ -115,7 +133,9 @@ function row(c, isCheapest) {
       ? `салон <b>${esc(c.interiorUnverified)}</b><span class="est" title="Не підтверджено білд-листом за VIN">?</span>`
       : '');
   const colors = c.exterior || trim
-    ? `<p class="colors">${c.exterior ? `кузов <b>${esc(c.exterior)}</b>` : ''}${c.exterior && trim ? ' · ' : ''}${trim}</p>`
+    ? `<p class="colors">${c.exterior
+        ? `кузов ${swatch(c.exterior)}<b>${esc(c.exterior)}</b>`
+        : ''}${c.exterior && trim ? ' · ' : ''}${trim}</p>`
     : '';
 
   return `<li class="car">

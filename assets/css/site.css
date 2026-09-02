@@ -371,6 +371,22 @@ a:hover { text-decoration-thickness: 2px; }
 }
 .colors b { font-weight: 500; color: var(--ink); }
 
+/* Квадратик фарби біля назви кольору. Відтінки — з рендерів bimmer.work;
+   невідомий колір штрихуємо, щоб не вигадувати фарбу. */
+.swatch {
+  display: inline-block;
+  width: 11px;
+  height: 11px;
+  margin-right: 5px;
+  vertical-align: baseline;
+  background: var(--swatch, transparent);
+  border: 1px solid var(--rule-strong);
+}
+.swatch-unknown {
+  background:
+    repeating-linear-gradient(45deg, var(--rule) 0 2px, transparent 2px 4px);
+}
+
 .feats {
   display: flex;
   flex-wrap: wrap;
@@ -469,6 +485,32 @@ a:hover { text-decoration-thickness: 2px; }
   grid-column: 1 / -1;
   border-top: 1px solid var(--rule);
 }
+
+/* Рендери заводської конфігурації за VIN — кузов і салон поруч */
+.renders {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 16px;
+  margin: 4px 0 10px;
+}
+.renders figure {
+  margin: 0;
+  border: 1px solid var(--rule);
+  background: #fff;
+}
+.renders img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.renders figcaption {
+  padding: 6px 8px;
+  font-size: 12.5px;
+  color: var(--ink-2);
+  border-top: 1px solid var(--rule);
+  background: var(--sheet);
+}
+.renders figcaption b { font-weight: 500; color: var(--ink); }
 
 .rows {
   margin: 0;

@@ -366,5 +366,9 @@
       "text": "Звіт інспекції чистий: ні замін панелей, ні кузовного, ні комерційної історії."
     }
   ],
-  "decodeSource": "mdecoder.com"
+  "decodeSource": "mdecoder.com",
+  "renders": {
+    "exterior": "assets/renders/WBAJU8107N9J92586-ext.jpg",
+    "interior": "assets/renders/WBAJU8107N9J92586-int.jpg"
+  }
 }

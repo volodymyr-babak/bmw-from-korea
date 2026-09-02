@@ -368,5 +368,9 @@
     "exhaust": true
   },
   "decodeSource": "bimmer.work (вставлено користувачем 2026-09-02)",
-  "airSeller": true
+  "airSeller": true,
+  "renders": {
+    "exterior": "assets/renders/WBAGT810XN9M18391-ext.jpg",
+    "interior": "assets/renders/WBAGT810XN9M18391-int.jpg"
+  }
 }

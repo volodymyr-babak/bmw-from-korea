@@ -395,5 +395,9 @@
     "climate4": true,
     "exhaust": true
   },
-  "decodeSource": "bimmer.work API"
+  "decodeSource": "bimmer.work API",
+  "renders": {
+    "exterior": "assets/renders/WBACV6105L9B86540-ext.jpg",
+    "interior": "assets/renders/WBACV6105L9B86540-int.jpg"
+  }
 }

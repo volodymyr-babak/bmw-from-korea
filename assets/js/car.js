@@ -1,6 +1,6 @@
 import {
   usd, km, krw, krwM, breakdown, KEY_FEATURES, featureState, encarUrl, MARKS, photoUrl,
-  initTheme, esc, KRW_PER_USD, AGE_BASE, BUDGET_CAP,
+  initTheme, esc, swatch, KRW_PER_USD, AGE_BASE, BUDGET_CAP,
 } from './common.js';
 import { groupOptions } from './options.js';
 
@@ -76,6 +76,7 @@ function renderBody(c, d) {
   const b = breakdown(c.year, c.priceUSD, c.koreaPriceMan);
   $('#body').innerHTML = `
     ${gallery(c, d)}
+    ${panelRenders(c, d)}
     <div class="panels">
       <div class="panel-col">${panelIdentity(c, d)}${panelCalc(c, b)}</div>
       <div class="panel-col">${panelFeatures(c, d)}${panelHistory(d)}</div>
@@ -83,6 +84,28 @@ function renderBody(c, d) {
     ${panelInspection(c, d)}
     ${panelSeller(c, d)}
     ${panelOptions(c, d)}`;
+}
+
+/** Рендери заводської конфігурації за VIN — еталон кольору кузова й салону.
+ *  Саме вони знімають питання «кава чи cognac», якого не бере ні фото з
+ *  оголошення, ні метрика відтінку. Джерело — API bimmer.work. */
+function panelRenders(c, d) {
+  const r = (d && d.renders) || null;
+  if (!r || (!r.exterior && !r.interior)) return '';
+  const shots = [
+    [r.exterior, 'Кузов', d.exterior && d.exterior.name],
+    [r.interior, 'Салон', d.interior && d.interior.name],
+  ].filter(([src]) => src);
+  return `<section class="panel panel-wide"><h2>Заводська конфігурація за VIN</h2>
+    <div class="renders">${shots.map(([src, kind, name]) => `<figure>
+      <img loading="lazy" decoding="async" src="${esc(src)}" width="1000" height="600"
+        alt="${esc(kind)} — заводський рендер за VIN ${esc(c.vin || '')}">
+      <figcaption>${esc(kind)}${name ? ` · <b>${esc(name)}</b>` : ''}</figcaption>
+    </figure>`).join('')}</div>
+    <p class="note">Рендер BMW за VIN, не фото цього авто: показує саме ту фарбу
+      й оббивку, які стоять у білд-листі. Пробіг, стан і доукомплектацію дивитись
+      на фото з оголошення вище.</p>
+  </section>`;
 }
 
 /** Фото з оголошення: велике + смужка мініатюр (кузов, потім салон) */
@@ -132,9 +155,9 @@ function rows(pairs) {
     .join('')}</dl>`;
 }
 
-function colorLine(side) {
+function colorLine(side, paint = false) {
   if (!side || !side.name) return null;
-  const bits = [`<b>${esc(side.name)}</b>`];
+  const bits = [`${paint ? swatch(side) : ''}<b>${esc(side.name)}</b>`];
   if (side.code) bits.push(`<span class="num">${esc(side.code)}</span>`);
   if (side.german) bits.push(`<span class="opt-en">${esc(side.german)}</span>`);
   return bits.join(' · ');
@@ -153,7 +176,8 @@ function panelIdentity(c, d) {
     if (d.engine) pairs.push(['Двигун', `<span class="num">${esc(d.engine)}</span>${d.power ? ` · ${esc(d.power)}` : ''}`]);
   }
   // назви BMW беремо з білд-листа; поки його немає — корейський колір з оголошення
-  pairs.push(['Колір кузова', colorLine(d && d.exterior) || (c.exterior ? `<b>${esc(c.exterior)}</b>` : null)]);
+  pairs.push(['Колір кузова', colorLine(d && d.exterior, true)
+    || (c.exterior ? `${swatch(c.exterior)}<b>${esc(c.exterior)}</b>` : null)]);
   // Пріоритет: білд-лист за VIN → колір з індексу → опис продавця (він збігається
   // з VIN там, де є обидва, але це все ж слова продавця, тому позначаємо).
   pairs.push(['Салон', colorLine(d && d.interior) || (c.interior ? `<b>${esc(c.interior)}</b>` : null)

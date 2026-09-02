@@ -342,5 +342,9 @@
     "climate4": true,
     "exhaust": true
   },
-  "decodeSource": "bimmer.work (вставлено користувачем 2026-09-02)"
+  "decodeSource": "bimmer.work (вставлено користувачем 2026-09-02)",
+  "renders": {
+    "exterior": "assets/renders/WBAGT8108M9H53103-ext.jpg",
+    "interior": "assets/renders/WBAGT8108M9H53103-int.jpg"
+  }
 }

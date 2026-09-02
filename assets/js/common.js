@@ -124,6 +124,52 @@ export function photoUrl(path, size = 'card') {
   return `${CI}${path}?impolicy=heightRate&${PHOTO_SIZES[size] || PHOTO_SIZES.card}&cg=Center`;
 }
 
+/* ---- колір кузова ---- */
+
+/** Зразок фарби для квадратика біля назви кольору.
+ *  Ключі — і код BMW, і назва в нижньому регістрі (в індексі лежить лише назва,
+ *  а в недекодованих авто — переклад корейської назви з Encar).
+ *  Відтінки знято з рендерів заводської конфігурації bimmer.work (медіана по
+ *  борту авто), тому вони ближчі до реальної фарби, ніж каталожні картинки. */
+const PAINT_COLORS = {
+  '416': '#1d1f26', 'carbon black': '#1d1f26',
+  'a96': '#e9e8e3', 'mineral white': '#e9e8e3',
+  'c27': '#74777b', 'arctic grey': '#74777b',
+  'c3d': '#6e6a5c', 'manhattan': '#6e6a5c',
+  'c1m': '#2f5a86', 'phytonic blue': '#2f5a86',
+  // назви з Encar — поки немає білд-листа за VIN
+  'чорний': '#22242a',
+  'білий': '#ededea',
+  'перловий': '#e8e3d8',
+  'сірий': '#767a7d',
+  'синій': '#2f5a86',
+  'небесно-блакитний': '#9fb6c8',
+  'коричневий': '#6b5a45',
+  'бронзовий': '#6a6559',
+};
+
+/** hex фарби за кодом або назвою; null — коли відтінок невідомий */
+export function paintHex(side) {
+  if (!side) return null;
+  const keys = typeof side === 'string'
+    ? [side]
+    : [side.code, side.name, side.german];
+  for (const k of keys) {
+    if (!k) continue;
+    const hit = PAINT_COLORS[String(k).toLowerCase()];
+    if (hit) return hit;
+  }
+  return null;
+}
+
+/** Квадратик кольору. Невідомий відтінок — штрихування, а не вигаданий колір. */
+export function swatch(side) {
+  const hex = paintHex(side);
+  return hex
+    ? `<span class="swatch" style="--swatch:${hex}" aria-hidden="true"></span>`
+    : '<span class="swatch swatch-unknown" title="Відтінок не звірений" aria-hidden="true"></span>';
+}
+
 /** Кураторські маркери з даних. Суперлативи («найдешевше») тут не тримаємо —
  *  список оновлюється автоматично, тому їх рахує index.js на рендері. */
 export const MARKS = {

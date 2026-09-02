@@ -332,5 +332,9 @@
     "climate4": true,
     "exhaust": true
   },
-  "decodeSource": "bimmer.work API"
+  "decodeSource": "bimmer.work API",
+  "renders": {
+    "exterior": "assets/renders/WBAGT2100L9B74036-ext.jpg",
+    "interior": "assets/renders/WBAGT2100L9B74036-int.jpg"
+  }
 }
