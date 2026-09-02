@@ -110,5 +110,286 @@
       "kind": "plus",
       "text": "Звіт інспекції чистий: ні замін панелей, ні кузовного, ні комерційної історії."
     }
-  ]
+  ],
+  "prodDate": "2020-06-26",
+  "engine": "B57D30O0",
+  "power": "195 кВт / 265 к.с. · 620 Нм",
+  "engineNote": "Без 48V mild-hybrid (S1CE немає) — версія B57O 2019–2020, 195 кВт / 265 к.с. Складання Spartanburg, США.",
+  "exterior": {
+    "name": "Arctic Grey",
+    "german": "Arktikgrau Brillanteffekt Metallic",
+    "code": "C27"
+  },
+  "interior": {
+    "name": "Vernasca Cognac",
+    "german": "Leder Vernasca Cognac",
+    "code": "MCRI"
+  },
+  "options": [
+    {
+      "code": "S1MA",
+      "desc": "M Sport exhaust system"
+    },
+    {
+      "code": "S1TC",
+      "desc": "20\" M light alloy wheels Star-Spoke 740 M bicolour, mixed runflat tyres"
+    },
+    {
+      "code": "S212",
+      "desc": "National brake system equipment"
+    },
+    {
+      "code": "S258",
+      "desc": "Runflat tyres"
+    },
+    {
+      "code": "S2NH",
+      "desc": "M Sport brakes"
+    },
+    {
+      "code": "S2TB",
+      "desc": "Sport automatic transmission"
+    },
+    {
+      "code": "S2VB",
+      "desc": "Tyre pressure indicator"
+    },
+    {
+      "code": "S2VR",
+      "desc": "Two-axle air suspension"
+    },
+    {
+      "code": "S322",
+      "desc": "Comfort Access system"
+    },
+    {
+      "code": "S337",
+      "desc": "M Sports package"
+    },
+    {
+      "code": "S3AT",
+      "desc": "Roof rails, satinated aluminium"
+    },
+    {
+      "code": "S3DS",
+      "desc": "BMW Display Key"
+    },
+    {
+      "code": "S3MB",
+      "desc": "Individual Exterior Line, satinated aluminium"
+    },
+    {
+      "code": "S402",
+      "desc": "Panorama glass roof"
+    },
+    {
+      "code": "S418",
+      "desc": "Luggage compartment package"
+    },
+    {
+      "code": "S423",
+      "desc": "Floor mats, velours"
+    },
+    {
+      "code": "S428",
+      "desc": "Warning triangle and first aid kit"
+    },
+    {
+      "code": "S453",
+      "desc": "Active seat ventilation, front"
+    },
+    {
+      "code": "S456",
+      "desc": "Comfort seats, electrically adjustable with memory"
+    },
+    {
+      "code": "S4A2",
+      "desc": "Glass application Crafted Clarity"
+    },
+    {
+      "code": "S4AW",
+      "desc": "Instrument panel Sensatec"
+    },
+    {
+      "code": "S4HA",
+      "desc": "Seat heating, front and rear"
+    },
+    {
+      "code": "S4HB",
+      "desc": "Heat comfort package, front"
+    },
+    {
+      "code": "S4KK",
+      "desc": "Interior trim finishers aluminium tetragon"
+    },
+    {
+      "code": "S4NB",
+      "desc": "Automatic climate control, 4-zone"
+    },
+    {
+      "code": "S4T8",
+      "desc": "Extended exterior mirror package"
+    },
+    {
+      "code": "S4UR",
+      "desc": "Ambient light"
+    },
+    {
+      "code": "S548",
+      "desc": "Speedometer with kilometer reading"
+    },
+    {
+      "code": "S552",
+      "desc": "Adaptive LED headlights"
+    },
+    {
+      "code": "S5A1",
+      "desc": "LED fog lights"
+    },
+    {
+      "code": "S5AC",
+      "desc": "Automatic high-beam headlights control"
+    },
+    {
+      "code": "S5AL",
+      "desc": "Active Protection"
+    },
+    {
+      "code": "S5AU",
+      "desc": "Driving Assistant Professional"
+    },
+    {
+      "code": "S5AV",
+      "desc": "Active Guard"
+    },
+    {
+      "code": "S5DN",
+      "desc": "Parking Assistant Plus"
+    },
+    {
+      "code": "S610",
+      "desc": "Head-up display"
+    },
+    {
+      "code": "S688",
+      "desc": "Harman/Kardon surround sound system"
+    },
+    {
+      "code": "S699",
+      "desc": "Area-Code 3 for DVD"
+    },
+    {
+      "code": "S6AC",
+      "desc": "Intelligent emergency call"
+    },
+    {
+      "code": "S6AE",
+      "desc": "Teleservices"
+    },
+    {
+      "code": "S6AK",
+      "desc": "ConnectedDrive Services"
+    },
+    {
+      "code": "S6C3",
+      "desc": "Connected Package Professional I"
+    },
+    {
+      "code": "S6CP",
+      "desc": "Preparation for Apple CarPlay"
+    },
+    {
+      "code": "S6NV",
+      "desc": "Country-specific telephony with wireless charging"
+    },
+    {
+      "code": "S6U3",
+      "desc": "BMW Live Cockpit Professional"
+    },
+    {
+      "code": "S6U8",
+      "desc": "BMW gesture control"
+    },
+    {
+      "code": "S6UH",
+      "desc": "Traffic Information"
+    },
+    {
+      "code": "S710",
+      "desc": "M leather steering wheel"
+    },
+    {
+      "code": "S715",
+      "desc": "M Aerodynamics package"
+    },
+    {
+      "code": "S775",
+      "desc": "Individual roof-lining anthracite"
+    },
+    {
+      "code": "S802",
+      "desc": "Korea version"
+    },
+    {
+      "code": "S867",
+      "desc": "Language version Korean"
+    },
+    {
+      "code": "S8AF",
+      "desc": "Korean / on-board documentation"
+    },
+    {
+      "code": "S8KH",
+      "desc": "Oil service interval 20 000 km / 18 months"
+    },
+    {
+      "code": "S8R9",
+      "desc": "Refrigerant"
+    },
+    {
+      "code": "S8S3",
+      "desc": "Automatic lock when driving away"
+    },
+    {
+      "code": "S8SX",
+      "desc": "Provider control, telematics 1"
+    },
+    {
+      "code": "S8TF",
+      "desc": "Active protection for pedestrians"
+    },
+    {
+      "code": "S925",
+      "desc": "Shipping protection package"
+    },
+    {
+      "code": "S993",
+      "desc": "Model year code"
+    },
+    {
+      "code": "S9AA",
+      "desc": "Outer skin protection"
+    }
+  ],
+  "keyFeatures": {
+    "air": true,
+    "laser": false,
+    "led": true,
+    "soft": false,
+    "vent": true,
+    "hk": true,
+    "pano": true,
+    "skylounge": false,
+    "acoustic": false,
+    "mhev": false,
+    "acc": true,
+    "park": true,
+    "comfort": true,
+    "seatheat": true,
+    "wheelheat": true,
+    "climate4": true,
+    "exhaust": true
+  },
+  "decodeSource": "bimmer.work (вставлено користувачем 2026-09-02)",
+  "removedReason": "салон Vernasca Cognac (MCRI) за VIN — під виключення. VIN узятий з опису оголошення (차대번호), в Encar API його немає; код року L=2020 і дата випуску 26.06.2020 збіглися з лотом, тож VIN справді цього авто."
 }

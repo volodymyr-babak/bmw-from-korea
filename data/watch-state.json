@@ -604,6 +604,11 @@
       "reason": "салон Vernasca Cognac (MCRI) за VIN",
       "vin": "WBACV6107KLK23778",
       "at": "2026-09-02"
+    },
+    "42203413": {
+      "reason": "салон Vernasca Cognac (MCRI) за VIN",
+      "vin": "WBACV6100L9D36425",
+      "at": "2026-09-02"
     }
   },
   "mdecoder": {
@@ -622,7 +627,8 @@
     "WBAGT8105M9G09198": "Tacora Red",
     "WBAGT8104M9H08255": "Ivory White",
     "WBAJU8103M9G49105": "бежевий / айворі",
-    "WBACV6107KLK23778": "Vernasca Cognac"
+    "WBACV6107KLK23778": "Vernasca Cognac",
+    "WBACV6100L9D36425": "Vernasca Cognac"
   },
   "usageRejected": {
     "WBAGT8106M9H88223": "прокат",
