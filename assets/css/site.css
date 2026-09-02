@@ -13,6 +13,7 @@
   --yes: #1f6b45;
   --no: #a2a29a;
   --warn: #9a5b12;
+  --zebra: #f1f1ec;
   --ladder-track: #e6e5dd;
   --ladder-fill: #14559e;
   --focus: #14559e;
@@ -32,6 +33,7 @@ html[data-theme="dark"] {
   --yes: #52b37d;
   --no: #6c6f76;
   --warn: #d0a05c;
+  --zebra: #1a1d22;
   --ladder-track: #24272d;
   --ladder-fill: #6faeea;
   --focus: #6faeea;
@@ -52,7 +54,8 @@ html[data-theme="dark"] {
     --yes: #52b37d;
     --no: #6c6f76;
     --warn: #d0a05c;
-    --ladder-track: #24272d;
+    --zebra: #1a1d22;
+  --ladder-track: #24272d;
     --ladder-fill: #6faeea;
     --focus: #6faeea;
     color-scheme: dark;
@@ -240,139 +243,174 @@ a:hover { text-decoration-thickness: 2px; }
 
 /* ---------- ladder ---------- */
 
-.ladder-head {
-  display: grid;
-  grid-template-columns: 30px 160px minmax(0, 1fr) 150px 200px 70px;
-  gap: 16px;
-  align-items: end;
-  padding: 14px 0 6px;
-  font-family: "IBM Plex Sans Condensed", sans-serif;
-  font-weight: 600;
+/* ---- таблиця кандидатів ---- */
+
+.grid-wrap {
+  /* горизонтальний скрол лишається в таблиці, сторінка ніколи не їде боком */
+  overflow-x: auto;
+  overflow-y: visible;
+  border-top: 1px solid var(--rule-strong);
+  /* таблиця широка — випускаємо її на всю ширину вікна, а не в колонку тексту */
+  width: 100vw;
+  max-width: 100vw;
+  margin: 14px 0 6px calc(50% - 50vw);
+  scrollbar-gutter: stable;
+}
+
+.grid {
+  border-collapse: separate;         /* окремі бордюри, інакше липка шапка їх губить */
+  border-spacing: 0;
   font-size: 13px;
-  color: var(--ink-2);
-  border-bottom: 1px solid var(--rule-strong);
-}
-.ladder-head .h-scale { color: var(--ink-3); font-weight: 400; }
-
-.ladder {
-  list-style: none;
-  margin: 0;
-  padding: 0;
+  width: max-content;
+  min-width: 100%;
 }
 
-.car {
-  display: grid;
-  grid-template-columns: 30px 160px minmax(0, 1fr) 150px 200px 70px;
-  gap: 4px 16px;
-  padding: 14px 0 15px;
+.grid th,
+.grid td {
+  padding: 7px 8px;
   border-bottom: 1px solid var(--rule);
-}
-.car:hover { background: var(--sheet); }
-
-.car-rank {
-  grid-row: 1 / span 2;
-  grid-column: 1;
-  font-family: "IBM Plex Mono", monospace;
-  font-size: 15px;
-  color: var(--ink-3);
-  padding-top: 2px;
+  vertical-align: top;
+  text-align: left;
+  background: var(--paper);          /* непрозоре тло — під липкими клітинками */
 }
 
-.car-id { min-width: 0; }
-
-.car-title {
+/* Шапка липне до верху вікна, щоб у довгій таблиці було видно, де що */
+.grid thead th {
+  position: sticky;
+  top: 0;
+  z-index: 3;
+  padding: 0;
+  border-bottom: 1px solid var(--rule-strong);
   font-family: "IBM Plex Sans Condensed", sans-serif;
   font-weight: 600;
-  font-size: 20px;
-  line-height: 1.2;
-  margin: 0;
-}
-.car-title a { color: var(--ink); text-decoration: none; }
-.car-title a:hover { text-decoration: underline; text-decoration-color: var(--accent); }
-
-.car-meta {
-  font-size: 13px;
   color: var(--ink-2);
-  margin-top: 3px;
+  white-space: nowrap;
 }
-.car-meta .num { color: var(--ink); }
+.grid thead th button {
+  all: unset;
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 8px 8px 7px;
+  cursor: pointer;
+  color: inherit;
+  font: inherit;
+}
+.grid thead th button:hover { color: var(--accent); }
+.grid thead th:focus-within { outline: 2px solid var(--focus); outline-offset: -2px; }
+.grid thead th[aria-sort="ascending"] button::after { content: " ↑"; color: var(--accent); }
+.grid thead th[aria-sort="descending"] button::after { content: " ↓"; color: var(--accent); }
 
-.badge {
-  display: inline-block;
-  font-size: 12px;
-  line-height: 1.4;
-  padding: 1px 6px;
-  border: 1px solid var(--accent);
-  color: var(--accent);
-  margin-left: 8px;
-  vertical-align: 1px;
+/* Перші дві колонки липнуть до лівого краю: у широкій таблиці треба завжди
+   бачити, про яке саме авто рядок */
+col.c-rank  { width: 58px; }
+col.c-car   { width: 190px; }
+col.c-price { width: 126px; }
+
+.grid .c-rank {
+  position: sticky;
+  left: 0;
+  z-index: 2;
+  padding-left: 24px;                /* зовнішній відступ живе в клітинці */
+  color: var(--ink-3);
+}
+.grid .c-car   { position: sticky; left: 58px;  z-index: 2; }
+.grid .c-price { position: sticky; left: 248px; z-index: 2;
+  border-right: 1px solid var(--rule-strong); }
+.grid .c-note  { padding-right: 24px; }
+.grid thead th.c-rank,
+.grid thead th.c-car,
+.grid thead th.c-price { z-index: 4; }
+.grid thead th.c-rank button { padding-left: 24px; }
+
+/* На вузькому екрані трьох липких колонок задорого — лишаємо № і авто */
+@media (max-width: 780px) {
+  .grid .c-price { position: static; border-right: 0; }
 }
 
-.car-price {
-  text-align: left;
+.grid tbody tr:nth-child(even) th,
+.grid tbody tr:nth-child(even) td { background: var(--zebra); }
+.grid tbody tr:hover th,
+.grid tbody tr:hover td { background: var(--sheet); box-shadow: inset 0 0 0 9999px rgba(20, 85, 158, 0.05); }
+col.hl { background: var(--accent-soft); }
+
+.car-link {
+  font-family: "IBM Plex Sans Condensed", sans-serif;
+  font-weight: 600;
+  font-size: 15px;
+  color: var(--ink);
+  text-decoration: none;
 }
-.car-price .amount {
-  font-family: "IBM Plex Mono", monospace;
-  font-variant-numeric: tabular-nums;
-  font-size: 21px;
+.car-link:hover { text-decoration: underline; text-decoration-color: var(--accent); }
+.model-tag { margin-right: 6px; }
+
+.c-car-meta {
+  display: block;
+  margin-top: 2px;
+  font-weight: 400;
+  font-size: 11.5px;
+  line-height: 1.5;
+  color: var(--ink-3);
+}
+.c-car-meta .num { color: var(--ink-2); }
+
+.c-num { text-align: right; white-space: nowrap; }
+.c-price { white-space: nowrap; min-width: 116px; }
+.c-price .amount {
+  font-size: 15px;
   font-weight: 500;
   letter-spacing: -0.01em;
 }
-.car-price .amount-note {
-  font-size: 12px;
-  color: var(--ink-3);
-  display: block;
-  margin-top: 1px;
-}
-
 .bar {
   position: relative;
-  height: 8px;
+  display: block;
+  height: 4px;
+  margin: 5px 0 3px;
   background: var(--ladder-track);
-  margin-top: 12px;
 }
 .bar-fill {
   position: absolute;
   inset: 0 auto 0 0;
   background: var(--ladder-fill);
 }
-.bar-cap {
-  position: absolute;
-  top: -4px;
-  bottom: -4px;
-  width: 2px;
-  background: var(--ink);
-  right: 0;
-}
 .bar-scale {
-  font-size: 11.5px;
+  display: block;
+  font-size: 11px;
   color: var(--ink-3);
-  margin: 4px 0 0;
 }
 
-.car-open {
-  align-self: start;
-  font-size: 13px;
-  padding-top: 4px;
+.c-color { min-width: 132px; }
+.c-feat { text-align: center; width: 34px; }
+.c-note { min-width: 240px; max-width: 320px; color: var(--ink-2); font-size: 12.5px; line-height: 1.45; }
+
+.cell-yes { color: var(--yes); }
+.cell-yes sup { font-size: 9px; }
+.cell-no { color: var(--no); }
+.cell-unknown { color: var(--ink-3); }
+.grid .empty { padding: 20px 0; color: var(--ink-2); }
+
+.grid-legend {
+  font-size: 12.5px;
+  color: var(--ink-3);
+  margin: 0 0 8px;
+  max-width: 76ch;
+}
+.grid-legend b { font-weight: 500; color: var(--ink-2); }
+
+.badge {
+  display: inline-block;
+  font-size: 11px;
+  line-height: 1.4;
+  padding: 0 5px;
+  border: 1px solid var(--accent);
+  color: var(--accent);
+  margin-left: 5px;
+  vertical-align: 1px;
+  white-space: nowrap;
 }
 
-.car-spec {
-  grid-column: 3 / -1;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 4px 14px;
-  align-items: baseline;
-  margin-top: 6px;
-}
-
-.colors {
-  font-size: 13px;
-  color: var(--ink-2);
-}
-.colors b { font-weight: 500; color: var(--ink); }
-
-/* Квадратик фарби біля назви кольору. Відтінки — з рендерів bimmer.work;
-   невідомий колір штрихуємо, щоб не вигадувати фарбу. */
+/* Квадратик кольору біля назви — фарба кузова й оббивка. Відтінки знято
+   з рендерів bimmer.work; невідомий колір штрихуємо, а не вигадуємо. */
 .swatch {
   display: inline-block;
   width: 11px;
@@ -380,11 +418,12 @@ a:hover { text-decoration-thickness: 2px; }
   margin-right: 5px;
   vertical-align: baseline;
   background: var(--swatch, transparent);
-  border: 1px solid var(--rule-strong);
+  /* напівпрозора рамка читається і на папері, і на темному тлі — інакше
+     Carbon Black зникає в темній темі, а Mineral White у світлій */
+  border: 1px solid rgba(128, 128, 128, 0.6);
 }
 .swatch-unknown {
-  background:
-    repeating-linear-gradient(45deg, var(--rule) 0 2px, transparent 2px 4px);
+  background: repeating-linear-gradient(45deg, var(--rule) 0 2px, transparent 2px 4px);
 }
 
 .feats {

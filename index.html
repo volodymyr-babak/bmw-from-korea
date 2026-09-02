@@ -90,16 +90,6 @@
         <option value="">будь-який</option>
       </select>
     </label>
-    <label class="field">
-      <span>Сортувати</span>
-      <select name="sort">
-        <option value="price">за ціною під ключ</option>
-        <option value="price-desc">за ціною, спершу дорожчі</option>
-        <option value="mileage">за пробігом</option>
-        <option value="year-desc">за роком, спершу новіші</option>
-        <option value="accident">за виплатами на ремонт</option>
-      </select>
-    </label>
     <label class="check">
       <input type="checkbox" name="decoded">
       <span>лише з комплектацією за VIN</span>
@@ -111,18 +101,18 @@
     <p class="tally" id="tally" aria-live="polite"></p>
   </form>
 
-  <div class="ladder-head" aria-hidden="true">
-    <span>№</span>
-    <span></span>
-    <span>Авто</span>
-    <span>Під ключ у Києві</span>
-    <span class="h-scale">Від $50 000 до стелі $70 000</span>
-    <span>Encar</span>
-  </div>
-
   <main id="list">
     <p class="state" id="state">Завантажую список…</p>
-    <ol class="ladder" id="ladder" hidden></ol>
+    <p class="grid-legend">
+      <b>Клік по заголовку</b> — сортування. У колонках опцій:
+      <span class="cell-yes">✔</span> є за білд-листом (<span class="cell-yes">✔<sup>+</sup></span> — вищий тир: лазер, B&amp;W, Sky Lounge),
+      <span class="cell-no">☐</span> немає за білд-листом,
+      <span class="cell-unknown">—</span> не перевірено, бо VIN ще немає.
+      Наведи курсор на заголовок або клітинку, щоб побачити повну назву.
+    </p>
+    <div class="grid-wrap" id="grid-wrap" hidden>
+      <table class="grid" id="grid"></table>
+    </div>
   </main>
 
   <footer class="foot">
