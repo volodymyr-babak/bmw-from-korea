@@ -20,7 +20,7 @@ INDEX = ROOT / "data" / "cars.json"
 DETAILS = ROOT / "data" / "cars"
 
 KEY_FEATURES = ["air", "laser", "led", "soft", "vent", "hk", "pano", "skylounge",
-                "acoustic", "mhev", "acc", "park", "comfort", "seatheat",
+                "mhev", "acc", "park", "comfort", "seatheat",
                 "wheelheat", "climate4", "exhaust"]
 
 FRAME = re.compile(r"_(\d+)\.jpg$")

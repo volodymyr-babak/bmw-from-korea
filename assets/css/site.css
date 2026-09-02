@@ -14,8 +14,7 @@
   --no: #a2a29a;
   --warn: #9a5b12;
   --zebra: #f1f1ec;
-  --ladder-track: #e6e5dd;
-  --ladder-fill: #14559e;
+  --shade: #e6e5dd;
   --focus: #14559e;
   color-scheme: light;
 }
@@ -34,8 +33,7 @@ html[data-theme="dark"] {
   --no: #6c6f76;
   --warn: #d0a05c;
   --zebra: #1a1d22;
-  --ladder-track: #24272d;
-  --ladder-fill: #6faeea;
+  --shade: #24272d;
   --focus: #6faeea;
   color-scheme: dark;
 }
@@ -55,8 +53,7 @@ html[data-theme="dark"] {
     --no: #6c6f76;
     --warn: #d0a05c;
     --zebra: #1a1d22;
-  --ladder-track: #24272d;
-    --ladder-fill: #6faeea;
+    --shade: #24272d;
     --focus: #6faeea;
     color-scheme: dark;
   }
@@ -241,9 +238,7 @@ a:hover { text-decoration-thickness: 2px; }
   color: var(--ink);
 }
 
-/* ---------- ladder ---------- */
-
-/* ---- таблиця кандидатів ---- */
+/* ---------- таблиця кандидатів ---------- */
 
 .grid-wrap {
   /* горизонтальний скрол лишається в таблиці, сторінка ніколи не їде боком */
@@ -305,7 +300,7 @@ a:hover { text-decoration-thickness: 2px; }
    бачити, про яке саме авто рядок */
 col.c-rank  { width: 58px; }
 col.c-car   { width: 190px; }
-col.c-price { width: 126px; }
+col.c-price { width: 104px; }
 
 .grid .c-rank {
   position: sticky;
@@ -355,30 +350,12 @@ col.hl { background: var(--accent-soft); }
 .c-car-meta .num { color: var(--ink-2); }
 
 .c-num { text-align: right; white-space: nowrap; }
-.c-price { white-space: nowrap; min-width: 116px; }
+.c-price { white-space: nowrap; }
 .c-price .amount {
   font-size: 15px;
   font-weight: 500;
   letter-spacing: -0.01em;
 }
-.bar {
-  position: relative;
-  display: block;
-  height: 4px;
-  margin: 5px 0 3px;
-  background: var(--ladder-track);
-}
-.bar-fill {
-  position: absolute;
-  inset: 0 auto 0 0;
-  background: var(--ladder-fill);
-}
-.bar-scale {
-  display: block;
-  font-size: 11px;
-  color: var(--ink-3);
-}
-
 .c-color { min-width: 132px; }
 .c-feat { text-align: center; width: 34px; }
 .c-note { min-width: 240px; max-width: 320px; color: var(--ink-2); font-size: 12.5px; line-height: 1.45; }
@@ -700,18 +677,6 @@ col.hl { background: var(--accent-soft); }
 }
 
 @media (max-width: 900px) {
-  .ladder-head { display: none; }
-  .car {
-    grid-template-columns: 30px minmax(0, 1fr);
-    gap: 5px 12px;
-    padding: 16px 0 17px;
-  }
-  .car > * { grid-column: 2; }
-  .car-rank { grid-column: 1; grid-row: 1 / span 6; }
-  .car-open { order: 2; padding-top: 0; }
-  .car-scale { max-width: 340px; }
-  .car-spec { margin-top: 2px; }
-  .bar { margin-top: 4px; }
   .opt-columns { columns: 1; }
   .figures > div { padding-right: 18px; margin-right: 18px; }
 }
@@ -742,8 +707,11 @@ col.hl { background: var(--accent-soft); }
 }
 
 @media print {
-  .controls, .theme-toggle, .car-open { display: none; }
+  .controls, .theme-toggle, .grid-legend { display: none; }
   body { background: #fff; color: #000; }
+  /* таблиця на папері — без липких колонок і без скролу */
+  .grid-wrap { width: auto; margin: 0; overflow: visible; }
+  .grid .c-rank, .grid .c-car, .grid .c-price, .grid thead th { position: static; }
 }
 
 .foot h2 {
@@ -757,35 +725,13 @@ col.hl { background: var(--accent-soft); }
 
 /* ---------- фото ---------- */
 
-.car-thumb {
-  grid-row: 1 / span 2;
-  grid-column: 2;
-  align-self: start;
-}
-.car-thumb a { display: block; }
-.car-thumb img,
-.car-thumb .thumb-none {
-  display: block;
-  width: 100%;
-  height: auto;
-  aspect-ratio: 16 / 9;
-  object-fit: cover;
-  background: var(--ladder-track);
-}
-.car-thumb .thumb-none {
-  display: grid;
-  place-items: center;
-  font-size: 11px;
-  color: var(--ink-3);
-}
-
 .gallery {
   padding: 22px 0 2px;
   border-bottom: 1px solid var(--rule);
 }
 .shot {
   margin: 0;
-  background: var(--ladder-track);
+  background: var(--shade);
   max-width: 760px;
 }
 .shot img {

@@ -9,7 +9,6 @@ export const SHIPPING = 3700;
 export const SERVICE = 1000;
 export const CERT_REG = 124;            // сертифікація $79 + реєстрація $45
 export const BUDGET_CAP = 70000;
-export const LADDER_FLOOR = 50000;
 
 /** Фіксована мінімальна митна вартість P (USD) за роком виготовлення */
 export const MIN_CUSTOMS_VALUE = { 2019: 25000, 2020: 36000, 2021: 40500, 2022: 43000 };
@@ -86,7 +85,6 @@ export const KEY_FEATURES = [
   { id: 'climate4',  short: '4-зона',         long: '4-зонний клімат-контроль' },
   { id: 'audio',     short: 'H/K',            long: 'Harman/Kardon' },
   { id: 'roof',      short: 'панорама',       long: 'Панорамний дах' },
-  { id: 'acoustic',  short: 'акуст. скло',    long: 'Акустичне скло (S3KA)' },
   { id: 'exhaust',   short: 'M-вихлоп',       long: 'Вихлопна система M Sport' },
   { id: 'mhev',      short: '48V',            long: '48V mild-hybrid' },
 ];

@@ -38,7 +38,6 @@ FEATURE_CODES = {
     'bw':        ['S6F1', 'S6AR'],
     'pano':      ['S402', 'S407'],
     'skylounge': ['S407'],
-    'acoustic':  ['S3KA'],
     'mhev':      ['S1CE'],
     'acc':       ['S5AU'],
     'park':      ['S5DN'],

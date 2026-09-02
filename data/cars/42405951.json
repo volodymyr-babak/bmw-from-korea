@@ -332,7 +332,6 @@
     "bw": true,
     "pano": true,
     "skylounge": false,
-    "acoustic": false,
     "mhev": true,
     "acc": true,
     "park": true,
