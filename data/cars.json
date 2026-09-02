@@ -2,10 +2,10 @@
   "meta": {
     "updated": "2026-09-02",
     "model": "BMW X5 (G05) / X6 (G06) xDrive30d M Sport",
-    "criteria": "X5 (G05) і X6 (G06) · 2019–2022 виготовлення · ≤110000 км · M Sport · дизель 30d лише · ДТП ≤5 млн ₩ власний · під ключ ≤ $70000 · салон чорний/кавовий · без лізингу/айворі/cognac/Tacora Red/45e/40i/40d/M50",
+    "criteria": "X5 (G05) і X6 (G06) · 2019–2022 виготовлення · ≤110000 км · M Sport · дизель 30d лише · ДТП ≤5 млн ₩ власний · під ключ ≤ $70000 · салон чорний/кавовий · без лізингу/айворі/cognac/Tacora Red/45e/40i/40d/M50 · без прокатної/таксі історії (звіт інспекції)",
     "customs": "P (USD) by year 2019:25000 2020:36000 2021:40500 2022:43000; age=2025-year; duty=0.10P; excise=75*3.0*age*1.1648; vat=0.20(P+duty+excise); pens=0.05P; oblik=pens+124; ship=3700; svc=1000; korea=price_만*10000/1372",
-    "count": 45,
-    "decodedCount": 8,
+    "count": 41,
+    "decodedCount": 7,
     "customsNote": "Мінімальна митна вартість P звірена для X5. Для X6 узято ту саму таблицю, тому ціна під ключ X6 — оцінка (реально очікувати +$1000…2000)."
   },
   "cars": [
@@ -214,28 +214,6 @@
     },
     {
       "rank": 9,
-      "listingId": "42552103",
-      "model": "X6 (G06)",
-      "year": 2021,
-      "mileageKm": 89221,
-      "koreaPriceMan": 5150,
-      "priceUSD": 58603,
-      "priceEstimated": true,
-      "vin": "WBAGT8106M9H88223",
-      "decoded": false,
-      "exterior": "Carbon Black",
-      "accident": {
-        "costKRW": 0,
-        "owners": 1
-      },
-      "photo": "/carpicture04/pic4254/42548037_001.jpg",
-      "note": "Гарантію продовжено до 14.09.2026, три ключі.",
-      "flags": [
-        "прокат"
-      ]
-    },
-    {
-      "rank": 10,
       "listingId": "41032632",
       "model": "X6 (G06)",
       "year": 2020,
@@ -267,11 +245,11 @@
       },
       "photo": "/carpicture08/pic4258/42585873_001.jpg",
       "exterior": "білий",
-      "rank": 11,
+      "rank": 10,
       "interiorUnverified": "коричневий / Coffee — з опису"
     },
     {
-      "rank": 12,
+      "rank": 11,
       "listingId": "42595623",
       "model": "X6 (G06)",
       "year": 2021,
@@ -303,10 +281,10 @@
       },
       "photo": "/carpicture10/pic4220/42203413_001.jpg",
       "exterior": "сірий",
-      "rank": 13
+      "rank": 12
     },
     {
-      "rank": 14,
+      "rank": 13,
       "listingId": "42112799",
       "model": "X5 (G05)",
       "year": 2020,
@@ -344,7 +322,7 @@
       }
     },
     {
-      "rank": 15,
+      "rank": 14,
       "listingId": "42218942",
       "model": "X5 (G05)",
       "year": 2019,
@@ -382,7 +360,7 @@
       }
     },
     {
-      "rank": 16,
+      "rank": 15,
       "listingId": "41558094",
       "model": "X6 (G06)",
       "year": 2020,
@@ -401,48 +379,7 @@
       "interiorUnverified": "коричневий / Coffee — з опису"
     },
     {
-      "rank": 17,
-      "listingId": "42171783",
-      "model": "X5 (G05)",
-      "year": 2021,
-      "mileageKm": 54332,
-      "koreaPriceMan": 5630,
-      "priceUSD": 62102,
-      "vin": "WBAJU8107M9G39113",
-      "decoded": true,
-      "exterior": "Mineral White",
-      "interior": "Vernasca Black",
-      "accident": {
-        "costKRW": 2463449,
-        "owners": 2
-      },
-      "note": "пневмо + 48V MHEV + вентиляція + H/K; 54 332 км; без лазера/soft-close",
-      "photo": "/carpicture07/pic4217/42171783_001.jpg",
-      "keyFeatures": {
-        "air": true,
-        "laser": false,
-        "led": true,
-        "soft": false,
-        "vent": true,
-        "hk": true,
-        "pano": true,
-        "skylounge": false,
-        "acoustic": false,
-        "mhev": true,
-        "acc": true,
-        "park": true,
-        "comfort": true,
-        "seatheat": true,
-        "wheelheat": true,
-        "climate4": true,
-        "exhaust": true
-      },
-      "flags": [
-        "прокат"
-      ]
-    },
-    {
-      "rank": 18,
+      "rank": 16,
       "listingId": "41142979",
       "model": "X6 (G06)",
       "year": 2022,
@@ -475,10 +412,10 @@
       },
       "photo": "/carpicture02/pic4262/42627728_001.jpg",
       "exterior": "Carbon Black",
-      "rank": 19
+      "rank": 17
     },
     {
-      "rank": 20,
+      "rank": 18,
       "listingId": "41701983",
       "model": "X6 (G06)",
       "year": 2020,
@@ -496,7 +433,7 @@
       "photo": "/carpicture10/pic4170/41701983_001.jpg"
     },
     {
-      "rank": 21,
+      "rank": 19,
       "listingId": "41688103",
       "model": "X6 (G06)",
       "year": 2020,
@@ -514,7 +451,7 @@
       "photo": "/carpicture08/pic4168/41688103_001.jpg"
     },
     {
-      "rank": 22,
+      "rank": 20,
       "listingId": "42257052",
       "model": "X6 (G06)",
       "year": 2022,
@@ -532,29 +469,6 @@
       "photo": "/carpicture05/pic4225/42251152_001.jpg"
     },
     {
-      "rank": 23,
-      "listingId": "42478734",
-      "model": "X6 (G06)",
-      "year": 2022,
-      "mileageKm": 84698,
-      "koreaPriceMan": 5799,
-      "priceUSD": 63944,
-      "priceEstimated": true,
-      "vin": "WBAGT8105N9L38142",
-      "decoded": false,
-      "exterior": "білий",
-      "accident": {
-        "costKRW": 0,
-        "owners": 1
-      },
-      "photo": "/carpicture07/pic4247/42478734_001.jpg",
-      "interiorUnverified": "коричневий / Coffee — з опису",
-      "flags": [
-        "прокат",
-        "ДТП каркаса"
-      ]
-    },
-    {
       "listingId": "42646084",
       "model": "X5 (G05)",
       "year": 2020,
@@ -569,30 +483,10 @@
       },
       "photo": "/carpicture04/pic4264/42646084_001.jpg",
       "exterior": "сірий",
-      "rank": 24
+      "rank": 21
     },
     {
-      "rank": 25,
-      "listingId": "41056198",
-      "model": "X5 (G05)",
-      "year": 2020,
-      "mileageKm": 92727,
-      "koreaPriceMan": 6150,
-      "priceUSD": 64541,
-      "vin": "WBACV6101L9B14024",
-      "decoded": false,
-      "exterior": "синій",
-      "accident": {
-        "costKRW": 3381440,
-        "owners": 3
-      },
-      "photo": "/carpicture05/pic4105/41056026_001.jpg",
-      "flags": [
-        "прокат"
-      ]
-    },
-    {
-      "rank": 26,
+      "rank": 22,
       "listingId": "40966656",
       "model": "X6 (G06)",
       "year": 2021,
@@ -625,10 +519,10 @@
       },
       "photo": "/carpicture05/pic4265/42655967_001.jpg",
       "exterior": "чорний",
-      "rank": 27
+      "rank": 23
     },
     {
-      "rank": 28,
+      "rank": 24,
       "listingId": "42415471",
       "model": "X6 (G06)",
       "year": 2022,
@@ -646,7 +540,7 @@
       "photo": "/carpicture01/pic4241/42415469_002.jpg"
     },
     {
-      "rank": 29,
+      "rank": 25,
       "listingId": "41368455",
       "model": "X5 (G05)",
       "year": 2021,
@@ -663,7 +557,7 @@
       "photo": "/carpicture06/pic4136/41368455_001.jpg"
     },
     {
-      "rank": 30,
+      "rank": 26,
       "listingId": "41382456",
       "model": "X6 (G06)",
       "year": 2021,
@@ -681,7 +575,7 @@
       "photo": "/carpicture07/pic4137/41374235_001.jpg"
     },
     {
-      "rank": 31,
+      "rank": 27,
       "listingId": "42094631",
       "model": "X5 (G05)",
       "year": 2020,
@@ -699,7 +593,7 @@
       "photo": "/carpicture09/pic4209/42094631_001.jpg"
     },
     {
-      "rank": 32,
+      "rank": 28,
       "listingId": "42349824",
       "model": "X6 (G06)",
       "year": 2022,
@@ -718,7 +612,7 @@
       "note": "Пише «без фарбування й замін», а в реєстрі 4,7 млн ₩ виплат — найбільша розбіжність у добірці."
     },
     {
-      "rank": 33,
+      "rank": 29,
       "listingId": "42631623",
       "model": "X6 (G06)",
       "year": 2021,
@@ -736,7 +630,7 @@
       "photo": "/carpicture02/pic4262/42620687_002.jpg"
     },
     {
-      "rank": 34,
+      "rank": 30,
       "listingId": "42650455",
       "model": "X6 (G06)",
       "year": 2022,
@@ -754,7 +648,7 @@
       "photo": "/carpicture04/pic4264/42649355_001.jpg"
     },
     {
-      "rank": 35,
+      "rank": 31,
       "listingId": "42585911",
       "model": "X6 (G06)",
       "year": 2022,
@@ -772,7 +666,7 @@
       "photo": "/carpicture08/pic4258/42585911_001.jpg"
     },
     {
-      "rank": 36,
+      "rank": 32,
       "listingId": "41413915",
       "model": "X6 (G06)",
       "year": 2021,
@@ -790,7 +684,7 @@
       "photo": "/carpicture01/pic4141/41413915_001.jpg"
     },
     {
-      "rank": 37,
+      "rank": 33,
       "listingId": "41334762",
       "model": "X5 (G05)",
       "year": 2021,
@@ -827,7 +721,7 @@
       }
     },
     {
-      "rank": 38,
+      "rank": 34,
       "listingId": "41578153",
       "model": "X6 (G06)",
       "year": 2020,
@@ -846,7 +740,7 @@
       "interiorUnverified": "коричневий / Coffee — з опису"
     },
     {
-      "rank": 39,
+      "rank": 35,
       "listingId": "42574631",
       "model": "X5 (G05)",
       "year": 2021,
@@ -863,7 +757,7 @@
       "photo": "/carpicture07/pic4257/42574631_001.jpg"
     },
     {
-      "rank": 40,
+      "rank": 36,
       "listingId": "42476461",
       "model": "X6 (G06)",
       "year": 2022,
@@ -881,7 +775,7 @@
       "photo": "/carpicture07/pic4247/42476461_001.jpg"
     },
     {
-      "rank": 41,
+      "rank": 37,
       "listingId": "41616675",
       "model": "X6 (G06)",
       "year": 2022,
@@ -913,10 +807,10 @@
       },
       "photo": "/carpicture04/pic4264/42644431_001.jpg",
       "exterior": "білий",
-      "rank": 42
+      "rank": 38
     },
     {
-      "rank": 43,
+      "rank": 39,
       "listingId": "41689680",
       "model": "X5 (G05)",
       "year": 2022,
@@ -934,7 +828,7 @@
       "note": "Продавець сам пише про ≈5,7 млн ₩ на заміну крила — виплата ще не в реєстрі Encar, тому наш поріг 5 млн ₩ її не побачив."
     },
     {
-      "rank": 44,
+      "rank": 40,
       "listingId": "41437048",
       "model": "X5 (G05)",
       "year": 2022,
@@ -972,7 +866,7 @@
       }
     },
     {
-      "rank": 45,
+      "rank": 41,
       "listingId": "41456161",
       "model": "X5 (G05)",
       "year": 2021,

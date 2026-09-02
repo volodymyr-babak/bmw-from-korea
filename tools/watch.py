@@ -177,8 +177,14 @@ def is_twin(cars, model, year, man, mileage):
     return None
 
 
+# Прокат/таксі/комерційне минуле — стоп-фактор із 2026-09-02: в Україні воно
+# помітно б'є по ліквідності при перепродажі. Видно лише у звіті інспекції
+# (`usageChangeTypes`), в оголошенні й у решті API цього немає.
+BAD_USAGE = ('прокат', 'таксі', 'комерційне')
+
+
 def reject_reason(det, hist, vins_taken, cars, model, year, man, bad_trim=None,
-                  insp=None):
+                  insp=None, bad_usage_vins=None):
     kw_inspection = {'insp': insp}
     ad = det.get('advertisement') or {}
     if ad.get('salesStatus') or ad.get('price') == 9999:
@@ -192,6 +198,10 @@ def reject_reason(det, hist, vins_taken, cars, model, year, man, bad_trim=None,
     # Cognac від кавового по фото надійно не відрізниш — ці лишаємо до VIN.
     if vin and vin in (bad_trim or {}):
         return f'салон {bad_trim[vin]} за фото', vin
+    # Запасний шлях: якщо звіту інспекції немає, ловимо за VIN — той самий лот
+    # перевиставляють під новим listingId, а минуле авто не змінюється.
+    if vin and vin in (bad_usage_vins or {}):
+        return f'було в статусі «{bad_usage_vins[vin]}»', vin
     # Кольору салону в API немає, але продавці пишуть його в описі — і опис
     # збігається з білд-листом там, де є обидва. Відсіваємо тут, до mdecoder.
     colour, ok, _ = trim.seat_colour(((det.get('contents') or {}).get('text') or ''))
@@ -211,6 +221,9 @@ def reject_reason(det, hist, vins_taken, cars, model, year, man, bad_trim=None,
     if insp and (insp.get('serious') or insp.get('waterlog')):
         why = ', '.join(insp.get('serious') or []) or 'потоп'
         return f'звіт інспекції: {why}', vin
+    used = [u for u in (insp or {}).get('usage') or [] if u in BAD_USAGE]
+    if used:
+        return f'звіт інспекції: було в статусі «{", ".join(used)}»', vin
     cost = hist.get('myAccidentCost') or 0
     if cost > MAX_ACCIDENT_KRW:
         return f'власний ремонт {krw_m(cost)}', vin
@@ -222,6 +235,7 @@ def find_new(index, state, ch):
     rejected = state.setdefault('rejected', {})
     vins_taken = {c['vin'] for c in index['cars'] if c.get('vin')}
     bad_trim = state.get('interiorRejected') or {}
+    bad_usage_vins = state.get('usageRejected') or {}
 
     # дублі варто перепитати: близнюк міг продатись і місце звільнилось
     for lid in [k for k, v in rejected.items()
@@ -260,7 +274,8 @@ def find_new(index, state, ch):
             insp = fetch_inspection(vid, (det.get('spec') or {}).get('mileage'))
 
             why, vin = reject_reason(det, hist, vins_taken, index['cars'],
-                                     model, year, int(man), bad_trim, insp)
+                                     model, year, int(man), bad_trim, insp,
+                                     bad_usage_vins)
             if why:
                 rejected[lid] = {'reason': why, 'vin': vin, 'at': today()}
                 continue
