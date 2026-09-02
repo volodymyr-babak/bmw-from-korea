@@ -79,6 +79,7 @@ export const OPTIONS = {
   S4AW: ['interior', 'Панель приладів у шкірі Sensatec'],
   S4KK: ['interior', 'Вставки салону — алюміній Tetragon'],
   S4KM: ['interior', 'Вставки салону — алюміній Mesh Effect темний'],
+  S44A: ['interior', 'Підстаканники з підігрівом і охолодженням'],
   S4UR: ['interior', 'Ambient — фонове підсвічування салону'],
   S4A2: ['interior', 'Crafted Clarity — кришталеві елементи iDrive'],
   S710: ['interior', 'Шкіряне кермо M'],
@@ -94,6 +95,7 @@ export const OPTIONS = {
   S3AT: ['exterior', 'Рейлінги — сатинований алюміній'],
   S3MB: ['exterior', 'Individual Exterior Line — темний алюміній'],
   S3DN: ['exterior', 'Решітка BMW Iconic Glow — підсвічені ніздрі'],
+  S3D0: ['exterior', 'Iconic Glow тимчасово не встановлено — з підготовкою до дистанційного оновлення ПЗ'],
   S9AA: ['exterior', 'Захист зовнішнього покриття'],
 
   S610: ['media', 'Head-up Display', true],

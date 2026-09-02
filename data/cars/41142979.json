@@ -42,7 +42,7 @@
     },
     {
       "kind": "plus",
-      "text": "Пневмопідвіска, лазерні фари, Harman/Kardon, Soft-Close («ghost door») і 48V — перелічені продавцем."
+      "text": "Пневмопідвіска (`S2VR`), лазерні фари (`S5AZ`) і 48V (`S1CE`) — підтверджено білд-листом за VIN."
     },
     {
       "kind": "plus",
@@ -59,6 +59,10 @@
     {
       "kind": "minus",
       "text": "У кінці опису стоїть VIN іншого авто (WBACY…, 2021 рік) — очевидно, копіпаст із сусіднього оголошення. Наш VIN узятий з API."
+    },
+    {
+      "kind": "minus",
+      "text": "Двох речей зі списку продавця в білд-листі НЕМАЄ: **Soft-Close** (`S323` відсутній) і **Harman/Kardon** — аудіо базове HiFi `S676`."
     }
   ],
   "inspection": {
@@ -79,5 +83,289 @@
       "kind": "plus",
       "text": "Звіт інспекції чистий: ні замін панелей, ні кузовного, ні комерційної історії."
     }
-  ]
+  ],
+  "prodDate": "2022-04-13",
+  "engine": "B57D30O2",
+  "power": "210 кВт / 286 к.с. · 650 Нм",
+  "engineNote": "48V mild-hybrid (S1CE) — версія 210 кВт / 286 к.с., потужніша за B57O 2019–2020 (195 кВт / 265 к.с.). Складання Spartanburg, США.",
+  "exterior": {
+    "name": "Mineral White",
+    "german": "Mineralweiß Metallic",
+    "code": "A96"
+  },
+  "interior": {
+    "name": "Merino Coffee",
+    "german": "Leder Merino Coffee",
+    "code": "VAHF"
+  },
+  "options": [
+    {
+      "code": "S1CE",
+      "desc": "Recuperation system (48V mild-hybrid)"
+    },
+    {
+      "code": "S1MA",
+      "desc": "M Sport exhaust system"
+    },
+    {
+      "code": "S1XN",
+      "desc": "21\" M light alloy wheels Y-spoke 741 M bicolour, mixed runflat tyres"
+    },
+    {
+      "code": "S212",
+      "desc": "National brake system equipment"
+    },
+    {
+      "code": "S258",
+      "desc": "Runflat tyres"
+    },
+    {
+      "code": "S2NH",
+      "desc": "M Sport brakes"
+    },
+    {
+      "code": "S2VB",
+      "desc": "Tyre pressure indicator"
+    },
+    {
+      "code": "S2VR",
+      "desc": "2-axle air suspension"
+    },
+    {
+      "code": "S322",
+      "desc": "Comfort Access system"
+    },
+    {
+      "code": "S337",
+      "desc": "M Sports package"
+    },
+    {
+      "code": "S3AT",
+      "desc": "Roof rails, satinated aluminium"
+    },
+    {
+      "code": "S3D0",
+      "desc": "BMW kidney Iconic Glow — temporary deletion, prepared for Remote Software Upgrade"
+    },
+    {
+      "code": "S3DN",
+      "desc": "BMW kidney Iconic Glow"
+    },
+    {
+      "code": "S3DS",
+      "desc": "BMW Display Key"
+    },
+    {
+      "code": "S3MB",
+      "desc": "Individual Exterior Line, satinated aluminium"
+    },
+    {
+      "code": "S402",
+      "desc": "Panorama glass roof"
+    },
+    {
+      "code": "S417",
+      "desc": "Roller sunblind, rear side windows"
+    },
+    {
+      "code": "S423",
+      "desc": "Floor mats, velours"
+    },
+    {
+      "code": "S428",
+      "desc": "Warning triangle and first aid kit"
+    },
+    {
+      "code": "S44A",
+      "desc": "Cup holder, temperature-adjustable"
+    },
+    {
+      "code": "S453",
+      "desc": "Active seat ventilation, front"
+    },
+    {
+      "code": "S456",
+      "desc": "Comfort seats, electrically adjustable with memory"
+    },
+    {
+      "code": "S4A2",
+      "desc": "Glass application Crafted Clarity"
+    },
+    {
+      "code": "S4FL",
+      "desc": "Travel & Comfort rail system"
+    },
+    {
+      "code": "S4HA",
+      "desc": "Seat heating, front and rear"
+    },
+    {
+      "code": "S4HB",
+      "desc": "Heat comfort package, front"
+    },
+    {
+      "code": "S4KM",
+      "desc": "Interior trim finishers aluminium mesh effect dark"
+    },
+    {
+      "code": "S4NB",
+      "desc": "Automatic climate control, 4-zone"
+    },
+    {
+      "code": "S4T8",
+      "desc": "Extended exterior mirror package"
+    },
+    {
+      "code": "S4UR",
+      "desc": "Ambient light"
+    },
+    {
+      "code": "S548",
+      "desc": "Speedometer with kilometer reading"
+    },
+    {
+      "code": "S5AC",
+      "desc": "Automatic high-beam headlights control"
+    },
+    {
+      "code": "S5AL",
+      "desc": "Active Protection"
+    },
+    {
+      "code": "S5AU",
+      "desc": "Driving Assistant Professional"
+    },
+    {
+      "code": "S5AV",
+      "desc": "Active Guard"
+    },
+    {
+      "code": "S5AZ",
+      "desc": "BMW Laserlight"
+    },
+    {
+      "code": "S5DN",
+      "desc": "Parking Assistant Plus"
+    },
+    {
+      "code": "S610",
+      "desc": "Head-up display"
+    },
+    {
+      "code": "S676",
+      "desc": "HiFi loudspeaker system (базове, НЕ Harman/Kardon)"
+    },
+    {
+      "code": "S699",
+      "desc": "Area-Code 3 for DVD"
+    },
+    {
+      "code": "S6AE",
+      "desc": "Teleservices"
+    },
+    {
+      "code": "S6AK",
+      "desc": "ConnectedDrive Services"
+    },
+    {
+      "code": "S6C3",
+      "desc": "Connected Package Professional I"
+    },
+    {
+      "code": "S6CP",
+      "desc": "Apple CarPlay preparation"
+    },
+    {
+      "code": "S6NV",
+      "desc": "Country-specific telephony with wireless charging"
+    },
+    {
+      "code": "S6U3",
+      "desc": "BMW Live Cockpit Professional"
+    },
+    {
+      "code": "S6U8",
+      "desc": "BMW gesture control"
+    },
+    {
+      "code": "S6UX",
+      "desc": "BMW controller without touch function"
+    },
+    {
+      "code": "S710",
+      "desc": "M leather steering wheel"
+    },
+    {
+      "code": "S715",
+      "desc": "M Aerodynamics package"
+    },
+    {
+      "code": "S775",
+      "desc": "Individual roof-lining anthracite"
+    },
+    {
+      "code": "S802",
+      "desc": "Korea version"
+    },
+    {
+      "code": "S867",
+      "desc": "Language version Korean"
+    },
+    {
+      "code": "S8AF",
+      "desc": "Korean / on-board documentation"
+    },
+    {
+      "code": "S8KH",
+      "desc": "Oil service interval 20 000 km / 18 months"
+    },
+    {
+      "code": "S8R9",
+      "desc": "Refrigerant"
+    },
+    {
+      "code": "S8S3",
+      "desc": "Automatic lock when driving away"
+    },
+    {
+      "code": "S8SX",
+      "desc": "Provider control, telematics 1"
+    },
+    {
+      "code": "S8TF",
+      "desc": "Active protection for pedestrians"
+    },
+    {
+      "code": "S925",
+      "desc": "Shipping protection package"
+    },
+    {
+      "code": "S993",
+      "desc": "Model year code"
+    },
+    {
+      "code": "S9AA",
+      "desc": "Outer skin protection"
+    }
+  ],
+  "keyFeatures": {
+    "air": true,
+    "laser": true,
+    "led": false,
+    "soft": false,
+    "vent": true,
+    "hk": false,
+    "pano": true,
+    "skylounge": false,
+    "acoustic": false,
+    "mhev": true,
+    "acc": true,
+    "park": true,
+    "comfort": true,
+    "seatheat": true,
+    "wheelheat": true,
+    "climate4": true,
+    "exhaust": true
+  },
+  "decodeSource": "bimmer.work (вставлено користувачем 2026-09-02)"
 }
