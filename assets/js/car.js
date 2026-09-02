@@ -203,11 +203,17 @@ function panelFeatures(c, d) {
   // з фото, тож вона рендериться в обох гілках.
   const note = c.note ? `<p class="note">${esc(c.note)}</p>` : '';
   if (!kf) {
+    // Пневмо — єдина опція, яку варто показати й без білд-листа: вона важлива
+    // для комфорту, ретрофіт нереальний, а продавці про неї часто пишуть.
+    const air = d && typeof d.airSeller === 'boolean' ? d.airSeller : null;
+    const airLine = air === null ? '' : `<p class="note"><b>Пневмопідвіска ${air
+      ? 'є' : 'немає'}</b> — зі слів продавця, не підтверджено білд-листом за VIN.
+      Ретрофіт нереальний ($6000–10 000), тож це властивість авто назавжди.</p>`;
     return `<section class="panel"><h2>Ключові опції</h2>
       <p class="pending">Комплектація ще не розшифрована. ${c.vin
         ? 'VIN є — потрібно прогнати білд-лист BMW, і опції зʼявляться тут.'
         : 'Encar для цього лота VIN не показує, тому білд-лист поки не зняти — доглядач перевіряє щогодини.'}</p>
-      ${note}</section>`;
+      ${airLine}${note}</section>`;
   }
   const items = KEY_FEATURES.map((f) => {
     const { has, long } = featureState(kf, f);

@@ -82,6 +82,14 @@ def main() -> int:
             car["accident"] = {"costKRW": h.get("myAccidentCost") or 0,
                                "owners": h.get("ownerChangeCnt") or 0}
 
+        # Пневмопідвіска зі слів продавця — для недекодованих це єдине джерело
+        # (у каталозі опцій Encar її немає, а ретрофіт нереальний). Щойно є
+        # білд-лист — прапорець з індексу йде, щоб не було двох відповідей.
+        if detail.get("airSeller") is not None and not detail.get("options"):
+            car["airSeller"] = bool(detail["airSeller"])
+        else:
+            car.pop("airSeller", None)
+
         # decoded = знято білд-лист BMW за VIN. Детальний файл є в кожного авто
         # (фото й історія), тому сама його наявність нічого не означає.
         car["decoded"] = bool(detail.get("options"))

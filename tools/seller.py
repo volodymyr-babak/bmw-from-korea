@@ -93,7 +93,50 @@ def _nonsmoker(text):
     return None
 
 
-CHECKS = (_keys, _tyres, _new_price, _warranty, _no_rental, _bps, _nonsmoker)
+# --- пневмопідвіска ----------------------------------------------------
+# Єдиний виняток із правила «полярність руками»: заперечення тут стоїть
+# впритул до згадки («에어서스 없는차량» = пневмо НЕМАЄ), тож вікно вузьке.
+AIR_RE = re.compile(r'에어\s?[서써]스\w*|air\s?susp\w*|에어매틱', re.I)
+# Корейське заперечення йде ПІСЛЯ іменника, англійське — ПЕРЕД ним.
+AIR_NEG_AFTER = re.compile(r'없|미장착|비장착|미적용|아닙|아님')
+AIR_NEG_BEFORE = re.compile(r'\b(?:no|not|without)\b\s*$', re.I)
+
+
+def air_suspension(text):
+    """True / False / None — пневмопідвіска зі слів продавця.
+
+    Пневмо (`S2VR`) є не в усіх X5/X6 M Sport — у частині стоїть `S2VF`
+    Adaptive M chassis, а ретрофіт нереальний. Продавці про неї пишуть, і в
+    усіх авто, де є і опис, і білд-лист, вони збіглися (41032632 «에어 서스팬션
+    적용» і 41142979 = S2VR; 42468210 «에어서스 없는차량» = S2VF). Тому опис —
+    безкоштовне джерело для недекодованих.
+
+    `None` = продавець не згадав. Це НЕ «немає»: у 42445415 і 42405951
+    пневмо немає за білд-листом, а в описі про неї ні слова.
+    """
+    if not text:
+        return None
+    verdict = None
+    for m in AIR_RE.finditer(text):
+        # вікно 10 знаків: далі вже наступне речення з його власним 무사고
+        if AIR_NEG_AFTER.search(text[m.end():m.end() + 10]):
+            return False                      # пряме заперечення важить більше
+        if AIR_NEG_BEFORE.search(text[max(0, m.start() - 12):m.start()]):
+            return False
+        verdict = True
+    return verdict
+
+
+def _air(text):
+    got = air_suspension(text)
+    if got is True:
+        return ('plus', 'Пневмопідвіска є (зі слів продавця).')
+    if got is False:
+        return ('minus', 'Пневмопідвіски немає (продавець зазначає прямо).')
+    return None
+
+
+CHECKS = (_keys, _tyres, _new_price, _warranty, _no_rental, _bps, _nonsmoker, _air)
 
 
 def facts(text):

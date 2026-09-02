@@ -34,6 +34,9 @@ function renderFigures(meta, list) {
   const cheapest = Math.min(...list.map((c) => c.priceUSD));
   const decoded = list.filter((c) => c.decoded).length;
   const x5 = list.filter((c) => c.model.startsWith('X5')).length;
+  const known = list.map(airState).filter((a) => a !== null);
+  const knownAir = known.length;
+  const withAir = known.filter(Boolean).length;
   const updated = new Date(meta.updated).toLocaleDateString('uk-UA', { day: 'numeric', month: 'long', year: 'numeric' });
   $('#figures').innerHTML = [
     ['Кандидатів у списку', `${list.length}`, true],
@@ -41,10 +44,19 @@ function renderFigures(meta, list) {
     ['Найдешевше під ключ', usd(cheapest), true],
     ['Стеля бюджету', usd(BUDGET_CAP), true],
     ['Комплектація за VIN', `${decoded} з ${list.length}`, true],
+    ['Пневмопідвіска', `${withAir} з ${knownAir}`, true],
     ['Дані станом на', updated, false],
   ].map(([dt, dd, isNum]) =>
     `<div><dt>${esc(dt)}</dt><dd${isNum ? ' class="num"' : ''}>${esc(dd)}</dd></div>`
   ).join('');
+}
+
+/** Пневмо: білд-лист за VIN → інакше слова продавця → інакше невідомо (null).
+    Ретрофіт нереальний, тому це властивість авто, а не опція, яку доберуть. */
+function airState(c) {
+  if (c.decoded) return !!c.keyFeatures?.air;
+  if (typeof c.airSeller === 'boolean') return c.airSeller;
+  return null;
 }
 
 function render() {
@@ -54,13 +66,17 @@ function render() {
   const maxKm = Number(f.get('mileage')) || Infinity;
   const maxPrice = Number(f.get('price')) || Infinity;
   const onlyDecoded = f.get('decoded') === 'on';
+  const onlyAir = f.get('air') === 'on';
 
   let view = cars.filter((c) =>
     (!model || c.model.startsWith(model)) &&
     (!year || String(c.year) === year) &&
     c.mileageKm <= maxKm &&
     c.priceUSD <= maxPrice &&
-    (!onlyDecoded || c.decoded)
+    (!onlyDecoded || c.decoded) &&
+    // невідоме ховаємо разом із «немає»: краще недобрати кандидата, ніж
+    // порахувати пневмо там, де її не перевіряли
+    (!onlyAir || airState(c) === true)
   );
 
   const sorters = {
@@ -124,10 +140,19 @@ function row(c, isCheapest) {
     <div class="car-spec">
       ${colors}
       ${accident(c)}
-      ${c.decoded ? featureStrip(c) : '<p class="feat-unknown">Комплектація — уточнюється за VIN</p>'}
+      ${c.decoded ? featureStrip(c) : pending(c)}
       ${c.note ? `<p class="colors">${esc(c.note)}</p>` : ''}
     </div>
   </li>`;
+}
+
+/** Недекодоване авто: комплектації немає, але пневмо часто відома з опису —
+    а вона для нас важлива й нездобувна ретрофітом, тож показуємо окремо. */
+function pending(c) {
+  const air = airState(c);
+  const note = air === null ? '' :
+    ` · пневмопідвіска <b>${air ? 'є' : 'немає'}</b><span class="est" title="Зі слів продавця, не підтверджено білд-листом за VIN">?</span>`;
+  return `<p class="feat-unknown">Комплектація — уточнюється за VIN${note}</p>`;
 }
 
 function thumb(c, href) {

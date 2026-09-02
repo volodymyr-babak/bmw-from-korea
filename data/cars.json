@@ -699,7 +699,8 @@
         "costKRW": 3185992,
         "owners": 1
       },
-      "photo": "/carpicture07/pic4137/41374235_001.jpg"
+      "photo": "/carpicture07/pic4137/41374235_001.jpg",
+      "airSeller": true
     },
     {
       "rank": 25,
@@ -881,7 +882,8 @@
         "costKRW": 2199367,
         "owners": 0
       },
-      "photo": "/carpicture07/pic4257/42574631_001.jpg"
+      "photo": "/carpicture07/pic4257/42574631_001.jpg",
+      "airSeller": true
     },
     {
       "rank": 34,
@@ -952,7 +954,8 @@
         "owners": 0
       },
       "photo": "/carpicture08/pic4168/41689680_001.jpg",
-      "note": "Продавець сам пише про ≈5,7 млн ₩ на заміну крила — виплата ще не в реєстрі Encar, тому наш поріг 5 млн ₩ її не побачив."
+      "note": "Продавець сам пише про ≈5,7 млн ₩ на заміну крила — виплата ще не в реєстрі Encar, тому наш поріг 5 млн ₩ її не побачив.",
+      "airSeller": true
     },
     {
       "rank": 38,

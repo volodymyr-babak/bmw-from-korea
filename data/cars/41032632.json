@@ -331,5 +331,6 @@
     "climate4": true,
     "exhaust": true
   },
-  "decodeSource": "bimmer.work (вставлено користувачем 2026-09-02)"
+  "decodeSource": "bimmer.work (вставлено користувачем 2026-09-02)",
+  "airSeller": true
 }
