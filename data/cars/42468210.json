@@ -129,6 +129,10 @@
       "desc": "Adaptive M chassis (адаптивні амортизатори, НЕ пневмо)"
     },
     {
+      "code": "S321",
+      "desc": ""
+    },
+    {
       "code": "S322",
       "desc": "Comfort Access system"
     },
@@ -364,10 +368,19 @@
     "climate4": true,
     "exhaust": true
   },
-  "decodeSource": "bimmer.work (вставлено користувачем 2026-09-02)",
+  "decodeSource": "bimmer.work (вставлено користувачем 2026-09-02) + oemnavigation.com/vin (share) 9H27574",
   "airSeller": false,
   "renders": {
     "exterior": "assets/renders/WBAJU8101M9H27574-ext.jpg",
     "interior": "assets/renders/WBAJU8101M9H27574-int.jpg"
+  },
+  "oem": {
+    "mileageKm": 87163,
+    "mileageAt": "2025-08-04",
+    "warrantyStart": "2021-08-19",
+    "deliveryDate": "2021-08-19",
+    "retailer": "Kolon Motors Gimhae FF, Gimhae-si, KR",
+    "market": "National version Korea",
+    "integrationLevel": "S18A-23-03-553"
   }
 }

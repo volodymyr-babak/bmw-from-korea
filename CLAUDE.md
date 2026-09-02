@@ -220,33 +220,59 @@ svc   = 1000                                    # послуги
   так і зроблено для `42655967`, спрацювало добре**.
   **Бонус, якого немає в mdecoder:** 360°-зображення заводської конфігурації — ними можна
   було б закривати питання cognac / кава, яке ні фото з оголошення, ні метрика не беруть.
-- **✅ oemnavigations.com — дилерське джерело BMW (AOS), 2 VIN на добу (знайдено 2026-09-02).**
-  Сторінка `https://oemnavigations.com/pages/vin-decoder-app`. Це не черговий VIN-декодер:
-  набір полів дилерський, такого немає ні в bimmer.work, ні в mdecoder — `OptionalEquipment`
-  (SA-коди), `Color`, `VehicleDetails`, `ProductionDate`, **`StartOfWarranty`** (початок
-  гарантії ≈ перша реєстрація), **`TechnicalCampaigns`** (відкриті відкликання), `BsiContracts`
-  (сервісні пакети), `Retailer` (дилер, що продав), `ActualIntegrationLevel` (рівень ПЗ),
-  `HeadUnitAndRegion`, `SelectedNavigation`, `Picture`.
-  **Ліміт — 2 VIN на добу**, рахується по `visitor_id` (localStorage) + FingerprintJS.
-  **⛔ Скриптом не береться, і обходити не будемо:** запит `requestType:'full'` на
-  `POST /apps/vin-search` вимагає `captcha_response` (Cloudflare Turnstile / hCaptcha).
-  Це **ручний крок у браузері**, як bimmer.work без токена.
-  **Як віддати результат сюди — share-посилання.** На сторінці результату є кнопка share:
-  вона постить дані в `https://9t4kg8tixk.execute-api.us-east-1.amazonaws.com/prod` і
-  повертає **публічний URL `https://oemnavigation.com/vin/<id>`** — увага, домен **в однині,
-  без `s`**. Він відкривається без капчі, тож достатньо кинути посилання. Вгадати його не
-  можна: `/vin/<хвіст VIN>` віддає **403**, URL створює саме share.
-  Формат `OptionalEquipment` — рядки `"КОД опис"` (код до першого пробілу), тобто лягає
-  в наш `options` майже без переробки.
+- **✅ oemnavigations.com — дилерське джерело BMW (AOS). ПЕРЕВІРЕНО на живих даних 2026-09-02.**
+  Декод — руками на `https://oemnavigations.com/pages/vin-decoder-app`, **2 VIN на добу**
+  (ліміт по `visitor_id` з localStorage + FingerprintJS).
+  **⛔ Скриптом не береться, і обходити не будемо:** `requestType:'full'` на
+  `POST /apps/vin-search` вимагає `captcha_response` (Cloudflare Turnstile).
+  **⛔ HAR тут не допоможе** — перевірено: HTTP-відповідь на декод це лише квитанція
+  (`202 VIN search in progress`), а самі дані приходять **через WebSocket Ably**, а
+  Chrome WS-фрейми в HAR не експортує.
+  **Як віддати результат сюди — кнопка share.** Вона постить дані в
+  `https://9t4kg8tixk.execute-api.us-east-1.amazonaws.com/prod` і повертає публічний
+  URL **`https://oemnavigation.com/vin/<хвіст VIN>`** — домен **в однині, без `s`**.
+  ⚠️ Уточнення: це саме хвіст VIN (7 знаків), а не випадковий id, але **до першого share
+  він віддає 403** — тобто вгадати не можна, посилання має створити людина. Після share
+  сторінка публічна й без капчі. Альтернатива, якщо share не спрацював: на сторінці
+  результату в консолі `copy(JSON.stringify(lastFullApiResponse, null, 2))`.
+  **Інструмент: `tools/oemnav.py`** (написаний уже по живій сторінці, не наосліп):
+  ```
+  python3 tools/oemnav.py https://oemnavigation.com/vin/9H27574            # показати
+  python3 tools/oemnav.py <url|файл.html> --write [--id <listingId>]       # + у data/
+  ```
+  Розмітка стабільна: `data-label`/`data-value` (26 пар) і
+  `equipment-item`/`equipment-code` (67 записів).
+  **⚠️ Коди без префікса `S`, з нулем: `01CE` = наш `S1CE`, `0323` = `S323`.** Конверсія —
+  `'S' + code[1:]`.
+  **Звірка з bimmer.work на `WBAJU8101M9H27574` (лот 42468210): 63 з 63 кодів збіглися
+  код-у-код.** OEM дав ще 4 записи, яких у bimmer немає: фарбу `C27` і оббивку `MCSW`
+  окремими рядками, `A090`, і **`S321` — новий код, опису немає ні в OEM, ні в нас**
+  (у даних лежить із порожнім `desc`, чекає уточнення; не вигадувати).
+  **⚠️ Описи опцій беремо НЕ з OEM.** Там `08KH` і `0925` — «Dummy-SALAPA», тобто гірше
+  за bimmer.work (`S8KH` інтервал оливи, `S925` захист при транспортуванні). Тому
+  `oemnav.py` бере формулювання так: **власні описи цього ж авто → решта проєкту
+  (`corpus_descs`) → і лише потім англійський текст OEM**. З тієї ж причини він **не
+  перетирає** вже наявні `exterior` / `interior` / `prodDate`: у bimmer.work німецькі
+  назви повніші (`Arktikgrau Brillanteffekt Metallic` проти `arktis-grau Brillanteffekt`),
+  а коди в обох джерелах однакові.
+  **🔑 Головне, чого немає НІДЕ більше — пробіг за даними BMW.** Поля `Mileage (km)` +
+  `Data Timestamp` = одометр на дату останнього сервісного контакту з BMW. Це **незалежна
+  перевірка на скручений пробіг**, окрема і від Encar, і від звіту інспекції.
+  На 42468210 зійшлося: BMW бачив **87 163 км на 2025-08-04**, в оголошенні **109 176 км**
+  → +22 013 км за 13 міс ≈ **20 400 км/рік**, тобто одометр чесний. `oemnav.py` рахує це
+  сам і кричить `⛔ СКРУЧЕНИЙ?`, якщо в оголошенні пробіг **менший** за той, що бачив BMW.
+  **Решта полів (усі підтверджені на живому прикладі):** `Retailer` — дилер, що продав нове
+  (`Kolon Motors Gimhae FF, Gimhae-si, KR`), `National Market Version` (`National version
+  Korea` — доказ, що авто не реімпорт), `Start of Warranty` / `Delivery Date` (2021-08-19 —
+  фактична перша реєстрація), `Actual Integration Level` (`S18A-23-03-553`, рівень ПЗ),
+  `Engine Number`, `Transmission Number`, `Head Unit Serial Number`, `Selected Navigation`.
+  У даних це блок `oem` в `data/cars/<id>.json`; в індекс поки не переноситься.
   **Чим цінний саме нам:**
-  1. `StartOfWarranty` + `ProductionDate` — пряма відповідь на **відкрите питання про рік
-     для митниці** (연식 vs календарний рік випуску; 2019→2020 це ≈ $4000 під ключ).
-  2. `TechnicalCampaigns` — невиконані відкликання конкретного авто; цього не показують
-     ні Encar, ні звіт інспекції.
-  3. Незалежний арбітр для пари cognac / кава, коли bimmer.work недоступний.
-  **⚠️ Парсер наосліп НЕ пишемо** — саме так помер `tools/mdecoder.py` (0 успішних декодів
-  за весь час). Спершу один реальний результат, потім інструмент.
-- Альтернативи vindecoderz, bmw.plus, NHTSA назв оббивки/опцій **не дають**.
+  1. **Пробіг від BMW** — див. вище, це найсильніше.
+  2. `Delivery Date` + `Production Date` — матеріал до **відкритого питання про рік для
+     митниці** (연식 vs календарний рік випуску; 2019→2020 це ≈ $4000 під ключ).
+  3. `Retailer` + `National Market Version` — історія походження, якої немає в Encar.
+  4. Незалежний арбітр для пари cognac / кава, коли bimmer.work недоступний.
 - **⛔ `github.com/jakkuh/bmw-vin-decoder` — перевірено 2026-09-02, не годиться.** Це обгортка
   над **NHTSA vPIC** плюс хардкод-таблиці; README сам пише, що опції — «Future Features
   (requires proprietary database access)». На нашому VIN `WBAJU8101M9H27574` vPIC віддає
@@ -678,6 +704,8 @@ assets/js/index.js       головна: таблиця (COLUMNS + колонк�
 assets/js/car.js         сторінка авто
 tools/sync_index.py      переносить VIN/кольори/keyFeatures з data/cars/*.json у data/cars.json
 tools/bimmer.py          декодер VIN через API bimmer.work (+ --images: рендери в assets/renders/)
+tools/oemnav.py          розбір share-сторінки oemnavigation.com/vin/<хвіст VIN>:
+                         SA-коди + пробіг за даними BMW (перевірка на скручений одометр)
 assets/renders/          <VIN>-ext.jpg / <VIN>-int.jpg — заводські рендери, 1000 px, ~4 МБ на 34 авто
 ```
 **Декодування — порядок вибору джерела:**
@@ -685,10 +713,11 @@ assets/renders/          <VIN>-ext.jpg / <VIN>-int.jpg — заводські р
    (Trial до 2026-09-03 15:13 GMT+1). Робить усе саме, включно з `keyFeatures`.
 2. **Користувач вставляє результат із браузера bimmer.work** — коли токен скінчився;
    далі руками в `data/cars/<id>.json` → `sync_index.py` → нові коди в `options.js`.
-3. **oemnavigations.com** — ручний крок у браузері (капча), **2 VIN на добу**. Віддає
-   найбагатший набір: гарантію, відкликання, дилера, дату випуску. Результат приходить
-   share-посиланням `https://oemnavigation.com/vin/<id>`. Брати, коли потрібні саме
-   гарантія / відкликання / дата випуску або коли bimmer.work недоступний.
+3. **oemnavigations.com** (`python3 tools/oemnav.py <share-url> --write`) — ручний крок
+   у браузері (капча), **2 VIN на добу**, далі share-посилання
+   `https://oemnavigation.com/vin/<хвіст VIN>`. Брати обов'язково там, де важливий
+   **пробіг від BMW** (перевірка на скручений одометр) або дата першої реєстрації;
+   а також коли bimmer.work недоступний.
 4. **mdecoder.com** — остання опція, добовий ліміт на IP.
 У детальному файлі завжди лишати `decodeSource`, щоб було видно, звідки взято білд-лист.
 
