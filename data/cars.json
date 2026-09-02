@@ -830,6 +830,24 @@
     },
     {
       "rank": 43,
+      "listingId": "42650455",
+      "model": "X6 (G06)",
+      "year": 2022,
+      "mileageKm": 60299,
+      "koreaPriceMan": 6190,
+      "priceUSD": 66794,
+      "priceEstimated": true,
+      "vin": "WBAGT8109N9L82242",
+      "decoded": false,
+      "exterior": "Carbon Black",
+      "accident": {
+        "costKRW": 0,
+        "owners": 2
+      },
+      "photo": "/carpicture04/pic4264/42649355_001.jpg"
+    },
+    {
+      "rank": 44,
       "listingId": "42585911",
       "model": "X6 (G06)",
       "year": 2022,
@@ -847,7 +865,7 @@
       "photo": "/carpicture08/pic4258/42585911_001.jpg"
     },
     {
-      "rank": 44,
+      "rank": 45,
       "listingId": "41413915",
       "model": "X6 (G06)",
       "year": 2021,
@@ -865,7 +883,7 @@
       "photo": "/carpicture01/pic4141/41413915_001.jpg"
     },
     {
-      "rank": 45,
+      "rank": 46,
       "listingId": "41334762",
       "model": "X5 (G05)",
       "year": 2021,
@@ -894,7 +912,7 @@
       }
     },
     {
-      "rank": 46,
+      "rank": 47,
       "listingId": "42551562",
       "model": "X6 (G06)",
       "year": 2021,
@@ -912,7 +930,7 @@
       "photo": "/carpicture05/pic4255/42551560_002.jpg"
     },
     {
-      "rank": 47,
+      "rank": 48,
       "listingId": "41578153",
       "model": "X6 (G06)",
       "year": 2020,
@@ -930,7 +948,7 @@
       "photo": "/carpicture06/pic4156/41565618_001.jpg"
     },
     {
-      "rank": 48,
+      "rank": 49,
       "listingId": "42574631",
       "model": "X5 (G05)",
       "year": 2021,
@@ -947,7 +965,7 @@
       "photo": "/carpicture07/pic4257/42574631_001.jpg"
     },
     {
-      "rank": 49,
+      "rank": 50,
       "listingId": "42476461",
       "model": "X6 (G06)",
       "year": 2022,
@@ -963,24 +981,6 @@
         "owners": 1
       },
       "photo": "/carpicture07/pic4247/42476461_001.jpg"
-    },
-    {
-      "rank": 50,
-      "listingId": "42650455",
-      "model": "X6 (G06)",
-      "year": 2022,
-      "mileageKm": 60299,
-      "koreaPriceMan": 6500,
-      "priceUSD": 69053,
-      "priceEstimated": true,
-      "vin": "WBAGT8109N9L82242",
-      "decoded": false,
-      "exterior": "Carbon Black",
-      "accident": {
-        "costKRW": 0,
-        "owners": 2
-      },
-      "photo": "/carpicture04/pic4264/42649355_001.jpg"
     },
     {
       "rank": 51,
