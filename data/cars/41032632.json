@@ -48,5 +48,24 @@
       "kind": "info",
       "text": "Колір кузова — Manhattan; продавець вважає, що на X6 він виглядає найкраще."
     }
+  ],
+  "inspection": {
+    "accident": false,
+    "simpleRepair": false,
+    "waterlog": false,
+    "tuning": false,
+    "usage": [],
+    "serious": [],
+    "panels": [],
+    "date": "20260323",
+    "mileage": 94104,
+    "recall": true,
+    "comment": "부분적인 판금 도색 및 부식, 탈부착 가능한 골격부품 교환은 고지하지 않습니다. 기능상 영향없는 감각적 손해(소음/진동/냄새/외관/작동감각 등) 보증제외."
+  },
+  "inspectionFacts": [
+    {
+      "kind": "plus",
+      "text": "Звіт інспекції чистий: ні замін панелей, ні кузовного, ні комерційної історії."
+    }
   ]
 }

@@ -15,6 +15,7 @@ REFERER = 'https://fem.encar.com/'
 
 DETAIL = 'https://api.encar.com/v1/readside/vehicle/{}'
 RECORD = 'https://api.encar.com/v1/readside/record/vehicle/{}/open'
+INSPECTION = 'https://api.encar.com/v1/readside/inspection/vehicle/{}'
 SEARCH = 'https://api.encar.com/search/car/list/general'
 PHOTO_BASE = 'https://ci.encar.com'
 
@@ -56,6 +57,11 @@ def get_json(url: str, **kw):
 
 def detail(listing_id: str):
     return get_json(DETAIL.format(listing_id))
+
+
+def inspection(vehicle_id):
+    """Державний звіт про стан. 404 — звіту немає, це нормально."""
+    return get_json(INSPECTION.format(vehicle_id))
 
 
 def record(vehicle_id):

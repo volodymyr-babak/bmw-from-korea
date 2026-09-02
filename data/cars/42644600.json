@@ -104,5 +104,24 @@
       "kind": "minus",
       "text": "Опис — реклама сервісу підписки на авто, про саме авто нічого."
     }
+  ],
+  "inspection": {
+    "accident": false,
+    "simpleRepair": false,
+    "waterlog": false,
+    "tuning": false,
+    "usage": [],
+    "serious": [],
+    "panels": [],
+    "date": "20260820",
+    "mileage": 40555,
+    "recall": false,
+    "comment": "A(흠집)U(요철)T(손상) 보증제외.  비금속(FRP) 또는 탈부착 가능부품은 점검사항에서 제외되며, 중고차 특성상 부분적인 부식 판금 도색은 있을 수 있습니다. 라디에이터 서포트 점검사항 제외.(DB손해보험 접수.1811-8769)"
+  },
+  "inspectionFacts": [
+    {
+      "kind": "plus",
+      "text": "Звіт інспекції чистий: ні замін панелей, ні кузовного, ні комерційної історії."
+    }
   ]
 }

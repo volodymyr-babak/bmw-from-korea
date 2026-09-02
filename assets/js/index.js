@@ -108,7 +108,8 @@ function row(c, isCheapest) {
     <div class="car-id">
       <h2 class="car-title"><a href="${href}"><span class="model-tag">${short}</span>${c.year} · <span class="num">${km(c.mileageKm)}</span></a>${
         isCheapest ? '<span class="badge">найдешевше</span>' : ''}${
-        c.mark ? `<span class="badge">${esc(MARKS[c.mark] || c.mark)}</span>` : ''}</h2>
+        c.mark ? `<span class="badge">${esc(MARKS[c.mark] || c.mark)}</span>` : ''}${
+        (c.flags || []).map((f) => `<span class="badge badge-warn" title="Зі звіту інспекції">${esc(f)}</span>`).join('')}</h2>
       <p class="car-meta">${c.vin ? `VIN <span class="num">${esc(c.vin)}</span>` : 'VIN відсутній в Encar'} · лот <span class="num">${esc(c.listingId)}</span></p>
     </div>
     <p class="car-price"><span class="amount">${price}</span></p>

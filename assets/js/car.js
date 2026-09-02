@@ -80,6 +80,7 @@ function renderBody(c, d) {
       <div class="panel-col">${panelIdentity(c, d)}${panelCalc(c, b)}</div>
       <div class="panel-col">${panelFeatures(c, d)}${panelHistory(d)}</div>
     </div>
+    ${panelInspection(c, d)}
     ${panelSeller(c, d)}
     ${panelOptions(c, d)}`;
 }
@@ -257,18 +258,48 @@ function panelHistory(d) {
  *  kind: plus (аргумент за) · minus (насторожує) · info (просто факт). */
 const SELLER_MARK = { plus: '+', minus: '!', info: '·' };
 
-function panelSeller(c, d) {
-  const fs = (d && d.sellerFacts) || [];
-  if (!fs.length) return '';
-  const items = fs.map((f) => {
+function factsList(fs) {
+  return fs.map((f) => {
     const kind = SELLER_MARK[f.kind] ? f.kind : 'info';
     return `<li class="fact fact-${kind}"><span class="fact-mark" aria-hidden="true">${SELLER_MARK[kind]}</span>${esc(f.text)}</li>`;
   }).join('');
+}
+
+function panelSeller(c, d) {
+  const fs = (d && d.sellerFacts) || [];
+  if (!fs.length) return '';
   return `<section class="panel panel-wide"><h2>Що пише продавець</h2>
-    <ul class="facts">${items}</ul>
+    <ul class="facts">${factsList(fs)}</ul>
     <p class="note">Це слова продавця з опису на Encar, а не перевірені дані. Корисне саме
       тим, що частину цього немає ні в API, ні в білд-листі за VIN — ключі, залишок протектора,
       продовжена гарантія, визнані кузовні роботи. Розбіжності з реєстром виплат позначені «!».</p>
+  </section>`;
+}
+
+/** Державний звіт про стан (성능점검기록부) — найтвердіше джерело в добірці. */
+function panelInspection(c, d) {
+  const insp = d && d.inspection;
+  const fs = (d && d.inspectionFacts) || [];
+  if (!insp) {
+    return `<section class="panel panel-wide"><h2>Звіт інспекції</h2>
+      <p class="pending">Для цього лота Encar звіту про стан не віддає.</p></section>`;
+  }
+  const when = insp.date
+    ? `${insp.date.slice(6, 8)}.${insp.date.slice(4, 6)}.${insp.date.slice(0, 4)}`
+    : null;
+  const meta = [
+    when ? `перевірено ${when}` : null,
+    insp.mileage ? `пробіг на інспекції ${km(insp.mileage)}` : null,
+    insp.recall ? 'відкликання виконано' : null,
+  ].filter(Boolean).join(' · ');
+  return `<section class="panel panel-wide"><h2>Звіт інспекції</h2>
+    <ul class="facts">${factsList(fs)}</ul>
+    ${meta ? `<p class="note">${esc(meta)}.</p>` : ''}
+    ${insp.comment ? `<p class="note note-quote">Коментар інспектора: «${esc(insp.comment)}»</p>` : ''}
+    <p class="note">Це державний звіт про стан (성능점검기록부), а не слова продавця. Заміна
+      накладних деталей — капота, крил, дверей, кришки багажника — у Кореї вважається дрібним
+      ремонтом; зварювання каркаса це вже інша розмова, і саме через нього стоїть позначка
+      «ДТП каркаса».</p>
   </section>`;
 }
 

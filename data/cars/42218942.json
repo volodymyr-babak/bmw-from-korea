@@ -327,5 +327,24 @@
       "kind": "plus",
       "text": "Хімчистка салону й полірування виконані."
     }
+  ],
+  "inspection": {
+    "accident": false,
+    "simpleRepair": false,
+    "waterlog": false,
+    "tuning": false,
+    "usage": [],
+    "serious": [],
+    "panels": [],
+    "date": "20260617",
+    "mileage": 37315,
+    "recall": true,
+    "comment": "비금속(FRP 플라스틱)의 탈부착 가능 부품은 점검사항에서 제외되며 중고차 특성 상 부분적인 판금,도색 및 차량의 노후화에 따른 자연스러운 부식이 있을 수 있습니다."
+  },
+  "inspectionFacts": [
+    {
+      "kind": "plus",
+      "text": "Звіт інспекції чистий: ні замін панелей, ні кузовного, ні комерційної історії."
+    }
   ]
 }

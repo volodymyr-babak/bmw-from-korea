@@ -41,5 +41,24 @@
       "kind": "info",
       "text": "Пише «완전무사고», хоч у реєстрі 2,7 млн ₩ виплат."
     }
+  ],
+  "inspection": {
+    "accident": false,
+    "simpleRepair": false,
+    "waterlog": false,
+    "tuning": false,
+    "usage": [],
+    "serious": [],
+    "panels": [],
+    "date": "20260202",
+    "mileage": 64564,
+    "recall": false,
+    "comment": null
+  },
+  "inspectionFacts": [
+    {
+      "kind": "plus",
+      "text": "Звіт інспекції чистий: ні замін панелей, ні кузовного, ні комерційної історії."
+    }
   ]
 }

@@ -28,6 +28,7 @@ import encar
 import mdecoder
 import trim
 import seller
+import inspection as inspect_report
 import sync_index
 
 REPO = pathlib.Path(__file__).resolve().parent.parent
@@ -108,6 +109,20 @@ def check_existing(index, ch):
                 save(f, d)
             ch['vins'].append(car)
 
+        # Звіт про стан видається один раз, тому тягнемо лише за відсутності —
+        # щогодини перепитувати 45 разів немає сенсу.
+        f = CARS / f'{lid}.json'
+        d = load(f, {}) or {}
+        if f.exists() and 'inspection' not in d:
+            vid = det.get('vehicleId') or (det.get('manage') or {}).get('dummyVehicleId')
+            got = fetch_inspection(vid, (det.get('spec') or {}).get('mileage'))
+            if got:
+                d['inspection'] = got
+                d['inspectionFacts'] = [{'kind': k, 'text': t}
+                                        for k, t in inspect_report.facts(got)]
+                save(f, d)
+                ch['inspected'].append((car, got))
+
         ad, spec = det.get('advertisement') or {}, det.get('spec') or {}
         man, mileage = ad.get('price'), spec.get('mileage')
         if not man:
@@ -162,7 +177,9 @@ def is_twin(cars, model, year, man, mileage):
     return None
 
 
-def reject_reason(det, hist, vins_taken, cars, model, year, man, bad_trim=None):
+def reject_reason(det, hist, vins_taken, cars, model, year, man, bad_trim=None,
+                  insp=None):
+    kw_inspection = {'insp': insp}
     ad = det.get('advertisement') or {}
     if ad.get('salesStatus') or ad.get('price') == 9999:
         return 'уже продається за контрактом', None
@@ -188,6 +205,12 @@ def reject_reason(det, hist, vins_taken, cars, model, year, man, bad_trim=None):
         return 'історія недоступна', vin
     if hist.get('totalLoss') or hist.get('flood') or hist.get('robber'):
         return 'списання / потоп / викрадення', vin
+    # Той самий запобіжник із другого джерела: державний звіт про стан.
+    # `record` API інколи ще не має того, що інспекція вже зафіксувала.
+    insp = kw_inspection.get('insp')
+    if insp and (insp.get('serious') or insp.get('waterlog')):
+        why = ', '.join(insp.get('serious') or []) or 'потоп'
+        return f'звіт інспекції: {why}', vin
     cost = hist.get('myAccidentCost') or 0
     if cost > MAX_ACCIDENT_KRW:
         return f'власний ремонт {krw_m(cost)}', vin
@@ -234,23 +257,35 @@ def find_new(index, state, ch):
                 continue
             vid = det.get('vehicleId') or (det.get('manage') or {}).get('dummyVehicleId')
             _, hist = encar.record(vid) if vid else ('404', None)
+            insp = fetch_inspection(vid, (det.get('spec') or {}).get('mileage'))
 
             why, vin = reject_reason(det, hist, vins_taken, index['cars'],
-                                     model, year, int(man), bad_trim)
+                                     model, year, int(man), bad_trim, insp)
             if why:
                 rejected[lid] = {'reason': why, 'vin': vin, 'at': today()}
                 continue
 
-            car = build_car(lid, model, year, int(man), price, det, hist)
+            car = build_car(lid, model, year, int(man), price, det, hist, insp)
             index['cars'].append(car)
             known.add(lid)
             if vin:
                 vins_taken.add(vin)
-            save(CARS / f'{lid}.json', build_detail(lid, model, year, int(man), price, det, hist))
+            save(CARS / f'{lid}.json',
+                 build_detail(lid, model, year, int(man), price, det, hist, insp))
             ch['new'].append(car)
 
 
-def build_car(lid, model, year, man, price, det, hist):
+def fetch_inspection(vehicle_id, mileage_ad=None):
+    """Нормалізований звіт про стан або None, якщо Encar його не має."""
+    if not vehicle_id:
+        return None
+    code, payload = encar.inspection(vehicle_id)
+    if code != '200' or not payload:
+        return None
+    return inspect_report.normalise(payload, mileage_ad)
+
+
+def build_car(lid, model, year, man, price, det, hist, insp=None):
     spec = det.get('spec') or {}
     ph = encar.photos(det)
     car = {
@@ -272,10 +307,17 @@ def build_car(lid, model, year, man, price, det, hist):
     colour, ok, _ = trim.seat_colour(((det.get('contents') or {}).get('text') or ''))
     if colour and ok:
         car['interiorUnverified'] = f'{colour} — з опису'
+    # Прапорці зі звіту показуються прямо в списку — прокат і ДТП каркаса
+    # надто важливі, щоб чекати, поки хтось відкриє картку.
+    flags = list((insp or {}).get('usage') or []) + list((insp or {}).get('serious') or [])
+    if (insp or {}).get('accident'):
+        flags.append('ДТП каркаса')
+    if flags:
+        car['flags'] = flags
     return car
 
 
-def build_detail(lid, model, year, man, price, det, hist):
+def build_detail(lid, model, year, man, price, det, hist, insp=None):
     # Сирий текст оголошення зберігаємо назавжди: у ньому лежить те, чого немає
     # в API (ключі, протектор, продовжена гарантія, визнані кузовні роботи), і
     # перечитати його руками можна вже без запитів до Encar.
@@ -293,6 +335,9 @@ def build_detail(lid, model, year, man, price, det, hist):
         'history': hist,
         **({'sellerText': text} if text.strip() else {}),
         **({'sellerFacts': auto} if auto else {}),
+        **({'inspection': insp} if insp else {}),
+        **({'inspectionFacts': [{'kind': k, 'text': t}
+                                for k, t in inspect_report.facts(insp)]} if insp else {}),
     }
 
 
@@ -407,6 +452,8 @@ def report(ch):
         head.append(f'зміна ціни {n["changed"]}')
     if n['vins']:
         head.append(f'з\'явився VIN {n["vins"]}')
+    if n['inspected']:
+        head.append(f'звітів про стан {n["inspected"]}')
     if not head and n['problems']:
         head.append(f'проблем {n["problems"]}')
     title = 'Encar: ' + ' · '.join(head) if head else 'Encar: без змін'
@@ -442,6 +489,16 @@ def report(ch):
         for car in ch['vins']:
             out.append(f'- **{short(car["model"])} {car["year"]}** · {km(car["mileageKm"])} '
                        f'· {usd(car["priceUSD"])} · VIN `{car["vin"]}`  \n  {car_link(car)}')
+        out.append('')
+    if ch['inspected']:
+        out += ['## Додано звіт про стан', '']
+        for car, insp in ch['inspected']:
+            bits = list(insp.get('usage') or []) + list(insp.get('serious') or [])
+            if insp.get('accident'):
+                bits.append('ДТП каркаса')
+            bits += [f"{p['part']} — {p['status']}" for p in insp.get('panels') or []]
+            out.append(f'- **{short(car["model"])} {car["year"]}** · {usd(car["priceUSD"])} — '
+                       f'{", ".join(bits) if bits else "звіт чистий"}  \n  {car_link(car)}')
         out.append('')
     if ch['changed']:
         out += ['## Змінилась ціна або пробіг', '']
@@ -490,7 +547,7 @@ def main():
         sys.exit('немає data/cars.json')
     state = load(STATE, {})
     ch = {'sold': [], 'new': [], 'decoded': [], 'changed': [], 'vins': [],
-          'problems': [], 'notes': []}
+          'inspected': [], 'problems': [], 'notes': []}
 
     check_existing(index, ch)
     find_new(index, state, ch)

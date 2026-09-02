@@ -103,5 +103,24 @@
       "kind": "plus",
       "text": "Кузов Carbon Black, салон коричневий — зазначено прямо в описі."
     }
+  ],
+  "inspection": {
+    "accident": false,
+    "simpleRepair": false,
+    "waterlog": false,
+    "tuning": false,
+    "usage": [],
+    "serious": [],
+    "panels": [],
+    "date": "20260624",
+    "mileage": 74715,
+    "recall": false,
+    "comment": null
+  },
+  "inspectionFacts": [
+    {
+      "kind": "plus",
+      "text": "Звіт інспекції чистий: ні замін панелей, ні кузовного, ні комерційної історії."
+    }
   ]
 }

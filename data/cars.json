@@ -229,7 +229,10 @@
         "owners": 1
       },
       "photo": "/carpicture04/pic4254/42548037_001.jpg",
-      "note": "Гарантію продовжено до 14.09.2026, три ключі."
+      "note": "Гарантію продовжено до 14.09.2026, три ключі.",
+      "flags": [
+        "прокат"
+      ]
     },
     {
       "rank": 10,
@@ -433,7 +436,10 @@
         "wheelheat": true,
         "climate4": true,
         "exhaust": true
-      }
+      },
+      "flags": [
+        "прокат"
+      ]
     },
     {
       "rank": 18,
@@ -542,7 +548,11 @@
         "owners": 1
       },
       "photo": "/carpicture07/pic4247/42478734_001.jpg",
-      "interiorUnverified": "коричневий / Coffee — з опису"
+      "interiorUnverified": "коричневий / Coffee — з опису",
+      "flags": [
+        "прокат",
+        "ДТП каркаса"
+      ]
     },
     {
       "listingId": "42646084",
@@ -576,7 +586,10 @@
         "costKRW": 3381440,
         "owners": 3
       },
-      "photo": "/carpicture05/pic4105/41056026_001.jpg"
+      "photo": "/carpicture05/pic4105/41056026_001.jpg",
+      "flags": [
+        "прокат"
+      ]
     },
     {
       "rank": 26,

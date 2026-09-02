@@ -346,5 +346,24 @@
       "kind": "plus",
       "text": "Гарантія Deutsch 6 місяців / 10 000 км."
     }
+  ],
+  "inspection": {
+    "accident": false,
+    "simpleRepair": false,
+    "waterlog": false,
+    "tuning": false,
+    "usage": [],
+    "serious": [],
+    "panels": [],
+    "date": "20260126",
+    "mileage": 100810,
+    "recall": false,
+    "comment": null
+  },
+  "inspectionFacts": [
+    {
+      "kind": "plus",
+      "text": "Звіт інспекції чистий: ні замін панелей, ні кузовного, ні комерційної історії."
+    }
   ]
 }

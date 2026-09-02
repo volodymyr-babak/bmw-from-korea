@@ -526,6 +526,17 @@ a:hover { text-decoration-thickness: 2px; }
   font-size: 14px;
 }
 
+.badge-warn {
+  border-color: var(--warn);
+  color: var(--warn);
+}
+
+.note-quote {
+  border-left: 2px solid var(--rule);
+  padding-left: 10px;
+  font-style: italic;
+}
+
 /* ---------- що пише продавець ---------- */
 
 .facts {

@@ -43,5 +43,24 @@
       "kind": "minus",
       "text": "4,5 млн ₩ власних виплат — майже на нашому порозі 5 млн ₩; про це в описі не сказано нічого."
     }
+  ],
+  "inspection": {
+    "accident": false,
+    "simpleRepair": false,
+    "waterlog": false,
+    "tuning": false,
+    "usage": [],
+    "serious": [],
+    "panels": [],
+    "date": "20260701",
+    "mileage": 75662,
+    "recall": false,
+    "comment": "강석근"
+  },
+  "inspectionFacts": [
+    {
+      "kind": "plus",
+      "text": "Звіт інспекції чистий: ні замін панелей, ні кузовного, ні комерційної історії."
+    }
   ]
 }

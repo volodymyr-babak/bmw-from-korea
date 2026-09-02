@@ -316,5 +316,24 @@
       "kind": "info",
       "text": "Оголошення в програмі Encar «точна діагностика»: Encar перевіряє ДТП і опції та компенсує, якщо стан не збігається з описом."
     }
+  ],
+  "inspection": {
+    "accident": false,
+    "simpleRepair": false,
+    "waterlog": false,
+    "tuning": false,
+    "usage": [],
+    "serious": [],
+    "panels": [],
+    "date": "20260723",
+    "mileage": 90099,
+    "recall": true,
+    "comment": null
+  },
+  "inspectionFacts": [
+    {
+      "kind": "plus",
+      "text": "Звіт інспекції чистий: ні замін панелей, ні кузовного, ні комерційної історії."
+    }
   ]
 }

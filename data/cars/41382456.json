@@ -48,5 +48,24 @@
       "kind": "plus",
       "text": "Один власник від нового."
     }
+  ],
+  "inspection": {
+    "accident": false,
+    "simpleRepair": false,
+    "waterlog": false,
+    "tuning": false,
+    "usage": [],
+    "serious": [],
+    "panels": [],
+    "date": "20260121",
+    "mileage": 45298,
+    "recall": true,
+    "comment": "비금속 또는 탈부착 가능한 부품은 점검사항에서 제외되며 중고차 특성상 부분적인 판금도색은 있을 수 있습니다.♣ 성능보험료 납부계좌 : MG새마을금고 9002-1994-5215-3 예금주 : 주식회사팀모터스 《성능보험  KB손해보험 접수처 : 1533-2729》 ♣"
+  },
+  "inspectionFacts": [
+    {
+      "kind": "plus",
+      "text": "Звіт інспекції чистий: ні замін панелей, ні кузовного, ні комерційної історії."
+    }
   ]
 }

@@ -340,5 +340,24 @@
       "kind": "info",
       "text": "Продавець пише «без ДТП», хоч у реєстрі 2,6 млн ₩ власних виплат."
     }
+  ],
+  "inspection": {
+    "accident": false,
+    "simpleRepair": false,
+    "waterlog": false,
+    "tuning": false,
+    "usage": [],
+    "serious": [],
+    "panels": [],
+    "date": "20260724",
+    "mileage": 91728,
+    "recall": false,
+    "comment": "한금석"
+  },
+  "inspectionFacts": [
+    {
+      "kind": "plus",
+      "text": "Звіт інспекції чистий: ні замін панелей, ні кузовного, ні комерційної історії."
+    }
   ]
 }

@@ -48,5 +48,30 @@
       "kind": "plus",
       "text": "Можна взяти на 5 днів «покататись» із поверненням, і є гарантія 6 місяців / 10 тис. км на двигун і АКП."
     }
+  ],
+  "inspection": {
+    "accident": false,
+    "simpleRepair": true,
+    "waterlog": false,
+    "tuning": false,
+    "usage": [],
+    "serious": [],
+    "panels": [
+      {
+        "part": "капот",
+        "status": "заміна",
+        "frame": false
+      }
+    ],
+    "date": "20260901",
+    "mileage": 50089,
+    "recall": true,
+    "comment": "FRP 또는 비금속 탈부착 가능 부품은 점검사항에서 제외되며, 중고차 특성상 부분적인 부식 판금 도색은 있을 수 있습니다./국토부정비이력없음/운)휀다조정"
+  },
+  "inspectionFacts": [
+    {
+      "kind": "info",
+      "text": "Накладні деталі: капот — заміна. У Кореї це вважається дрібним ремонтом."
+    }
   ]
 }

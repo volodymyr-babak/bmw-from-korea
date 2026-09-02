@@ -95,5 +95,24 @@
       "kind": "plus",
       "text": "Виплати всього 220 тис ₩ — на тлі решти добірки це майже нуль."
     }
+  ],
+  "inspection": {
+    "accident": false,
+    "simpleRepair": false,
+    "waterlog": false,
+    "tuning": false,
+    "usage": [],
+    "serious": [],
+    "panels": [],
+    "date": "20260828",
+    "mileage": 66916,
+    "recall": false,
+    "comment": "퍼스트엠 김종운"
+  },
+  "inspectionFacts": [
+    {
+      "kind": "plus",
+      "text": "Звіт інспекції чистий: ні замін панелей, ні кузовного, ні комерційної історії."
+    }
   ]
 }

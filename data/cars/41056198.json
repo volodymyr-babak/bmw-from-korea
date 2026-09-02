@@ -37,5 +37,26 @@
       "kind": "minus",
       "text": "Опис — суцільна реклама дилера, про саме авто немає нічого."
     }
+  ],
+  "inspection": {
+    "accident": false,
+    "simpleRepair": false,
+    "waterlog": false,
+    "tuning": false,
+    "usage": [
+      "прокат"
+    ],
+    "serious": [],
+    "panels": [],
+    "date": "20251127",
+    "mileage": 92727,
+    "recall": true,
+    "comment": "프론트휀더 교정"
+  },
+  "inspectionFacts": [
+    {
+      "kind": "minus",
+      "text": "У минулому авто було в статусі «прокат». В Україні це помітно б'є по ліквідності при перепродажі."
+    }
   ]
 }

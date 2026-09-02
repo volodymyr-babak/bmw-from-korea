@@ -52,5 +52,24 @@
       "kind": "info",
       "text": "Вентиляція й підігрів сидінь, підігрів керма, панорама, адаптивний круїз — зі слів продавця."
     }
+  ],
+  "inspection": {
+    "accident": false,
+    "simpleRepair": false,
+    "waterlog": false,
+    "tuning": false,
+    "usage": [],
+    "serious": [],
+    "panels": [],
+    "date": "20260319",
+    "mileage": 60976,
+    "recall": false,
+    "comment": "(사)전국자동차성능평가협회"
+  },
+  "inspectionFacts": [
+    {
+      "kind": "plus",
+      "text": "Звіт інспекції чистий: ні замін панелей, ні кузовного, ні комерційної історії."
+    }
   ]
 }

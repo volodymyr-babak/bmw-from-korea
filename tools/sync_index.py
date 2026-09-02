@@ -65,6 +65,18 @@ def main() -> int:
             # _001 в Encar — головний ракурс; беремо найменший номер кадру
             car["photo"] = min(shots, key=frame_no)
 
+        # Прапорці зі звіту інспекції — найтвердіші дані, мусять бути видні у списку
+        insp = detail.get("inspection") or {}
+        flags = list(insp.get("usage") or []) + list(insp.get("serious") or [])
+        if insp.get("accident"):
+            flags.append("ДТП каркаса")
+        if insp.get("waterlog"):
+            flags.append("потоп")
+        if flags:
+            car["flags"] = flags
+        else:
+            car.pop("flags", None)
+
         h = detail.get("history") or {}
         if h and not h.get("http"):
             car["accident"] = {"costKRW": h.get("myAccidentCost") or 0,
