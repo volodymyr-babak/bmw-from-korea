@@ -1,0 +1,96 @@
+{
+  "listingId": "42244757",
+  "encarUrl": "https://fem.encar.com/cars/detail/42244757",
+  "model": "X5 (G05)",
+  "mfgYear": 2019,
+  "vin": "WBACV6107KLK23778",
+  "mileageKm": 74730,
+  "koreaPriceMan": 5390,
+  "priceUSD": 55246,
+  "photos": {
+    "outer": [
+      "/carpicture04/pic4224/42244753_002.jpg",
+      "/carpicture04/pic4224/42244753_003.jpg",
+      "/carpicture04/pic4224/42244753_004.jpg",
+      "/carpicture04/pic4224/42244753_005.jpg",
+      "/carpicture04/pic4224/42244753_006.jpg",
+      "/carpicture04/pic4224/42244753_031.jpg",
+      "/carpicture04/pic4224/42244753_032.jpg",
+      "/carpicture04/pic4224/42244753_033.jpg"
+    ],
+    "inner": [
+      "/carpicture04/pic4224/42244753_007.jpg",
+      "/carpicture04/pic4224/42244753_008.jpg",
+      "/carpicture04/pic4224/42244753_009.jpg",
+      "/carpicture04/pic4224/42244753_010.jpg",
+      "/carpicture04/pic4224/42244753_034.jpg",
+      "/carpicture04/pic4224/42244753_035.jpg",
+      "/carpicture04/pic4224/42244753_036.jpg"
+    ]
+  },
+  "history": {
+    "openData": true,
+    "regDate": "2026-05-29T13:27:31.851589",
+    "carNo": "263우2828",
+    "year": "2019",
+    "maker": "BMW",
+    "carKind": "1",
+    "use": "2",
+    "displacement": "2993",
+    "carName": null,
+    "firstDate": "2019-10-22",
+    "fuel": "디젤",
+    "carShape": null,
+    "model": "X5 (G05)",
+    "transmission": null,
+    "carNameCode": null,
+    "myAccidentCnt": 1,
+    "otherAccidentCnt": 0,
+    "ownerChangeCnt": 2,
+    "robberCnt": 0,
+    "robberDate": null,
+    "totalLossCnt": 0,
+    "totalLossDate": null,
+    "floodTotalLossCnt": 0,
+    "floodPartLossCnt": null,
+    "floodDate": null,
+    "government": 0,
+    "business": 0,
+    "loan": 0,
+    "carNoChangeCnt": 0,
+    "myAccidentCost": 2825350,
+    "otherAccidentCost": 0,
+    "carInfoChanges": [
+      {
+        "date": "2019-10-22",
+        "carNo": "263우XXXX"
+      }
+    ],
+    "carInfoUse1s": [
+      "2"
+    ],
+    "carInfoUse2s": [
+      "1"
+    ],
+    "ownerChanges": [
+      "2026-01-08",
+      "2022-11-02"
+    ],
+    "notJoinDate1": "202601~202603",
+    "notJoinDate2": null,
+    "notJoinDate3": null,
+    "notJoinDate4": null,
+    "notJoinDate5": null,
+    "accidentCnt": 1,
+    "accidents": [
+      {
+        "type": "2",
+        "date": "2022-07-27",
+        "insuranceBenefit": 4124000,
+        "partCost": 1808200,
+        "laborCost": 389630,
+        "paintingCost": 627520
+      }
+    ]
+  }
+}

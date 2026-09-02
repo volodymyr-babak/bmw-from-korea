@@ -1,0 +1,97 @@
+{
+  "listingId": "42644600",
+  "encarUrl": "https://fem.encar.com/cars/detail/42644600",
+  "model": "X5 (G05)",
+  "mfgYear": 2021,
+  "vin": "WBAJU8103M9G44762",
+  "mileageKm": 40566,
+  "koreaPriceMan": 6600,
+  "priceUSD": 69172,
+  "photos": {
+    "outer": [
+      "/carpicture04/pic4264/42644431_001.jpg",
+      "/carpicture04/pic4264/42644431_002.jpg",
+      "/carpicture04/pic4264/42644431_003.jpg",
+      "/carpicture04/pic4264/42644431_004.jpg",
+      "/carpicture04/pic4264/42644431_005.jpg",
+      "/carpicture04/pic4264/42644431_006.jpg",
+      "/carpicture04/pic4264/42644431_031.jpg",
+      "/carpicture04/pic4264/42644431_032.jpg",
+      "/carpicture04/pic4264/42644431_033.jpg"
+    ],
+    "inner": [
+      "/carpicture04/pic4264/42644431_007.jpg",
+      "/carpicture04/pic4264/42644431_008.jpg",
+      "/carpicture04/pic4264/42644431_009.jpg",
+      "/carpicture04/pic4264/42644431_010.jpg",
+      "/carpicture04/pic4264/42644431_034.jpg",
+      "/carpicture04/pic4264/42644431_035.jpg",
+      "/carpicture04/pic4264/42644431_036.jpg"
+    ]
+  },
+  "history": {
+    "openData": true,
+    "regDate": "2026-09-01T08:24:21.053323",
+    "carNo": "138부6174",
+    "year": "2021",
+    "maker": "BMW",
+    "carKind": "1",
+    "use": "2",
+    "displacement": "2993",
+    "carName": null,
+    "firstDate": "2021-05-21",
+    "fuel": "하이브리드",
+    "carShape": "SUV",
+    "model": "X5 (G05)",
+    "transmission": null,
+    "carNameCode": null,
+    "myAccidentCnt": 1,
+    "otherAccidentCnt": 0,
+    "ownerChangeCnt": 2,
+    "robberCnt": 0,
+    "robberDate": null,
+    "totalLossCnt": 0,
+    "totalLossDate": null,
+    "floodTotalLossCnt": 0,
+    "floodPartLossCnt": null,
+    "floodDate": null,
+    "government": 0,
+    "business": 0,
+    "loan": 0,
+    "carNoChangeCnt": 0,
+    "myAccidentCost": 2578310,
+    "otherAccidentCost": 0,
+    "carInfoChanges": [
+      {
+        "date": "2021-05-21",
+        "carNo": "138부XXXX"
+      }
+    ],
+    "carInfoUse1s": [
+      "2"
+    ],
+    "carInfoUse2s": [
+      "1"
+    ],
+    "ownerChanges": [
+      "2026-08-21",
+      "2026-05-29"
+    ],
+    "notJoinDate1": "202605~202606",
+    "notJoinDate2": null,
+    "notJoinDate3": null,
+    "notJoinDate4": null,
+    "notJoinDate5": null,
+    "accidentCnt": 1,
+    "accidents": [
+      {
+        "type": "2",
+        "date": "2025-02-25",
+        "insuranceBenefit": 4283880,
+        "partCost": 1662020,
+        "laborCost": 227060,
+        "paintingCost": 689230
+      }
+    ]
+  }
+}

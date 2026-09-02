@@ -1,0 +1,44 @@
+name: Лист про зміни в добірці
+
+# tools/watch.py пушить data/last-change.md, коли щось змінилось.
+# Issue створює github-actions[bot], а не власник репо — саме тому GitHub
+# надсилає листа: про власні дії він листів не надсилає.
+on:
+  push:
+    branches: [main]
+    paths: ['data/last-change.md']
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  issue:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const md = fs.readFileSync('data/last-change.md', 'utf8').trim();
+            if (!md) { core.info('data/last-change.md порожній — нічого надсилати'); return; }
+
+            const lines = md.split('\n');
+            const title = lines[0].replace(/^#+\s*/, '').trim() || 'Encar: зміни в добірці';
+            const body = [
+              lines.slice(1).join('\n').trim(),
+              '',
+              `_Створено автоматично з коміту ${context.sha.slice(0, 7)}._`,
+            ].join('\n');
+
+            const issue = await github.rest.issues.create({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              title,
+              body,
+              labels: ['encar-watch'],
+            });
+            core.info(`issue #${issue.data.number}: ${title}`);

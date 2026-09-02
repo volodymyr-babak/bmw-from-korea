@@ -1,0 +1,88 @@
+{
+  "listingId": "42646084",
+  "encarUrl": "https://fem.encar.com/cars/detail/42646084",
+  "model": "X5 (G05)",
+  "mfgYear": 2020,
+  "vin": null,
+  "mileageKm": 22756,
+  "koreaPriceMan": 6100,
+  "priceUSD": 64177,
+  "photos": {
+    "outer": [
+      "/carpicture04/pic4264/42646084_001.jpg",
+      "/carpicture04/pic4264/42646084_002.jpg",
+      "/carpicture04/pic4264/42646084_003.jpg",
+      "/carpicture04/pic4264/42646084_004.jpg",
+      "/carpicture04/pic4264/42646084_005.jpg",
+      "/carpicture04/pic4264/42646084_006.jpg"
+    ],
+    "inner": [
+      "/carpicture04/pic4264/42646084_007.jpg",
+      "/carpicture04/pic4264/42646084_008.jpg",
+      "/carpicture04/pic4264/42646084_009.jpg",
+      "/carpicture04/pic4264/42646084_010.jpg"
+    ]
+  },
+  "history": {
+    "openData": true,
+    "regDate": "2026-09-01T10:59:09.451242",
+    "carNo": "143모9789",
+    "year": "2020",
+    "maker": "BMW",
+    "carKind": "1",
+    "use": "2",
+    "displacement": "2993",
+    "carName": null,
+    "firstDate": "2020-02-21",
+    "fuel": "디젤",
+    "carShape": null,
+    "model": "X5 (G05)",
+    "transmission": null,
+    "carNameCode": null,
+    "myAccidentCnt": 1,
+    "otherAccidentCnt": 0,
+    "ownerChangeCnt": 0,
+    "robberCnt": 0,
+    "robberDate": null,
+    "totalLossCnt": 0,
+    "totalLossDate": null,
+    "floodTotalLossCnt": 0,
+    "floodPartLossCnt": null,
+    "floodDate": null,
+    "government": 0,
+    "business": 0,
+    "loan": 0,
+    "carNoChangeCnt": 0,
+    "myAccidentCost": 3446712,
+    "otherAccidentCost": 0,
+    "carInfoChanges": [
+      {
+        "date": "2020-02-21",
+        "carNo": "143모XXXX"
+      }
+    ],
+    "carInfoUse1s": [
+      "2"
+    ],
+    "carInfoUse2s": [
+      "1"
+    ],
+    "ownerChanges": [],
+    "notJoinDate1": null,
+    "notJoinDate2": null,
+    "notJoinDate3": null,
+    "notJoinDate4": null,
+    "notJoinDate5": null,
+    "accidentCnt": 1,
+    "accidents": [
+      {
+        "type": "1",
+        "date": "2024-05-19",
+        "insuranceBenefit": 3010000,
+        "partCost": 2134400,
+        "laborCost": 420360,
+        "paintingCost": 891952
+      }
+    ]
+  }
+}

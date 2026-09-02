@@ -1,0 +1,79 @@
+{
+  "listingId": "42585873",
+  "encarUrl": "https://fem.encar.com/cars/detail/42585873",
+  "model": "X5 (G05)",
+  "mfgYear": 2021,
+  "vin": null,
+  "mileageKm": 91683,
+  "koreaPriceMan": 5390,
+  "priceUSD": 60353,
+  "photos": {
+    "outer": [
+      "/carpicture08/pic4258/42585873_001.jpg",
+      "/carpicture08/pic4258/42585873_002.jpg",
+      "/carpicture08/pic4258/42585873_003.jpg",
+      "/carpicture08/pic4258/42585873_004.jpg",
+      "/carpicture08/pic4258/42585873_005.jpg",
+      "/carpicture08/pic4258/42585873_006.jpg"
+    ],
+    "inner": [
+      "/carpicture08/pic4258/42585873_007.jpg",
+      "/carpicture08/pic4258/42585873_008.jpg",
+      "/carpicture08/pic4258/42585873_009.jpg",
+      "/carpicture08/pic4258/42585873_010.jpg"
+    ]
+  },
+  "history": {
+    "openData": true,
+    "regDate": "2026-08-21T11:33:13.363032",
+    "carNo": "152소2628",
+    "year": "2021",
+    "maker": "BMW",
+    "carKind": "1",
+    "use": "2",
+    "displacement": "2993",
+    "carName": null,
+    "firstDate": "2021-07-09",
+    "fuel": "하이브리드",
+    "carShape": "SUV",
+    "model": "X5 (G05)",
+    "transmission": null,
+    "carNameCode": null,
+    "myAccidentCnt": 0,
+    "otherAccidentCnt": 0,
+    "ownerChangeCnt": 0,
+    "robberCnt": 0,
+    "robberDate": null,
+    "totalLossCnt": 0,
+    "totalLossDate": null,
+    "floodTotalLossCnt": 0,
+    "floodPartLossCnt": null,
+    "floodDate": null,
+    "government": 0,
+    "business": 0,
+    "loan": 0,
+    "carNoChangeCnt": 0,
+    "myAccidentCost": 0,
+    "otherAccidentCost": 0,
+    "carInfoChanges": [
+      {
+        "date": "2021-07-09",
+        "carNo": "152소XXXX"
+      }
+    ],
+    "carInfoUse1s": [
+      "2"
+    ],
+    "carInfoUse2s": [
+      "1"
+    ],
+    "ownerChanges": [],
+    "notJoinDate1": null,
+    "notJoinDate2": null,
+    "notJoinDate3": null,
+    "notJoinDate4": null,
+    "notJoinDate5": null,
+    "accidentCnt": 0,
+    "accidents": []
+  }
+}

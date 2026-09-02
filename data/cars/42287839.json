@@ -1,0 +1,129 @@
+{
+  "listingId": "42287839",
+  "encarUrl": "https://fem.encar.com/cars/detail/42287839",
+  "model": "X5 (G05)",
+  "mfgYear": 2019,
+  "vin": "WBACV6108KLK22283",
+  "mileageKm": 76015,
+  "koreaPriceMan": 5290,
+  "priceUSD": 54517,
+  "photos": {
+    "outer": [
+      "/carpicture08/pic4228/42284007_001.jpg",
+      "/carpicture08/pic4228/42284007_002.jpg",
+      "/carpicture08/pic4228/42284007_003.jpg",
+      "/carpicture08/pic4228/42284007_004.jpg",
+      "/carpicture08/pic4228/42284007_005.jpg",
+      "/carpicture08/pic4228/42284007_006.jpg",
+      "/carpicture08/pic4228/42284007_031.jpg",
+      "/carpicture08/pic4228/42284007_032.jpg",
+      "/carpicture08/pic4228/42284007_033.jpg"
+    ],
+    "inner": [
+      "/carpicture08/pic4228/42284007_007.jpg",
+      "/carpicture08/pic4228/42284007_008.jpg",
+      "/carpicture08/pic4228/42284007_009.jpg",
+      "/carpicture08/pic4228/42284007_010.jpg",
+      "/carpicture08/pic4228/42284007_034.jpg",
+      "/carpicture08/pic4228/42284007_035.jpg",
+      "/carpicture08/pic4228/42284007_036.jpg"
+    ]
+  },
+  "history": {
+    "openData": true,
+    "regDate": "2026-07-01T10:26:29.281133",
+    "carNo": "224거8007",
+    "year": "2019",
+    "maker": "BMW",
+    "carKind": "1",
+    "use": "2",
+    "displacement": "2993",
+    "carName": null,
+    "firstDate": "2019-09-27",
+    "fuel": "디젤",
+    "carShape": "SUV 5도어",
+    "model": "X5 (G05)",
+    "transmission": null,
+    "carNameCode": null,
+    "myAccidentCnt": 3,
+    "otherAccidentCnt": 2,
+    "ownerChangeCnt": 2,
+    "robberCnt": 0,
+    "robberDate": null,
+    "totalLossCnt": 0,
+    "totalLossDate": null,
+    "floodTotalLossCnt": 0,
+    "floodPartLossCnt": null,
+    "floodDate": null,
+    "government": 0,
+    "business": 0,
+    "loan": 0,
+    "carNoChangeCnt": 0,
+    "myAccidentCost": 4473292,
+    "otherAccidentCost": 2308150,
+    "carInfoChanges": [
+      {
+        "date": "2019-09-27",
+        "carNo": "224거XXXX"
+      }
+    ],
+    "carInfoUse1s": [
+      "2"
+    ],
+    "carInfoUse2s": [
+      "1"
+    ],
+    "ownerChanges": [
+      "2026-02-26",
+      "2025-08-29"
+    ],
+    "notJoinDate1": "202508~202604",
+    "notJoinDate2": null,
+    "notJoinDate3": null,
+    "notJoinDate4": null,
+    "notJoinDate5": null,
+    "accidentCnt": 5,
+    "accidents": [
+      {
+        "type": "1",
+        "date": "2025-07-08",
+        "insuranceBenefit": 253000,
+        "partCost": 509735,
+        "laborCost": 102690,
+        "paintingCost": 760517
+      },
+      {
+        "type": "3",
+        "date": "2025-07-08",
+        "insuranceBenefit": 0,
+        "partCost": 0,
+        "laborCost": 0,
+        "paintingCost": 0
+      },
+      {
+        "type": "2",
+        "date": "2020-08-18",
+        "insuranceBenefit": 670000,
+        "partCost": 1300000,
+        "laborCost": 174000,
+        "paintingCost": 130000
+      },
+      {
+        "type": "3",
+        "date": "2020-08-18",
+        "insuranceBenefit": 1593204,
+        "partCost": 0,
+        "laborCost": 1279590,
+        "paintingCost": 1028560
+      },
+      {
+        "type": "2",
+        "date": "2019-11-14",
+        "insuranceBenefit": 3928700,
+        "partCost": 1387800,
+        "laborCost": 75920,
+        "paintingCost": 32630
+      }
+    ]
+  }
+}

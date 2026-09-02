@@ -102,11 +102,11 @@ export function photoUrl(path, size = 'card') {
   return `${CI}${path}?impolicy=heightRate&${PHOTO_SIZES[size] || PHOTO_SIZES.card}&cg=Center`;
 }
 
+/** Кураторські маркери з даних. Суперлативи («найдешевше») тут не тримаємо —
+ *  список оновлюється автоматично, тому їх рахує index.js на рендері. */
 export const MARKS = {
-  'money':      'найдешевший 2021',
-  'money-cand': 'найдешевше',
-  'hero':       'вибір №1',
-  'star':       'малий пробіг',
+  'hero': 'вибір №1',
+  'star': 'малий пробіг',
 };
 
 /* ---- тема ---- */

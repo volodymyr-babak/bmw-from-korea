@@ -76,11 +76,12 @@ function render() {
     ? `Показано <b>${view.length}</b> з <b>${cars.length}</b>`
     : 'Під фільтри нічого не підходить';
 
-  $('#ladder').innerHTML = view.map(row).join('') ||
+  const cheapest = cars.reduce((a, c) => (c.priceUSD < a.priceUSD ? c : a), cars[0]);
+  $('#ladder').innerHTML = view.map((c) => row(c, c === cheapest)).join('') ||
     '<li class="state">Послаб фільтри — під ці умови авто в списку немає.</li>';
 }
 
-function row(c) {
+function row(c, isCheapest) {
   const pos = Math.max(0, Math.min(1, (c.priceUSD - LADDER_FLOOR) / (BUDGET_CAP - LADDER_FLOOR)));
   const headroom = BUDGET_CAP - c.priceUSD;
   const href = `car.html?id=${encodeURIComponent(c.listingId)}`;
@@ -99,6 +100,7 @@ function row(c) {
     <div class="car-thumb">${thumb(c, href)}</div>
     <div class="car-id">
       <h2 class="car-title"><a href="${href}"><span class="model-tag">${short}</span>${c.year} · <span class="num">${km(c.mileageKm)}</span></a>${
+        isCheapest ? '<span class="badge">найдешевше</span>' : ''}${
         c.mark ? `<span class="badge">${esc(MARKS[c.mark] || c.mark)}</span>` : ''}</h2>
       <p class="car-meta">${c.vin ? `VIN <span class="num">${esc(c.vin)}</span>` : 'VIN відсутній в Encar'} · лот <span class="num">${esc(c.listingId)}</span></p>
     </div>
