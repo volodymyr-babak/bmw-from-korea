@@ -67,17 +67,29 @@ export const krwM = (n) => (n / 1e6).toFixed(1).replace('.', ',') + NBSP + 'мл
 /** Ключові опції — однаковий набір і порядок усюди.
  *  Слоти light, audio і roof адаптивні: показують найвищий тир, який реально є
  *  (лазер понад адаптивний LED, B&W понад Harman/Kardon, Sky Lounge понад
- *  звичайну панораму). Так один слот несе більше інформації, ніж галочка. */
+ *  звичайну панораму). Так один слот несе більше інформації, ніж галочка.
+ *
+ *  Опції, наявні в усіх декодованих (ACC, M-вихлоп, підігріви, HUD, 4-зона,
+ *  Comfort Access, камери), лишаємо в рядку СВІДОМО: «в усіх є» — властивість
+ *  вибірки з 8 авто, а не G05/G06. Нове авто без них ми маємо побачити, а не
+ *  домалювати їй опцію в уяві. */
 export const KEY_FEATURES = [
-  { id: 'air',      short: 'пневмо',      long: 'Пневмопідвіска на дві осі' },
-  { id: 'light',    short: 'адапт. LED',  long: 'Адаптивні LED-фари' },
-  { id: 'soft',     short: 'soft-close',  long: 'Soft-Close двері' },
-  { id: 'vent',     short: 'вентиляція',  long: 'Вентиляція передніх сидінь' },
-  { id: 'massage',  short: 'масаж',       long: 'Масаж сидінь' },
-  { id: 'audio',    short: 'H/K',         long: 'Harman/Kardon' },
-  { id: 'roof',     short: 'панорама',    long: 'Панорамний дах' },
-  { id: 'acoustic', short: 'акуст. скло', long: 'Акустичне скло (S3KA)' },
-  { id: 'mhev',     short: '48V',         long: '48V mild-hybrid' },
+  { id: 'air',       short: 'пневмо',         long: 'Пневмопідвіска на дві осі' },
+  { id: 'light',     short: 'адапт. LED',     long: 'Адаптивні LED-фари' },
+  { id: 'acc',       short: 'ACC',            long: 'Adaptive Cruise Control — основа пакета Driving Assistant Professional' },
+  { id: 'park',      short: 'камери 360',     long: 'Асистент паркування Plus — камери навколо авто' },
+  { id: 'hud',       short: 'HUD',            long: 'Проекція на скло (Head-up Display)' },
+  { id: 'soft',      short: 'soft-close',     long: 'Soft-Close двері' },
+  { id: 'comfort',   short: 'безключовий',    long: 'Comfort Access — безключовий доступ і запуск' },
+  { id: 'vent',      short: 'вентиляція',     long: 'Вентиляція передніх сидінь' },
+  { id: 'seatheat',  short: 'підігрів задн.', long: 'Підігрів сидінь спереду й позаду' },
+  { id: 'wheelheat', short: 'підігрів керма', long: 'Підігрів керма (пакет Heat Comfort)' },
+  { id: 'climate4',  short: '4-зона',         long: '4-зонний клімат-контроль' },
+  { id: 'audio',     short: 'H/K',            long: 'Harman/Kardon' },
+  { id: 'roof',      short: 'панорама',       long: 'Панорамний дах' },
+  { id: 'acoustic',  short: 'акуст. скло',    long: 'Акустичне скло (S3KA)' },
+  { id: 'exhaust',   short: 'M-вихлоп',       long: 'Вихлопна система M Sport' },
+  { id: 'mhev',      short: '48V',            long: '48V mild-hybrid' },
 ];
 
 /** Стан одного слота: {has, short, long}. Адаптивні слоти показують вищий тир. */

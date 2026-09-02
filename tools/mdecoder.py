@@ -23,21 +23,31 @@ URL = 'https://www.mdecoder.com/decode/{}'
 MIN_CODES = 25          # менше — точно не повний білд-лист
 
 # S-коди → ключові опції сайту.
-# ⚠ S4NM (масаж) не підтверджено на живому білд-листі — жодне авто в добірці
-# його поки не мало. Перевірити на першому ж декоді, де масаж видно на фото.
+# Опції, що є в усіх декодованих (acc, park, hud, comfort, seatheat, wheelheat,
+# climate4, exhaust), лишаємо свідомо: «8 з 8» — властивість малої вибірки, тож
+# нове авто без них має відзначитись у рядку, а не отримати опцію за замовчуванням.
+# wheelheat: підігрів керма дає пакет S4HB Heat Comfort; S248 — та сама функція
+# окремою опцією (разом не зустрічаються, бо пакет її перекриває).
 FEATURE_CODES = {
     'air':       ['S2VR'],
     'laser':     ['S5AZ'],
     'led':       ['S552'],
     'soft':      ['S323'],
     'vent':      ['S453'],
-    'massage':   ['S4NM'],
     'hk':        ['S688'],
     'bw':        ['S6F1', 'S6AR'],
     'pano':      ['S402', 'S407'],
     'skylounge': ['S407'],
     'acoustic':  ['S3KA'],
     'mhev':      ['S1CE'],
+    'acc':       ['S5AU'],
+    'park':      ['S5DN'],
+    'hud':       ['S610'],
+    'comfort':   ['S322'],
+    'seatheat':  ['S4HA'],
+    'wheelheat': ['S4HB', 'S248'],
+    'climate4':  ['S4NB'],
+    'exhaust':   ['S1MA'],
 }
 
 PAINT_HINTS = ('metallic', 'brillanteffekt', 'uni', 'einfarbig', 'effekt')

@@ -227,10 +227,10 @@ function panelHistory(d) {
   return `<section class="panel"><h2>Історія</h2>
     ${rows([
       ['Власний ремонт', h.myAccidentCnt
-        ? `<span class="num">${h.myAccidentCnt}</span> ${plural(h.myAccidentCnt, 'звернення', 'звернення', 'звернень')} на <span class="num">${krw(h.myAccidentCostKRW)}</span>`
+        ? `<span class="num">${h.myAccidentCnt}</span> ${plural(h.myAccidentCnt, 'звернення', 'звернення', 'звернень')} на <span class="num">${krw(h.myAccidentCost || 0)}</span>`
         : '<span class="feat-yes">не було</span>'],
       ['Ремонт іншим за рахунок цього авто', h.otherAccidentCnt
-        ? `<span class="num">${h.otherAccidentCnt}</span> на <span class="num">${krw(h.otherAccidentCostKRW || 0)}</span>`
+        ? `<span class="num">${h.otherAccidentCnt}</span> на <span class="num">${krw(h.otherAccidentCost || 0)}</span>`
         : 'не було'],
       ['Змін власника', `<span class="num">${h.ownerChangeCnt}</span>`],
       ['Списання / потоп', h.totalLoss || h.flood
@@ -239,7 +239,7 @@ function panelHistory(d) {
     ])}
     <p class="note">${clean
       ? 'За виплатами страховика авто без ремонтів.'
-      : `Виплати на власний ремонт — ${krwM(h.myAccidentCostKRW)}, це нижче за поріг 5 млн ₩, який ми тримаємо.`}</p>
+      : `Виплати на власний ремонт — ${krwM(h.myAccidentCost || 0)}, це нижче за поріг 5 млн ₩, який ми тримаємо.`}</p>
   </section>`;
 }
 

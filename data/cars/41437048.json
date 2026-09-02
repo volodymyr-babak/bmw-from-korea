@@ -26,12 +26,19 @@
     "led": false,
     "soft": true,
     "vent": false,
-    "massage": false,
     "hk": false,
     "pano": true,
     "skylounge": false,
     "acoustic": false,
-    "mhev": true
+    "mhev": true,
+    "acc": true,
+    "park": true,
+    "hud": true,
+    "comfort": true,
+    "seatheat": true,
+    "wheelheat": true,
+    "climate4": true,
+    "exhaust": true
   },
   "options": [
     {
