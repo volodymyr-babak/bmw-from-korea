@@ -5,7 +5,7 @@
     "criteria": "X5 (G05) і X6 (G06) · 2019–2022 виготовлення · ≤110000 км · M Sport · дизель 30d лише · ДТП ≤5 млн ₩ власний · під ключ ≤ $70000 · салон чорний/кавовий · без лізингу/айворі/cognac/Tacora Red/45e/40i/40d/M50 · без прокатної/таксі історії (звіт інспекції)",
     "customs": "P (USD) by year 2019:25000 2020:36000 2021:40500 2022:43000; age=2025-year; duty=0.10P; excise=75*3.0*age*1.1648; vat=0.20(P+duty+excise); pens=0.05P; oblik=pens+124; ship=3700; svc=1000; korea=price_만*10000/1372",
     "count": 39,
-    "decodedCount": 15,
+    "decodedCount": 34,
     "customsNote": "Мінімальна митна вартість P звірена для X5. Для X6 узято ту саму таблицю, тому ціна під ключ X6 — оцінка (реально очікувати +$1000…2000)."
   },
   "cars": [
@@ -490,15 +490,36 @@
       "mileageKm": 66916,
       "koreaPriceMan": 5650,
       "priceUSD": 62248,
-      "vin": null,
-      "decoded": false,
+      "vin": "WBAJU8105M9H56351",
+      "decoded": true,
       "accident": {
         "costKRW": 220490,
         "owners": 0
       },
       "photo": "/carpicture02/pic4262/42627728_001.jpg",
       "exterior": "Carbon Black",
-      "rank": 15
+      "rank": 15,
+      "interior": "Vernasca Coffee",
+      "keyFeatures": {
+        "air": false,
+        "laser": true,
+        "led": false,
+        "soft": true,
+        "vent": true,
+        "hk": false,
+        "pano": true,
+        "skylounge": false,
+        "acoustic": false,
+        "mhev": true,
+        "acc": true,
+        "park": true,
+        "comfort": true,
+        "seatheat": true,
+        "wheelheat": true,
+        "climate4": true,
+        "exhaust": true,
+        "bw": true
+      }
     },
     {
       "rank": 16,
@@ -509,14 +530,34 @@
       "koreaPriceMan": 5870,
       "priceUSD": 62500,
       "priceEstimated": true,
-      "vin": null,
-      "decoded": false,
-      "exterior": "сірий",
+      "vin": "WBAGT2100L9B74036",
+      "decoded": true,
+      "exterior": "Arctic Grey",
       "accident": {
         "costKRW": 0,
         "owners": 1
       },
-      "photo": "/carpicture10/pic4170/41701983_001.jpg"
+      "photo": "/carpicture10/pic4170/41701983_001.jpg",
+      "interior": "Vernasca Coffee",
+      "keyFeatures": {
+        "air": true,
+        "laser": false,
+        "led": false,
+        "soft": false,
+        "vent": true,
+        "hk": true,
+        "pano": true,
+        "skylounge": false,
+        "acoustic": false,
+        "mhev": false,
+        "acc": true,
+        "park": true,
+        "comfort": true,
+        "seatheat": true,
+        "wheelheat": true,
+        "climate4": true,
+        "exhaust": true
+      }
     },
     {
       "rank": 17,
@@ -566,13 +607,33 @@
       "priceUSD": 63805,
       "priceEstimated": true,
       "vin": "WBAGT8107N9L42838",
-      "decoded": false,
-      "exterior": "синій",
+      "decoded": true,
+      "exterior": "Carbon Black",
       "accident": {
         "costKRW": 0,
         "owners": 2
       },
-      "photo": "/carpicture05/pic4225/42251152_001.jpg"
+      "photo": "/carpicture05/pic4225/42251152_001.jpg",
+      "interior": "Merino Coffee",
+      "keyFeatures": {
+        "air": false,
+        "laser": true,
+        "led": false,
+        "soft": true,
+        "vent": true,
+        "hk": false,
+        "pano": true,
+        "skylounge": false,
+        "acoustic": false,
+        "mhev": true,
+        "acc": true,
+        "park": true,
+        "comfort": true,
+        "seatheat": true,
+        "wheelheat": true,
+        "climate4": true,
+        "exhaust": true
+      }
     },
     {
       "listingId": "42646084",
@@ -581,15 +642,35 @@
       "mileageKm": 22756,
       "koreaPriceMan": 6100,
       "priceUSD": 64177,
-      "vin": null,
-      "decoded": false,
+      "vin": "WBACV6105L9B86540",
+      "decoded": true,
       "accident": {
         "costKRW": 3446712,
         "owners": 0
       },
       "photo": "/carpicture04/pic4264/42646084_001.jpg",
-      "exterior": "сірий",
-      "rank": 19
+      "exterior": "Arctic Grey",
+      "rank": 19,
+      "interior": "Vernasca Coffee",
+      "keyFeatures": {
+        "air": true,
+        "laser": false,
+        "led": true,
+        "soft": false,
+        "vent": true,
+        "hk": true,
+        "pano": true,
+        "skylounge": false,
+        "acoustic": false,
+        "mhev": false,
+        "acc": true,
+        "park": true,
+        "comfort": true,
+        "seatheat": true,
+        "wheelheat": true,
+        "climate4": true,
+        "exhaust": true
+      }
     },
     {
       "rank": 20,
@@ -601,14 +682,35 @@
       "priceUSD": 64653,
       "priceEstimated": true,
       "vin": "WBAGT8101M9H35011",
-      "decoded": false,
-      "exterior": "білий",
+      "decoded": true,
+      "exterior": "Mineral White",
       "accident": {
         "costKRW": 4490960,
         "owners": 1
       },
       "photo": "/carpicture06/pic4096/40966656_001.jpg",
-      "note": "Міняли капот — продавець пише, що через звичайну вмʼятину, і має фото. Звідси 4,5 млн ₩ виплат."
+      "note": "Міняли капот — продавець пише, що через звичайну вмʼятину, і має фото. Звідси 4,5 млн ₩ виплат.",
+      "interior": "Vernasca Coffee",
+      "keyFeatures": {
+        "air": false,
+        "laser": true,
+        "led": false,
+        "soft": true,
+        "vent": true,
+        "hk": false,
+        "pano": true,
+        "skylounge": false,
+        "acoustic": false,
+        "mhev": true,
+        "acc": true,
+        "park": true,
+        "comfort": true,
+        "seatheat": true,
+        "wheelheat": true,
+        "climate4": true,
+        "exhaust": true,
+        "bw": true
+      }
     },
     {
       "listingId": "42655967",
@@ -658,13 +760,33 @@
       "priceUSD": 65263,
       "priceEstimated": true,
       "vin": "WBAGT8102N9L68098",
-      "decoded": false,
-      "exterior": "білий",
+      "decoded": true,
+      "exterior": "Mineral White",
       "accident": {
         "costKRW": 0,
         "owners": 1
       },
-      "photo": "/carpicture01/pic4241/42415469_002.jpg"
+      "photo": "/carpicture01/pic4241/42415469_002.jpg",
+      "interior": "Merino Coffee",
+      "keyFeatures": {
+        "air": false,
+        "laser": true,
+        "led": false,
+        "soft": true,
+        "vent": true,
+        "hk": false,
+        "pano": true,
+        "skylounge": false,
+        "acoustic": false,
+        "mhev": true,
+        "acc": true,
+        "park": true,
+        "comfort": true,
+        "seatheat": true,
+        "wheelheat": true,
+        "climate4": true,
+        "exhaust": true
+      }
     },
     {
       "rank": 23,
@@ -675,13 +797,33 @@
       "koreaPriceMan": 6080,
       "priceUSD": 65382,
       "vin": "WBAJU8104M9F24954",
-      "decoded": false,
-      "exterior": "чорний",
+      "decoded": true,
+      "exterior": "Carbon Black",
       "accident": {
         "costKRW": 1662954,
         "owners": 0
       },
-      "photo": "/carpicture06/pic4136/41368455_001.jpg"
+      "photo": "/carpicture06/pic4136/41368455_001.jpg",
+      "interior": "Vernasca Coffee",
+      "keyFeatures": {
+        "air": true,
+        "laser": false,
+        "led": true,
+        "soft": false,
+        "vent": true,
+        "hk": true,
+        "pano": true,
+        "skylounge": false,
+        "acoustic": false,
+        "mhev": true,
+        "acc": true,
+        "park": true,
+        "comfort": true,
+        "seatheat": true,
+        "wheelheat": true,
+        "climate4": true,
+        "exhaust": true
+      }
     },
     {
       "rank": 24,
@@ -693,14 +835,33 @@
       "priceUSD": 65892,
       "priceEstimated": true,
       "vin": "WBAGT8102M9F06174",
-      "decoded": false,
-      "exterior": "сірий",
+      "decoded": true,
+      "exterior": "Arctic Grey",
       "accident": {
         "costKRW": 3185992,
         "owners": 1
       },
       "photo": "/carpicture07/pic4137/41374235_001.jpg",
-      "airSeller": true
+      "interior": "Vernasca Coffee",
+      "keyFeatures": {
+        "air": true,
+        "laser": false,
+        "led": false,
+        "soft": false,
+        "vent": true,
+        "hk": true,
+        "pano": true,
+        "skylounge": false,
+        "acoustic": false,
+        "mhev": true,
+        "acc": true,
+        "park": true,
+        "comfort": true,
+        "seatheat": true,
+        "wheelheat": true,
+        "climate4": true,
+        "exhaust": true
+      }
     },
     {
       "rank": 25,
@@ -730,14 +891,34 @@
       "priceUSD": 66065,
       "priceEstimated": true,
       "vin": "WBAGT8106N9L42863",
-      "decoded": false,
+      "decoded": true,
       "exterior": "Carbon Black",
       "accident": {
         "costKRW": 4724399,
         "owners": 1
       },
       "photo": "/carpicture04/pic4234/42348555_001.jpg",
-      "note": "Пише «без фарбування й замін», а в реєстрі 4,7 млн ₩ виплат — найбільша розбіжність у добірці."
+      "note": "Пише «без фарбування й замін», а в реєстрі 4,7 млн ₩ виплат — найбільша розбіжність у добірці.",
+      "interior": "Merino Coffee",
+      "keyFeatures": {
+        "air": false,
+        "laser": true,
+        "led": false,
+        "soft": true,
+        "vent": true,
+        "hk": false,
+        "pano": true,
+        "skylounge": false,
+        "acoustic": false,
+        "mhev": true,
+        "acc": true,
+        "park": true,
+        "comfort": true,
+        "seatheat": true,
+        "wheelheat": true,
+        "climate4": true,
+        "exhaust": true
+      }
     },
     {
       "rank": 27,
@@ -749,13 +930,33 @@
       "priceUSD": 66621,
       "priceEstimated": true,
       "vin": "WBAGT8106N9J54344",
-      "decoded": false,
+      "decoded": true,
       "exterior": "Carbon Black",
       "accident": {
         "costKRW": 0,
         "owners": 2
       },
-      "photo": "/carpicture02/pic4262/42620687_002.jpg"
+      "photo": "/carpicture02/pic4262/42620687_002.jpg",
+      "interior": "Merino Coffee",
+      "keyFeatures": {
+        "air": true,
+        "laser": true,
+        "led": false,
+        "soft": true,
+        "vent": true,
+        "hk": true,
+        "pano": true,
+        "skylounge": false,
+        "acoustic": false,
+        "mhev": true,
+        "acc": true,
+        "park": true,
+        "comfort": true,
+        "seatheat": true,
+        "wheelheat": true,
+        "climate4": true,
+        "exhaust": true
+      }
     },
     {
       "rank": 28,
@@ -767,13 +968,33 @@
       "priceUSD": 66794,
       "priceEstimated": true,
       "vin": "WBAGT8109N9L82242",
-      "decoded": false,
+      "decoded": true,
       "exterior": "Carbon Black",
       "accident": {
         "costKRW": 0,
         "owners": 2
       },
-      "photo": "/carpicture04/pic4264/42649355_001.jpg"
+      "photo": "/carpicture04/pic4264/42649355_001.jpg",
+      "interior": "Merino Coffee",
+      "keyFeatures": {
+        "air": true,
+        "laser": true,
+        "led": false,
+        "soft": false,
+        "vent": true,
+        "hk": false,
+        "pano": true,
+        "skylounge": false,
+        "acoustic": false,
+        "mhev": true,
+        "acc": true,
+        "park": true,
+        "comfort": true,
+        "seatheat": true,
+        "wheelheat": true,
+        "climate4": true,
+        "exhaust": true
+      }
     },
     {
       "rank": 29,
@@ -784,14 +1005,34 @@
       "koreaPriceMan": 6200,
       "priceUSD": 66867,
       "priceEstimated": true,
-      "vin": null,
-      "decoded": false,
+      "vin": "WBAGT8106N9K47297",
+      "decoded": true,
       "exterior": "Carbon Black",
       "accident": {
         "costKRW": 0,
         "owners": 0
       },
-      "photo": "/carpicture08/pic4258/42585911_001.jpg"
+      "photo": "/carpicture08/pic4258/42585911_001.jpg",
+      "interior": "Vernasca Coffee",
+      "keyFeatures": {
+        "air": true,
+        "laser": true,
+        "led": false,
+        "soft": true,
+        "vent": false,
+        "hk": false,
+        "pano": true,
+        "skylounge": true,
+        "acoustic": false,
+        "mhev": true,
+        "acc": true,
+        "park": true,
+        "comfort": true,
+        "seatheat": true,
+        "wheelheat": true,
+        "climate4": true,
+        "exhaust": true
+      }
     },
     {
       "rank": 30,
@@ -802,14 +1043,34 @@
       "koreaPriceMan": 6290,
       "priceUSD": 66912,
       "priceEstimated": true,
-      "vin": "WBAGT810MX9E57421",
-      "decoded": false,
-      "exterior": "чорний",
+      "vin": "WBAGT810XM9E57421",
+      "decoded": true,
+      "exterior": "Carbon Black",
       "accident": {
         "costKRW": 0,
         "owners": 0
       },
-      "photo": "/carpicture01/pic4141/41413915_001.jpg"
+      "photo": "/carpicture01/pic4141/41413915_001.jpg",
+      "interior": "Vernasca Coffee",
+      "keyFeatures": {
+        "air": true,
+        "laser": false,
+        "led": false,
+        "soft": false,
+        "vent": true,
+        "hk": true,
+        "pano": true,
+        "skylounge": false,
+        "acoustic": false,
+        "mhev": true,
+        "acc": true,
+        "park": true,
+        "comfort": true,
+        "seatheat": true,
+        "wheelheat": true,
+        "climate4": true,
+        "exhaust": true
+      }
     },
     {
       "rank": 31,
@@ -858,14 +1119,33 @@
       "priceUSD": 67457,
       "priceEstimated": true,
       "vin": "WBAGT2104L9D39893",
-      "decoded": false,
+      "decoded": true,
       "exterior": "Manhattan",
       "accident": {
         "costKRW": 0,
         "owners": 1
       },
       "photo": "/carpicture06/pic4156/41565618_001.jpg",
-      "interiorUnverified": "коричневий — кава або cognac — з опису"
+      "interior": "Vernasca Coffee",
+      "keyFeatures": {
+        "air": true,
+        "laser": false,
+        "led": false,
+        "soft": false,
+        "vent": true,
+        "hk": true,
+        "pano": true,
+        "skylounge": false,
+        "acoustic": false,
+        "mhev": false,
+        "acc": true,
+        "park": true,
+        "comfort": true,
+        "seatheat": true,
+        "wheelheat": true,
+        "climate4": true,
+        "exhaust": true
+      }
     },
     {
       "rank": 33,
@@ -876,14 +1156,33 @@
       "koreaPriceMan": 6380,
       "priceUSD": 67568,
       "vin": "WBAJU810XN9J04145",
-      "decoded": false,
-      "exterior": "синій",
+      "decoded": true,
+      "exterior": "Carbon Black",
       "accident": {
         "costKRW": 2199367,
         "owners": 0
       },
       "photo": "/carpicture07/pic4257/42574631_001.jpg",
-      "airSeller": true
+      "interior": "Merino Coffee",
+      "keyFeatures": {
+        "air": true,
+        "laser": true,
+        "led": false,
+        "soft": true,
+        "vent": true,
+        "hk": true,
+        "pano": true,
+        "skylounge": false,
+        "acoustic": false,
+        "mhev": true,
+        "acc": true,
+        "park": true,
+        "comfort": true,
+        "seatheat": true,
+        "wheelheat": true,
+        "climate4": true,
+        "exhaust": true
+      }
     },
     {
       "rank": 34,
@@ -894,14 +1193,34 @@
       "koreaPriceMan": 6390,
       "priceUSD": 68251,
       "priceEstimated": true,
-      "vin": null,
-      "decoded": false,
+      "vin": "WBAGT8105P9N88287",
+      "decoded": true,
       "exterior": "Carbon Black",
       "accident": {
         "costKRW": 4474716,
         "owners": 1
       },
-      "photo": "/carpicture07/pic4247/42476461_001.jpg"
+      "photo": "/carpicture07/pic4247/42476461_001.jpg",
+      "interior": "Merino Coffee",
+      "keyFeatures": {
+        "air": true,
+        "laser": true,
+        "led": false,
+        "soft": false,
+        "vent": true,
+        "hk": true,
+        "pano": true,
+        "skylounge": false,
+        "acoustic": false,
+        "mhev": true,
+        "acc": true,
+        "park": true,
+        "comfort": true,
+        "seatheat": true,
+        "wheelheat": true,
+        "climate4": true,
+        "exhaust": true
+      }
     },
     {
       "rank": 35,
@@ -929,14 +1248,34 @@
       "koreaPriceMan": 6600,
       "priceUSD": 69172,
       "vin": "WBAJU8103M9G44762",
-      "decoded": false,
+      "decoded": true,
       "accident": {
         "costKRW": 2578310,
         "owners": 2
       },
       "photo": "/carpicture04/pic4264/42644431_001.jpg",
-      "exterior": "білий",
-      "rank": 36
+      "exterior": "Mineral White",
+      "rank": 36,
+      "interior": "Vernasca Coffee",
+      "keyFeatures": {
+        "air": true,
+        "laser": false,
+        "led": true,
+        "soft": false,
+        "vent": true,
+        "hk": true,
+        "pano": true,
+        "skylounge": false,
+        "acoustic": false,
+        "mhev": true,
+        "acc": true,
+        "park": true,
+        "comfort": true,
+        "seatheat": true,
+        "wheelheat": true,
+        "climate4": true,
+        "exhaust": true
+      }
     },
     {
       "rank": 37,
@@ -947,15 +1286,34 @@
       "koreaPriceMan": 6550,
       "priceUSD": 69418,
       "vin": "WBAJU8100N9K24911",
-      "decoded": false,
-      "exterior": "білий",
+      "decoded": true,
+      "exterior": "Mineral White",
       "accident": {
         "costKRW": 0,
         "owners": 0
       },
       "photo": "/carpicture08/pic4168/41689680_001.jpg",
       "note": "Продавець сам пише про ≈5,7 млн ₩ на заміну крила — виплата ще не в реєстрі Encar, тому наш поріг 5 млн ₩ її не побачив.",
-      "airSeller": true
+      "interior": "Vernasca Coffee",
+      "keyFeatures": {
+        "air": true,
+        "laser": true,
+        "led": false,
+        "soft": true,
+        "vent": false,
+        "hk": false,
+        "pano": true,
+        "skylounge": false,
+        "acoustic": false,
+        "mhev": true,
+        "acc": true,
+        "park": true,
+        "comfort": true,
+        "seatheat": true,
+        "wheelheat": true,
+        "climate4": true,
+        "exhaust": true
+      }
     },
     {
       "rank": 38,
@@ -1004,14 +1362,34 @@
       "koreaPriceMan": 6660,
       "priceUSD": 69609,
       "vin": "WBAJU810XM9H99843",
-      "decoded": false,
+      "decoded": true,
       "exterior": "Carbon Black",
       "accident": {
         "costKRW": 2736290,
         "owners": 0
       },
       "photo": "/carpicture05/pic4145/41456161_001.jpg",
-      "interiorUnverified": "коричневий — кава або cognac — з опису"
+      "interior": "Vernasca Coffee",
+      "keyFeatures": {
+        "air": false,
+        "laser": true,
+        "led": false,
+        "soft": true,
+        "vent": true,
+        "hk": false,
+        "pano": true,
+        "skylounge": false,
+        "acoustic": false,
+        "mhev": true,
+        "acc": true,
+        "park": true,
+        "comfort": true,
+        "seatheat": true,
+        "wheelheat": true,
+        "climate4": true,
+        "exhaust": true,
+        "bw": true
+      }
     }
   ]
 }

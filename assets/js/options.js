@@ -104,6 +104,7 @@ export const OPTIONS = {
   S6AR: ['media', 'Bowers & Wilkins High End (старе позначення)', true],
   S676: ['media', 'Базова аудіосистема HiFi (не Harman/Kardon)'],
   S6UX: ['media', 'Контролер iDrive без тач-панелі (корейська версія)'],
+  S6UY: ['media', 'Сенсорні функції скасовано — екран без тач-керування'],
   S6U8: ['media', 'Керування жестами'],
   S6U3: ['media', 'BMW Live Cockpit Professional'],
   S6C3: ['media', 'Connected Package Professional'],
