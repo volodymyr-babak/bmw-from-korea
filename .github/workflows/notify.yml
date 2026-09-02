@@ -26,19 +26,26 @@ jobs:
             const md = fs.readFileSync('data/last-change.md', 'utf8').trim();
             if (!md) { core.info('data/last-change.md порожній — нічого надсилати'); return; }
 
+            const owner = context.repo.owner;
             const lines = md.split('\n');
             const title = lines[0].replace(/^#+\s*/, '').trim() || 'Encar: зміни в добірці';
+
+            // Підписка на репо може зникнути (unwatch, зміна налаштувань), а
+            // згадка й призначення нотифікують незалежно від неї — тому обидва.
             const body = [
+              `@${owner}`,
+              '',
               lines.slice(1).join('\n').trim(),
               '',
               `_Створено автоматично з коміту ${context.sha.slice(0, 7)}._`,
             ].join('\n');
 
             const issue = await github.rest.issues.create({
-              owner: context.repo.owner,
+              owner,
               repo: context.repo.repo,
               title,
               body,
               labels: ['encar-watch'],
+              assignees: [owner],
             });
             core.info(`issue #${issue.data.number}: ${title}`);
