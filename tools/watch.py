@@ -358,9 +358,11 @@ def build_detail(lid, model, year, man, price, det, hist, insp=None):
 
 KO_COLOR = {'흰색': 'білий', '검정색': 'чорний', '청색': 'синій', '쥐색': 'сірий',
             '진주색': 'перловий', '은색': 'срібний', '회색': 'сірий', '갈색': 'коричневий',
-            '남색': 'темно-синій', '하늘색': 'небесно-блакитний'}
+            '남색': 'темно-синій', '하늘색': 'небесно-блакитний', '연금색': 'бронзовий'}
 KO_CUSTOM = {'카본블랙': 'Carbon Black', '카본 블랙': 'Carbon Black', '416': 'Carbon Black',
-             '아크틱그레이': 'Arctic Grey', '네이비': 'Navy'}
+             '아크틱그레이': 'Arctic Grey', '네이비': 'Navy',
+             '맨하탄': 'Manhattan', '미네랄화이트': 'Mineral White',
+             '미네랄 화이트': 'Mineral White', '피토닉블루': 'Phytonic Blue'}
 
 
 def exterior_label(color_name, custom):

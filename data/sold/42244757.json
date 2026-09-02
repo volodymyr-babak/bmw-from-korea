@@ -1,0 +1,394 @@
+{
+  "listingId": "42244757",
+  "encarUrl": "https://fem.encar.com/cars/detail/42244757",
+  "model": "X5 (G05)",
+  "mfgYear": 2019,
+  "vin": "WBACV6107KLK23778",
+  "mileageKm": 74730,
+  "koreaPriceMan": 5390,
+  "priceUSD": 55246,
+  "photos": {
+    "outer": [
+      "/carpicture04/pic4224/42244753_002.jpg",
+      "/carpicture04/pic4224/42244753_003.jpg",
+      "/carpicture04/pic4224/42244753_004.jpg",
+      "/carpicture04/pic4224/42244753_005.jpg",
+      "/carpicture04/pic4224/42244753_006.jpg",
+      "/carpicture04/pic4224/42244753_031.jpg",
+      "/carpicture04/pic4224/42244753_032.jpg",
+      "/carpicture04/pic4224/42244753_033.jpg"
+    ],
+    "inner": [
+      "/carpicture04/pic4224/42244753_007.jpg",
+      "/carpicture04/pic4224/42244753_008.jpg",
+      "/carpicture04/pic4224/42244753_009.jpg",
+      "/carpicture04/pic4224/42244753_010.jpg",
+      "/carpicture04/pic4224/42244753_034.jpg",
+      "/carpicture04/pic4224/42244753_035.jpg",
+      "/carpicture04/pic4224/42244753_036.jpg"
+    ]
+  },
+  "history": {
+    "openData": true,
+    "regDate": "2026-05-29T13:27:31.851589",
+    "carNo": "263우2828",
+    "year": "2019",
+    "maker": "BMW",
+    "carKind": "1",
+    "use": "2",
+    "displacement": "2993",
+    "carName": null,
+    "firstDate": "2019-10-22",
+    "fuel": "디젤",
+    "carShape": null,
+    "model": "X5 (G05)",
+    "transmission": null,
+    "carNameCode": null,
+    "myAccidentCnt": 1,
+    "otherAccidentCnt": 0,
+    "ownerChangeCnt": 2,
+    "robberCnt": 0,
+    "robberDate": null,
+    "totalLossCnt": 0,
+    "totalLossDate": null,
+    "floodTotalLossCnt": 0,
+    "floodPartLossCnt": null,
+    "floodDate": null,
+    "government": 0,
+    "business": 0,
+    "loan": 0,
+    "carNoChangeCnt": 0,
+    "myAccidentCost": 2825350,
+    "otherAccidentCost": 0,
+    "carInfoChanges": [
+      {
+        "date": "2019-10-22",
+        "carNo": "263우XXXX"
+      }
+    ],
+    "carInfoUse1s": [
+      "2"
+    ],
+    "carInfoUse2s": [
+      "1"
+    ],
+    "ownerChanges": [
+      "2026-01-08",
+      "2022-11-02"
+    ],
+    "notJoinDate1": "202601~202603",
+    "notJoinDate2": null,
+    "notJoinDate3": null,
+    "notJoinDate4": null,
+    "notJoinDate5": null,
+    "accidentCnt": 1,
+    "accidents": [
+      {
+        "type": "2",
+        "date": "2022-07-27",
+        "insuranceBenefit": 4124000,
+        "partCost": 1808200,
+        "laborCost": 389630,
+        "paintingCost": 627520
+      }
+    ]
+  },
+  "sellerText": "▶강서오토플렉스 1호 안심매매상사입니다.\n▶특별한 상사에 있는 특별한 혜택 7년&14만km 이내의 차량 한하여 구매 후 6개월 중고차 보증 보험이 가입가능합니다.\n▶Kb . 현대 캐피탈 제휴 상사로 다이렉트 최저 금리를 약속합니다.\n▶경매나 공매가 아닌 차주가 직접 방문하여 검차 및 시운전 후에 꼼꼼하게 확인후에 매입하여 직접 판매합니다.\n\n------------------------------------------------------------------------------------------------------------------------------\n\n\n▶차량설명 \n\n-차    종 : BMW X5 xDrive 30d M스포츠\n-연    식 : 2019년 10월\n-색    상 : 카본 블랙 / 브라운시트 \n-주행거리 : 74730km\n-특이사항 : 완전무사고 차량입니다. \n\n▶문의방법 \n\n- 판매자 문의하기 클릭하셔서 전화나 채팅으로 예약하셔서 방문해주시면 됩니다\n\n▶ 주 소 \n\n- 차량이동 : 서울시 강서구 양천로390 강서오토플렉스 309호 에스유카  혹은 네비게이션 검색으로  '강서오토플렉스' 검색 하시면 됩니다.\n- 대중교통: 9호선 양천향교역 5번출구 나오셔서 500m 직진하시면 우측편에 있습니다.",
+  "sellerFacts": [
+    {
+      "kind": "info",
+      "text": "Продавець пише «완전무사고» (зовсім без ДТП) — але в реєстрі 2,8 млн ₩ власних виплат. У Кореї «무사고» означає «без ремонту силових елементів», дрібні виплати сюди не входять."
+    },
+    {
+      "kind": "plus",
+      "text": "Кузов Carbon Black, салон коричневий — зазначено прямо в описі."
+    }
+  ],
+  "inspection": {
+    "accident": false,
+    "simpleRepair": false,
+    "waterlog": false,
+    "tuning": false,
+    "usage": [],
+    "serious": [],
+    "panels": [],
+    "date": "20260624",
+    "mileage": 74715,
+    "recall": false,
+    "comment": null
+  },
+  "inspectionFacts": [
+    {
+      "kind": "plus",
+      "text": "Звіт інспекції чистий: ні замін панелей, ні кузовного, ні комерційної історії."
+    }
+  ],
+  "prodDate": "2019-08-01",
+  "engine": "B57D30O0",
+  "power": "195 кВт / 265 к.с. · 620 Нм",
+  "exterior": {
+    "name": "Carbon Black",
+    "german": "Carbonschwarz Metallic",
+    "code": "416"
+  },
+  "interior": {
+    "name": "Vernasca Cognac",
+    "german": "Leder Vernasca Cognac",
+    "code": "MCRI"
+  },
+  "options": [
+    {
+      "code": "S337",
+      "desc": "M Sports package"
+    },
+    {
+      "code": "S710",
+      "desc": "M leather steering wheel"
+    },
+    {
+      "code": "S715",
+      "desc": "M Aerodynamics package"
+    },
+    {
+      "code": "S402",
+      "desc": "Panorama glass roof"
+    },
+    {
+      "code": "S423",
+      "desc": "Floor mats velours"
+    },
+    {
+      "code": "S428",
+      "desc": "Warning triangle and first aid kit"
+    },
+    {
+      "code": "S453",
+      "desc": "Climate-controlled (ventilated) seats, front"
+    },
+    {
+      "code": "S456",
+      "desc": "Comfort seat with memory"
+    },
+    {
+      "code": "S4A2",
+      "desc": "Glass application Crafted Clarity"
+    },
+    {
+      "code": "S4HA",
+      "desc": "Seat heating, front and rear"
+    },
+    {
+      "code": "S4HB",
+      "desc": "Heat comfort package, front"
+    },
+    {
+      "code": "S4KK",
+      "desc": "Interior trim finishers aluminium tetragon"
+    },
+    {
+      "code": "S4M5",
+      "desc": "Individual instrument panel finished in leather"
+    },
+    {
+      "code": "S4NB",
+      "desc": "Automatic climate control, 4-zone"
+    },
+    {
+      "code": "S4T8",
+      "desc": "Extended mirror package"
+    },
+    {
+      "code": "S4UR",
+      "desc": "Ambient interior light"
+    },
+    {
+      "code": "S610",
+      "desc": "Head-up display"
+    },
+    {
+      "code": "S688",
+      "desc": "Harman/Kardon surround sound system"
+    },
+    {
+      "code": "S699",
+      "desc": "Area-Code 3 for DVD"
+    },
+    {
+      "code": "S6AC",
+      "desc": "Intelligent emergency call"
+    },
+    {
+      "code": "S6AE",
+      "desc": "Teleservices"
+    },
+    {
+      "code": "S6AK",
+      "desc": "Connected Drive Services"
+    },
+    {
+      "code": "S6NV",
+      "desc": "Telephony with wireless charging"
+    },
+    {
+      "code": "S6U3",
+      "desc": "BMW Live Cockpit Professional"
+    },
+    {
+      "code": "S6U8",
+      "desc": "BMW gesture control"
+    },
+    {
+      "code": "S6UH",
+      "desc": "Traffic Information"
+    },
+    {
+      "code": "S548",
+      "desc": "Kilometre speedo"
+    },
+    {
+      "code": "S552",
+      "desc": "Adaptive LED headlight"
+    },
+    {
+      "code": "S5A1",
+      "desc": "LED Fog lights"
+    },
+    {
+      "code": "S5AC",
+      "desc": "High-beam assistant"
+    },
+    {
+      "code": "S5AL",
+      "desc": "Active Protection"
+    },
+    {
+      "code": "S5AU",
+      "desc": "Driving assistant professional"
+    },
+    {
+      "code": "S5AV",
+      "desc": "Active Guard"
+    },
+    {
+      "code": "S5DN",
+      "desc": "Parking assistance system Plus"
+    },
+    {
+      "code": "S212",
+      "desc": "Equipment, brake system country-specific"
+    },
+    {
+      "code": "S258",
+      "desc": "Tyres with runflat properties"
+    },
+    {
+      "code": "S2NH",
+      "desc": "M Sport brake"
+    },
+    {
+      "code": "S2TB",
+      "desc": "Sport automatic gearbox"
+    },
+    {
+      "code": "S2VB",
+      "desc": "Tyre pressure display"
+    },
+    {
+      "code": "S2VR",
+      "desc": "Two-axle air suspension"
+    },
+    {
+      "code": "S322",
+      "desc": "Comfort access"
+    },
+    {
+      "code": "S3AT",
+      "desc": "Roof rails aluminium satinated"
+    },
+    {
+      "code": "S3DS",
+      "desc": "BMW display key"
+    },
+    {
+      "code": "S3MB",
+      "desc": "Individual Ext. Line, aluminium satinated"
+    },
+    {
+      "code": "S775",
+      "desc": "Individual headlining anthracite"
+    },
+    {
+      "code": "S802",
+      "desc": "National version Korea"
+    },
+    {
+      "code": "S867",
+      "desc": "Language version Korean"
+    },
+    {
+      "code": "S8AF",
+      "desc": "On-board literature, Korean"
+    },
+    {
+      "code": "S8KH",
+      "desc": "Oil service interval 20 000 km / 18 months"
+    },
+    {
+      "code": "S8R9",
+      "desc": "Refrigerant"
+    },
+    {
+      "code": "S8S3",
+      "desc": "Automatic locking during starting"
+    },
+    {
+      "code": "S8TF",
+      "desc": "Active pedestrian protection"
+    },
+    {
+      "code": "S8TR",
+      "desc": "Decoding additional functions"
+    },
+    {
+      "code": "S1MA",
+      "desc": "M sports exhaust system"
+    },
+    {
+      "code": "S1TC",
+      "desc": "20\" light-alloy wheel star spoke 740M bicolor, mixed runflat tyres"
+    },
+    {
+      "code": "S925",
+      "desc": "Shipping protection package"
+    },
+    {
+      "code": "S993",
+      "desc": "Model year code in VIN"
+    },
+    {
+      "code": "S9AA",
+      "desc": "Outer skin protection"
+    }
+  ],
+  "keyFeatures": {
+    "air": true,
+    "laser": false,
+    "led": true,
+    "soft": false,
+    "vent": true,
+    "hk": true,
+    "pano": true,
+    "skylounge": false,
+    "acoustic": false,
+    "mhev": false,
+    "acc": true,
+    "park": true,
+    "comfort": true,
+    "seatheat": true,
+    "wheelheat": true,
+    "climate4": true,
+    "exhaust": true
+  },
+  "decodeSource": "bimmer.work (вставлено користувачем 2026-09-02)",
+  "removedReason": "салон Vernasca Cognac (MCRI) за VIN — під виключення. Продавець в описі писав «브라운시트» (коричневий), і підказка з опису помилково вказувала на каву."
+}
