@@ -65,7 +65,7 @@ export const OPTIONS = {
   S481: ['seats', 'Спортивні сидіння'],
   S488: ['seats', 'Люмбальна підтримка водія й пасажира'],
   S4HA: ['seats', 'Підігрів сидінь: передні + задні', true],
-  S4HB: ['seats', 'Пакет підігріву спереду (кермо, підлокітники)'],
+  S4HB: ['seats', 'Heat Comfort — підігрів керма й підлокітників', true],
 
   S4NB: ['climate', 'Клімат-контроль, 4 зони', true],
   S322: ['climate', 'Comfort Access — безключовий доступ'],
@@ -80,7 +80,7 @@ export const OPTIONS = {
   S4UR: ['interior', 'Ambient — фонове підсвічування салону'],
   S4A2: ['interior', 'Crafted Clarity — кришталеві елементи iDrive'],
   S710: ['interior', 'Шкіряне кермо M'],
-  S248: ['interior', 'Підігрів керма', true],
+  S248: ['interior', 'Підігрів керма окремою опцією (без пакета S4HB)', true],
   S4M5: ['interior', 'Шкіряна панель приладів BMW Individual'],
   S423: ['interior', 'Велюрові килимки'],
   S775: ['interior', 'Стеля антрацит'],
