@@ -98,6 +98,7 @@ export const OPTIONS = {
   S6F1: ['media', 'Bowers & Wilkins High End — топова аудіосистема', true],
   S6AR: ['media', 'Bowers & Wilkins High End (старе позначення)', true],
   S676: ['media', 'Базова аудіосистема HiFi (не Harman/Kardon)'],
+  S6UX: ['media', 'Контролер iDrive без тач-панелі (корейська версія)'],
   S6U8: ['media', 'Керування жестами'],
   S6U3: ['media', 'BMW Live Cockpit Professional'],
   S6C3: ['media', 'Connected Package Professional'],
@@ -118,8 +119,8 @@ export const OPTIONS = {
   S8TR: ['tech', 'Декодування додаткових функцій'],
   S9WL: ['tech', 'Групування WLTP'],
   S993: ['tech', 'Код модельного року у VIN'],
-  S8KH: ['tech', 'Технічний код без окремої функції (Dummy-SALAPA)'],
-  S925: ['tech', 'Технічний код без окремої функції (Dummy-SALAPA)'],
+  S8KH: ['tech', 'Інтервал заміни оливи 20 000 км / 18 місяців'],
+  S925: ['tech', 'Пакет захисту при транспортуванні (Versandschutzpaket)'],
 };
 
 /** Розкладає список опцій авто на групи в стабільному порядку */
