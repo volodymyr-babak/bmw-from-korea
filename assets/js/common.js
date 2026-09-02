@@ -78,7 +78,6 @@ export const KEY_FEATURES = [
   { id: 'light',     short: 'адапт. LED',     long: 'Адаптивні LED-фари' },
   { id: 'acc',       short: 'ACC',            long: 'Adaptive Cruise Control — основа пакета Driving Assistant Professional' },
   { id: 'park',      short: 'камери 360',     long: 'Асистент паркування Plus — камери навколо авто' },
-  { id: 'hud',       short: 'HUD',            long: 'Проекція на скло (Head-up Display)' },
   { id: 'soft',      short: 'soft-close',     long: 'Soft-Close двері' },
   { id: 'comfort',   short: 'безключовий',    long: 'Comfort Access — безключовий доступ і запуск' },
   { id: 'vent',      short: 'вентиляція',     long: 'Вентиляція передніх сидінь' },

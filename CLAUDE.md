@@ -134,9 +134,11 @@ svc   = 1000                                    # послуги
 **Рішення 2026-09-02: важливі з них лишаються в рядку опцій, хоч і 8/8.** «Є в усіх» —
 це властивість вибірки з восьми авто, а не гарантія G05/G06. Якби ми їх не показували,
 нове авто **без** ACC чи підігріву керма виглядало б так само, як з ними, і ми б
-дорисували йому опцію в уяві. Тому в рядок додано `acc, park, hud, comfort, seatheat,
-wheelheat, climate4, exhaust`. Не показуємо тільки дрібне й косметичне: жести `S6U8`,
-Display Key `S3DS`, Ambient `S4UR`, кришталевий селектор `S4A2`, гальма `S2NH`.
+дорисували йому опцію в уяві. Тому в рядок додано `acc, park, comfort, seatheat,
+wheelheat, climate4, exhaust`. Не показуємо дрібне й косметичне: жести `S6U8`,
+Display Key `S3DS`, Ambient `S4UR`, кришталевий селектор `S4A2`, гальма `S2NH`,
+а також **HUD `S610` — за рішенням користувача 2026-09-02: йому не важливий**
+(у білд-листі на сторінці авто він, звісно, лишається).
 
 ### Матеріал салону
 У всіх 8 декодованих — **шкіра Vernasca** (`MCSW` black / `MCHF` coffee). Merino і Nappa
@@ -249,18 +251,18 @@ data/
   vin, decoded, mark?, exterior?, interior?, accident{costKRW,owners}, note?, photo, keyFeatures?`.
 - `photo` — шлях Encar головного кадру (`/carpicture…/…_001.jpg`); розмір підставляє `photoUrl()`.
 - `keyFeatures` (виводяться з S-кодів функцією `tools/mdecoder.py::key_features`):
-  `air, laser, led, soft, vent, hk, pano, skylounge, acoustic, mhev, acc, park, hud,
+  `air, laser, led, soft, vent, hk, pano, skylounge, acoustic, mhev, acc, park,
   comfort, seatheat, wheelheat, climate4, exhaust` + опційний `bw`.
   **`massage` прибрано 2026-09-02** — код `S4NM` так і не підтвердився на живому
   білд-листі, а масажу не було ні в кого з 8; слот показував лише перекреслене.
-- У рядку опцій **16 слотів**, з них три **адаптивні** — показують вищий тир, який реально є:
+- У рядку опцій **15 слотів**, з них три **адаптивні** — показують вищий тир, який реально є:
   | Слот | Логіка |
   |------|--------|
   | `light` | `laser` (S5AZ) → інакше `led` (S552) → інакше перекреслено |
   | `audio` | `bw` (S6F1/S6AR) → інакше `hk` (S688) → інакше перекреслено |
   | `roof` | `skylounge` (S407) → інакше `pano` (S402) → інакше перекреслено |
   Решта слотів прості: `air` (S2VR) · `soft` (S323) · `vent` (S453) · `acoustic` (S3KA) ·
-  `mhev` (S1CE) · `acc` (S5AU) · `park` (S5DN) · `hud` (S610) · `comfort` (S322) ·
+  `mhev` (S1CE) · `acc` (S5AU) · `park` (S5DN) · `comfort` (S322) ·
   `seatheat` (S4HA) · `wheelheat` (S4HB або S248) · `climate4` (S4NB) · `exhaust` (S1MA).
   Логіка — `featureState()` в `assets/js/common.js`, набір — `KEY_FEATURES` там само.
 - Декодовані дані — найцінніші, бо **mdecoder має добовий ліміт на IP** (вичерпано 2026-09-02

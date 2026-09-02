@@ -23,7 +23,7 @@ URL = 'https://www.mdecoder.com/decode/{}'
 MIN_CODES = 25          # менше — точно не повний білд-лист
 
 # S-коди → ключові опції сайту.
-# Опції, що є в усіх декодованих (acc, park, hud, comfort, seatheat, wheelheat,
+# Опції, що є в усіх декодованих (acc, park, comfort, seatheat, wheelheat,
 # climate4, exhaust), лишаємо свідомо: «8 з 8» — властивість малої вибірки, тож
 # нове авто без них має відзначитись у рядку, а не отримати опцію за замовчуванням.
 # wheelheat: підігрів керма дає пакет S4HB Heat Comfort; S248 — та сама функція
@@ -42,7 +42,6 @@ FEATURE_CODES = {
     'mhev':      ['S1CE'],
     'acc':       ['S5AU'],
     'park':      ['S5DN'],
-    'hud':       ['S610'],
     'comfort':   ['S322'],
     'seatheat':  ['S4HA'],
     'wheelheat': ['S4HB', 'S248'],
