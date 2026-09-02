@@ -1,0 +1,121 @@
+/* Спільне: формула розмитнення, форматери, тема, ключові опції */
+
+export const KRW_PER_USD = 1372;
+export const EUR_USD = 1.1648;
+export const EXCISE_RATE_EUR = 75;      // €/л дизель
+export const ENGINE_L = 3.0;            // митниця бере 2993 см³ → 3.0 л
+export const AGE_BASE = 2025;
+export const SHIPPING = 3700;
+export const SERVICE = 1000;
+export const CERT_REG = 124;            // сертифікація $79 + реєстрація $45
+export const BUDGET_CAP = 70000;
+export const LADDER_FLOOR = 50000;
+
+/** Фіксована мінімальна митна вартість P (USD) за роком виготовлення */
+export const MIN_CUSTOMS_VALUE = { 2019: 25000, 2020: 36000, 2021: 40500, 2022: 43000 };
+
+const r = (x) => Math.floor(x + 0.5);
+
+/**
+ * Розкладає ціну «під ключ» на складові.
+ * Мита рахуються від фіксованої P за роком, а не від корейської ціни,
+ * тому вартість авто виводиться як залишок: car = total - усі збори.
+ */
+export function breakdown(year, totalUSD) {
+  const P = MIN_CUSTOMS_VALUE[year];
+  if (!P) return null;
+  const age = AGE_BASE - year;
+  const duty = 0.1 * P;
+  const excise = EXCISE_RATE_EUR * ENGINE_L * age * EUR_USD;
+  const vat = 0.2 * (P + duty + excise);
+  const pension = 0.05 * P;
+  const customs = r(duty) + r(excise) + r(vat);
+  const registration = r(pension) + CERT_REG;
+  const fees = customs + registration + SHIPPING + SERVICE;
+  const car = totalUSD - fees;
+  return {
+    P, age,
+    car,
+    carKRW: car * KRW_PER_USD,
+    duty: r(duty),
+    excise: r(excise),
+    vat: r(vat),
+    customs,
+    pension: r(pension),
+    registration,
+    shipping: SHIPPING,
+    service: SERVICE,
+    fees,
+    total: totalUSD,
+  };
+}
+
+const NBSP = ' ';
+
+/** 52327 → "52 327" (нерозривні пробіли, щоб число не ламалось) */
+function group(n) {
+  return String(Math.round(n)).replace(/\B(?=(\d{3})+(?!\d))/g, NBSP);
+}
+
+export const usd = (n) => '$' + group(n);
+export const km = (n) => group(n) + NBSP + 'км';
+export const krw = (n) => group(n) + NBSP + '₩';
+/** 49894000 → "49,9 млн ₩" */
+export const krwM = (n) => (n / 1e6).toFixed(1).replace('.', ',') + NBSP + 'млн' + NBSP + '₩';
+
+/** Ключові опції — однаковий набір і порядок усюди */
+export const KEY_FEATURES = [
+  { id: 'air',      short: 'пневмо',      long: 'Пневмопідвіска на дві осі' },
+  { id: 'laser',    short: 'лазер',       long: 'BMW Laserlight' },
+  { id: 'soft',     short: 'soft-close',  long: 'Soft-Close двері' },
+  { id: 'vent',     short: 'вентиляція',  long: 'Вентиляція передніх сидінь' },
+  { id: 'massage',  short: 'масаж',       long: 'Масаж сидінь' },
+  { id: 'hk',       short: 'H/K',         long: 'Harman/Kardon' },
+  { id: 'pano',     short: 'панорама',    long: 'Панорамний дах' },
+  { id: 'acoustic', short: 'акуст. скло', long: 'Акустичне скло (S3KA)' },
+  { id: 'mhev',     short: '48V',         long: '48V mild-hybrid' },
+];
+
+/**
+ * Стан одного слота в рядку опцій. Слот аудіо адаптивний:
+ * якщо є Bowers & Wilkins (вищий тир), показуємо його замість Harman/Kardon.
+ */
+export function featureState(kf, f) {
+  if (f.id === 'hk' && kf.bw) {
+    return { has: true, short: 'B&W', long: 'Bowers & Wilkins High End' };
+  }
+  return { has: !!kf[f.id], short: f.short, long: f.long };
+}
+
+export const encarUrl = (id) => `https://fem.encar.com/cars/detail/${id}`;
+
+export const MARKS = {
+  'money':      'найдешевше',
+  'money-cand': 'дешево й повна база',
+  'hero':       'вибір №1',
+  'star':       'малий пробіг',
+};
+
+/* ---- тема ---- */
+
+export function initTheme() {
+  const btn = document.querySelector('.theme-toggle');
+  if (!btn) return;
+  const apply = (t) => {
+    document.documentElement.dataset.theme = t;
+    btn.textContent = t === 'dark' ? 'Світла тема' : 'Темна тема';
+    btn.setAttribute('aria-label', t === 'dark' ? 'Увімкнути світлу тему' : 'Увімкнути темну тему');
+  };
+  apply(document.documentElement.dataset.theme || 'light');
+  btn.addEventListener('click', () => {
+    const next = document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark';
+    try { localStorage.setItem('bmwk-theme', next); } catch (e) { /* приватний режим */ }
+    apply(next);
+  });
+}
+
+export function esc(s) {
+  return String(s).replace(/[&<>"']/g, (c) => (
+    { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]
+  ));
+}

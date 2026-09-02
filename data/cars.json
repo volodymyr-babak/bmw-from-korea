@@ -1,0 +1,323 @@
+{
+  "meta": {
+    "updated": "2026-09-02",
+    "model": "BMW X5 (G05) xDrive30d M Sport",
+    "criteria": "2019–2022 виготовлення · ≤110000 км · M Sport · дизель 30d лише · ДТП ≤5 млн ₩ власний · під ключ ≤ $70000 · салон чорний/кавовий · без лізингу/айворі/cognac/45e/40i/M50",
+    "customs": "P (USD) by year 2019:25000 2020:36000 2021:40500 2022:43000; age=2025-year; duty=0.10P; excise=75*3.0*age*1.1648; vat=0.20(P+duty+excise); pens=0.05P; oblik=pens+124; ship=3700; svc=1000; korea=price_만*10000/1372",
+    "count": 20,
+    "decodedCount": 9
+  },
+  "cars": [
+    {
+      "rank": 1,
+      "listingId": "42092261",
+      "year": 2019,
+      "mileageKm": 90101,
+      "priceUSD": 52327,
+      "vin": "WBACV6108L9B00816",
+      "decoded": true,
+      "mark": "money-cand",
+      "exterior": "Phytonic Blue",
+      "interior": "Vernasca Coffee",
+      "keyFeatures": {
+        "air": true,
+        "laser": false,
+        "soft": false,
+        "vent": true,
+        "massage": false,
+        "hk": true,
+        "pano": true,
+        "acoustic": false,
+        "mhev": false
+      }
+    },
+    {
+      "rank": 2,
+      "listingId": "42445415",
+      "year": 2021,
+      "mileageKm": 91728,
+      "priceUSD": 55977,
+      "vin": "WBAJU8107M9H04994",
+      "decoded": true,
+      "mark": "money",
+      "exterior": "Carbon Black",
+      "interior": "Vernasca Black",
+      "note": "лазер+soft-close+B&W+вентиляція+48V MHEV, але БЕЗ пневмо (S2VF adaptive M chassis)",
+      "keyFeatures": {
+        "air": false,
+        "laser": true,
+        "soft": true,
+        "vent": true,
+        "massage": false,
+        "hk": false,
+        "pano": true,
+        "acoustic": false,
+        "mhev": true,
+        "bw": true
+      }
+    },
+    {
+      "rank": 3,
+      "listingId": "41517612",
+      "year": 2019,
+      "mileageKm": 86742,
+      "priceUSD": 57429,
+      "vin": "WBACV610XLLK23890",
+      "decoded": true,
+      "note": "пневмо+вентиляція+H/K; Individual шкіряна панель S4M5; білий Mineral White; без лазера/soft-close",
+      "exterior": "Mineral White",
+      "interior": "Vernasca Black",
+      "keyFeatures": {
+        "air": true,
+        "laser": false,
+        "soft": false,
+        "vent": true,
+        "massage": false,
+        "hk": true,
+        "pano": true,
+        "acoustic": false,
+        "mhev": false
+      }
+    },
+    {
+      "rank": 4,
+      "listingId": "42554478",
+      "year": 2019,
+      "mileageKm": 87922,
+      "priceUSD": 58158,
+      "vin": null,
+      "decoded": false,
+      "interior": "чорний (фото)",
+      "note": "VIN відсутній в Encar"
+    },
+    {
+      "rank": 5,
+      "listingId": "42468210",
+      "year": 2021,
+      "mileageKm": 109176,
+      "priceUSD": 58236,
+      "vin": "WBAJU8101M9H27574",
+      "decoded": false
+    },
+    {
+      "rank": 6,
+      "listingId": "42112799",
+      "year": 2020,
+      "mileageKm": 58728,
+      "priceUSD": 61184,
+      "vin": "WBACV6100L9D26073",
+      "decoded": true,
+      "mark": "hero",
+      "exterior": "Carbon Black",
+      "interior": "Vernasca Black",
+      "keyFeatures": {
+        "air": true,
+        "laser": false,
+        "soft": false,
+        "vent": true,
+        "massage": false,
+        "hk": true,
+        "pano": true,
+        "acoustic": false,
+        "mhev": false
+      }
+    },
+    {
+      "rank": 7,
+      "listingId": "42218942",
+      "year": 2019,
+      "mileageKm": 37328,
+      "priceUSD": 61365,
+      "vin": "WBACV6106LLK30030",
+      "decoded": true,
+      "mark": "star",
+      "exterior": "Carbon Black",
+      "interior": "Vernasca Coffee",
+      "keyFeatures": {
+        "air": true,
+        "laser": false,
+        "soft": false,
+        "vent": true,
+        "massage": false,
+        "hk": true,
+        "pano": true,
+        "acoustic": false,
+        "mhev": false
+      }
+    },
+    {
+      "rank": 8,
+      "listingId": "42171783",
+      "year": 2021,
+      "mileageKm": 54332,
+      "priceUSD": 62536,
+      "vin": "WBAJU8107M9G39113",
+      "decoded": true,
+      "note": "пневмо + 48V MHEV + вентиляція + H/K; 54 332 км; без лазера/soft-close",
+      "exterior": "Mineral White",
+      "interior": "Vernasca Black",
+      "keyFeatures": {
+        "air": true,
+        "laser": false,
+        "soft": false,
+        "vent": true,
+        "massage": false,
+        "hk": true,
+        "pano": true,
+        "acoustic": false,
+        "mhev": true
+      }
+    },
+    {
+      "rank": 9,
+      "listingId": "42579054",
+      "year": 2021,
+      "mileageKm": 59325,
+      "priceUSD": 63702,
+      "vin": "WBAJU8109M9F67735",
+      "decoded": true,
+      "note": "ідентичний-близнюк №8 по опціях, але +$1166 і +5 тис. км → бекап до №8",
+      "exterior": "Mineral White",
+      "interior": "Vernasca Black",
+      "keyFeatures": {
+        "air": true,
+        "laser": false,
+        "soft": false,
+        "vent": true,
+        "massage": false,
+        "hk": true,
+        "pano": true,
+        "acoustic": false,
+        "mhev": true
+      }
+    },
+    {
+      "rank": 10,
+      "listingId": "41056198",
+      "year": 2020,
+      "mileageKm": 92727,
+      "priceUSD": 64537,
+      "vin": "WBACV6101L9B14024",
+      "decoded": false
+    },
+    {
+      "rank": 11,
+      "listingId": "41368455",
+      "year": 2021,
+      "mileageKm": 90266,
+      "priceUSD": 65379,
+      "vin": "WBAJU8104M9F24954",
+      "decoded": false
+    },
+    {
+      "rank": 12,
+      "listingId": "42543879",
+      "year": 2021,
+      "mileageKm": 39625,
+      "priceUSD": 65517,
+      "vin": "WBAJU810XM9F51995",
+      "decoded": true,
+      "note": "пневмо+48V MHEV+вент.+H/K, 39 625 км, салон Coffee; вироблено 2020-12 при 연식 2021 → можливо −$1350 на митниці",
+      "exterior": "Mineral White",
+      "interior": "Vernasca Coffee",
+      "keyFeatures": {
+        "air": true,
+        "laser": false,
+        "soft": false,
+        "vent": true,
+        "massage": false,
+        "hk": true,
+        "pano": true,
+        "acoustic": false,
+        "mhev": true
+      }
+    },
+    {
+      "rank": 13,
+      "listingId": "42094631",
+      "year": 2020,
+      "mileageKm": 26786,
+      "priceUSD": 65995,
+      "vin": null,
+      "decoded": false,
+      "note": "найменший пробіг; VIN відсутній в Encar"
+    },
+    {
+      "rank": 14,
+      "listingId": "42422608",
+      "year": 2021,
+      "mileageKm": 48475,
+      "priceUSD": 66108,
+      "vin": "WBAJU8101M9G90350",
+      "decoded": false
+    },
+    {
+      "rank": 15,
+      "listingId": "42574631",
+      "year": 2021,
+      "mileageKm": 63515,
+      "priceUSD": 66181,
+      "vin": "WBAJU810XN9J04145",
+      "decoded": false
+    },
+    {
+      "rank": 16,
+      "listingId": "41334762",
+      "year": 2021,
+      "mileageKm": 42063,
+      "priceUSD": 67347,
+      "vin": "WBAJU8100M9G14568",
+      "decoded": false
+    },
+    {
+      "rank": 17,
+      "listingId": "41815032",
+      "year": 2022,
+      "mileageKm": 66303,
+      "priceUSD": 68687,
+      "vin": "WBAJU8100N9K85398",
+      "decoded": false
+    },
+    {
+      "rank": 18,
+      "listingId": "41689680",
+      "year": 2022,
+      "mileageKm": 54959,
+      "priceUSD": 69416,
+      "vin": "WBAJU8100N9K24911",
+      "decoded": false
+    },
+    {
+      "rank": 19,
+      "listingId": "41437048",
+      "year": 2022,
+      "mileageKm": 100891,
+      "priceUSD": 69561,
+      "vin": "WBAJU8107N9J92586",
+      "decoded": true,
+      "exterior": "Arctic Grey",
+      "interior": "Vernasca Coffee",
+      "note": "лазер+soft-close+48V MHEV; без вентиляції/H&K",
+      "keyFeatures": {
+        "air": true,
+        "laser": true,
+        "soft": true,
+        "vent": false,
+        "massage": false,
+        "hk": false,
+        "pano": true,
+        "acoustic": false,
+        "mhev": true
+      }
+    },
+    {
+      "rank": 20,
+      "listingId": "41456161",
+      "year": 2021,
+      "mileageKm": 64567,
+      "priceUSD": 69606,
+      "vin": "WBAJU810XM9H99843",
+      "decoded": false
+    }
+  ]
+}

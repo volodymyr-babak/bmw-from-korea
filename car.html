@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="uk" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Авто зі шортлиста — BMW X5 G05 з Кореї</title>
+<meta name="description" content="Повна комплектація за VIN, історія та розклад платежів «під ключ» для BMW X5 G05 xDrive30d з Кореї.">
+<script>
+  try {
+    var t = localStorage.getItem('bmwk-theme');
+    if (!t) t = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    document.documentElement.dataset.theme = t;
+  } catch (e) {}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+Condensed:wght@600&family=IBM+Plex+Sans:wght@400;500&display=swap" rel="stylesheet">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/css/site.css">
+</head>
+<body>
+<a class="skip" href="#detail">До опису авто</a>
+
+<header class="detail-head">
+  <div class="wrap">
+    <div class="masthead-top">
+      <p class="crumb"><a href="index.html">← Шортлист X5 G05 з Кореї</a></p>
+      <button class="theme-toggle" type="button">Темна тема</button>
+    </div>
+    <div id="head"></div>
+  </div>
+</header>
+
+<div class="wrap">
+  <main id="detail">
+    <p class="state" id="state">Завантажую авто…</p>
+    <div id="body" hidden></div>
+  </main>
+
+  <footer class="foot">
+    <p>Комплектація — з фабричного білд-листа BMW за VIN, тому вона авторитетніша за фото оголошення. Історія й пробіг — з Encar на дату перевірки.</p>
+    <p><a href="index.html">Повернутися до шортлиста</a> · <a href="https://github.com/volodymyr-babak/bmw-from-korea">дані проєкту на GitHub</a></p>
+  </footer>
+</div>
+
+<script type="module" src="assets/js/car.js"></script>
+</body>
+</html>
