@@ -4,7 +4,7 @@
     "model": "BMW X5 (G05) / X6 (G06) xDrive30d M Sport",
     "criteria": "X5 (G05) і X6 (G06) · 2019–2022 виготовлення · ≤110000 км · M Sport · дизель 30d лише · ДТП ≤5 млн ₩ власний · під ключ ≤ $70000 · салон чорний/кавовий · без лізингу/айворі/cognac/Tacora Red/45e/40i/40d/M50",
     "customs": "P (USD) by year 2019:25000 2020:36000 2021:40500 2022:43000; age=2025-year; duty=0.10P; excise=75*3.0*age*1.1648; vat=0.20(P+duty+excise); pens=0.05P; oblik=pens+124; ship=3700; svc=1000; korea=price_만*10000/1372",
-    "count": 44,
+    "count": 45,
     "decodedCount": 8,
     "customsNote": "Мінімальна митна вартість P звірена для X5. Для X6 узято ту саму таблицю, тому ціна під ключ X6 — оцінка (реально очікувати +$1000…2000)."
   },
@@ -598,7 +598,24 @@
       "note": "Міняли капот — продавець пише, що через звичайну вмʼятину, і має фото. Звідси 4,5 млн ₩ виплат."
     },
     {
-      "rank": 27,
+      "listingId": "42655967",
+      "model": "X5 (G05)",
+      "year": 2022,
+      "mileageKm": 79918,
+      "koreaPriceMan": 5899,
+      "priceUSD": 64673,
+      "vin": "WBAJU8106N9N40779",
+      "decoded": false,
+      "accident": {
+        "costKRW": 0,
+        "owners": 0
+      },
+      "photo": "/carpicture05/pic4265/42655967_001.jpg",
+      "exterior": "чорний",
+      "rank": 27
+    },
+    {
+      "rank": 28,
       "listingId": "42415471",
       "model": "X6 (G06)",
       "year": 2022,
@@ -616,7 +633,7 @@
       "photo": "/carpicture01/pic4241/42415469_002.jpg"
     },
     {
-      "rank": 28,
+      "rank": 29,
       "listingId": "41368455",
       "model": "X5 (G05)",
       "year": 2021,
@@ -633,7 +650,7 @@
       "photo": "/carpicture06/pic4136/41368455_001.jpg"
     },
     {
-      "rank": 29,
+      "rank": 30,
       "listingId": "41382456",
       "model": "X6 (G06)",
       "year": 2021,
@@ -651,7 +668,7 @@
       "photo": "/carpicture07/pic4137/41374235_001.jpg"
     },
     {
-      "rank": 30,
+      "rank": 31,
       "listingId": "42094631",
       "model": "X5 (G05)",
       "year": 2020,
@@ -669,7 +686,7 @@
       "photo": "/carpicture09/pic4209/42094631_001.jpg"
     },
     {
-      "rank": 31,
+      "rank": 32,
       "listingId": "42349824",
       "model": "X6 (G06)",
       "year": 2022,
@@ -688,7 +705,7 @@
       "note": "Пише «без фарбування й замін», а в реєстрі 4,7 млн ₩ виплат — найбільша розбіжність у добірці."
     },
     {
-      "rank": 32,
+      "rank": 33,
       "listingId": "42631623",
       "model": "X6 (G06)",
       "year": 2021,
@@ -706,7 +723,7 @@
       "photo": "/carpicture02/pic4262/42620687_002.jpg"
     },
     {
-      "rank": 33,
+      "rank": 34,
       "listingId": "42650455",
       "model": "X6 (G06)",
       "year": 2022,
@@ -724,7 +741,7 @@
       "photo": "/carpicture04/pic4264/42649355_001.jpg"
     },
     {
-      "rank": 34,
+      "rank": 35,
       "listingId": "42585911",
       "model": "X6 (G06)",
       "year": 2022,
@@ -742,7 +759,7 @@
       "photo": "/carpicture08/pic4258/42585911_001.jpg"
     },
     {
-      "rank": 35,
+      "rank": 36,
       "listingId": "41413915",
       "model": "X6 (G06)",
       "year": 2021,
@@ -760,7 +777,7 @@
       "photo": "/carpicture01/pic4141/41413915_001.jpg"
     },
     {
-      "rank": 36,
+      "rank": 37,
       "listingId": "41334762",
       "model": "X5 (G05)",
       "year": 2021,
@@ -797,7 +814,7 @@
       }
     },
     {
-      "rank": 37,
+      "rank": 38,
       "listingId": "41578153",
       "model": "X6 (G06)",
       "year": 2020,
@@ -816,7 +833,7 @@
       "interiorUnverified": "коричневий / Coffee — з опису"
     },
     {
-      "rank": 38,
+      "rank": 39,
       "listingId": "42574631",
       "model": "X5 (G05)",
       "year": 2021,
@@ -833,7 +850,7 @@
       "photo": "/carpicture07/pic4257/42574631_001.jpg"
     },
     {
-      "rank": 39,
+      "rank": 40,
       "listingId": "42476461",
       "model": "X6 (G06)",
       "year": 2022,
@@ -851,7 +868,7 @@
       "photo": "/carpicture07/pic4247/42476461_001.jpg"
     },
     {
-      "rank": 40,
+      "rank": 41,
       "listingId": "41616675",
       "model": "X6 (G06)",
       "year": 2022,
@@ -883,10 +900,10 @@
       },
       "photo": "/carpicture04/pic4264/42644431_001.jpg",
       "exterior": "білий",
-      "rank": 41
+      "rank": 42
     },
     {
-      "rank": 42,
+      "rank": 43,
       "listingId": "41689680",
       "model": "X5 (G05)",
       "year": 2022,
@@ -904,7 +921,7 @@
       "note": "Продавець сам пише про ≈5,7 млн ₩ на заміну крила — виплата ще не в реєстрі Encar, тому наш поріг 5 млн ₩ її не побачив."
     },
     {
-      "rank": 43,
+      "rank": 44,
       "listingId": "41437048",
       "model": "X5 (G05)",
       "year": 2022,
@@ -942,7 +959,7 @@
       }
     },
     {
-      "rank": 44,
+      "rank": 45,
       "listingId": "41456161",
       "model": "X5 (G05)",
       "year": 2021,
