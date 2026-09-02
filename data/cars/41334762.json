@@ -1,34 +1,24 @@
 {
-  "listingId": "42092261",
-  "vin": "WBACV6108L9B00816",
-  "encarUrl": "https://fem.encar.com/cars/detail/42092261",
+  "listingId": "41334762",
+  "vin": "WBAJU8100M9G14568",
+  "encarUrl": "https://fem.encar.com/cars/detail/41334762",
   "model": "X5 (G05)",
-  "prodDate": "2019-10-07",
-  "modelYear": 2020,
-  "mfgYear": 2019,
-  "engine": "B57O",
-  "power": "195 kW / 265 hp",
-  "mileageKm": 90101,
-  "priceUSD": 52330,
+  "prodDate": "2021-02-22",
+  "mfgYear": 2021,
+  "engine": "B57P",
+  "engineNote": "48V mild-hybrid (S1CE); B57P = 210 кВт / 286 к.с. (проти 195 кВт / 265 к.с. у B57O 2019–20)",
+  "mileageKm": 42063,
+  "priceUSD": 67350,
+  "note": "Опції = №8/№9: пневмо S2VR + 48V MHEV + вентиляція S453 + H/K S688 + панорама + HUD + 4-зона + 20\" 740M. Різниця — трохи менший пробіг (42 063 км). Без лазера/soft-close/масажу/акуст.скла. Білд-лист дав коди фарби й оббивки: S416 carbon-schwarz, SMCSW Vernasca Black.",
   "exterior": {
-    "name": "Phytonic Blue",
-    "german": "Phytonic-blau metallic",
-    "code": "C1M"
+    "name": "Carbon Black",
+    "german": "carbon-schwarz",
+    "code": "416"
   },
   "interior": {
-    "name": "Vernasca Coffee",
-    "german": "Leather Vernasca coffee",
-    "code": "MCHF"
-  },
-  "history": {
-    "myAccidentCnt": 2,
-    "myAccidentCost": 4092920,
-    "otherAccidentCnt": 0,
-    "otherAccidentCost": 0,
-    "ownerChangeCnt": 0,
-    "totalLoss": null,
-    "flood": null,
-    "robber": null
+    "name": "Vernasca Black",
+    "german": "Leather Vernasca black",
+    "code": "MCSW"
   },
   "keyFeatures": {
     "air": true,
@@ -39,7 +29,7 @@
     "hk": true,
     "pano": true,
     "acoustic": false,
-    "mhev": false
+    "mhev": true
   },
   "options": [
     {
@@ -136,7 +126,7 @@
     },
     {
       "code": "S6C3",
-      "desc": "Connected/Digital Professional"
+      "desc": "Connected Package Professional"
     },
     {
       "code": "S6CP",
@@ -155,12 +145,12 @@
       "desc": "BMW gesture control"
     },
     {
-      "code": "S6UH",
-      "desc": "Traffic Information"
-    },
-    {
       "code": "S548",
       "desc": "Kilometre speedo"
+    },
+    {
+      "code": "S552",
+      "desc": "Adaptive LED headlight"
     },
     {
       "code": "S5A1",
@@ -181,10 +171,6 @@
     {
       "code": "S5AV",
       "desc": "Active Guard"
-    },
-    {
-      "code": "S552",
-      "desc": "Adaptive LED headlight"
     },
     {
       "code": "S5DN",
@@ -212,7 +198,7 @@
     },
     {
       "code": "S2VR",
-      "desc": "Two-axle air suspension"
+      "desc": "Two-axle air suspension (пневмопідвіска)"
     },
     {
       "code": "S322",
@@ -247,6 +233,10 @@
       "desc": "On-board literature, Korean"
     },
     {
+      "code": "S8KH",
+      "desc": "Dummy-SALAPA"
+    },
+    {
       "code": "S8R9",
       "desc": "Refrigerant R1234yf"
     },
@@ -263,8 +253,8 @@
       "desc": "Active pedestrian protection"
     },
     {
-      "code": "S8TR",
-      "desc": "Decoding additional functions"
+      "code": "S1CE",
+      "desc": "Recuperation system (48V mild-hybrid)"
     },
     {
       "code": "S1MA",
@@ -275,31 +265,62 @@
       "desc": "20\" light-alloy wheel star spoke 740M"
     },
     {
+      "code": "S925",
+      "desc": "Dummy-SALAPA"
+    },
+    {
       "code": "S993",
       "desc": "Model year code in VIN"
+    },
+    {
+      "code": "S9AA",
+      "desc": "Outer skin protection"
+    },
+    {
+      "code": "S9WL",
+      "desc": "WLTP grouping"
+    },
+    {
+      "code": "SA090",
+      "desc": "90 Ah AGM battery"
+    },
+    {
+      "code": "S416",
+      "desc": "Фарба: carbon-schwarz (Carbon Black 416)"
+    },
+    {
+      "code": "SMCSW",
+      "desc": "Оббивка: Leather Vernasca black (MCSW)"
     }
   ],
+  "power": "210 kW / 286 hp",
+  "drive": "ALLR (xDrive)",
+  "steering": "Left Hand Drive",
   "photos": {
     "outer": [
-      "/carpicture09/pic4209/42091161_001.jpg",
-      "/carpicture09/pic4209/42091161_002.jpg",
-      "/carpicture09/pic4209/42091161_003.jpg",
-      "/carpicture09/pic4209/42091161_004.jpg",
-      "/carpicture09/pic4209/42091161_005.jpg",
-      "/carpicture09/pic4209/42091161_006.jpg",
-      "/carpicture09/pic4209/42091161_031.jpg",
-      "/carpicture09/pic4209/42091161_032.jpg",
-      "/carpicture09/pic4209/42091161_033.jpg"
+      "/carpicture02/pic4132/41328019_001.jpg",
+      "/carpicture02/pic4132/41328019_002.jpg",
+      "/carpicture02/pic4132/41328019_003.jpg",
+      "/carpicture02/pic4132/41328019_004.jpg",
+      "/carpicture02/pic4132/41328019_005.jpg",
+      "/carpicture02/pic4132/41328019_006.jpg"
     ],
     "inner": [
-      "/carpicture09/pic4209/42091161_007.jpg",
-      "/carpicture09/pic4209/42091161_008.jpg",
-      "/carpicture09/pic4209/42091161_009.jpg",
-      "/carpicture09/pic4209/42091161_010.jpg",
-      "/carpicture09/pic4209/42091161_034.jpg",
-      "/carpicture09/pic4209/42091161_035.jpg",
-      "/carpicture09/pic4209/42091161_036.jpg"
+      "/carpicture02/pic4132/41328019_007.jpg",
+      "/carpicture02/pic4132/41328019_008.jpg",
+      "/carpicture02/pic4132/41328019_009.jpg",
+      "/carpicture02/pic4132/41328019_010.jpg"
     ]
   },
-  "koreaPriceMan": 4990
+  "koreaPriceMan": 6350,
+  "history": {
+    "myAccidentCnt": 1,
+    "myAccidentCost": 2065160,
+    "otherAccidentCnt": 0,
+    "otherAccidentCost": 0,
+    "ownerChangeCnt": 2,
+    "totalLoss": null,
+    "flood": null,
+    "robber": null
+  }
 }

@@ -1,0 +1,42 @@
+{
+  "listingId": "42631623",
+  "encarUrl": "https://fem.encar.com/cars/detail/42631623",
+  "photos": {
+    "outer": [
+      "/carpicture02/pic4262/42620687_002.jpg",
+      "/carpicture02/pic4262/42620687_003.jpg",
+      "/carpicture02/pic4262/42620687_004.jpg",
+      "/carpicture02/pic4262/42620687_005.jpg",
+      "/carpicture02/pic4262/42620687_006.jpg",
+      "/carpicture02/pic4262/42620687_031.jpg",
+      "/carpicture02/pic4262/42620687_032.jpg",
+      "/carpicture02/pic4262/42620687_033.jpg"
+    ],
+    "inner": [
+      "/carpicture02/pic4262/42620687_007.jpg",
+      "/carpicture02/pic4262/42620687_008.jpg",
+      "/carpicture02/pic4262/42620687_009.jpg",
+      "/carpicture02/pic4262/42620687_010.jpg",
+      "/carpicture02/pic4262/42620687_034.jpg",
+      "/carpicture02/pic4262/42620687_035.jpg",
+      "/carpicture02/pic4262/42620687_036.jpg"
+    ]
+  },
+  "koreaPriceMan": 6250,
+  "history": {
+    "myAccidentCnt": 0,
+    "myAccidentCost": 0,
+    "otherAccidentCnt": 0,
+    "otherAccidentCost": 0,
+    "ownerChangeCnt": 2,
+    "totalLoss": null,
+    "flood": null,
+    "robber": null
+  },
+  "model": "X6 (G06)",
+  "mileageKm": 51034,
+  "priceUSD": 66621,
+  "priceEstimated": true,
+  "mfgYear": 2021,
+  "vin": "WBAGT8106N9J54344"
+}

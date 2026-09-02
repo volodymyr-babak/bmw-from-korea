@@ -1,0 +1,42 @@
+{
+  "listingId": "42415471",
+  "encarUrl": "https://fem.encar.com/cars/detail/42415471",
+  "photos": {
+    "outer": [
+      "/carpicture01/pic4241/42415469_002.jpg",
+      "/carpicture01/pic4241/42415469_003.jpg",
+      "/carpicture01/pic4241/42415469_004.jpg",
+      "/carpicture01/pic4241/42415469_005.jpg",
+      "/carpicture01/pic4241/42415469_006.jpg",
+      "/carpicture01/pic4241/42415469_031.jpg",
+      "/carpicture01/pic4241/42415469_032.jpg",
+      "/carpicture01/pic4241/42415469_033.jpg"
+    ],
+    "inner": [
+      "/carpicture01/pic4241/42415469_007.jpg",
+      "/carpicture01/pic4241/42415469_008.jpg",
+      "/carpicture01/pic4241/42415469_009.jpg",
+      "/carpicture01/pic4241/42415469_010.jpg",
+      "/carpicture01/pic4241/42415469_034.jpg",
+      "/carpicture01/pic4241/42415469_035.jpg",
+      "/carpicture01/pic4241/42415469_036.jpg"
+    ]
+  },
+  "koreaPriceMan": 5980,
+  "history": {
+    "myAccidentCnt": 0,
+    "myAccidentCost": 0,
+    "otherAccidentCnt": 0,
+    "otherAccidentCost": 0,
+    "ownerChangeCnt": 1,
+    "totalLoss": null,
+    "flood": null,
+    "robber": null
+  },
+  "model": "X6 (G06)",
+  "mileageKm": 82832,
+  "priceUSD": 65263,
+  "priceEstimated": true,
+  "mfgYear": 2022,
+  "vin": "WBAGT8102N9L68098"
+}

@@ -242,7 +242,7 @@ a:hover { text-decoration-thickness: 2px; }
 
 .ladder-head {
   display: grid;
-  grid-template-columns: 34px 1fr 170px 250px 76px;
+  grid-template-columns: 30px 160px minmax(0, 1fr) 150px 200px 70px;
   gap: 16px;
   align-items: end;
   padding: 14px 0 6px;
@@ -262,7 +262,7 @@ a:hover { text-decoration-thickness: 2px; }
 
 .car {
   display: grid;
-  grid-template-columns: 34px 1fr 170px 250px 76px;
+  grid-template-columns: 30px 160px minmax(0, 1fr) 150px 200px 70px;
   gap: 4px 16px;
   padding: 14px 0 15px;
   border-bottom: 1px solid var(--rule);
@@ -271,6 +271,7 @@ a:hover { text-decoration-thickness: 2px; }
 
 .car-rank {
   grid-row: 1 / span 2;
+  grid-column: 1;
   font-family: "IBM Plex Mono", monospace;
   font-size: 15px;
   color: var(--ink-3);
@@ -356,7 +357,7 @@ a:hover { text-decoration-thickness: 2px; }
 }
 
 .car-spec {
-  grid-column: 2 / -1;
+  grid-column: 3 / -1;
   display: flex;
   flex-wrap: wrap;
   gap: 4px 14px;
@@ -630,4 +631,121 @@ a:hover { text-decoration-thickness: 2px; }
   font-weight: 600;
   margin: 0 0 8px;
   color: var(--ink-2);
+}
+
+
+/* ---------- фото ---------- */
+
+.car-thumb {
+  grid-row: 1 / span 2;
+  grid-column: 2;
+  align-self: start;
+}
+.car-thumb a { display: block; }
+.car-thumb img,
+.car-thumb .thumb-none {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  background: var(--ladder-track);
+}
+.car-thumb .thumb-none {
+  display: grid;
+  place-items: center;
+  font-size: 11px;
+  color: var(--ink-3);
+}
+
+.gallery {
+  padding: 22px 0 2px;
+  border-bottom: 1px solid var(--rule);
+}
+.shot {
+  margin: 0;
+  background: var(--ladder-track);
+  max-width: 760px;
+}
+.shot img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+.strip {
+  display: flex;
+  gap: 6px;
+  overflow-x: auto;
+  list-style: none;
+  margin: 6px 0 0;
+  padding: 0 0 6px;
+  max-width: 760px;
+}
+.strip li { flex: 0 0 auto; }
+.strip button {
+  display: block;
+  width: 106px;
+  padding: 0;
+  border: 0;
+  background: none;
+  cursor: pointer;
+}
+.strip img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  opacity: 0.5;
+}
+.strip button[aria-current="true"] img,
+.strip button:hover img { opacity: 1; }
+.strip button[aria-current="true"] {
+  outline: 2px solid var(--accent);
+  outline-offset: -2px;
+}
+.shot-caption {
+  font-size: 12.5px;
+  color: var(--ink-3);
+  margin: 8px 0 14px;
+  max-width: 760px;
+}
+
+/* ---------- оцінка ціни та історія в рядку ---------- */
+
+.est {
+  color: var(--ink-3);
+  font-weight: 400;
+}
+.acc { font-size: 13px; color: var(--ink-2); }
+.acc-clean { color: var(--yes); }
+
+.model-tag {
+  font-family: "IBM Plex Sans Condensed", sans-serif;
+  font-weight: 600;
+  font-size: 13px;
+  color: var(--ink-2);
+  border: 1px solid var(--rule-strong);
+  padding: 0 5px;
+  margin-right: 7px;
+  vertical-align: 2px;
+}
+
+@media (max-width: 900px) {
+  .car { grid-template-columns: 30px 108px minmax(0, 1fr); }
+  .car > * { grid-column: 3; }
+  .car-rank { grid-column: 1; grid-row: 1 / span 6; }
+  .car-thumb { grid-column: 2; grid-row: 1 / span 6; }
+  .car-spec { grid-column: 3; }
+}
+
+@media (max-width: 560px) {
+  .car { grid-template-columns: 24px minmax(0, 1fr); gap: 5px 10px; }
+  .car > * { grid-column: 2; }
+  .car-rank { grid-column: 1; grid-row: 1 / span 7; }
+  .car-thumb { grid-column: 2; grid-row: auto; max-width: 260px; }
+  .car-spec { grid-column: 2; }
+  .strip button { width: 84px; }
 }

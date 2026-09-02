@@ -1,0 +1,26 @@
+{
+  "listingId": "42595623",
+  "encarUrl": "https://fem.encar.com/cars/detail/42595623",
+  "photos": {
+    "outer": [
+      "/carpicture09/pic4259/42595623_001.jpg"
+    ],
+    "inner": []
+  },
+  "koreaPriceMan": 5400,
+  "history": {
+    "myAccidentCnt": 0,
+    "myAccidentCost": 0,
+    "otherAccidentCnt": 0,
+    "otherAccidentCost": 0,
+    "ownerChangeCnt": 0,
+    "totalLoss": null,
+    "flood": null,
+    "robber": null
+  },
+  "model": "X6 (G06)",
+  "mileageKm": 89977,
+  "priceUSD": 60426,
+  "priceEstimated": true,
+  "mfgYear": 2021
+}

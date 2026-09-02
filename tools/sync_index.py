@@ -1,13 +1,18 @@
 #!/usr/bin/env python3
 """Синхронізує data/cars.json з детальними файлами data/cars/<listingId>.json.
 
-Детальні файли (білд-листи за VIN) — джерело правди. Індекс — похідний артефакт
-для головної сторінки: до нього підтягуються VIN, кольори та ключові опції.
+Детальні файли — джерело правди. Індекс — похідний артефакт для головної
+сторінки: до нього підтягуються VIN, кольори, фото, історія та ключові опції.
+
+`decoded` = у детальному файлі є `options`, тобто знято білд-лист BMW за VIN.
+Детальний файл існує для кожного авто (фото й історія є завжди), тому сама
+його наявність ще не означає, що комплектація відома.
 
 Запуск:  python3 tools/sync_index.py
 """
 import json
 import pathlib
+import re
 import sys
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
@@ -15,6 +20,14 @@ INDEX = ROOT / "data" / "cars.json"
 DETAILS = ROOT / "data" / "cars"
 
 KEY_FEATURES = ["air", "laser", "soft", "vent", "massage", "hk", "pano", "acoustic", "mhev"]
+
+FRAME = re.compile(r"_(\d+)\.jpg$")
+
+
+def frame_no(path: str) -> int:
+    """Номер кадру з шляху Encar (…_001.jpg → 1); без номера — в кінець."""
+    m = FRAME.search(path)
+    return int(m.group(1)) if m else 999
 # Необовʼязкові прапорці: переносяться в індекс лише якщо є в деталі.
 # bw = Bowers & Wilkins (S6F1) — вищий тир за Harman/Kardon, тоді hk=false.
 OPTIONAL_FEATURES = ["bw"]
@@ -27,14 +40,12 @@ def main() -> int:
     for car in index["cars"]:
         path = DETAILS / f"{car['listingId']}.json"
         if not path.exists():
-            if car.get("decoded"):
-                problems.append(f"{car['listingId']}: decoded=true, але {path.name} немає")
+            problems.append(f"{car['listingId']}: немає {path.name} — фото й історії не буде")
             continue
 
         detail = json.loads(path.read_text(encoding="utf-8"))
         before = json.dumps(car, ensure_ascii=False, sort_keys=True)
 
-        car["decoded"] = True
         if detail.get("vin"):
             car["vin"] = detail["vin"]
         for side in ("exterior", "interior"):
@@ -42,16 +53,31 @@ def main() -> int:
             if name:
                 car[side] = name
 
-        kf = detail.get("keyFeatures") or {}
-        missing = [k for k in KEY_FEATURES if k not in kf]
-        if missing:
-            problems.append(f"{car['listingId']}: keyFeatures без {', '.join(missing)}")
-        car["keyFeatures"] = {k: bool(kf.get(k)) for k in KEY_FEATURES}
-        if kf.get("bw"):
-            car["keyFeatures"]["bw"] = True
-        for k in OPTIONAL_FEATURES:
-            if k in kf:
-                car["keyFeatures"][k] = bool(kf[k])
+        photos = detail.get("photos") or {}
+        shots = photos.get("outer") or photos.get("inner") or []
+        if shots:
+            # _001 в Encar — головний ракурс; беремо найменший номер кадру
+            car["photo"] = min(shots, key=frame_no)
+
+        h = detail.get("history") or {}
+        if h and not h.get("http"):
+            car["accident"] = {"costKRW": h.get("myAccidentCost") or 0,
+                               "owners": h.get("ownerChangeCnt") or 0}
+
+        # decoded = знято білд-лист BMW за VIN. Детальний файл є в кожного авто
+        # (фото й історія), тому сама його наявність нічого не означає.
+        car["decoded"] = bool(detail.get("options"))
+        if car["decoded"]:
+            kf = detail.get("keyFeatures") or {}
+            missing = [k for k in KEY_FEATURES if k not in kf]
+            if missing:
+                problems.append(f"{car['listingId']}: keyFeatures без {', '.join(missing)}")
+            car["keyFeatures"] = {k: bool(kf.get(k)) for k in KEY_FEATURES}
+            for k in OPTIONAL_FEATURES:
+                if k in kf:
+                    car["keyFeatures"][k] = bool(kf[k])
+        else:
+            car.pop("keyFeatures", None)
 
         if json.dumps(car, ensure_ascii=False, sort_keys=True) != before:
             changed.append(car["listingId"])

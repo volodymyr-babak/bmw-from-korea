@@ -1,0 +1,43 @@
+{
+  "listingId": "42650455",
+  "encarUrl": "https://fem.encar.com/cars/detail/42650455",
+  "photos": {
+    "outer": [
+      "/carpicture04/pic4264/42649355_001.jpg",
+      "/carpicture04/pic4264/42649355_002.jpg",
+      "/carpicture04/pic4264/42649355_003.jpg",
+      "/carpicture04/pic4264/42649355_004.jpg",
+      "/carpicture04/pic4264/42649355_005.jpg",
+      "/carpicture04/pic4264/42649355_006.jpg",
+      "/carpicture04/pic4264/42649355_031.jpg",
+      "/carpicture04/pic4264/42649355_032.jpg",
+      "/carpicture04/pic4264/42649355_033.jpg"
+    ],
+    "inner": [
+      "/carpicture04/pic4264/42649355_007.jpg",
+      "/carpicture04/pic4264/42649355_008.jpg",
+      "/carpicture04/pic4264/42649355_009.jpg",
+      "/carpicture04/pic4264/42649355_010.jpg",
+      "/carpicture04/pic4264/42649355_034.jpg",
+      "/carpicture04/pic4264/42649355_035.jpg",
+      "/carpicture04/pic4264/42649355_036.jpg"
+    ]
+  },
+  "koreaPriceMan": 6500,
+  "history": {
+    "myAccidentCnt": 0,
+    "myAccidentCost": 0,
+    "otherAccidentCnt": 1,
+    "otherAccidentCost": 1117150,
+    "ownerChangeCnt": 2,
+    "totalLoss": null,
+    "flood": null,
+    "robber": null
+  },
+  "model": "X6 (G06)",
+  "mileageKm": 60299,
+  "priceUSD": 69053,
+  "priceEstimated": true,
+  "mfgYear": 2022,
+  "vin": "WBAGT8109N9L82242"
+}

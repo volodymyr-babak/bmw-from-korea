@@ -1,0 +1,37 @@
+{
+  "listingId": "41558094",
+  "encarUrl": "https://fem.encar.com/cars/detail/41558094",
+  "photos": {
+    "outer": [
+      "/carpicture05/pic4155/41555850_001.jpg",
+      "/carpicture05/pic4155/41555850_002.jpg",
+      "/carpicture05/pic4155/41555850_003.jpg",
+      "/carpicture05/pic4155/41555850_004.jpg",
+      "/carpicture05/pic4155/41555850_005.jpg",
+      "/carpicture05/pic4155/41555850_006.jpg"
+    ],
+    "inner": [
+      "/carpicture05/pic4155/41555850_007.jpg",
+      "/carpicture05/pic4155/41555850_008.jpg",
+      "/carpicture05/pic4155/41555850_009.jpg",
+      "/carpicture05/pic4155/41555850_010.jpg"
+    ]
+  },
+  "koreaPriceMan": 5790,
+  "history": {
+    "myAccidentCnt": 1,
+    "myAccidentCost": 911580,
+    "otherAccidentCnt": 0,
+    "otherAccidentCost": 0,
+    "ownerChangeCnt": 0,
+    "totalLoss": null,
+    "flood": null,
+    "robber": null
+  },
+  "model": "X6 (G06)",
+  "mileageKm": 64067,
+  "priceUSD": 61917,
+  "priceEstimated": true,
+  "mfgYear": 2020,
+  "vin": "WBAGT8105M9D98682"
+}

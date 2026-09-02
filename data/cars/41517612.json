@@ -2,7 +2,7 @@
   "listingId": "41517612",
   "vin": "WBACV610XLLK23890",
   "encarUrl": "https://fem.encar.com/cars/detail/41517612",
-  "model": "BMW X5 xDrive30d M Sport",
+  "model": "X5 (G05)",
   "prodDate": "2019-08-02",
   "mfgYear": 2019,
   "engine": "B57O",
@@ -10,76 +10,316 @@
   "drive": "ALLR (xDrive)",
   "steering": "Left Hand Drive",
   "mileageKm": 86742,
-  "priceUSD": 57429,
+  "priceUSD": 57432,
   "note": "Багата база 2019-го: пневмо S2VR, вентиляція S453, Harman/Kardon S688, панорама, HUD, 4-зона. Унікальне серед декодованих — Individual шкіряна панель приладів S4M5. Єдиний білий кузов (Mineral White). Без лазера/soft-close/масажу/акуст.скла/48V.",
-  "exterior": {"name": "Mineral White", "german": "mineral-weiss metallic", "code": "A96"},
-  "interior": {"name": "Vernasca Black", "german": "Leather Vernasca black", "code": "MCSW"},
-  "keyFeatures": {"air": true, "laser": false, "soft": false, "vent": true, "massage": false, "hk": true, "pano": true, "acoustic": false, "mhev": false},
+  "exterior": {
+    "name": "Mineral White",
+    "german": "mineral-weiss metallic",
+    "code": "A96"
+  },
+  "interior": {
+    "name": "Vernasca Black",
+    "german": "Leather Vernasca black",
+    "code": "MCSW"
+  },
+  "keyFeatures": {
+    "air": true,
+    "laser": false,
+    "soft": false,
+    "vent": true,
+    "massage": false,
+    "hk": true,
+    "pano": true,
+    "acoustic": false,
+    "mhev": false
+  },
   "options": [
-    {"code": "S337", "desc": "M Sports package"},
-    {"code": "S710", "desc": "M leather steering wheel"},
-    {"code": "S715", "desc": "M Aerodynamics package"},
-    {"code": "S402", "desc": "Panorama glass roof"},
-    {"code": "S418", "desc": "Luggage compartment package"},
-    {"code": "S423", "desc": "Floor mats velours"},
-    {"code": "S428", "desc": "Warning triangle and first aid kit"},
-    {"code": "S453", "desc": "Climate-controlled (ventilated) seats, front"},
-    {"code": "S456", "desc": "Comfort seat with memory"},
-    {"code": "S4A2", "desc": "Glass application Crafted Clarity"},
-    {"code": "S4HA", "desc": "Seat heating, front and rear"},
-    {"code": "S4HB", "desc": "Heat comfort package, front"},
-    {"code": "S4KK", "desc": "Interior trim finishers aluminium tetragon"},
-    {"code": "S4M5", "desc": "Individual leather-covered dashboard (шкіряна панель приладів BMW Individual)"},
-    {"code": "S4NB", "desc": "Automatic climate control, 4-zone"},
-    {"code": "S4T8", "desc": "Extended mirror package"},
-    {"code": "S4UR", "desc": "Ambient interior light"},
-    {"code": "S610", "desc": "Head-up display"},
-    {"code": "S688", "desc": "Harman/Kardon surround sound system"},
-    {"code": "S699", "desc": "Area-Code 3 for DVD"},
-    {"code": "S6AC", "desc": "Intelligent emergency call"},
-    {"code": "S6AE", "desc": "Teleservices"},
-    {"code": "S6AK", "desc": "Connected Drive Services"},
-    {"code": "S6C3", "desc": "Connected Package Professional"},
-    {"code": "S6CP", "desc": "Smartphone integration (Apple CarPlay)"},
-    {"code": "S6NV", "desc": "Telephony with wireless charging"},
-    {"code": "S6U3", "desc": "BMW Live operating area Professional"},
-    {"code": "S6U8", "desc": "BMW gesture control"},
-    {"code": "S6UH", "desc": "Traffic Information"},
-    {"code": "S548", "desc": "Kilometre speedo"},
-    {"code": "S552", "desc": "Adaptive LED headlight"},
-    {"code": "S5A1", "desc": "LED Fog lights"},
-    {"code": "S5AC", "desc": "High-beam assistant"},
-    {"code": "S5AL", "desc": "Active Protection"},
-    {"code": "S5AU", "desc": "Driving assistant professional"},
-    {"code": "S5AV", "desc": "Active Guard"},
-    {"code": "S5DN", "desc": "Parking assistance system Plus"},
-    {"code": "S212", "desc": "Equipment, brake system country-specific"},
-    {"code": "S258", "desc": "Tyres with runflat properties"},
-    {"code": "S2NH", "desc": "M Sport brake"},
-    {"code": "S2TB", "desc": "Sport automatic gearbox"},
-    {"code": "S2VB", "desc": "Tyre pressure display"},
-    {"code": "S2VR", "desc": "Two-axle air suspension (пневмопідвіска)"},
-    {"code": "S322", "desc": "Comfort access"},
-    {"code": "S3AT", "desc": "Roof rails aluminium satinated"},
-    {"code": "S3DS", "desc": "BMW display key"},
-    {"code": "S3MB", "desc": "Individual Ext. Line, burnished aluminium"},
-    {"code": "S775", "desc": "Headlining anthracite"},
-    {"code": "S802", "desc": "National version Korea"},
-    {"code": "S867", "desc": "Language version Korean"},
-    {"code": "S8AF", "desc": "On-board literature, Korean"},
-    {"code": "S8KH", "desc": "Dummy-SALAPA"},
-    {"code": "S8R9", "desc": "Refrigerant R1234yf"},
-    {"code": "S8S3", "desc": "Automatic locking during starting"},
-    {"code": "S8SX", "desc": "Providersteuerung Telematik"},
-    {"code": "S8TF", "desc": "Active pedestrian protection"},
-    {"code": "S8TR", "desc": "Decoding additional functions"},
-    {"code": "S1MA", "desc": "M sports exhaust system"},
-    {"code": "S1TC", "desc": "20\" light-alloy wheel star spoke 740M"},
-    {"code": "S925", "desc": "Dummy-SALAPA"},
-    {"code": "S993", "desc": "Model year code in VIN"},
-    {"code": "S9AA", "desc": "Outer skin protection"},
-    {"code": "SA090", "desc": "90 Ah AGM battery"},
-    {"code": "SA96", "desc": "Фарба: mineral-weiss metallic (Mineral White A96)"},
-    {"code": "SMCSW", "desc": "Оббивка: Leather Vernasca black (MCSW)"}
-  ]
+    {
+      "code": "S337",
+      "desc": "M Sports package"
+    },
+    {
+      "code": "S710",
+      "desc": "M leather steering wheel"
+    },
+    {
+      "code": "S715",
+      "desc": "M Aerodynamics package"
+    },
+    {
+      "code": "S402",
+      "desc": "Panorama glass roof"
+    },
+    {
+      "code": "S418",
+      "desc": "Luggage compartment package"
+    },
+    {
+      "code": "S423",
+      "desc": "Floor mats velours"
+    },
+    {
+      "code": "S428",
+      "desc": "Warning triangle and first aid kit"
+    },
+    {
+      "code": "S453",
+      "desc": "Climate-controlled (ventilated) seats, front"
+    },
+    {
+      "code": "S456",
+      "desc": "Comfort seat with memory"
+    },
+    {
+      "code": "S4A2",
+      "desc": "Glass application Crafted Clarity"
+    },
+    {
+      "code": "S4HA",
+      "desc": "Seat heating, front and rear"
+    },
+    {
+      "code": "S4HB",
+      "desc": "Heat comfort package, front"
+    },
+    {
+      "code": "S4KK",
+      "desc": "Interior trim finishers aluminium tetragon"
+    },
+    {
+      "code": "S4M5",
+      "desc": "Individual leather-covered dashboard (шкіряна панель приладів BMW Individual)"
+    },
+    {
+      "code": "S4NB",
+      "desc": "Automatic climate control, 4-zone"
+    },
+    {
+      "code": "S4T8",
+      "desc": "Extended mirror package"
+    },
+    {
+      "code": "S4UR",
+      "desc": "Ambient interior light"
+    },
+    {
+      "code": "S610",
+      "desc": "Head-up display"
+    },
+    {
+      "code": "S688",
+      "desc": "Harman/Kardon surround sound system"
+    },
+    {
+      "code": "S699",
+      "desc": "Area-Code 3 for DVD"
+    },
+    {
+      "code": "S6AC",
+      "desc": "Intelligent emergency call"
+    },
+    {
+      "code": "S6AE",
+      "desc": "Teleservices"
+    },
+    {
+      "code": "S6AK",
+      "desc": "Connected Drive Services"
+    },
+    {
+      "code": "S6C3",
+      "desc": "Connected Package Professional"
+    },
+    {
+      "code": "S6CP",
+      "desc": "Smartphone integration (Apple CarPlay)"
+    },
+    {
+      "code": "S6NV",
+      "desc": "Telephony with wireless charging"
+    },
+    {
+      "code": "S6U3",
+      "desc": "BMW Live operating area Professional"
+    },
+    {
+      "code": "S6U8",
+      "desc": "BMW gesture control"
+    },
+    {
+      "code": "S6UH",
+      "desc": "Traffic Information"
+    },
+    {
+      "code": "S548",
+      "desc": "Kilometre speedo"
+    },
+    {
+      "code": "S552",
+      "desc": "Adaptive LED headlight"
+    },
+    {
+      "code": "S5A1",
+      "desc": "LED Fog lights"
+    },
+    {
+      "code": "S5AC",
+      "desc": "High-beam assistant"
+    },
+    {
+      "code": "S5AL",
+      "desc": "Active Protection"
+    },
+    {
+      "code": "S5AU",
+      "desc": "Driving assistant professional"
+    },
+    {
+      "code": "S5AV",
+      "desc": "Active Guard"
+    },
+    {
+      "code": "S5DN",
+      "desc": "Parking assistance system Plus"
+    },
+    {
+      "code": "S212",
+      "desc": "Equipment, brake system country-specific"
+    },
+    {
+      "code": "S258",
+      "desc": "Tyres with runflat properties"
+    },
+    {
+      "code": "S2NH",
+      "desc": "M Sport brake"
+    },
+    {
+      "code": "S2TB",
+      "desc": "Sport automatic gearbox"
+    },
+    {
+      "code": "S2VB",
+      "desc": "Tyre pressure display"
+    },
+    {
+      "code": "S2VR",
+      "desc": "Two-axle air suspension (пневмопідвіска)"
+    },
+    {
+      "code": "S322",
+      "desc": "Comfort access"
+    },
+    {
+      "code": "S3AT",
+      "desc": "Roof rails aluminium satinated"
+    },
+    {
+      "code": "S3DS",
+      "desc": "BMW display key"
+    },
+    {
+      "code": "S3MB",
+      "desc": "Individual Ext. Line, burnished aluminium"
+    },
+    {
+      "code": "S775",
+      "desc": "Headlining anthracite"
+    },
+    {
+      "code": "S802",
+      "desc": "National version Korea"
+    },
+    {
+      "code": "S867",
+      "desc": "Language version Korean"
+    },
+    {
+      "code": "S8AF",
+      "desc": "On-board literature, Korean"
+    },
+    {
+      "code": "S8KH",
+      "desc": "Dummy-SALAPA"
+    },
+    {
+      "code": "S8R9",
+      "desc": "Refrigerant R1234yf"
+    },
+    {
+      "code": "S8S3",
+      "desc": "Automatic locking during starting"
+    },
+    {
+      "code": "S8SX",
+      "desc": "Providersteuerung Telematik"
+    },
+    {
+      "code": "S8TF",
+      "desc": "Active pedestrian protection"
+    },
+    {
+      "code": "S8TR",
+      "desc": "Decoding additional functions"
+    },
+    {
+      "code": "S1MA",
+      "desc": "M sports exhaust system"
+    },
+    {
+      "code": "S1TC",
+      "desc": "20\" light-alloy wheel star spoke 740M"
+    },
+    {
+      "code": "S925",
+      "desc": "Dummy-SALAPA"
+    },
+    {
+      "code": "S993",
+      "desc": "Model year code in VIN"
+    },
+    {
+      "code": "S9AA",
+      "desc": "Outer skin protection"
+    },
+    {
+      "code": "SA090",
+      "desc": "90 Ah AGM battery"
+    },
+    {
+      "code": "SA96",
+      "desc": "Фарба: mineral-weiss metallic (Mineral White A96)"
+    },
+    {
+      "code": "SMCSW",
+      "desc": "Оббивка: Leather Vernasca black (MCSW)"
+    }
+  ],
+  "photos": {
+    "outer": [
+      "/carpicture01/pic4151/41517612_001.jpg",
+      "/carpicture01/pic4151/41517612_002.jpg",
+      "/carpicture01/pic4151/41517612_003.jpg",
+      "/carpicture01/pic4151/41517612_004.jpg",
+      "/carpicture01/pic4151/41517612_005.jpg",
+      "/carpicture01/pic4151/41517612_006.jpg"
+    ],
+    "inner": [
+      "/carpicture01/pic4151/41517612_007.jpg",
+      "/carpicture01/pic4151/41517612_008.jpg",
+      "/carpicture01/pic4151/41517612_009.jpg",
+      "/carpicture01/pic4151/41517612_010.jpg"
+    ]
+  },
+  "koreaPriceMan": 5690,
+  "history": {
+    "myAccidentCnt": 0,
+    "myAccidentCost": 0,
+    "otherAccidentCnt": 0,
+    "otherAccidentCost": 0,
+    "ownerChangeCnt": 3,
+    "totalLoss": null,
+    "flood": null,
+    "robber": null
+  }
 }

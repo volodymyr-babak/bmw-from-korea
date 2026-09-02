@@ -1,0 +1,37 @@
+{
+  "listingId": "41142979",
+  "encarUrl": "https://fem.encar.com/cars/detail/41142979",
+  "photos": {
+    "outer": [
+      "/carpicture04/pic4114/41142979_001.jpg",
+      "/carpicture04/pic4114/41142979_002.jpg",
+      "/carpicture04/pic4114/41142979_003.jpg",
+      "/carpicture04/pic4114/41142979_004.jpg",
+      "/carpicture04/pic4114/41142979_005.jpg",
+      "/carpicture04/pic4114/41142979_006.jpg"
+    ],
+    "inner": [
+      "/carpicture04/pic4114/41142979_007.jpg",
+      "/carpicture04/pic4114/41142979_008.jpg",
+      "/carpicture04/pic4114/41142979_009.jpg",
+      "/carpicture04/pic4114/41142979_010.jpg"
+    ]
+  },
+  "koreaPriceMan": 5549,
+  "history": {
+    "myAccidentCnt": 0,
+    "myAccidentCost": 0,
+    "otherAccidentCnt": 0,
+    "otherAccidentCost": 0,
+    "ownerChangeCnt": 0,
+    "totalLoss": null,
+    "flood": null,
+    "robber": null
+  },
+  "model": "X6 (G06)",
+  "mileageKm": 104251,
+  "priceUSD": 62122,
+  "priceEstimated": true,
+  "mfgYear": 2022,
+  "vin": "WBAGT810XN9M18391"
+}

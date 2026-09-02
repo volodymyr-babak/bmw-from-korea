@@ -1,0 +1,43 @@
+{
+  "listingId": "42349824",
+  "encarUrl": "https://fem.encar.com/cars/detail/42349824",
+  "photos": {
+    "outer": [
+      "/carpicture04/pic4234/42348555_001.jpg",
+      "/carpicture04/pic4234/42348555_002.jpg",
+      "/carpicture04/pic4234/42348555_003.jpg",
+      "/carpicture04/pic4234/42348555_004.jpg",
+      "/carpicture04/pic4234/42348555_005.jpg",
+      "/carpicture04/pic4234/42348555_006.jpg",
+      "/carpicture04/pic4234/42348555_031.jpg",
+      "/carpicture04/pic4234/42348555_032.jpg",
+      "/carpicture04/pic4234/42348555_033.jpg"
+    ],
+    "inner": [
+      "/carpicture04/pic4234/42348555_007.jpg",
+      "/carpicture04/pic4234/42348555_008.jpg",
+      "/carpicture04/pic4234/42348555_009.jpg",
+      "/carpicture04/pic4234/42348555_010.jpg",
+      "/carpicture04/pic4234/42348555_034.jpg",
+      "/carpicture04/pic4234/42348555_035.jpg",
+      "/carpicture04/pic4234/42348555_036.jpg"
+    ]
+  },
+  "koreaPriceMan": 6090,
+  "history": {
+    "myAccidentCnt": 2,
+    "myAccidentCost": 4724399,
+    "otherAccidentCnt": 0,
+    "otherAccidentCost": 0,
+    "ownerChangeCnt": 1,
+    "totalLoss": null,
+    "flood": null,
+    "robber": null
+  },
+  "model": "X6 (G06)",
+  "mileageKm": 85581,
+  "priceUSD": 66065,
+  "priceEstimated": true,
+  "mfgYear": 2022,
+  "vin": "WBAGT8106N9L42863"
+}

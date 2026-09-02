@@ -1,0 +1,43 @@
+{
+  "listingId": "42552103",
+  "encarUrl": "https://fem.encar.com/cars/detail/42552103",
+  "photos": {
+    "outer": [
+      "/carpicture04/pic4254/42548037_001.jpg",
+      "/carpicture04/pic4254/42548037_002.jpg",
+      "/carpicture04/pic4254/42548037_003.jpg",
+      "/carpicture04/pic4254/42548037_004.jpg",
+      "/carpicture04/pic4254/42548037_005.jpg",
+      "/carpicture04/pic4254/42548037_006.jpg",
+      "/carpicture04/pic4254/42548037_031.jpg",
+      "/carpicture04/pic4254/42548037_032.jpg",
+      "/carpicture04/pic4254/42548037_033.jpg"
+    ],
+    "inner": [
+      "/carpicture04/pic4254/42548037_007.jpg",
+      "/carpicture04/pic4254/42548037_008.jpg",
+      "/carpicture04/pic4254/42548037_009.jpg",
+      "/carpicture04/pic4254/42548037_010.jpg",
+      "/carpicture04/pic4254/42548037_034.jpg",
+      "/carpicture04/pic4254/42548037_035.jpg",
+      "/carpicture04/pic4254/42548037_036.jpg"
+    ]
+  },
+  "koreaPriceMan": 5150,
+  "history": {
+    "myAccidentCnt": 0,
+    "myAccidentCost": 0,
+    "otherAccidentCnt": 0,
+    "otherAccidentCost": 0,
+    "ownerChangeCnt": 1,
+    "totalLoss": null,
+    "flood": null,
+    "robber": null
+  },
+  "model": "X6 (G06)",
+  "mileageKm": 89221,
+  "priceUSD": 58603,
+  "priceEstimated": true,
+  "mfgYear": 2021,
+  "vin": "WBAGT8106M9H88223"
+}

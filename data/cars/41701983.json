@@ -1,0 +1,36 @@
+{
+  "listingId": "41701983",
+  "encarUrl": "https://fem.encar.com/cars/detail/41701983",
+  "photos": {
+    "outer": [
+      "/carpicture10/pic4170/41701983_001.jpg",
+      "/carpicture10/pic4170/41701983_002.jpg",
+      "/carpicture10/pic4170/41701983_003.jpg",
+      "/carpicture10/pic4170/41701983_004.jpg",
+      "/carpicture10/pic4170/41701983_005.jpg",
+      "/carpicture10/pic4170/41701983_006.jpg"
+    ],
+    "inner": [
+      "/carpicture10/pic4170/41701983_007.jpg",
+      "/carpicture10/pic4170/41701983_008.jpg",
+      "/carpicture10/pic4170/41701983_009.jpg",
+      "/carpicture10/pic4170/41701983_010.jpg"
+    ]
+  },
+  "koreaPriceMan": 5870,
+  "history": {
+    "myAccidentCnt": 0,
+    "myAccidentCost": 0,
+    "otherAccidentCnt": 3,
+    "otherAccidentCost": 4211009,
+    "ownerChangeCnt": 1,
+    "totalLoss": null,
+    "flood": null,
+    "robber": null
+  },
+  "model": "X6 (G06)",
+  "mileageKm": 63528,
+  "priceUSD": 62500,
+  "priceEstimated": true,
+  "mfgYear": 2020
+}

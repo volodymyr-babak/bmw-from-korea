@@ -1,0 +1,42 @@
+{
+  "listingId": "42551562",
+  "encarUrl": "https://fem.encar.com/cars/detail/42551562",
+  "photos": {
+    "outer": [
+      "/carpicture05/pic4255/42551560_002.jpg",
+      "/carpicture05/pic4255/42551560_003.jpg",
+      "/carpicture05/pic4255/42551560_004.jpg",
+      "/carpicture05/pic4255/42551560_005.jpg",
+      "/carpicture05/pic4255/42551560_006.jpg",
+      "/carpicture05/pic4255/42551560_031.jpg",
+      "/carpicture05/pic4255/42551560_032.jpg",
+      "/carpicture05/pic4255/42551560_033.jpg"
+    ],
+    "inner": [
+      "/carpicture05/pic4255/42551560_007.jpg",
+      "/carpicture05/pic4255/42551560_008.jpg",
+      "/carpicture05/pic4255/42551560_009.jpg",
+      "/carpicture05/pic4255/42551560_010.jpg",
+      "/carpicture05/pic4255/42551560_034.jpg",
+      "/carpicture05/pic4255/42551560_035.jpg",
+      "/carpicture05/pic4255/42551560_036.jpg"
+    ]
+  },
+  "koreaPriceMan": 6350,
+  "history": {
+    "myAccidentCnt": 0,
+    "myAccidentCost": 0,
+    "otherAccidentCnt": 0,
+    "otherAccidentCost": 0,
+    "ownerChangeCnt": 0,
+    "totalLoss": null,
+    "flood": null,
+    "robber": null
+  },
+  "model": "X6 (G06)",
+  "mileageKm": 31232,
+  "priceUSD": 67350,
+  "priceEstimated": true,
+  "mfgYear": 2021,
+  "vin": "WBAGT8100M9F15603"
+}

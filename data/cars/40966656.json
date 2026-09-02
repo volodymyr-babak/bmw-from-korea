@@ -1,0 +1,37 @@
+{
+  "listingId": "40966656",
+  "encarUrl": "https://fem.encar.com/cars/detail/40966656",
+  "photos": {
+    "outer": [
+      "/carpicture06/pic4096/40966656_001.jpg",
+      "/carpicture06/pic4096/40966656_002.jpg",
+      "/carpicture06/pic4096/40966656_003.jpg",
+      "/carpicture06/pic4096/40966656_004.jpg",
+      "/carpicture06/pic4096/40966656_005.jpg",
+      "/carpicture06/pic4096/40966656_006.jpg"
+    ],
+    "inner": [
+      "/carpicture06/pic4096/40966656_007.jpg",
+      "/carpicture06/pic4096/40966656_008.jpg",
+      "/carpicture06/pic4096/40966656_009.jpg",
+      "/carpicture06/pic4096/40966656_010.jpg"
+    ]
+  },
+  "koreaPriceMan": 5980,
+  "history": {
+    "myAccidentCnt": 2,
+    "myAccidentCost": 4490960,
+    "otherAccidentCnt": 0,
+    "otherAccidentCost": 0,
+    "ownerChangeCnt": 1,
+    "totalLoss": null,
+    "flood": null,
+    "robber": null
+  },
+  "model": "X6 (G06)",
+  "mileageKm": 48657,
+  "priceUSD": 64653,
+  "priceEstimated": true,
+  "mfgYear": 2021,
+  "vin": "WBAGT8101M9H35011"
+}

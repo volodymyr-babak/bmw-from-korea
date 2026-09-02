@@ -1,0 +1,36 @@
+{
+  "listingId": "41616675",
+  "encarUrl": "https://fem.encar.com/cars/detail/41616675",
+  "photos": {
+    "outer": [
+      "/carpicture01/pic4161/41616675_001.jpg",
+      "/carpicture01/pic4161/41616675_002.jpg",
+      "/carpicture01/pic4161/41616675_003.jpg",
+      "/carpicture01/pic4161/41616675_004.jpg",
+      "/carpicture01/pic4161/41616675_005.jpg",
+      "/carpicture01/pic4161/41616675_006.jpg"
+    ],
+    "inner": [
+      "/carpicture01/pic4161/41616675_007.jpg",
+      "/carpicture01/pic4161/41616675_008.jpg",
+      "/carpicture01/pic4161/41616675_009.jpg",
+      "/carpicture01/pic4161/41616675_010.jpg"
+    ]
+  },
+  "koreaPriceMan": 6500,
+  "history": {
+    "myAccidentCnt": 1,
+    "myAccidentCost": 1215969,
+    "otherAccidentCnt": 0,
+    "otherAccidentCost": 0,
+    "ownerChangeCnt": 0,
+    "totalLoss": null,
+    "flood": null,
+    "robber": null
+  },
+  "model": "X6 (G06)",
+  "mileageKm": 54000,
+  "priceUSD": 69053,
+  "priceEstimated": true,
+  "mfgYear": 2022
+}

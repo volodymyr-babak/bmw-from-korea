@@ -1,0 +1,34 @@
+{
+  "listingId": "42094631",
+  "encarUrl": "https://fem.encar.com/cars/detail/42094631",
+  "photos": {
+    "outer": [
+      "/carpicture09/pic4209/42094631_001.jpg",
+      "/carpicture09/pic4209/42094631_002.jpg",
+      "/carpicture09/pic4209/42094631_003.jpg",
+      "/carpicture09/pic4209/42094631_004.jpg",
+      "/carpicture09/pic4209/42094631_005.jpg",
+      "/carpicture09/pic4209/42094631_006.jpg"
+    ],
+    "inner": [
+      "/carpicture09/pic4209/42094631_007.jpg",
+      "/carpicture09/pic4209/42094631_008.jpg",
+      "/carpicture09/pic4209/42094631_009.jpg",
+      "/carpicture09/pic4209/42094631_010.jpg"
+    ]
+  },
+  "koreaPriceMan": 6350,
+  "history": {
+    "myAccidentCnt": 1,
+    "myAccidentCost": 0,
+    "otherAccidentCnt": 1,
+    "otherAccidentCost": 0,
+    "ownerChangeCnt": 0,
+    "totalLoss": null,
+    "flood": null,
+    "robber": null
+  },
+  "model": "X5 (G05)",
+  "mileageKm": 26786,
+  "priceUSD": 65999
+}

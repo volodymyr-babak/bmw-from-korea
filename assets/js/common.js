@@ -18,10 +18,11 @@ const r = (x) => Math.floor(x + 0.5);
 
 /**
  * Розкладає ціну «під ключ» на складові.
- * Мита рахуються від фіксованої P за роком, а не від корейської ціни,
- * тому вартість авто виводиться як залишок: car = total - усі збори.
+ * Мита рахуються від фіксованої P за роком, а не від корейської ціни.
+ * Якщо відома корейська ціна (в 만원) — вартість авто беремо з неї,
+ * інакше виводимо як залишок: car = total - усі збори.
  */
-export function breakdown(year, totalUSD) {
+export function breakdown(year, totalUSD, koreaPriceMan) {
   const P = MIN_CUSTOMS_VALUE[year];
   if (!P) return null;
   const age = AGE_BASE - year;
@@ -32,11 +33,11 @@ export function breakdown(year, totalUSD) {
   const customs = r(duty) + r(excise) + r(vat);
   const registration = r(pension) + CERT_REG;
   const fees = customs + registration + SHIPPING + SERVICE;
-  const car = totalUSD - fees;
+  const car = koreaPriceMan ? r(koreaPriceMan * 10000 / KRW_PER_USD) : totalUSD - fees;
   return {
     P, age,
     car,
-    carKRW: car * KRW_PER_USD,
+    carKRW: koreaPriceMan ? koreaPriceMan * 10000 : car * KRW_PER_USD,
     duty: r(duty),
     excise: r(excise),
     vat: r(vat),
@@ -46,7 +47,7 @@ export function breakdown(year, totalUSD) {
     shipping: SHIPPING,
     service: SERVICE,
     fees,
-    total: totalUSD,
+    total: car + fees,
   };
 }
 
@@ -89,9 +90,21 @@ export function featureState(kf, f) {
 
 export const encarUrl = (id) => `https://fem.encar.com/cars/detail/${id}`;
 
+const CI = 'https://ci.encar.com';
+/** Фото з CDN Encar у потрібному розмірі (усі 16:9, як в оригіналі) */
+const PHOTO_SIZES = {
+  thumb: 'rh=158&cw=280&ch=158',
+  card:  'rh=360&cw=640&ch=360',
+  large: 'rh=450&cw=800&ch=450',
+};
+export function photoUrl(path, size = 'card') {
+  if (!path) return null;
+  return `${CI}${path}?impolicy=heightRate&${PHOTO_SIZES[size] || PHOTO_SIZES.card}&cg=Center`;
+}
+
 export const MARKS = {
-  'money':      'найдешевше',
-  'money-cand': 'дешево й повна база',
+  'money':      'найдешевший 2021',
+  'money-cand': 'найдешевше',
   'hero':       'вибір №1',
   'star':       'малий пробіг',
 };

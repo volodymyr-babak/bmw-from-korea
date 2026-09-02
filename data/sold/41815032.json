@@ -1,45 +1,38 @@
 {
-  "listingId": "42092261",
-  "vin": "WBACV6108L9B00816",
-  "encarUrl": "https://fem.encar.com/cars/detail/42092261",
-  "model": "X5 (G05)",
-  "prodDate": "2019-10-07",
-  "modelYear": 2020,
-  "mfgYear": 2019,
-  "engine": "B57O",
-  "power": "195 kW / 265 hp",
-  "mileageKm": 90101,
-  "priceUSD": 52330,
+  "listingId": "41815032",
+  "vin": "WBAJU8100N9K85398",
+  "encarUrl": "https://fem.encar.com/cars/detail/41815032",
+  "model": "BMW X5 xDrive30d M Sport",
+  "prodDate": "2021-12-18",
+  "mfgYear": 2022,
+  "mfgYearNote": "Encar 연식 = 2022, фактичне виробництво BMW — 2021-12-18. Розрахунок під ключ по P(2022)=$43 000 (консервативно). Якщо митниця візьме 2021 (P=$40 500, вік 4) — буде дешевше ≈$2 000. Уточнити в брокера.",
+  "engine": "B57P",
+  "engineNote": "48V mild-hybrid (S1CE); B57P = 210 кВт / 286 к.с.",
+  "mileageKm": 66303,
+  "priceUSD": 68687,
+  "mark": "loaded",
+  "note": "НАЙПОВНІША комплектація в добірці: лазер S5AZ + soft-close S323 + пневмо S2VR + вентиляція S453 + 48V MHEV одночасно — такого поєднання нема ні в кого. Плюс 21\" 741M, задні шторки S417, Travel&Comfort rails S4FL. Оббивка Leather Merino Tartufo — вищий тир за Vernasca (Individual, коричнево-трюфельна). ЄДИНИЙ мінус: аудіо базове S676 (без Harman/Kardon). Пробіг 66 303 км.",
   "exterior": {
-    "name": "Phytonic Blue",
-    "german": "Phytonic-blau metallic",
-    "code": "C1M"
+    "name": "Carbon Black",
+    "german": "carbon-schwarz",
+    "code": "416"
   },
   "interior": {
-    "name": "Vernasca Coffee",
-    "german": "Leather Vernasca coffee",
-    "code": "MCHF"
-  },
-  "history": {
-    "myAccidentCnt": 2,
-    "myAccidentCost": 4092920,
-    "otherAccidentCnt": 0,
-    "otherAccidentCost": 0,
-    "ownerChangeCnt": 0,
-    "totalLoss": null,
-    "flood": null,
-    "robber": null
+    "name": "Merino Tartufo",
+    "german": "Leather Merino tartufo",
+    "code": null,
+    "comment": "Extended Merino — вищий клас шкіри за Vernasca; колір трюфельно-коричневий (не cognac/рудий)"
   },
   "keyFeatures": {
     "air": true,
-    "laser": false,
-    "soft": false,
+    "laser": true,
+    "soft": true,
     "vent": true,
     "massage": false,
-    "hk": true,
+    "hk": false,
     "pano": true,
     "acoustic": false,
-    "mhev": false
+    "mhev": true
   },
   "options": [
     {
@@ -57,6 +50,10 @@
     {
       "code": "S402",
       "desc": "Panorama glass roof"
+    },
+    {
+      "code": "S417",
+      "desc": "Roller sun visor, rear door (задні шторки)"
     },
     {
       "code": "S418",
@@ -87,6 +84,10 @@
       "desc": "Instrument panel Sensatec"
     },
     {
+      "code": "S4FL",
+      "desc": "Travel & Comfort rail system"
+    },
+    {
       "code": "S4HA",
       "desc": "Seat heating, front and rear"
     },
@@ -115,8 +116,8 @@
       "desc": "Head-up display"
     },
     {
-      "code": "S688",
-      "desc": "Harman/Kardon surround sound system"
+      "code": "S676",
+      "desc": "HiFi speaker system (базове, НЕ Harman/Kardon)"
     },
     {
       "code": "S699",
@@ -136,15 +137,15 @@
     },
     {
       "code": "S6C3",
-      "desc": "Connected/Digital Professional"
+      "desc": "Connected Package Professional"
     },
     {
       "code": "S6CP",
       "desc": "Preparation Apple CarPlay"
     },
     {
-      "code": "S6NV",
-      "desc": "Telephony with wireless charging"
+      "code": "S6NS",
+      "desc": "Comfort telephony with enhanced Smartphone"
     },
     {
       "code": "S6U3",
@@ -155,16 +156,8 @@
       "desc": "BMW gesture control"
     },
     {
-      "code": "S6UH",
-      "desc": "Traffic Information"
-    },
-    {
       "code": "S548",
       "desc": "Kilometre speedo"
-    },
-    {
-      "code": "S5A1",
-      "desc": "LED Fog lights"
     },
     {
       "code": "S5AC",
@@ -183,8 +176,8 @@
       "desc": "Active Guard"
     },
     {
-      "code": "S552",
-      "desc": "Adaptive LED headlight"
+      "code": "S5AZ",
+      "desc": "BMW Laserlicht (лазерні фари)"
     },
     {
       "code": "S5DN",
@@ -192,7 +185,7 @@
     },
     {
       "code": "S212",
-      "desc": "Equipment, brake system country-specific"
+      "desc": "National brake system equipment"
     },
     {
       "code": "S258",
@@ -212,11 +205,15 @@
     },
     {
       "code": "S2VR",
-      "desc": "Two-axle air suspension"
+      "desc": "Two-axle air suspension (пневмопідвіска)"
     },
     {
       "code": "S322",
       "desc": "Comfort access"
+    },
+    {
+      "code": "S323",
+      "desc": "Soft-Close-Automatic doors"
     },
     {
       "code": "S3AT",
@@ -231,10 +228,6 @@
       "desc": "Individual Ext. Line, burnished aluminium"
     },
     {
-      "code": "S775",
-      "desc": "Headlining anthracite"
-    },
-    {
       "code": "S802",
       "desc": "National version Korea"
     },
@@ -245,6 +238,10 @@
     {
       "code": "S8AF",
       "desc": "On-board literature, Korean"
+    },
+    {
+      "code": "S8KH",
+      "desc": "Dummy-SALAPA"
     },
     {
       "code": "S8R9",
@@ -263,43 +260,36 @@
       "desc": "Active pedestrian protection"
     },
     {
-      "code": "S8TR",
-      "desc": "Decoding additional functions"
+      "code": "S775",
+      "desc": "Headlining anthracite"
+    },
+    {
+      "code": "S1CE",
+      "desc": "Recuperation system (48V mild-hybrid)"
     },
     {
       "code": "S1MA",
       "desc": "M sports exhaust system"
     },
     {
-      "code": "S1TC",
-      "desc": "20\" light-alloy wheel star spoke 740M"
+      "code": "S1XN",
+      "desc": "21\" light-alloy wheel Y-spoke 741M"
+    },
+    {
+      "code": "S925",
+      "desc": "Dummy-SALAPA"
     },
     {
       "code": "S993",
       "desc": "Model year code in VIN"
+    },
+    {
+      "code": "S9AA",
+      "desc": "Outer skin protection"
+    },
+    {
+      "code": "SA090",
+      "desc": "90 Ah AGM battery"
     }
-  ],
-  "photos": {
-    "outer": [
-      "/carpicture09/pic4209/42091161_001.jpg",
-      "/carpicture09/pic4209/42091161_002.jpg",
-      "/carpicture09/pic4209/42091161_003.jpg",
-      "/carpicture09/pic4209/42091161_004.jpg",
-      "/carpicture09/pic4209/42091161_005.jpg",
-      "/carpicture09/pic4209/42091161_006.jpg",
-      "/carpicture09/pic4209/42091161_031.jpg",
-      "/carpicture09/pic4209/42091161_032.jpg",
-      "/carpicture09/pic4209/42091161_033.jpg"
-    ],
-    "inner": [
-      "/carpicture09/pic4209/42091161_007.jpg",
-      "/carpicture09/pic4209/42091161_008.jpg",
-      "/carpicture09/pic4209/42091161_009.jpg",
-      "/carpicture09/pic4209/42091161_010.jpg",
-      "/carpicture09/pic4209/42091161_034.jpg",
-      "/carpicture09/pic4209/42091161_035.jpg",
-      "/carpicture09/pic4209/42091161_036.jpg"
-    ]
-  },
-  "koreaPriceMan": 4990
+  ]
 }
