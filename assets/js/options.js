@@ -25,6 +25,7 @@ export const OPTIONS = {
 
   SA96:  ['colors', 'Фарба Mineral White металік'],
   SC1M:  ['colors', 'Фарба Phytonic Blue металік'],
+  SC27:  ['colors', 'Фарба Arctic Grey металік'],
   S416:  ['colors', 'Фарба Carbon Black металік'],
   SMCHF: ['colors', 'Оббивка шкіра Vernasca Coffee'],
   SMCSW: ['colors', 'Оббивка шкіра Vernasca Black'],
