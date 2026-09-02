@@ -92,6 +92,19 @@ def check_existing(index, ch):
             ch['sold'].append((car, why))
             continue
 
+        # VIN в Encar то з'являється, то зникає. Якщо його ще не було —
+        # забираємо: без VIN авто неможливо декодувати й перевірити салон.
+        # Наявний VIN ніколи не перетираємо значенням None.
+        vin = det.get('vin')
+        if vin and not car.get('vin'):
+            car['vin'] = vin
+            f = CARS / f'{lid}.json'
+            if f.exists():
+                d = load(f, {}) or {}
+                d['vin'] = vin
+                save(f, d)
+            ch['vins'].append(car)
+
         ad, spec = det.get('advertisement') or {}, det.get('spec') or {}
         man, mileage = ad.get('price'), spec.get('mileage')
         if not man:
@@ -370,6 +383,8 @@ def report(ch):
         head.append(f'декодовано {n["decoded"]}')
     if n['changed']:
         head.append(f'зміна ціни {n["changed"]}')
+    if n['vins']:
+        head.append(f'з\'явився VIN {n["vins"]}')
     if not head and n['problems']:
         head.append(f'проблем {n["problems"]}')
     title = 'Encar: ' + ' · '.join(head) if head else 'Encar: без змін'
@@ -399,6 +414,12 @@ def report(ch):
             out.append(f'- **{short(car["model"])} {car["year"]}** · {car["vin"]} — '
                        f'салон **{res.trim or "не розпізнано"}**, кузов {res.paint or "?"}; '
                        f'{len(res.options)} опцій; є: {have}  \n  {car_link(car)}')
+        out.append('')
+    if ch['vins']:
+        out += ['## З\'явився VIN — можна декодувати', '']
+        for car in ch['vins']:
+            out.append(f'- **{short(car["model"])} {car["year"]}** · {km(car["mileageKm"])} '
+                       f'· {usd(car["priceUSD"])} · VIN `{car["vin"]}`  \n  {car_link(car)}')
         out.append('')
     if ch['changed']:
         out += ['## Змінилась ціна або пробіг', '']
@@ -446,7 +467,8 @@ def main():
     if index is None:
         sys.exit('немає data/cars.json')
     state = load(STATE, {})
-    ch = {'sold': [], 'new': [], 'decoded': [], 'changed': [], 'problems': [], 'notes': []}
+    ch = {'sold': [], 'new': [], 'decoded': [], 'changed': [], 'vins': [],
+          'problems': [], 'notes': []}
 
     check_existing(index, ch)
     find_new(index, state, ch)

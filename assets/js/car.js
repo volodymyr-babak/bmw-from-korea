@@ -193,10 +193,15 @@ function panelCalc(c, b) {
 
 function panelFeatures(c, d) {
   const kf = (d && d.keyFeatures) || c.keyFeatures;
+  // Нотатка потрібна саме тоді, коли опцій ще немає — там і живуть спостереження
+  // з фото, тож вона рендериться в обох гілках.
+  const note = c.note ? `<p class="note">${esc(c.note)}</p>` : '';
   if (!kf) {
     return `<section class="panel"><h2>Ключові опції</h2>
-      <p class="pending">Комплектація ще не розшифрована. VIN є — потрібно прогнати білд-лист BMW,
-      і опції зʼявляться тут.</p></section>`;
+      <p class="pending">Комплектація ще не розшифрована. ${c.vin
+        ? 'VIN є — потрібно прогнати білд-лист BMW, і опції зʼявляться тут.'
+        : 'Encar для цього лота VIN не показує, тому білд-лист поки не зняти — доглядач перевіряє щогодини.'}</p>
+      ${note}</section>`;
   }
   const items = KEY_FEATURES.map((f) => {
     const { has, long } = featureState(kf, f);
@@ -204,7 +209,7 @@ function panelFeatures(c, d) {
   }).join('');
   return `<section class="panel"><h2>Ключові опції</h2>
     <ul class="feature-grid">${items}</ul>
-    ${c.note ? `<p class="note">${esc(c.note)}</p>` : ''}</section>`;
+    ${note}</section>`;
 }
 
 /** «1 звернення · 2 звернення · 5 звернень» */
