@@ -1,12 +1,12 @@
-# Encar: зміна ціни 1
+# Encar: нових 1
 
-## Змінилась ціна або пробіг
+## Нові кандидати
 
-- **X6 2022** · $69 053 → **$66 794**  
-  [лот 42650455](https://volodymyr-babak.github.io/bmw-from-korea/car.html?id=42650455) · [Encar](https://fem.encar.com/cars/detail/42650455)
+- **X5 2019** · 41 921 км · $55 246 · без ремонтів · 1 власн.  
+  [лот 42660021](https://volodymyr-babak.github.io/bmw-from-korea/car.html?id=42660021) · [Encar](https://fem.encar.com/cars/detail/42660021)
 
 ## Примітки
 
 - mdecoder: добова квота вичерпана, наступна спроба завтра
 
-Список: https://volodymyr-babak.github.io/bmw-from-korea/  ·  перевірено 2026-09-02 11:17
+Список: https://volodymyr-babak.github.io/bmw-from-korea/  ·  перевірено 2026-09-02 12:17
