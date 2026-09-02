@@ -155,9 +155,9 @@ function rows(pairs) {
     .join('')}</dl>`;
 }
 
-function colorLine(side, paint = false) {
+function colorLine(side, kind = null) {
   if (!side || !side.name) return null;
-  const bits = [`${paint ? swatch(side) : ''}<b>${esc(side.name)}</b>`];
+  const bits = [`${kind ? swatch(side, kind) : ''}<b>${esc(side.name)}</b>`];
   if (side.code) bits.push(`<span class="num">${esc(side.code)}</span>`);
   if (side.german) bits.push(`<span class="opt-en">${esc(side.german)}</span>`);
   return bits.join(' · ');
@@ -176,13 +176,15 @@ function panelIdentity(c, d) {
     if (d.engine) pairs.push(['Двигун', `<span class="num">${esc(d.engine)}</span>${d.power ? ` · ${esc(d.power)}` : ''}`]);
   }
   // назви BMW беремо з білд-листа; поки його немає — корейський колір з оголошення
-  pairs.push(['Колір кузова', colorLine(d && d.exterior, true)
+  pairs.push(['Колір кузова', colorLine(d && d.exterior, 'paint')
     || (c.exterior ? `${swatch(c.exterior)}<b>${esc(c.exterior)}</b>` : null)]);
   // Пріоритет: білд-лист за VIN → колір з індексу → опис продавця (він збігається
   // з VIN там, де є обидва, але це все ж слова продавця, тому позначаємо).
-  pairs.push(['Салон', colorLine(d && d.interior) || (c.interior ? `<b>${esc(c.interior)}</b>` : null)
+  pairs.push(['Салон', colorLine(d && d.interior, 'trim')
+    || (c.interior ? `${swatch(c.interior, 'trim')}<b>${esc(c.interior)}</b>` : null)
     || (c.interiorUnverified
-      ? `<b>${esc(c.interiorUnverified)}</b> <span class="feat-unknown">— не підтверджено за VIN</span>`
+      ? `${swatch(c.interiorUnverified, 'trim')}<b>${esc(c.interiorUnverified)}</b>`
+        + ' <span class="feat-unknown">— не підтверджено за VIN</span>'
       : '<span class="feat-unknown">уточнюється за VIN</span>')]);
   pairs.push(['Ціна в Кореї', c.koreaPriceMan
     ? `<span class="num">${c.koreaPriceMan.toLocaleString('uk-UA').replace(/\s/g, '\u00a0')}</span>\u00a0만원`

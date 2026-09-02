@@ -124,7 +124,7 @@ export function photoUrl(path, size = 'card') {
   return `${CI}${path}?impolicy=heightRate&${PHOTO_SIZES[size] || PHOTO_SIZES.card}&cg=Center`;
 }
 
-/* ---- колір кузова ---- */
+/* ---- кольори: фарба кузова й оббивка ---- */
 
 /** Зразок фарби для квадратика біля назви кольору.
  *  Ключі — і код BMW, і назва в нижньому регістрі (в індексі лежить лише назва,
@@ -148,23 +148,60 @@ const PAINT_COLORS = {
   'бронзовий': '#6a6559',
 };
 
-/** hex фарби за кодом або назвою; null — коли відтінок невідомий */
-export function paintHex(side) {
+/** Зразок оббивки. Відтінки знято з тих самих рендерів — медіана по спинках
+ *  і подушках передніх сидінь (центральний тунель вирізаний), піднята до того,
+ *  як шкіра виглядає при денному світлі. Cognac і Canberra Beige взяті з
+ *  референсних рендерів уже відсіяних VIN, щоб їх було чим малювати, якщо
+ *  подібне авто з'явиться знову. */
+const TRIM_COLORS = {
+  'mchf': '#5b4638', 'vernasca coffee': '#5b4638',
+  'vahf': '#55402f', 'merino coffee': '#55402f',
+  'mcsw': '#2c2c2e', 'vernasca black': '#2c2c2e',
+  'mcri': '#96663c', 'vernasca cognac': '#96663c',
+  'mcfy': '#b9ab93', 'canberra beige': '#b9ab93',
+  'merino tartufo': '#6d5344',
+  'ivory white': '#ddd6c8',
+  'tacora red': '#7c2026',
+};
+
+/** Непідтверджений салон приходить фразою («чорний — з фото»), тому по ній
+ *  шукаємо ключове слово. «Коричневий» СВІДОМО не мапимо: це або кава, або
+ *  cognac, і вигадувати відповідь тут — та сама помилка, через яку `42244757`
+ *  півдня рахувався кавовим. */
+const TRIM_RULES = [
+  [/coffee|кав|мокко|шоколад/i, '#5b4638'],
+  [/black|чорн/i, '#2c2c2e'],
+  [/cognac|кон.як|рудий/i, '#96663c'],
+  [/tartufo/i, '#6d5344'],
+  [/ivory|айвор|beige|беж/i, '#ddd6c8'],
+  [/tacora|червон/i, '#7c2026'],
+];
+
+const PALETTES = { paint: PAINT_COLORS, trim: TRIM_COLORS };
+
+/** hex за кодом або назвою; null — коли відтінок невідомий.
+ *  `kind`: 'paint' — фарба кузова, 'trim' — оббивка. */
+export function colorHex(side, kind = 'paint') {
   if (!side) return null;
-  const keys = typeof side === 'string'
-    ? [side]
-    : [side.code, side.name, side.german];
+  const map = PALETTES[kind] || PAINT_COLORS;
+  const keys = typeof side === 'string' ? [side] : [side.code, side.name, side.german];
   for (const k of keys) {
     if (!k) continue;
-    const hit = PAINT_COLORS[String(k).toLowerCase()];
+    const hit = map[String(k).toLowerCase()];
     if (hit) return hit;
+  }
+  if (kind === 'trim') {
+    const text = typeof side === 'string' ? side : [side.name, side.german].join(' ');
+    for (const [re, hex] of TRIM_RULES) {
+      if (re.test(text)) return hex;
+    }
   }
   return null;
 }
 
 /** Квадратик кольору. Невідомий відтінок — штрихування, а не вигаданий колір. */
-export function swatch(side) {
-  const hex = paintHex(side);
+export function swatch(side, kind = 'paint') {
+  const hex = colorHex(side, kind);
   return hex
     ? `<span class="swatch" style="--swatch:${hex}" aria-hidden="true"></span>`
     : '<span class="swatch swatch-unknown" title="Відтінок не звірений" aria-hidden="true"></span>';

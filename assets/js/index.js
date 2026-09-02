@@ -25,6 +25,7 @@ async function init() {
   meta = data.meta;
   renderFigures(meta, cars);
   fillColors(cars);
+  fillTrims(cars);
   $('#controls').addEventListener('change', render);
   $('#state').hidden = true;
   $('#ladder').hidden = false;
@@ -67,6 +68,28 @@ function fillColors(list) {
     .join('') + (unknown ? `<option value="\u0000">колір невідомий — ${unknown}</option>` : ''));
 }
 
+/** Салон для показу й фільтра: білд-лист за VIN → інакше непідтверджене
+ *  джерело (опис чи фото). null — про салон не відомо нічого. */
+function trimLabel(c) {
+  return c.interior || c.interiorUnverified || null;
+}
+
+/** Варіанти для фільтра салону — з даних, підтверджені за VIN спершу. */
+function fillTrims(list) {
+  const counts = new Map();
+  for (const c of list) {
+    const t = trimLabel(c);
+    if (t) counts.set(t, (counts.get(t) || 0) + 1);
+  }
+  const unknown = list.filter((c) => !trimLabel(c)).length;
+  const verified = (name) => list.some((c) => c.interior === name);
+  $('#f-trim').insertAdjacentHTML('beforeend', [...counts.entries()]
+    .sort((a, b) => Number(verified(b[0])) - Number(verified(a[0])) || b[1] - a[1])
+    .map(([name, n]) =>
+      `<option value="${esc(name)}">${esc(name)}${verified(name) ? '' : ' (?)'} — ${n}</option>`)
+    .join('') + (unknown ? `<option value="\u0000">салон невідомий — ${unknown}</option>` : ''));
+}
+
 /** Пневмо: білд-лист за VIN → інакше слова продавця → інакше невідомо (null).
     Ретрофіт нереальний, тому це властивість авто, а не опція, яку доберуть. */
 function airState(c) {
@@ -84,6 +107,7 @@ function render() {
   const onlyDecoded = f.get('decoded') === 'on';
   const onlyAir = f.get('air') === 'on';
   const color = f.get('color');
+  const trimColor = f.get('trim');
 
   let view = cars.filter((c) =>
     (!model || c.model.startsWith(model)) &&
@@ -92,6 +116,7 @@ function render() {
     c.priceUSD <= maxPrice &&
     (!onlyDecoded || c.decoded) &&
     (!color || (color === '\u0000' ? !c.exterior : c.exterior === color)) &&
+    (!trimColor || (trimColor === '\u0000' ? !trimLabel(c) : trimLabel(c) === trimColor)) &&
     // невідоме ховаємо разом із «немає»: краще недобрати кандидата, ніж
     // порахувати пневмо там, де її не перевіряли
     (!onlyAir || airState(c) === true)
@@ -128,9 +153,9 @@ function row(c, isCheapest) {
   // Салон: спершу білд-лист за VIN, інакше непідтверджене джерело (опис
   // оголошення чи фото) — тоді зі знаком питання.
   const trim = c.interior
-    ? `салон <b>${esc(c.interior)}</b>`
+    ? `салон ${swatch(c.interior, 'trim')}<b>${esc(c.interior)}</b>`
     : (c.interiorUnverified
-      ? `салон <b>${esc(c.interiorUnverified)}</b><span class="est" title="Не підтверджено білд-листом за VIN">?</span>`
+      ? `салон ${swatch(c.interiorUnverified, 'trim')}<b>${esc(c.interiorUnverified)}</b><span class="est" title="Не підтверджено білд-листом за VIN">?</span>`
       : '');
   const colors = c.exterior || trim
     ? `<p class="colors">${c.exterior

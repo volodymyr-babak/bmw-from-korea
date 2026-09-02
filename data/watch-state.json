@@ -609,6 +609,11 @@
       "reason": "було в статусі «прокат»",
       "vin": "WBAGT8106M9H88223",
       "at": "2026-09-02"
+    },
+    "42595623": {
+      "reason": "салон Vernasca Tacora Red (MCG7) за VIN",
+      "vin": "WBAGT8106M9H41192",
+      "at": "2026-09-02"
     }
   },
   "mdecoder": {
@@ -625,10 +630,11 @@
     "WBAGT8104M9F77425": "Tacora Red",
     "WBAGT8105M9G08438": "Tacora Red",
     "WBAGT8105M9G09198": "Tacora Red",
-    "WBAGT8104M9H08255": "Ivory White",
+    "WBAGT8104M9H08255": "Vernasca Canberra Beige (MCFY) — за білд-листом",
     "WBAJU8103M9G49105": "бежевий / айворі",
     "WBACV6107KLK23778": "Vernasca Cognac",
-    "WBACV6100L9D36425": "Vernasca Cognac"
+    "WBACV6100L9D36425": "Vernasca Cognac",
+    "WBAGT8106M9H41192": "Vernasca Tacora Red (MCG7)"
   },
   "usageRejected": {
     "WBAGT8106M9H88223": "прокат",
