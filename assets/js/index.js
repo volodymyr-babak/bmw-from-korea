@@ -91,8 +91,13 @@ function row(c, isCheapest) {
     ? `<span class="est" title="Для X6 узято митну вартість X5 — реально очікувати на $1000–2000 більше">≈</span>${usd(c.priceUSD)}`
     : usd(c.priceUSD);
 
-  const colors = c.exterior || c.interior
-    ? `<p class="colors">${c.exterior ? `кузов <b>${esc(c.exterior)}</b>` : ''}${c.exterior && c.interior ? ' · ' : ''}${c.interior ? `салон <b>${esc(c.interior)}</b>` : ''}</p>`
+  // Салон: спершу VIN, інакше опис продавця — тоді зі знаком питання,
+  // бо це слова продавця, а не білд-лист.
+  const trim = c.interior
+    ? `салон <b>${esc(c.interior)}</b>`
+    : (c.interiorSeller ? `салон <b>${esc(c.interiorSeller)}</b><span class="est" title="За описом продавця на Encar, не підтверджено VIN">?</span>` : '');
+  const colors = c.exterior || trim
+    ? `<p class="colors">${c.exterior ? `кузов <b>${esc(c.exterior)}</b>` : ''}${c.exterior && trim ? ' · ' : ''}${trim}</p>`
     : '';
 
   return `<li class="car">

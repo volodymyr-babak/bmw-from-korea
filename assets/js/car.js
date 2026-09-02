@@ -152,8 +152,12 @@ function panelIdentity(c, d) {
   }
   // назви BMW беремо з білд-листа; поки його немає — корейський колір з оголошення
   pairs.push(['Колір кузова', colorLine(d && d.exterior) || (c.exterior ? `<b>${esc(c.exterior)}</b>` : null)]);
+  // Пріоритет: білд-лист за VIN → колір з індексу → опис продавця (він збігається
+  // з VIN там, де є обидва, але це все ж слова продавця, тому позначаємо).
   pairs.push(['Салон', colorLine(d && d.interior) || (c.interior ? `<b>${esc(c.interior)}</b>` : null)
-    || '<span class="feat-unknown">уточнюється за VIN</span>']);
+    || (c.interiorSeller
+      ? `<b>${esc(c.interiorSeller)}</b> <span class="feat-unknown">— за описом продавця, не за VIN</span>`
+      : '<span class="feat-unknown">уточнюється за VIN</span>')]);
   pairs.push(['Ціна в Кореї', c.koreaPriceMan
     ? `<span class="num">${c.koreaPriceMan.toLocaleString('uk-UA').replace(/\s/g, '\u00a0')}</span>\u00a0만원`
     : null]);

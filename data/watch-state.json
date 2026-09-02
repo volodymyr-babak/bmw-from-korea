@@ -569,6 +569,16 @@
       "reason": "салон Tacora Red за фото",
       "vin": "WBAGT8100M9F15603",
       "at": "2026-09-02"
+    },
+    "42660021": {
+      "reason": "салон Cognac (рудий) за описом продавця",
+      "vin": null,
+      "at": "2026-09-02"
+    },
+    "42348688": {
+      "reason": "салон бежевий / айворі за описом продавця",
+      "vin": "WBAJU8103M9G49105",
+      "at": "2026-09-02"
     }
   },
   "mdecoder": {
@@ -585,6 +595,7 @@
     "WBAGT8104M9F77425": "Tacora Red",
     "WBAGT8105M9G08438": "Tacora Red",
     "WBAGT8105M9G09198": "Tacora Red",
-    "WBAGT8104M9H08255": "Ivory White"
+    "WBAGT8104M9H08255": "Ivory White",
+    "WBAJU8103M9G49105": "бежевий / айворі"
   }
 }

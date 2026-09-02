@@ -26,6 +26,7 @@ sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
 import customs
 import encar
 import mdecoder
+import trim
 import sync_index
 
 REPO = pathlib.Path(__file__).resolve().parent.parent
@@ -172,6 +173,11 @@ def reject_reason(det, hist, vins_taken, cars, model, year, man, bad_trim=None):
     # Cognac від кавового по фото надійно не відрізниш — ці лишаємо до VIN.
     if vin and vin in (bad_trim or {}):
         return f'салон {bad_trim[vin]} за фото', vin
+    # Кольору салону в API немає, але продавці пишуть його в описі — і опис
+    # збігається з білд-листом там, де є обидва. Відсіваємо тут, до mdecoder.
+    colour, ok, _ = trim.seat_colour(((det.get('contents') or {}).get('text') or ''))
+    if colour and not ok:
+        return f'салон {colour} за описом продавця', vin
     if not vin:
         twin = is_twin(cars, model, year, man, (det.get('spec') or {}).get('mileage'))
         if twin:
@@ -258,6 +264,10 @@ def build_car(lid, model, year, man, price, det, hist):
     lab = exterior_label(spec.get('colorName'), spec.get('customColor'))
     if lab:
         car['exterior'] = lab
+    # Салон зі слів продавця: краще, ніж нічого, поки не знято білд-лист.
+    colour, ok, _ = trim.seat_colour(((det.get('contents') or {}).get('text') or ''))
+    if colour and ok:
+        car['interiorSeller'] = colour
     return car
 
 
