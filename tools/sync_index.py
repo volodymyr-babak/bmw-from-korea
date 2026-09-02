@@ -54,6 +54,10 @@ def main() -> int:
             name = (detail.get(side) or {}).get("name")
             if name:
                 car[side] = name
+        # Салон із білд-листа за VIN перекриває будь-яку непідтверджену догадку
+        # (опис оголошення чи фото) — щоб на сайті не лишалось двох відповідей.
+        if car.get("interior"):
+            car.pop("interiorUnverified", None)
 
         photos = detail.get("photos") or {}
         shots = photos.get("outer") or photos.get("inner") or []

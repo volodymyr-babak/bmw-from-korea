@@ -80,6 +80,7 @@ function renderBody(c, d) {
       <div class="panel-col">${panelIdentity(c, d)}${panelCalc(c, b)}</div>
       <div class="panel-col">${panelFeatures(c, d)}${panelHistory(d)}</div>
     </div>
+    ${panelSeller(c, d)}
     ${panelOptions(c, d)}`;
 }
 
@@ -155,8 +156,8 @@ function panelIdentity(c, d) {
   // Пріоритет: білд-лист за VIN → колір з індексу → опис продавця (він збігається
   // з VIN там, де є обидва, але це все ж слова продавця, тому позначаємо).
   pairs.push(['Салон', colorLine(d && d.interior) || (c.interior ? `<b>${esc(c.interior)}</b>` : null)
-    || (c.interiorSeller
-      ? `<b>${esc(c.interiorSeller)}</b> <span class="feat-unknown">— за описом продавця, не за VIN</span>`
+    || (c.interiorUnverified
+      ? `<b>${esc(c.interiorUnverified)}</b> <span class="feat-unknown">— не підтверджено за VIN</span>`
       : '<span class="feat-unknown">уточнюється за VIN</span>')]);
   pairs.push(['Ціна в Кореї', c.koreaPriceMan
     ? `<span class="num">${c.koreaPriceMan.toLocaleString('uk-UA').replace(/\s/g, '\u00a0')}</span>\u00a0만원`
@@ -249,6 +250,25 @@ function panelHistory(d) {
     <p class="note">${clean
       ? 'За виплатами страховика авто без ремонтів.'
       : `Виплати на власний ремонт — ${krwM(h.myAccidentCost || 0)}, це нижче за поріг 5 млн ₩, який ми тримаємо.`}</p>
+  </section>`;
+}
+
+/** Що пише продавець в описі оголошення — джерело поза API й білд-листом.
+ *  kind: plus (аргумент за) · minus (насторожує) · info (просто факт). */
+const SELLER_MARK = { plus: '+', minus: '!', info: '·' };
+
+function panelSeller(c, d) {
+  const fs = (d && d.sellerFacts) || [];
+  if (!fs.length) return '';
+  const items = fs.map((f) => {
+    const kind = SELLER_MARK[f.kind] ? f.kind : 'info';
+    return `<li class="fact fact-${kind}"><span class="fact-mark" aria-hidden="true">${SELLER_MARK[kind]}</span>${esc(f.text)}</li>`;
+  }).join('');
+  return `<section class="panel panel-wide"><h2>Що пише продавець</h2>
+    <ul class="facts">${items}</ul>
+    <p class="note">Це слова продавця з опису на Encar, а не перевірені дані. Корисне саме
+      тим, що частину цього немає ні в API, ні в білд-листі за VIN — ключі, залишок протектора,
+      продовжена гарантія, визнані кузовні роботи. Розбіжності з реєстром виплат позначені «!».</p>
   </section>`;
 }
 

@@ -526,6 +526,35 @@ a:hover { text-decoration-thickness: 2px; }
   font-size: 14px;
 }
 
+/* ---------- що пише продавець ---------- */
+
+.facts {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 10px 28px;
+}
+.fact {
+  display: grid;
+  grid-template-columns: 18px minmax(0, 1fr);
+  gap: 8px;
+  font-size: 14px;
+  line-height: 1.45;
+  max-width: 60ch;
+}
+.fact-mark {
+  font-family: "IBM Plex Mono", ui-monospace, monospace;
+  font-weight: 600;
+  text-align: center;
+}
+.fact-plus .fact-mark { color: var(--yes); }
+.fact-minus .fact-mark { color: var(--warn); }
+.fact-info .fact-mark { color: var(--ink-3); }
+.fact-minus { color: var(--ink); }
+.fact-info { color: var(--ink-2); }
+
 .opt-group { margin: 0 0 22px; break-inside: avoid; }
 .opt-group h3 {
   font-family: "IBM Plex Sans Condensed", sans-serif;

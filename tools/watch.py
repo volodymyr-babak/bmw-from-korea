@@ -27,6 +27,7 @@ import customs
 import encar
 import mdecoder
 import trim
+import seller
 import sync_index
 
 REPO = pathlib.Path(__file__).resolve().parent.parent
@@ -96,7 +97,8 @@ def check_existing(index, ch):
         # VIN в Encar то з'являється, то зникає. Якщо його ще не було —
         # забираємо: без VIN авто неможливо декодувати й перевірити салон.
         # Наявний VIN ніколи не перетираємо значенням None.
-        vin = det.get('vin')
+        vin = det.get('vin') or seller.vin_from_text(
+            (det.get('contents') or {}).get('text') or '', car['year'])
         if vin and not car.get('vin'):
             car['vin'] = vin
             f = CARS / f'{lid}.json'
@@ -254,7 +256,9 @@ def build_car(lid, model, year, man, price, det, hist):
     car = {
         'listingId': lid, 'model': model, 'year': year,
         'mileageKm': spec.get('mileage'), 'koreaPriceMan': man, 'priceUSD': price,
-        'vin': det.get('vin'), 'decoded': False,
+        'vin': det.get('vin') or seller.vin_from_text(
+            (det.get('contents') or {}).get('text') or '', year),
+        'decoded': False,
         'accident': {'costKRW': (hist or {}).get('myAccidentCost') or 0,
                      'owners': (hist or {}).get('ownerChangeCnt') or 0},
         'photo': (ph['outer'] or ph['inner'] or [None])[0],
@@ -267,20 +271,28 @@ def build_car(lid, model, year, man, price, det, hist):
     # Салон зі слів продавця: краще, ніж нічого, поки не знято білд-лист.
     colour, ok, _ = trim.seat_colour(((det.get('contents') or {}).get('text') or ''))
     if colour and ok:
-        car['interiorSeller'] = colour
+        car['interiorUnverified'] = f'{colour} — з опису'
     return car
 
 
 def build_detail(lid, model, year, man, price, det, hist):
+    # Сирий текст оголошення зберігаємо назавжди: у ньому лежить те, чого немає
+    # в API (ключі, протектор, продовжена гарантія, визнані кузовні роботи), і
+    # перечитати його руками можна вже без запитів до Encar.
+    text = (det.get('contents') or {}).get('text') or ''
+    auto = seller.facts(text)
     return {
         'listingId': lid,
         'encarUrl': f'https://fem.encar.com/cars/detail/{lid}',
-        'model': model, 'mfgYear': year, 'vin': det.get('vin'),
+        'model': model, 'mfgYear': year,
+        'vin': det.get('vin') or seller.vin_from_text(text, year),
         'mileageKm': (det.get('spec') or {}).get('mileage'),
         'koreaPriceMan': man, 'priceUSD': price,
         **({'priceEstimated': True} if not model.startswith('X5') else {}),
         'photos': encar.photos(det),
         'history': hist,
+        **({'sellerText': text} if text.strip() else {}),
+        **({'sellerFacts': auto} if auto else {}),
     }
 
 

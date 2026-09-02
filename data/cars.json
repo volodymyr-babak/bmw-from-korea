@@ -79,7 +79,7 @@
       "photo": "/carpicture04/pic4224/42244753_002.jpg",
       "exterior": "Carbon Black",
       "rank": 3,
-      "interiorSeller": "коричневий / Coffee"
+      "interiorUnverified": "коричневий / Coffee — з опису"
     },
     {
       "rank": 4,
@@ -187,13 +187,12 @@
       "vin": null,
       "decoded": false,
       "exterior": "перловий",
-      "interior": "чорний (фото)",
       "accident": {
         "costKRW": 1505024,
         "owners": 4
       },
-      "note": "VIN відсутній в Encar",
-      "photo": "/carpicture05/pic4255/42554478_001.jpg"
+      "photo": "/carpicture05/pic4255/42554478_001.jpg",
+      "interiorUnverified": "чорний — з фото"
     },
     {
       "rank": 8,
@@ -210,7 +209,8 @@
         "costKRW": 4593060,
         "owners": 1
       },
-      "photo": "/carpicture06/pic4246/42461837_001.jpg"
+      "photo": "/carpicture06/pic4246/42461837_001.jpg",
+      "note": "Пневмопідвіски немає — продавець зазначає це прямо (і подає як плюс). Натомість лазер, камери навколо і Harman/Kardon."
     },
     {
       "rank": 9,
@@ -228,7 +228,8 @@
         "costKRW": 0,
         "owners": 1
       },
-      "photo": "/carpicture04/pic4254/42548037_001.jpg"
+      "photo": "/carpicture04/pic4254/42548037_001.jpg",
+      "note": "Гарантію продовжено до 14.09.2026, три ключі."
     },
     {
       "rank": 10,
@@ -264,7 +265,7 @@
       "photo": "/carpicture08/pic4258/42585873_001.jpg",
       "exterior": "білий",
       "rank": 11,
-      "interiorSeller": "коричневий / Coffee"
+      "interiorUnverified": "коричневий / Coffee — з опису"
     },
     {
       "rank": 12,
@@ -291,7 +292,7 @@
       "mileageKm": 79541,
       "koreaPriceMan": 5590,
       "priceUSD": 60459,
-      "vin": null,
+      "vin": "WBACV6100L9D36425",
       "decoded": false,
       "accident": {
         "costKRW": 0,
@@ -394,7 +395,7 @@
         "owners": 0
       },
       "photo": "/carpicture05/pic4155/41555850_001.jpg",
-      "interiorSeller": "коричневий / Coffee"
+      "interiorUnverified": "коричневий / Coffee — з опису"
     },
     {
       "rank": 17,
@@ -451,7 +452,7 @@
         "owners": 0
       },
       "photo": "/carpicture04/pic4114/41142979_001.jpg",
-      "interiorSeller": "коричневий / Coffee"
+      "interiorUnverified": "коричневий / Coffee — з опису"
     },
     {
       "listingId": "42627728",
@@ -541,7 +542,7 @@
         "owners": 1
       },
       "photo": "/carpicture07/pic4247/42478734_001.jpg",
-      "interiorSeller": "коричневий / Coffee"
+      "interiorUnverified": "коричневий / Coffee — з опису"
     },
     {
       "listingId": "42646084",
@@ -593,7 +594,8 @@
         "costKRW": 4490960,
         "owners": 1
       },
-      "photo": "/carpicture06/pic4096/40966656_001.jpg"
+      "photo": "/carpicture06/pic4096/40966656_001.jpg",
+      "note": "Міняли капот — продавець пише, що через звичайну вмʼятину, і має фото. Звідси 4,5 млн ₩ виплат."
     },
     {
       "rank": 27,
@@ -663,7 +665,7 @@
         "costKRW": 0,
         "owners": 0
       },
-      "note": "найменший пробіг; VIN відсутній в Encar",
+      "note": "Пробіг 26 786 км. VIN Encar не показує. Продавець сам показує єдиний ремонт: верх кришки багажника — зачепили гілку, коли відкривали; є у звіті про стан.",
       "photo": "/carpicture09/pic4209/42094631_001.jpg"
     },
     {
@@ -682,7 +684,8 @@
         "costKRW": 4724399,
         "owners": 1
       },
-      "photo": "/carpicture04/pic4234/42348555_001.jpg"
+      "photo": "/carpicture04/pic4234/42348555_001.jpg",
+      "note": "Пише «без фарбування й замін», а в реєстрі 4,7 млн ₩ виплат — найбільша розбіжність у добірці."
     },
     {
       "rank": 32,
@@ -810,7 +813,7 @@
         "owners": 1
       },
       "photo": "/carpicture06/pic4156/41565618_001.jpg",
-      "interiorSeller": "коричневий / Coffee"
+      "interiorUnverified": "коричневий / Coffee — з опису"
     },
     {
       "rank": 38,
@@ -897,7 +900,8 @@
         "costKRW": 0,
         "owners": 0
       },
-      "photo": "/carpicture08/pic4168/41689680_001.jpg"
+      "photo": "/carpicture08/pic4168/41689680_001.jpg",
+      "note": "Продавець сам пише про ≈5,7 млн ₩ на заміну крила — виплата ще не в реєстрі Encar, тому наш поріг 5 млн ₩ її не побачив."
     },
     {
       "rank": 43,
@@ -953,7 +957,7 @@
         "owners": 0
       },
       "photo": "/carpicture05/pic4145/41456161_001.jpg",
-      "interiorSeller": "коричневий / Coffee"
+      "interiorUnverified": "коричневий / Coffee — з опису"
     }
   ]
 }
