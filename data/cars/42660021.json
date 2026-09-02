@@ -1,0 +1,87 @@
+{
+  "listingId": "42660021",
+  "encarUrl": "https://fem.encar.com/cars/detail/42660021",
+  "model": "X5 (G05)",
+  "mfgYear": 2019,
+  "vin": null,
+  "mileageKm": 41921,
+  "koreaPriceMan": 5390,
+  "priceUSD": 55246,
+  "photos": {
+    "outer": [
+      "/carpicture06/pic4266/42660021_001.jpg",
+      "/carpicture06/pic4266/42660021_002.jpg",
+      "/carpicture06/pic4266/42660021_003.jpg",
+      "/carpicture06/pic4266/42660021_004.jpg",
+      "/carpicture06/pic4266/42660021_005.jpg",
+      "/carpicture06/pic4266/42660021_006.jpg"
+    ],
+    "inner": [
+      "/carpicture06/pic4266/42660021_007.jpg",
+      "/carpicture06/pic4266/42660021_008.jpg",
+      "/carpicture06/pic4266/42660021_009.jpg",
+      "/carpicture06/pic4266/42660021_010.jpg"
+    ]
+  },
+  "history": {
+    "openData": true,
+    "regDate": "2026-09-02T17:07:29.45625",
+    "carNo": "393노6709",
+    "year": "2020",
+    "maker": "BMW",
+    "carKind": "1",
+    "use": "2",
+    "displacement": "2993",
+    "carName": null,
+    "firstDate": "2019-10-29",
+    "fuel": "디젤",
+    "carShape": "SUV 5도어",
+    "model": "X5 (G05)",
+    "transmission": null,
+    "carNameCode": null,
+    "myAccidentCnt": 0,
+    "otherAccidentCnt": 0,
+    "ownerChangeCnt": 1,
+    "robberCnt": 0,
+    "robberDate": null,
+    "totalLossCnt": 0,
+    "totalLossDate": null,
+    "floodTotalLossCnt": 0,
+    "floodPartLossCnt": null,
+    "floodDate": null,
+    "government": 0,
+    "business": 0,
+    "loan": 1,
+    "carNoChangeCnt": 1,
+    "myAccidentCost": 0,
+    "otherAccidentCost": 0,
+    "carInfoChanges": [
+      {
+        "date": "2019-10-29",
+        "carNo": "159호XXXX"
+      },
+      {
+        "date": "2023-11-03",
+        "carNo": "393노XXXX"
+      }
+    ],
+    "carInfoUse1s": [
+      "3",
+      "2"
+    ],
+    "carInfoUse2s": [
+      "1",
+      "1"
+    ],
+    "ownerChanges": [
+      "2023-11-03"
+    ],
+    "notJoinDate1": null,
+    "notJoinDate2": null,
+    "notJoinDate3": null,
+    "notJoinDate4": null,
+    "notJoinDate5": null,
+    "accidentCnt": 0,
+    "accidents": []
+  }
+}

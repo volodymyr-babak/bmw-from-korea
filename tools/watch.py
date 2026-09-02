@@ -146,13 +146,19 @@ def is_twin(cars, model, year, man, mileage):
     return None
 
 
-def reject_reason(det, hist, vins_taken, cars, model, year, man):
+def reject_reason(det, hist, vins_taken, cars, model, year, man, bad_trim=None):
     ad = det.get('advertisement') or {}
     if ad.get('salesStatus') or ad.get('price') == 9999:
         return 'уже продається за контрактом', None
     vin = det.get('vin')
     if vin and vin in vins_taken:
         return 'дубль за VIN', vin
+    # Tacora Red і Ivory White видно на фото одразу — відсіюємо, не витрачаючи
+    # на це дефіцитну спробу mdecoder. Ключ — VIN, бо той самий лот
+    # перевиставляють під новим listingId, а колір оббивки не змінюється.
+    # Cognac від кавового по фото надійно не відрізниш — ці лишаємо до VIN.
+    if vin and vin in (bad_trim or {}):
+        return f'салон {bad_trim[vin]} за фото', vin
     if not vin:
         twin = is_twin(cars, model, year, man, (det.get('spec') or {}).get('mileage'))
         if twin:
@@ -171,6 +177,7 @@ def find_new(index, state, ch):
     known = {c['listingId'] for c in index['cars']}
     rejected = state.setdefault('rejected', {})
     vins_taken = {c['vin'] for c in index['cars'] if c.get('vin')}
+    bad_trim = state.get('interiorRejected') or {}
 
     # дублі варто перепитати: близнюк міг продатись і місце звільнилось
     for lid in [k for k, v in rejected.items()
@@ -208,7 +215,7 @@ def find_new(index, state, ch):
             _, hist = encar.record(vid) if vid else ('404', None)
 
             why, vin = reject_reason(det, hist, vins_taken, index['cars'],
-                                     model, year, int(man))
+                                     model, year, int(man), bad_trim)
             if why:
                 rejected[lid] = {'reason': why, 'vin': vin, 'at': today()}
                 continue

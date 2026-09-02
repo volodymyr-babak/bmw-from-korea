@@ -519,6 +519,56 @@
       "reason": "дубль без VIN — те саме авто, що лот 42574631",
       "vin": null,
       "at": "2026-09-02"
+    },
+    "42551562": {
+      "reason": "червоний салон (Tacora Red) за фото",
+      "vin": "WBAGT8100M9F15603",
+      "at": "2026-09-02"
+    },
+    "42376797": {
+      "reason": "червоний салон (Tacora Red) за фото",
+      "vin": "WBAGT210XL9C65749",
+      "at": "2026-09-02"
+    },
+    "42047529": {
+      "reason": "червоний салон (Tacora Red) за фото",
+      "vin": "WBAGT8104M9F77425",
+      "at": "2026-09-02"
+    },
+    "41503700": {
+      "reason": "червоний салон (Tacora Red) за фото",
+      "vin": "WBAGT8105M9G08438",
+      "at": "2026-09-02"
+    },
+    "42190131": {
+      "reason": "червоний салон (Tacora Red) за фото",
+      "vin": null,
+      "at": "2026-09-02"
+    },
+    "42185232": {
+      "reason": "червоний салон (Tacora Red) за фото",
+      "vin": "WBAGT8104M9E79642",
+      "at": "2026-09-02"
+    },
+    "41962836": {
+      "reason": "червоний салон (Tacora Red) за фото",
+      "vin": "WBAGT2105L9B43171",
+      "at": "2026-09-02"
+    },
+    "42651049": {
+      "reason": "червоний салон (Tacora Red) за фото",
+      "vin": null,
+      "at": "2026-09-02"
+    },
+    "42569192": {
+      "reason": "червоний салон (Tacora Red) за фото",
+      "vin": "WBAGT8105M9G09198",
+      "at": "2026-09-02"
+    },
+    "42340650": {
+      "reason": "салон Ivory White за фото",
+      "vin": "WBAGT8104M9H08255",
+      "at": "2026-09-02"
     }
   },
   "mdecoder": {
@@ -526,5 +576,15 @@
     "decoded": {},
     "failed": {}
   },
-  "lastRun": "2026-09-02T11:17:27+03:00"
+  "lastRun": "2026-09-02T11:17:27+03:00",
+  "interiorRejected": {
+    "WBAGT2105L9B43171": "Tacora Red",
+    "WBAGT210XL9C65749": "Tacora Red",
+    "WBAGT8100M9F15603": "Tacora Red",
+    "WBAGT8104M9E79642": "Tacora Red",
+    "WBAGT8104M9F77425": "Tacora Red",
+    "WBAGT8105M9G08438": "Tacora Red",
+    "WBAGT8105M9G09198": "Tacora Red",
+    "WBAGT8104M9H08255": "Ivory White"
+  }
 }
