@@ -467,11 +467,27 @@ def main():
     sync_index.main()
 
     if touched or ch['problems']:
-        save_md(LAST, body)
-        append_md(LOG, body)
-    if touched or ch['problems']:
-        print(publish(title))
+        if same_as_last(body):
+            # Реальні зміни не повторюються (продане зникає, нове додається один
+            # раз), тому однаковий звіт означає ту саму невирішену проблему.
+            # Не пушимо — інакше issue приходив би щогодини.
+            print('звіт не змінився з минулого разу — не публікую')
+        else:
+            save_md(LAST, body)
+            append_md(LOG, body)
+            print(publish(title))
     print(title)
+
+
+def strip_stamp(body: str) -> str:
+    """Звіт без останнього рядка з часом перевірки."""
+    return '\n'.join(body.rstrip().split('\n')[:-1]).rstrip()
+
+
+def same_as_last(body: str) -> bool:
+    if not LAST.exists():
+        return False
+    return strip_stamp(LAST.read_text(encoding='utf-8')) == strip_stamp(body)
 
 
 def save_md(path, body):
