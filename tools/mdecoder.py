@@ -26,16 +26,18 @@ MIN_CODES = 25          # менше — точно не повний білд-�
 # ⚠ S4NM (масаж) не підтверджено на живому білд-листі — жодне авто в добірці
 # його поки не мало. Перевірити на першому ж декоді, де масаж видно на фото.
 FEATURE_CODES = {
-    'air':      ['S2VR'],
-    'laser':    ['S5AZ'],
-    'soft':     ['S323'],
-    'vent':     ['S453'],
-    'massage':  ['S4NM'],
-    'hk':       ['S688'],
-    'bw':       ['S6F1', 'S6AR'],
-    'pano':     ['S402', 'S407'],
-    'acoustic': ['S3KA'],
-    'mhev':     ['S1CE'],
+    'air':       ['S2VR'],
+    'laser':     ['S5AZ'],
+    'led':       ['S552'],
+    'soft':      ['S323'],
+    'vent':      ['S453'],
+    'massage':   ['S4NM'],
+    'hk':        ['S688'],
+    'bw':        ['S6F1', 'S6AR'],
+    'pano':      ['S402', 'S407'],
+    'skylounge': ['S407'],
+    'acoustic':  ['S3KA'],
+    'mhev':      ['S1CE'],
 }
 
 PAINT_HINTS = ('metallic', 'brillanteffekt', 'uni', 'einfarbig', 'effekt')

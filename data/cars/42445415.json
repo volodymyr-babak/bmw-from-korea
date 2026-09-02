@@ -24,12 +24,14 @@
   "keyFeatures": {
     "air": false,
     "laser": true,
+    "led": false,
     "soft": true,
     "vent": true,
     "massage": false,
     "hk": false,
     "bw": true,
     "pano": true,
+    "skylounge": false,
     "acoustic": false,
     "mhev": true
   },

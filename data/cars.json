@@ -29,11 +29,13 @@
       "keyFeatures": {
         "air": true,
         "laser": false,
+        "led": true,
         "soft": false,
         "vent": true,
         "massage": false,
         "hk": true,
         "pano": true,
+        "skylounge": false,
         "acoustic": false,
         "mhev": false
       }
@@ -93,11 +95,13 @@
       "keyFeatures": {
         "air": false,
         "laser": true,
+        "led": false,
         "soft": true,
         "vent": true,
         "massage": false,
         "hk": false,
         "pano": true,
+        "skylounge": false,
         "acoustic": false,
         "mhev": true,
         "bw": true
@@ -142,11 +146,13 @@
       "keyFeatures": {
         "air": true,
         "laser": false,
+        "led": true,
         "soft": false,
         "vent": true,
         "massage": false,
         "hk": true,
         "pano": true,
+        "skylounge": false,
         "acoustic": false,
         "mhev": false
       }
@@ -386,11 +392,13 @@
       "keyFeatures": {
         "air": true,
         "laser": false,
+        "led": true,
         "soft": false,
         "vent": true,
         "massage": false,
         "hk": true,
         "pano": true,
+        "skylounge": false,
         "acoustic": false,
         "mhev": false
       }
@@ -416,11 +424,13 @@
       "keyFeatures": {
         "air": true,
         "laser": false,
+        "led": true,
         "soft": false,
         "vent": true,
         "massage": false,
         "hk": true,
         "pano": true,
+        "skylounge": false,
         "acoustic": false,
         "mhev": false
       }
@@ -482,11 +492,13 @@
       "keyFeatures": {
         "air": true,
         "laser": false,
+        "led": true,
         "soft": false,
         "vent": true,
         "massage": false,
         "hk": true,
         "pano": true,
+        "skylounge": false,
         "acoustic": false,
         "mhev": true
       }
@@ -902,11 +914,13 @@
       "keyFeatures": {
         "air": true,
         "laser": false,
+        "led": true,
         "soft": false,
         "vent": true,
         "massage": false,
         "hk": true,
         "pano": true,
+        "skylounge": false,
         "acoustic": false,
         "mhev": true
       }
@@ -1055,11 +1069,13 @@
       "keyFeatures": {
         "air": true,
         "laser": true,
+        "led": false,
         "soft": true,
         "vent": false,
         "massage": false,
         "hk": false,
         "pano": true,
+        "skylounge": false,
         "acoustic": false,
         "mhev": true
       }

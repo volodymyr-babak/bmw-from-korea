@@ -19,7 +19,8 @@ ROOT = pathlib.Path(__file__).resolve().parent.parent
 INDEX = ROOT / "data" / "cars.json"
 DETAILS = ROOT / "data" / "cars"
 
-KEY_FEATURES = ["air", "laser", "soft", "vent", "massage", "hk", "pano", "acoustic", "mhev"]
+KEY_FEATURES = ["air", "laser", "led", "soft", "vent", "massage", "hk", "pano",
+                "skylounge", "acoustic", "mhev"]
 
 FRAME = re.compile(r"_(\d+)\.jpg$")
 

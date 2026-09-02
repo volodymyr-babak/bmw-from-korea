@@ -113,6 +113,33 @@ svc   = 1000                                    # послуги
 | S4M5 | Individual leather-covered dashboard (шкіряна панель приладів; проти базового `S4AW` Sensatec) |
 | `SA96` / `SMCSW` | mdecoder іноді видає **коди фарби й оббивки** прямо в «Other equipment» з префіксом `SA…`/`SM…` (тут A96 = Mineral White, MCSW = Vernasca Black) — звідти брати коди для картки |
 
+### ⚠️ Пастка: пакет перекриває окрему опцію
+Якщо опція входить у пакет, BMW **не виписує її окремим кодом**. Тому «коду немає»
+≠ «функції немає». Перевірені випадки:
+
+| Що шукаємо | Код, який реально стоїть | Окремий код, якого НЕ буде |
+|---|---|---|
+| підігрів керма | `S4HB` Heat Comfort (8/8) | `S248` (0/8) |
+| adaptive cruise control | `S5AU` Driving Assistant Professional (8/8) — ACC це його основа | окремого коду ACC немає |
+| памʼять сидінь | `S456` Comfort seat with memory (7/8) | `S459` поруч не з'явиться |
+| клімат | `S4NB` 4 зони (8/8) | 2-зонного коду не буде |
+
+### Є в УСІХ 8 декодованих — у рядок опцій не додавати
+`S1MA` M-вихлоп · `S402` панорама · `S610` HUD · `S4NB` 4-зона · `S4HA` підігрів сидінь
+пер.+задн. · `S4HB` підігрів керма · `S5AU` DAP (=ACC) · `S5DN` Parking Assistant Plus ·
+`S6U8` жести · `S2NH` гальма M Sport · `S322` Comfort Access · `S3DS` Display Key ·
+`S4UR` Ambient · `S4A2` кришталевий iDrive. Розрізняльна сила нульова.
+
+### Матеріал салону
+У всіх 8 декодованих — **шкіра Vernasca** (`MCSW` black / `MCHF` coffee). Merino і Nappa
+(вищі тири, BMW Individual) поки не траплялись — якщо з'являться, це буде видно
+в назві салону просто як інша перша частина («Merino …» замість «Vernasca …»).
+`S4AW` Sensatec — це **шкірозамінник на панелі приладів**, не сидіння; у 41517612
+замість нього `S4M5` Individual шкіряна панель (1/8, справжня рідкість).
+
+**Sky Lounge `S407` — 0/8:** у всіх звичайна панорама `S402`. Слот `roof` покаже
+«Sky Lounge», якщо колись знайдеться.
+
 **Акустичне скло `S3KA`:** тільки у VIN-білдлісті (шукати `3KA`); в Encar-каталозі його немає. Європейська опція, у США не пропонували, на корейський ринок йшла рідко → більшість авто без неї. Не плутати з `S4A2 Glass application Crafted Clarity` (кришталевий селектор iDrive).
 
 ### Кольори салону (Vernasca на G05/G06)
@@ -207,9 +234,16 @@ data/
 - Поля індексу: `rank, listingId, model, year, mileageKm, koreaPriceMan, priceUSD, priceEstimated?,
   vin, decoded, mark?, exterior?, interior?, accident{costKRW,owners}, note?, photo, keyFeatures?`.
 - `photo` — шлях Encar головного кадру (`/carpicture…/…_001.jpg`); розмір підставляє `photoUrl()`.
-- `keyFeatures` (однаковий набір усюди): `air, laser, soft, vent, massage, hk, pano, acoustic, mhev`
-  + опційний `bw` (Bowers & Wilkins, S6F1) — саме їх показувати зеленим ✔ / сірим закресленим.
-  Якщо `bw: true`, у картці показувати «B&W» замість «Harman/Kardon» (це вищий тир, `hk` при цьому false).
+- `keyFeatures` (виводяться з S-кодів функцією `tools/mdecoder.py::key_features`):
+  `air, laser, led, soft, vent, massage, hk, pano, skylounge, acoustic, mhev` + опційний `bw`.
+- У рядку опцій **9 слотів**, з них три **адаптивні** — показують вищий тир, який реально є:
+  | Слот | Логіка |
+  |------|--------|
+  | `light` | `laser` (S5AZ) → інакше `led` (S552) → інакше перекреслено |
+  | `audio` | `bw` (S6F1/S6AR) → інакше `hk` (S688) → інакше перекреслено |
+  | `roof` | `skylounge` (S407) → інакше `pano` (S402) → інакше перекреслено |
+  Решта слотів прості: `air, soft, vent, massage, acoustic, mhev`.
+  Логіка — `featureState()` в `assets/js/common.js`, набір — `KEY_FEATURES` там само.
 - Декодовані дані — найцінніші, бо **mdecoder має добовий ліміт на IP** (вичерпано 2026-09-02
   на першому ж X6 VIN). **Не втрачати їх**: продані авто йдуть у `data/sold/`, а не видаляються.
 

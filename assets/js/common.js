@@ -64,28 +64,39 @@ export const krw = (n) => group(n) + NBSP + '₩';
 /** 49894000 → "49,9 млн ₩" */
 export const krwM = (n) => (n / 1e6).toFixed(1).replace('.', ',') + NBSP + 'млн' + NBSP + '₩';
 
-/** Ключові опції — однаковий набір і порядок усюди */
+/** Ключові опції — однаковий набір і порядок усюди.
+ *  Слоти light, audio і roof адаптивні: показують найвищий тир, який реально є
+ *  (лазер понад адаптивний LED, B&W понад Harman/Kardon, Sky Lounge понад
+ *  звичайну панораму). Так один слот несе більше інформації, ніж галочка. */
 export const KEY_FEATURES = [
   { id: 'air',      short: 'пневмо',      long: 'Пневмопідвіска на дві осі' },
-  { id: 'laser',    short: 'лазер',       long: 'BMW Laserlight' },
+  { id: 'light',    short: 'адапт. LED',  long: 'Адаптивні LED-фари' },
   { id: 'soft',     short: 'soft-close',  long: 'Soft-Close двері' },
   { id: 'vent',     short: 'вентиляція',  long: 'Вентиляція передніх сидінь' },
   { id: 'massage',  short: 'масаж',       long: 'Масаж сидінь' },
-  { id: 'hk',       short: 'H/K',         long: 'Harman/Kardon' },
-  { id: 'pano',     short: 'панорама',    long: 'Панорамний дах' },
+  { id: 'audio',    short: 'H/K',         long: 'Harman/Kardon' },
+  { id: 'roof',     short: 'панорама',    long: 'Панорамний дах' },
   { id: 'acoustic', short: 'акуст. скло', long: 'Акустичне скло (S3KA)' },
   { id: 'mhev',     short: '48V',         long: '48V mild-hybrid' },
 ];
 
-/**
- * Стан одного слота в рядку опцій. Слот аудіо адаптивний:
- * якщо є Bowers & Wilkins (вищий тир), показуємо його замість Harman/Kardon.
- */
+/** Стан одного слота: {has, short, long}. Адаптивні слоти показують вищий тир. */
 export function featureState(kf, f) {
-  if (f.id === 'hk' && kf.bw) {
-    return { has: true, short: 'B&W', long: 'Bowers & Wilkins High End' };
+  switch (f.id) {
+    case 'light':
+      if (kf.laser) return { has: true, short: 'лазер', long: 'BMW Laserlight' };
+      return { has: !!kf.led, short: 'адапт. LED', long: 'Адаптивні LED-фари' };
+    case 'audio':
+      if (kf.bw) return { has: true, short: 'B&W', long: 'Bowers & Wilkins High End' };
+      return { has: !!kf.hk, short: 'H/K', long: 'Harman/Kardon Surround' };
+    case 'roof':
+      if (kf.skylounge) {
+        return { has: true, short: 'Sky Lounge', long: 'Панорама Sky Lounge з підсвіткою' };
+      }
+      return { has: !!kf.pano, short: 'панорама', long: 'Панорамний скляний дах' };
+    default:
+      return { has: !!kf[f.id], short: f.short, long: f.long };
   }
-  return { has: !!kf[f.id], short: f.short, long: f.long };
 }
 
 export const encarUrl = (id) => `https://fem.encar.com/cars/detail/${id}`;
