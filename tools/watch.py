@@ -16,6 +16,7 @@
 """
 import argparse
 import json
+import os
 import pathlib
 import shutil
 import subprocess
@@ -26,6 +27,7 @@ sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
 import customs
 import encar
 import mdecoder
+import outvin
 import trim
 import seller
 import inspection as inspect_report
@@ -44,6 +46,9 @@ YEAR_FROM, YEAR_TO = 2019, 2022
 MAX_KM = 110_000
 MAX_ACCIDENT_KRW = 5_000_000
 DECODE_PER_RUN = 3
+# ⚠️ Платний фолбек: КОЖЕН запит коштує грошей, пакет невеликий.
+# Тому строго один VIN за прохід і лише коли безкоштовний mdecoder не дав нічого.
+OUTVIN_PER_RUN = 1
 
 SITE = 'https://volodymyr-babak.github.io/bmw-from-korea'
 
@@ -407,7 +412,7 @@ def decode_batch(index, state, ch, limit):
             md['quotaExhaustedOn'] = today()
             md['quotaSeenAt'] = datetime.now().strftime('%Y-%m-%d %H:%M')
             ch['notes'].append('mdecoder: ліміт на IP зайнятий — спробую знову наступного проходу')
-            return
+            break
         if res.status in ('http', 'shell'):
             ch['problems'].append(f'{car["listingId"]}: mdecoder — {res.note}')
             continue
@@ -426,6 +431,43 @@ def decode_batch(index, state, ch, limit):
             ch['problems'].append(
                 f'{car["listingId"]}: опції зчитано, але {res.note}. '
                 f'Сирий HTML: `{path.relative_to(REPO)}`')
+
+    # Другий варіант — платний outvin.com, і тільки для того, що mdecoder не подужав.
+    left = [c for c in todo if not c.get('decoded')]
+    for car in left[:OUTVIN_PER_RUN]:
+        outvin_try(car, state, ch)
+
+
+def outvin_try(car, state, ch) -> bool:
+    """Один ПЛАТНИЙ декод. Кредити рахуємо в стані, щоб не палити їх наосліп."""
+    ov = state.setdefault('outvin', {'available': None, 'decoded': {}, 'failed': {}})
+    auth = os.environ.get('OUTVIN_AUTH')
+    if not auth:
+        ch['notes'].append('outvin: OUTVIN_AUTH не заданий — платний фолбек вимкнено')
+        return False
+    if ov.get('available') == 0:
+        ch['notes'].append('outvin: кредити скінчились')
+        return False
+    vin = car['vin']
+    if vin in ov['failed'] or vin in ov['decoded']:
+        return False
+    try:
+        payload = outvin.fetch(vin, auth)
+    except outvin.OutvinError as e:
+        ov['failed'][vin] = {'reason': str(e), 'at': today()}
+        ch['problems'].append(f'{car["listingId"]}: outvin — {e}')
+        return False
+
+    ov['available'] = payload.get('available_requests')
+    ov['decoded'][vin] = today()
+    _, built = outvin.apply(vin, payload, car['listingId'])
+    car['decoded'] = True
+    ch['decoded'].append((car, mdecoder.Result(
+        'ok', vin, options=built['options'],
+        paint=built['exterior']['german'], paint_code=built['exterior']['code'],
+        trim=built['interior']['name'], trim_code=built['interior']['code'])))
+    ch['notes'].append(f'outvin: витрачено 1 платний запит, лишилось {ov["available"]}')
+    return True
 
 
 def keep_raw(res):
