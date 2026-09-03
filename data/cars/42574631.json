@@ -426,5 +426,6 @@
   "renders": {
     "exterior": "assets/renders/WBAJU810XN9J04145-ext.jpg",
     "interior": "assets/renders/WBAJU810XN9J04145-int.jpg"
-  }
+  },
+  "vin": "WBAJU810XN9J04145"
 }
