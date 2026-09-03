@@ -385,9 +385,12 @@ def promise(car):
 
 def decode_batch(index, state, ch, limit):
     md = state.setdefault('mdecoder', {'quotaExhaustedOn': None, 'decoded': {}, 'failed': {}})
-    if md.get('quotaExhaustedOn') == today():
-        ch['notes'].append('mdecoder: добова квота вичерпана, наступна спроба завтра')
-        return
+    # Раніше тут стояв добовий локдаун: побачили ліміт — і до кінця доби не пробували.
+    # Це помилка, бо ліміт mdecoder рахується ПО IP, а egress у нас спільна
+    # (91.225.165.251; звідти ж Encar періодично віддає 407, а bimmer.work — 429).
+    # Тобто квоту з'їдають інші користувачі тієї самої адреси, і вікно, коли вона
+    # вільна, ловиться лише спробою. Тому пробуємо ЩОПРОХОДУ, а `quotaExhaustedOn`
+    # лишається просто відміткою «коли востаннє бачили ліміт».
     if limit <= 0:
         return
 
@@ -402,7 +405,8 @@ def decode_batch(index, state, ch, limit):
         res = mdecoder.decode(car['vin'])
         if res.status == 'quota':
             md['quotaExhaustedOn'] = today()
-            ch['notes'].append('mdecoder: квоту вичерпано на цьому проході, добираю завтра')
+            md['quotaSeenAt'] = datetime.now().strftime('%Y-%m-%d %H:%M')
+            ch['notes'].append('mdecoder: ліміт на IP зайнятий — спробую знову наступного проходу')
             return
         if res.status in ('http', 'shell'):
             ch['problems'].append(f'{car["listingId"]}: mdecoder — {res.note}')
@@ -507,6 +511,16 @@ def report(ch):
             out.append(f'- **{short(car["model"])} {car["year"]}** · {km(car["mileageKm"])} '
                        f'· {usd(car["priceUSD"])} · VIN `{car["vin"]}`  \n  {car_link(car)}')
         out.append('')
+    if ch['pending']:
+        out += ['## Чекають на білд-лист за VIN', '',
+                'Спершу найцікавіші. Декодувати руками: '
+                'oemnavigations.com/pages/vin-decoder-app (2 VIN/добу), далі '
+                '`python3 tools/oemnav.py <share-url> --write`.', '']
+        for car in ch['pending']:
+            vin = f'`{car["vin"]}`' if car.get('vin') else '**VIN невідомий**'
+            out.append(f'- **{short(car["model"])} {car["year"]}** · {km(car["mileageKm"])} '
+                       f'· {usd(car["priceUSD"])} · {vin}  \n  {car_link(car)}')
+        out.append('')
     if ch['inspected']:
         out += ['## Додано звіт про стан', '']
         for car, insp in ch['inspected']:
@@ -564,11 +578,16 @@ def main():
         sys.exit('немає data/cars.json')
     state = load(STATE, {})
     ch = {'sold': [], 'new': [], 'decoded': [], 'changed': [], 'vins': [],
-          'inspected': [], 'problems': [], 'notes': []}
+          'inspected': [], 'problems': [], 'notes': [], 'pending': []}
 
     check_existing(index, ch)
     find_new(index, state, ch)
     decode_batch(index, state, ch, 0 if a.no_decode else a.decode)
+    # Список у листі: що лишилось без білд-листа, найцікавіше згори. Сам по собі
+    # він листа НЕ шле (`touched` його не враховує) — їде разом зі справжніми змінами.
+    # Без VIN декодувати нічим, тому такі — у кінець списку, а не за ціною.
+    ch['pending'] = sorted((c for c in index['cars'] if not c.get('decoded')),
+                           key=lambda c: (not c.get('vin'), promise(c)))
 
     index['cars'].sort(key=lambda c: c['priceUSD'])
     for i, c in enumerate(index['cars'], 1):
