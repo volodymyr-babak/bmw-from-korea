@@ -3,6 +3,7 @@ import {
   initTheme, esc, swatch, KRW_PER_USD, AGE_BASE, BUDGET_CAP,
 } from './common.js';
 import { groupOptions } from './options.js';
+import { trimStrip, trimSpec, trimName } from './trims.js';
 
 const $ = (sel) => document.querySelector(sel);
 const id = new URLSearchParams(location.search).get('id');
@@ -186,11 +187,52 @@ function panelIdentity(c, d) {
       ? `${swatch(c.interiorUnverified, 'trim')}<b>${esc(c.interiorUnverified)}</b>`
         + ' <span class="feat-unknown">— не підтверджено за VIN</span>'
       : '<span class="feat-unknown">уточнюється за VIN</span>')]);
+  pairs.push(['Планки салону', finishLine(c, d)]);
   pairs.push(['Ціна в Кореї', c.koreaPriceMan
     ? `<span class="num">${c.koreaPriceMan.toLocaleString('uk-UA').replace(/\s/g, '\u00a0')}</span>\u00a0만원`
     : null]);
   const note = d && d.engineNote ? `<p class="note">${esc(d.engineNote)}</p>` : '';
-  return `<section class="panel"><h2>Що це за авто</h2>${rows(pairs)}${note}</section>`;
+  return `<section class="panel"><h2>Що це за авто</h2>${rows(pairs)}${finishFigure(c, d)}${note}</section>`;
+}
+
+/** Планка салону — рядок у таблиці фактів. Джерело лише білд-лист: у фото
+ *  оголошення вставку майже не спіймати, а продавці про неї не пишуть. */
+function finishLine(c, d) {
+  const f = c.trimFinish || finishFromOptions(d);
+  if (!f) return '<span class="feat-unknown">уточнюється за VIN</span>';
+  const spec = trimSpec(f);
+  const bits = [`<b>${esc(trimName(f))}</b>`, `<span class="num">${esc(f.code)}</span>`];
+  if (spec && f.en) bits.push(`<span class="opt-en">${esc(f.en)}</span>`);
+  return bits.join(' · ');
+}
+
+/** Індекс може відставати від деталі (білд-лист щойно вставили руками) —
+ *  тоді беремо планку прямо з опцій. */
+function finishFromOptions(d) {
+  const codes = ['S4KK', 'S4KM', 'S4KP', 'S4KR', 'S4KT', 'S4ML', 'S4MC'];
+  for (const o of (d && d.options) || []) {
+    if (codes.includes(o.code) || /interior trim finish|trim finishers/i.test(o.desc || '')) {
+      return { code: o.code, en: o.desc || '' };
+    }
+  }
+  return null;
+}
+
+/** Візуал планки: схема мотиву й матеріалу, а не фото деталі. Підпис це
+ *  проговорює — за правилом проєкту вигадане зображення не має видаватись
+ *  за знімок конкретного авто. */
+function finishFigure(c, d) {
+  const f = c.trimFinish || finishFromOptions(d);
+  if (!f) return '';
+  const spec = trimSpec(f);
+  return `<figure class="finish-figure">
+    ${trimStrip(f, { h: 40 })}
+    <figcaption>${spec
+      ? `Мотив і матеріал вставки — <b>${esc(spec.family)}</b>, схематично. `
+      : 'Мотив цієї планки в каталозі сайту ще не описаний. '
+      }Планка стоїть на панелі приладів, дверях і центральному тунелі; на фото
+      з оголошення її ракурсом майже не спіймати, тому єдине джерело — білд-лист за VIN.</figcaption>
+  </figure>`;
 }
 
 function panelCalc(c, b) {

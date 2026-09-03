@@ -35,6 +35,23 @@ def frame_no(path: str) -> int:
 OPTIONAL_FEATURES = ["bw"]
 
 
+# Декоративні планки салону (Interior trim finishers) — у білд-листі рівно одна.
+# Ловимо і за кодом, і за англійським описом: коди `S4K…`/`S4M…` виписані не
+# підряд, а формулювання BMW стабільне. Незнайомий код усе одно потрапляє
+# в індекс — фронт покаже англійський опис, а не вигадає назву.
+TRIM_CODES = {"S4KK", "S4KM", "S4KP", "S4KR", "S4KT", "S4ML", "S4MC"}
+TRIM_DESC = re.compile(r"interior trim finish|trim finishers", re.I)
+
+
+def trim_finish(detail):
+    """Планка салону з білд-листа: {"code", "en"} або None."""
+    for o in detail.get("options") or []:
+        code = o.get("code") or ""
+        if code in TRIM_CODES or TRIM_DESC.search(o.get("desc") or ""):
+            return {"code": code, "en": o.get("desc") or ""}
+    return None
+
+
 def incidents(history):
     """Скільки РІЗНИХ ДТП пережило авто (None — детальних записів немає).
 
@@ -112,6 +129,14 @@ def main() -> int:
             car["airSeller"] = bool(detail["airSeller"])
         else:
             car.pop("airSeller", None)
+
+        # Планка салону — властивість, яку видно тільки в білд-листі: на фото
+        # оголошення вставку майже не спіймати, а в описі про неї не пишуть.
+        finish = trim_finish(detail)
+        if finish:
+            car["trimFinish"] = finish
+        else:
+            car.pop("trimFinish", None)
 
         # decoded = знято білд-лист BMW за VIN. Детальний файл є в кожного авто
         # (фото й історія), тому сама його наявність нічого не означає.

@@ -379,6 +379,7 @@ col.hl { background: var(--accent-soft); }
   letter-spacing: -0.01em;
 }
 .c-color { min-width: 132px; }
+.c-finish { min-width: 104px; }
 .c-feat { text-align: center; width: 34px; }
 .c-note { min-width: 240px; max-width: 320px; color: var(--ink-2); font-size: 12.5px; line-height: 1.45; }
 
@@ -424,6 +425,35 @@ col.hl { background: var(--accent-soft); }
 .swatch-unknown {
   background: repeating-linear-gradient(45deg, var(--rule) 0 2px, transparent 2px 4px);
 }
+
+/* Планка салону: схема мотиву й матеріалу, а не фото деталі. Рамка
+   напівпрозора з тієї ж причини, що й у квадратика кольору — Piano Black
+   інакше зникає в темній темі. */
+.tstrip {
+  display: block;
+  border: 1px solid rgba(128, 128, 128, 0.55);
+}
+.tstrip-unknown {
+  background: repeating-linear-gradient(45deg, var(--rule) 0 3px, transparent 3px 6px);
+}
+.finish-cell {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.finish-cell .tstrip-cell { width: 34px; flex: none; }
+.finish-cell > span { font-size: 12.5px; color: var(--ink-2); }
+
+.finish-figure {
+  margin: 14px 0 0;
+}
+.finish-figure figcaption {
+  margin-top: 6px;
+  font-size: 12.5px;
+  line-height: 1.5;
+  color: var(--ink-2);
+}
+.finish-figure figcaption b { font-weight: 500; color: var(--ink); }
 
 .feats {
   display: flex;

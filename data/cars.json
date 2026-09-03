@@ -44,6 +44,10 @@
         "wheelheat": true,
         "climate4": true,
         "exhaust": true
+      },
+      "trimFinish": {
+        "code": "S4KK",
+        "en": "Interior trim finishers aluminium tetragon"
       }
     },
     {
@@ -81,6 +85,10 @@
         "wheelheat": true,
         "climate4": true,
         "exhaust": true
+      },
+      "trimFinish": {
+        "code": "S4KK",
+        "en": "Interior trim finishers aluminium tetragon"
       }
     },
     {
@@ -119,7 +127,11 @@
         "climate4": true,
         "exhaust": true
       },
-      "note": "пневмо + вентиляція + H/K + адаптивний LED, салон Vernasca Coffee, Individual шкіряна панель приладів S4M5 (2-й такий випадок у добірці). Без лазера, soft-close і 48V — це доліфтовий B57D30O0, 265 к.с. Виплати 4,5 млн ₩ своїх і 2,3 млн ₩ чужих — найбільші серед дешевих."
+      "note": "пневмо + вентиляція + H/K + адаптивний LED, салон Vernasca Coffee, Individual шкіряна панель приладів S4M5 (2-й такий випадок у добірці). Без лазера, soft-close і 48V — це доліфтовий B57D30O0, 265 к.с. Виплати 4,5 млн ₩ своїх і 2,3 млн ₩ чужих — найбільші серед дешевих.",
+      "trimFinish": {
+        "code": "S4KK",
+        "en": "Interior trim finishers aluminium tetragon"
+      }
     },
     {
       "rank": 4,
@@ -157,6 +169,10 @@
         "wheelheat": true,
         "climate4": true,
         "exhaust": true
+      },
+      "trimFinish": {
+        "code": "S4KK",
+        "en": "Interior trim finishers aluminium tetragon"
       }
     },
     {
@@ -214,6 +230,10 @@
         "wheelheat": true,
         "climate4": true,
         "exhaust": true
+      },
+      "trimFinish": {
+        "code": "S4KK",
+        "en": "Interior trim finishers aluminium tetragon"
       }
     },
     {
@@ -252,6 +272,10 @@
         "wheelheat": true,
         "climate4": true,
         "exhaust": true
+      },
+      "trimFinish": {
+        "code": "S4KK",
+        "en": "Interior trim finishers aluminium tetragon"
       }
     },
     {
@@ -290,6 +314,10 @@
         "wheelheat": true,
         "climate4": true,
         "exhaust": true
+      },
+      "trimFinish": {
+        "code": "S4KM",
+        "en": "Interior trim finishers aluminium mesh effect dark"
       }
     },
     {
@@ -327,6 +355,10 @@
         "wheelheat": true,
         "climate4": true,
         "exhaust": true
+      },
+      "trimFinish": {
+        "code": "S4KK",
+        "en": "Interior trim finishers aluminium tetragon"
       }
     },
     {
@@ -364,6 +396,10 @@
         "wheelheat": true,
         "climate4": true,
         "exhaust": true
+      },
+      "trimFinish": {
+        "code": "S4KK",
+        "en": "Interior trim finishers aluminium tetragon"
       }
     },
     {
@@ -401,6 +437,10 @@
         "wheelheat": true,
         "climate4": true,
         "exhaust": true
+      },
+      "trimFinish": {
+        "code": "S4KK",
+        "en": "Interior trim finishers aluminium tetragon"
       }
     },
     {
@@ -439,7 +479,11 @@
         "climate4": true,
         "exhaust": true
       },
-      "note": "пневмо + лазер + вентиляція + 48V, шкіра Merino Coffee (тир вище за Vernasca). Але аудіо базове S676 (не H/K), без soft-close і без акустичного скла. Диски 21\" (S1XN) — на наших дорогах це мінус."
+      "note": "пневмо + лазер + вентиляція + 48V, шкіра Merino Coffee (тир вище за Vernasca). Але аудіо базове S676 (не H/K), без soft-close і без акустичного скла. Диски 21\" (S1XN) — на наших дорогах це мінус.",
+      "trimFinish": {
+        "code": "S4KK",
+        "en": "Interior trim finishers aluminium tetragon"
+      }
     },
     {
       "rank": 13,
@@ -496,6 +540,10 @@
         "wheelheat": true,
         "climate4": true,
         "exhaust": true
+      },
+      "trimFinish": {
+        "code": "S4KM",
+        "en": "Interior trim finishers aluminium mesh effect dark"
       }
     },
     {
@@ -534,6 +582,10 @@
         "wheelheat": true,
         "climate4": true,
         "exhaust": true
+      },
+      "trimFinish": {
+        "code": "S4KM",
+        "en": "Interior trim finishers aluminium mesh effect dark"
       }
     },
     {
@@ -572,6 +624,10 @@
         "wheelheat": true,
         "climate4": true,
         "exhaust": true
+      },
+      "trimFinish": {
+        "code": "S4KM",
+        "en": "Interior trim finishers aluminium mesh effect dark"
       }
     },
     {
@@ -609,6 +665,10 @@
         "wheelheat": true,
         "climate4": true,
         "exhaust": true
+      },
+      "trimFinish": {
+        "code": "S4KK",
+        "en": "Interior trim finishers aluminium tetragon"
       }
     },
     {
@@ -648,7 +708,11 @@
         "exhaust": true
       },
       "mark": "spec",
-      "note": "Еталон комплектації: закриті всі 14 слотів рядка опцій — пневмо, лазер, Soft-Close, вентиляція сидінь, Harman/Kardon, панорама, 48V, ACC, паркування, Comfort Access, підігрів сидінь і керма, 4-зона, M-вихлоп. Шкіра Merino Coffee (тир вище за Vernasca), Carbon Black, 0 змін власника. З таким набором у добірці ще лише 42631623. Мінуси: ціна майже під стелею і 2 різні ДТП."
+      "note": "Еталон комплектації: закриті всі 14 слотів рядка опцій — пневмо, лазер, Soft-Close, вентиляція сидінь, Harman/Kardon, панорама, 48V, ACC, паркування, Comfort Access, підігрів сидінь і керма, 4-зона, M-вихлоп. Шкіра Merino Coffee (тир вище за Vernasca), Carbon Black, 0 змін власника. З таким набором у добірці ще лише 42631623. Мінуси: ціна майже під стелею і 2 різні ДТП.",
+      "trimFinish": {
+        "code": "S4KK",
+        "en": "Interior trim finishers aluminium tetragon"
+      }
     },
     {
       "rank": 19,
@@ -686,6 +750,10 @@
         "wheelheat": true,
         "climate4": true,
         "exhaust": true
+      },
+      "trimFinish": {
+        "code": "S4KM",
+        "en": "Interior trim finishers aluminium mesh effect dark"
       }
     },
     {
@@ -724,6 +792,10 @@
         "wheelheat": true,
         "climate4": true,
         "exhaust": true
+      },
+      "trimFinish": {
+        "code": "S4KM",
+        "en": "Interior trim finishers aluminium mesh effect dark"
       }
     },
     {
@@ -761,6 +833,10 @@
         "wheelheat": true,
         "climate4": true,
         "exhaust": true
+      },
+      "trimFinish": {
+        "code": "S4KK",
+        "en": "Interior trim finishers aluminium tetragon"
       }
     },
     {
@@ -799,6 +875,10 @@
         "wheelheat": true,
         "climate4": true,
         "exhaust": true
+      },
+      "trimFinish": {
+        "code": "S4KK",
+        "en": "Interior trim finishers aluminium tetragon"
       }
     },
     {
@@ -837,6 +917,10 @@
         "wheelheat": true,
         "climate4": true,
         "exhaust": true
+      },
+      "trimFinish": {
+        "code": "S4KK",
+        "en": "Interior trim finishers aluminium tetragon"
       }
     }
   ]

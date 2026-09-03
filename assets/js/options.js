@@ -79,6 +79,13 @@ export const OPTIONS = {
   S4AW: ['interior', 'Панель приладів у шкірі Sensatec'],
   S4KK: ['interior', 'Вставки салону — алюміній Tetragon'],
   S4KM: ['interior', 'Вставки салону — алюміній Mesh Effect темний'],
+  // Нижче — варіанти планок, яких у нашій добірці ще не траплялось; назви
+  // з переліку G05 від користувача, коди в білд-листі перевіримо на першому ж авто.
+  S4KP: ['interior', 'Вставки салону — ясен Brown-Metallic, глянець'],
+  S4KR: ['interior', 'Вставки салону — дерево Fineline Stripe коричневе, глянець'],
+  S4KT: ['interior', 'Вставки салону — тополя Anthracite-Brown, відкриті пори'],
+  S4ML: ['interior', 'Вставки салону — BMW Individual Piano Finish Black'],
+  S4MC: ['interior', 'Вставки салону — карбон'],
   S44A: ['interior', 'Підстаканники з підігрівом і охолодженням'],
   S4UR: ['interior', 'Ambient — фонове підсвічування салону'],
   S4A2: ['interior', 'Crafted Clarity — кришталеві елементи iDrive'],
