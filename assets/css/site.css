@@ -231,6 +231,27 @@ a:hover { text-decoration-thickness: 2px; }
 
 /* ---------- таблиця кандидатів ---------- */
 
+/* Дві таблиці — X5, потім X6. Заголовок лишається в колонці тексту, поки
+   сама таблиця їде вбік: інакше при горизонтальному скролі назва моделі
+   виїжджала б за екран разом із рядками. */
+.grid-title {
+  font-family: "IBM Plex Sans Condensed", "IBM Plex Sans", sans-serif;
+  font-weight: 600;
+  font-size: 19px;
+  letter-spacing: 0.01em;
+  margin: 26px 0 0;
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+}
+.grid-count {
+  font-family: "IBM Plex Mono", ui-monospace, monospace;
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--ink-2);
+}
+.grid-section:first-of-type .grid-title { margin-top: 14px; }
+
 .grid-wrap {
   /* горизонтальний скрол лишається в таблиці, сторінка ніколи не їде боком */
   overflow-x: auto;
