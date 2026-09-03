@@ -60,25 +60,6 @@
       </select>
     </label>
     <label class="field">
-      <span>Пробіг не більше</span>
-      <select name="mileage">
-        <option value="">110 000 км</option>
-        <option value="100000">100 000 км</option>
-        <option value="80000">80 000 км</option>
-        <option value="60000">60 000 км</option>
-        <option value="45000">45 000 км</option>
-      </select>
-    </label>
-    <label class="field">
-      <span>Під ключ не більше</span>
-      <select name="price">
-        <option value="">$70 000</option>
-        <option value="65000">$65 000</option>
-        <option value="60000">$60 000</option>
-        <option value="55000">$55 000</option>
-      </select>
-    </label>
-    <label class="field">
       <span>Колір кузова</span>
       <select name="color" id="f-color">
         <option value="">будь-який</option>
@@ -90,13 +71,22 @@
         <option value="">будь-який</option>
       </select>
     </label>
-    <label class="check">
-      <input type="checkbox" name="decoded">
-      <span>лише з комплектацією за VIN</span>
+    <label class="field">
+      <span>Різних ДТП не більше</span>
+      <select name="incidents" title="Рахуємо унікальні дати, а не страхові записи Encar. Якщо обрано ліміт, авто без детальних записів теж ховаються">
+        <option value="">будь-скільки</option>
+        <option value="0">жодного</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+      </select>
     </label>
-    <label class="check">
-      <input type="checkbox" name="air">
-      <span title="Пневмо за білд-листом або за описом оголошення; авто, де про неї нічого не відомо, ховаються">лише з пневмопідвіскою</span>
+    <label class="field">
+      <span>Ремонт</span>
+      <select name="repair" title="За виплатами страховика на власний ремонт (myAccidentCost)">
+        <option value="">будь-який</option>
+        <option value="no">без ремонту</option>
+        <option value="yes">був ремонт</option>
+      </select>
     </label>
     <p class="tally" id="tally" aria-live="polite"></p>
   </form>

@@ -216,15 +216,6 @@ a:hover { text-decoration-thickness: 2px; }
   min-width: 148px;
 }
 
-.check {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  font-size: 14px;
-  padding-bottom: 7px;
-  cursor: pointer;
-}
-.check input { accent-color: var(--accent); width: 16px; height: 16px; }
 
 .tally {
   margin-left: auto;
