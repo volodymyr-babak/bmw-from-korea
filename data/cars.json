@@ -676,6 +676,42 @@
     },
     {
       "rank": 20,
+      "listingId": "41368455",
+      "model": "X5 (G05)",
+      "year": 2021,
+      "mileageKm": 90266,
+      "koreaPriceMan": 5950,
+      "priceUSD": 64434,
+      "vin": "WBAJU8104M9F24954",
+      "decoded": true,
+      "exterior": "Carbon Black",
+      "accident": {
+        "costKRW": 1662954,
+        "owners": 0
+      },
+      "photo": "/carpicture06/pic4136/41368455_001.jpg",
+      "interior": "Vernasca Coffee",
+      "keyFeatures": {
+        "air": true,
+        "laser": false,
+        "led": true,
+        "soft": false,
+        "vent": true,
+        "hk": true,
+        "pano": true,
+        "skylounge": false,
+        "mhev": true,
+        "acc": true,
+        "park": true,
+        "comfort": true,
+        "seatheat": true,
+        "wheelheat": true,
+        "climate4": true,
+        "exhaust": true
+      }
+    },
+    {
+      "rank": 21,
       "listingId": "40966656",
       "model": "X6 (G06)",
       "year": 2021,
@@ -728,7 +764,7 @@
       },
       "photo": "/carpicture05/pic4265/42655967_001.jpg",
       "exterior": "Carbon Black",
-      "rank": 21,
+      "rank": 22,
       "interior": "Merino Coffee",
       "keyFeatures": {
         "air": true,
@@ -749,42 +785,6 @@
         "exhaust": true
       },
       "note": "пневмо + лазер + вентиляція + 48V, шкіра Merino Coffee (тир вище за Vernasca). Але аудіо базове S676 (не H/K), без soft-close і без акустичного скла. Диски 21\" (S1XN) — на наших дорогах це мінус."
-    },
-    {
-      "rank": 22,
-      "listingId": "41368455",
-      "model": "X5 (G05)",
-      "year": 2021,
-      "mileageKm": 90266,
-      "koreaPriceMan": 6030,
-      "priceUSD": 65017,
-      "vin": "WBAJU8104M9F24954",
-      "decoded": true,
-      "exterior": "Carbon Black",
-      "accident": {
-        "costKRW": 1662954,
-        "owners": 0
-      },
-      "photo": "/carpicture06/pic4136/41368455_001.jpg",
-      "interior": "Vernasca Coffee",
-      "keyFeatures": {
-        "air": true,
-        "laser": false,
-        "led": true,
-        "soft": false,
-        "vent": true,
-        "hk": true,
-        "pano": true,
-        "skylounge": false,
-        "mhev": true,
-        "acc": true,
-        "park": true,
-        "comfort": true,
-        "seatheat": true,
-        "wheelheat": true,
-        "climate4": true,
-        "exhaust": true
-      }
     },
     {
       "rank": 23,
@@ -825,6 +825,44 @@
     },
     {
       "rank": 24,
+      "listingId": "42349824",
+      "model": "X6 (G06)",
+      "year": 2022,
+      "mileageKm": 85581,
+      "koreaPriceMan": 6050,
+      "priceUSD": 65773,
+      "priceEstimated": true,
+      "vin": "WBAGT8106N9L42863",
+      "decoded": true,
+      "exterior": "Carbon Black",
+      "accident": {
+        "costKRW": 4724399,
+        "owners": 1
+      },
+      "photo": "/carpicture04/pic4234/42348555_001.jpg",
+      "note": "Пише «без фарбування й замін», а в реєстрі 4,7 млн ₩ виплат — найбільша розбіжність у добірці.",
+      "interior": "Merino Coffee",
+      "keyFeatures": {
+        "air": false,
+        "laser": true,
+        "led": false,
+        "soft": true,
+        "vent": true,
+        "hk": false,
+        "pano": true,
+        "skylounge": false,
+        "mhev": true,
+        "acc": true,
+        "park": true,
+        "comfort": true,
+        "seatheat": true,
+        "wheelheat": true,
+        "climate4": true,
+        "exhaust": true
+      }
+    },
+    {
+      "rank": 25,
       "listingId": "41382456",
       "model": "X6 (G06)",
       "year": 2021,
@@ -861,7 +899,7 @@
       }
     },
     {
-      "rank": 25,
+      "rank": 26,
       "listingId": "42094631",
       "model": "X5 (G05)",
       "year": 2020,
@@ -877,44 +915,6 @@
       },
       "note": "Пробіг 26 786 км. VIN Encar не показує. Продавець сам показує єдиний ремонт: верх кришки багажника — зачепили гілку, коли відкривали; є у звіті про стан.",
       "photo": "/carpicture09/pic4209/42094631_001.jpg"
-    },
-    {
-      "rank": 26,
-      "listingId": "42349824",
-      "model": "X6 (G06)",
-      "year": 2022,
-      "mileageKm": 85581,
-      "koreaPriceMan": 6090,
-      "priceUSD": 66065,
-      "priceEstimated": true,
-      "vin": "WBAGT8106N9L42863",
-      "decoded": true,
-      "exterior": "Carbon Black",
-      "accident": {
-        "costKRW": 4724399,
-        "owners": 1
-      },
-      "photo": "/carpicture04/pic4234/42348555_001.jpg",
-      "note": "Пише «без фарбування й замін», а в реєстрі 4,7 млн ₩ виплат — найбільша розбіжність у добірці.",
-      "interior": "Merino Coffee",
-      "keyFeatures": {
-        "air": false,
-        "laser": true,
-        "led": false,
-        "soft": true,
-        "vent": true,
-        "hk": false,
-        "pano": true,
-        "skylounge": false,
-        "mhev": true,
-        "acc": true,
-        "park": true,
-        "comfort": true,
-        "seatheat": true,
-        "wheelheat": true,
-        "climate4": true,
-        "exhaust": true
-      }
     },
     {
       "rank": 27,
