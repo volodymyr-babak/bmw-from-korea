@@ -196,6 +196,133 @@ def save_render(url: str, token: str, dest: Path) -> bool:
     return conv.returncode == 0 and dest.exists()
 
 
+def _known_vins() -> list[tuple[str, str]]:
+    """Усі VIN, які проєкт колись бачив, у порядку цінності рендера.
+
+    1. `cars` — живий список; 2. `sold` — архів білд-листів (там наші єдині
+    зразки cognac / Tacora); 3. `interiorRejected` — відсіяні за кольором
+    салону, тобто саме ті кольори, яких у палітрі бракує; 4. решта журналу
+    відсіву — кольори невідомі, беремо як лотерею на новий код.
+    """
+    seen, out = set(), []
+    def add(vin, src):
+        if vin and vin not in seen:
+            seen.add(vin)
+            out.append((vin, src))
+    for src in ('cars', 'sold'):
+        for f in sorted((ROOT / 'data' / src).glob('*.json')):
+            add(json.loads(f.read_text()).get('vin'), src)
+    state = json.loads((ROOT / 'data' / 'watch-state.json').read_text())
+    for key in ('interiorRejected', 'lightRejected', 'usageRejected'):
+        for vin in (state.get(key) or {}):
+            add(vin, key)
+    for rec in (state.get('rejected') or {}).values():
+        add(rec.get('vin'), 'rejected')
+    return out
+
+
+def _coverage() -> tuple[set, set]:
+    """Коди фарби й оббивки, для яких рендер уже є."""
+    have = {p.name for p in RENDERS.glob('*.jpg')}
+    paint_ok, trim_ok = set(), set()
+    for src in ('cars', 'sold'):
+        for f in (ROOT / 'data' / src).glob('*.json'):
+            d = json.loads(f.read_text())
+            vin = d.get('vin')
+            if not vin:
+                continue
+            if f'{vin}-ext.jpg' in have and (d.get('exterior') or {}).get('code'):
+                paint_ok.add(d['exterior']['code'])
+            if f'{vin}-int.jpg' in have and (d.get('interior') or {}).get('code'):
+                trim_ok.add(d['interior']['code'])
+    return paint_ok, trim_ok
+
+
+def renders_all_mode(token: str, limit: int) -> int:
+    """Зібрати рендери «на майбутнє», поки живий токен.
+
+    Для авто зі списку й архіву зберігаємо завжди. Для відсіяних — лише якщо
+    вони приносять НОВИЙ код фарби чи оббивки: сімнадцятий Carbon Black не
+    додає нічого, а `MCRI` Cognac у нас узагалі немає, хоч це головне питання
+    проєкту («кава чи cognac»). У кінці пишемо довідник `data/render-refs.json`:
+    код кольору → VIN, у якого є рендер.
+    """
+    RENDERS.mkdir(parents=True, exist_ok=True)
+    paint_ok, trim_ok = _coverage()
+    print(f'уже покрито: фарба {sorted(paint_ok)} · оббивка {sorted(trim_ok)}')
+    todo = [(v, s) for v, s in _known_vins()
+            if not ((RENDERS / f'{v}-ext.jpg').exists() and (RENDERS / f'{v}-int.jpg').exists())]
+    if limit:
+        todo = todo[:limit]
+    print(f'кандидатів: {len(todo)}')
+
+    kept = skipped = failed = 0
+    for i, (vin, src) in enumerate(todo, 1):
+        item = fetch(vin, token)
+        if item.get('status') != 'OKAY':
+            print(f'  [{i}/{len(todo)}] {vin} {src} — {item.get("status")}')
+            failed += 1
+            continue
+        pc = paint(item.get('color', '')).get('code')
+        tc = trim(item.get('upholstery', '')).get('code')
+        fresh = (pc and pc not in paint_ok) or (tc and tc not in trim_ok)
+        if src not in ('cars', 'sold') and not fresh:
+            print(f'  [{i}/{len(todo)}] {vin} {src} — {pc}/{tc} вже покриті, пропускаю')
+            skipped += 1
+            continue
+        urls = item.get('images') or {}
+        got = {}
+        for kind, short in (('exterior', 'ext'), ('interior', 'int')):
+            dest = RENDERS / f'{vin}-{short}.jpg'
+            if urls.get(kind) and (dest.exists() or save_render(urls[kind], token, dest)):
+                got[kind] = f'assets/renders/{vin}-{short}.jpg'
+        if not got:
+            print(f'  [{i}/{len(todo)}] {vin} {src} — рендерів немає')
+            failed += 1
+            continue
+        if 'exterior' in got and pc:
+            paint_ok.add(pc)
+        if 'interior' in got and tc:
+            trim_ok.add(tc)
+        for f in (ROOT / 'data' / 'cars').glob('*.json'):   # шлях у деталь, якщо авто живе
+            d = json.loads(f.read_text())
+            if d.get('vin') == vin:
+                d['renders'] = got
+                with f.open('w') as fh:
+                    json.dump(d, fh, ensure_ascii=False, indent=2)
+                    fh.write('\n')
+                break
+        kept += 1
+        print(f'  [{i}/{len(todo)}] {vin} {src} — {pc}/{tc} ✓ {"НОВИЙ КОЛІР" if fresh else ""}')
+
+    write_render_refs()
+    print(f'\nзбережено {kept} · пропущено {skipped} · без рендера {failed}')
+    print(f'покриття тепер: фарба {sorted(paint_ok)} · оббивка {sorted(trim_ok)}')
+    return 0
+
+
+def write_render_refs() -> None:
+    """Довідник «код кольору → VIN із рендером», щоб показувати еталон кольору."""
+    have = {p.name for p in RENDERS.glob('*.jpg')}
+    refs = {'paint': {}, 'trim': {}}
+    for src in ('cars', 'sold'):
+        for f in sorted((ROOT / 'data' / src).glob('*.json')):
+            d = json.loads(f.read_text())
+            vin = d.get('vin')
+            if not vin:
+                continue
+            ex, inn = d.get('exterior') or {}, d.get('interior') or {}
+            if ex.get('code') and f'{vin}-ext.jpg' in have:
+                refs['paint'].setdefault(ex['code'], {'vin': vin, 'name': ex.get('name')})
+            if inn.get('code') and f'{vin}-int.jpg' in have:
+                refs['trim'].setdefault(inn['code'], {'vin': vin, 'name': inn.get('name')})
+    path = ROOT / 'data' / 'render-refs.json'
+    with path.open('w') as fh:
+        json.dump(refs, fh, ensure_ascii=False, indent=2)
+        fh.write('\n')
+    print(f'довідник: {len(refs["paint"])} фарб · {len(refs["trim"])} оббивок → {path.name}')
+
+
 def images_mode(token: str) -> int:
     """Рендери заводської конфігурації за VIN — еталон кольору кузова й салону."""
     RENDERS.mkdir(parents=True, exist_ok=True)
@@ -237,6 +364,8 @@ def main(argv: list[str]) -> int:
         return 2
     if argv and argv[0] == '--images':
         return images_mode(token)
+    if argv and argv[0] == '--renders-all':
+        return renders_all_mode(token, int(argv[1]) if len(argv) > 1 else 0)
 
     descs = corpus_descs()
 

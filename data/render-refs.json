@@ -1,0 +1,38 @@
+{
+  "paint": {
+    "A96": {
+      "vin": "WBAGT8101M9H35011",
+      "name": "Mineral White"
+    },
+    "416": {
+      "vin": "WBAJU8100M9G14568",
+      "name": "Carbon Black"
+    },
+    "C1M": {
+      "vin": "WBACV6108L9B00816",
+      "name": "Phytonic Blue"
+    },
+    "C27": {
+      "vin": "WBAJU8101M9H27574",
+      "name": "Arctic Grey"
+    },
+    "C3D": {
+      "vin": "WBAGT2102L9D05449",
+      "name": "Manhattan"
+    }
+  },
+  "trim": {
+    "MCHF": {
+      "vin": "WBAGT8101M9H35011",
+      "name": "Vernasca Coffee"
+    },
+    "VAHF": {
+      "vin": "WBAGT810XN9M18391",
+      "name": "Merino Coffee"
+    },
+    "MCSW": {
+      "vin": "WBAJU8100M9G14568",
+      "name": "Vernasca Black"
+    }
+  }
+}
