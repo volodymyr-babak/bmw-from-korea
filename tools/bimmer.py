@@ -257,14 +257,16 @@ def renders_all_mode(token: str, limit: int) -> int:
     print(f'кандидатів: {len(todo)}')
 
     kept = skipped = failed = 0
+    discovered = {}          # VIN → (код фарби, код оббивки, назва, назва)
     for i, (vin, src) in enumerate(todo, 1):
         item = fetch(vin, token)
         if item.get('status') != 'OKAY':
             print(f'  [{i}/{len(todo)}] {vin} {src} — {item.get("status")}')
             failed += 1
             continue
-        pc = paint(item.get('color', '')).get('code')
-        tc = trim(item.get('upholstery', '')).get('code')
+        pp, tt = paint(item.get('color', '')), trim(item.get('upholstery', ''))
+        pc, tc = pp.get('code'), tt.get('code')
+        discovered[vin] = (pc, tc, pp.get('name'), tt.get('name'))
         fresh = (pc and pc not in paint_ok) or (tc and tc not in trim_ok)
         if src not in ('cars', 'sold') and not fresh:
             print(f'  [{i}/{len(todo)}] {vin} {src} — {pc}/{tc} вже покриті, пропускаю')
@@ -295,16 +297,56 @@ def renders_all_mode(token: str, limit: int) -> int:
         kept += 1
         print(f'  [{i}/{len(todo)}] {vin} {src} — {pc}/{tc} ✓ {"НОВИЙ КОЛІР" if fresh else ""}')
 
-    write_render_refs()
+    print(f'посилань на рендери проставлено в деталях: {link_renders()}')
+    write_render_refs(discovered)
     print(f'\nзбережено {kept} · пропущено {skipped} · без рендера {failed}')
     print(f'покриття тепер: фарба {sorted(paint_ok)} · оббивка {sorted(trim_ok)}')
     return 0
 
 
-def write_render_refs() -> None:
-    """Довідник «код кольору → VIN із рендером», щоб показувати еталон кольору."""
+def link_renders() -> int:
+    """Проставити `renders` у деталях, де файли рендерів уже лежать на диску.
+
+    Потрібно, бо `renders_all_mode` пропускає VIN, у якого обидва файли є, —
+    і якщо рендер зняли ще тоді, коли авто було відсіяне, а потім авто
+    повернули в список, шлях у деталь ніхто не записував.
+    """
+    n = 0
+    for f in sorted((ROOT / 'data' / 'cars').glob('*.json')):
+        d = json.loads(f.read_text())
+        vin = d.get('vin')
+        if not vin:
+            continue
+        got = {kind: f'assets/renders/{vin}-{short}.jpg'
+               for kind, short in (('exterior', 'ext'), ('interior', 'int'))
+               if (RENDERS / f'{vin}-{short}.jpg').exists()}
+        if got and d.get('renders') != got:
+            d['renders'] = got
+            with f.open('w') as fh:
+                json.dump(d, fh, ensure_ascii=False, indent=2)
+                fh.write('\n')
+            n += 1
+    return n
+
+
+def write_render_refs(discovered: dict | None = None) -> None:
+    """Довідник «код кольору → VIN із рендером», щоб показувати еталон кольору.
+
+    Джерела коду: наявний довідник (не втрачаємо вже знайдене), деталі авто
+    зі списку й архіву, і `discovered` — коди, які прохід дізнався з відповіді
+    bimmer. Останнє важливе: VIN із журналу відсіву в `data/` не лежить узагалі,
+    тож без цього його колір (напр. `VATQ`) у довідник не потрапляв.
+    """
     have = {p.name for p in RENDERS.glob('*.jpg')}
-    refs = {'paint': {}, 'trim': {}}
+    path0 = ROOT / 'data' / 'render-refs.json'
+    refs = json.loads(path0.read_text()) if path0.exists() else {'paint': {}, 'trim': {}}
+    refs.setdefault('paint', {})
+    refs.setdefault('trim', {})
+    for vin, (pc, tc, pn, tn) in (discovered or {}).items():
+        if pc and f'{vin}-ext.jpg' in have:
+            refs['paint'].setdefault(pc, {'vin': vin, 'name': pn})
+        if tc and f'{vin}-int.jpg' in have:
+            refs['trim'].setdefault(tc, {'vin': vin, 'name': tn})
     for src in ('cars', 'sold'):
         for f in sorted((ROOT / 'data' / src).glob('*.json')):
             d = json.loads(f.read_text())

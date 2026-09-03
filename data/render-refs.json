@@ -34,6 +34,10 @@
       "vin": "WBAJU8100M9G14568",
       "name": "Vernasca Black"
     },
+    "MCFY": {
+      "vin": "WBAGT8104M9H08255",
+      "name": "Vernasca Canberrabeige"
+    },
     "MCRI": {
       "vin": "WBACV6100L9D36425",
       "name": "Vernasca Cognac"
@@ -41,6 +45,10 @@
     "MCG7": {
       "vin": "WBAGT8106M9H41192",
       "name": "Pervoriert Tacorarot"
+    },
+    "VATQ": {
+      "vin": "WBAGT8105N9L38142",
+      "name": "Merino Tartufo"
     }
   }
 }
