@@ -33,6 +33,14 @@
     "MCSW": {
       "vin": "WBAJU8100M9G14568",
       "name": "Vernasca Black"
+    },
+    "MCRI": {
+      "vin": "WBACV6100L9D36425",
+      "name": "Vernasca Cognac"
+    },
+    "MCG7": {
+      "vin": "WBAGT8106M9H41192",
+      "name": "Pervoriert Tacorarot"
     }
   }
 }

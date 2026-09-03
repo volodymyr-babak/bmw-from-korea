@@ -157,6 +157,9 @@ const TRIM_COLORS = {
   'mcsw': '#2c2c2e', 'vernasca black': '#2c2c2e',
   'mcri': '#96663c', 'vernasca cognac': '#96663c',
   'mcfy': '#b9ab93', 'canberra beige': '#b9ab93',
+  // Білд-лист пише німецьким одним словом — без цього ключа спрацьовувало б
+  // загальне правило для бежевого й давало відтінок айворі, світліший за MCFY.
+  'vernasca canberrabeige': '#b9ab93', 'leder vernasca canberrabeige': '#b9ab93',
   'merino tartufo': '#6d5344',
   'ivory white': '#ddd6c8',
   'tacora red': '#7c2026',
