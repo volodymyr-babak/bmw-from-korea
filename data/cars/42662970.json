@@ -1,0 +1,98 @@
+{
+  "listingId": "42662970",
+  "encarUrl": "https://fem.encar.com/cars/detail/42662970",
+  "model": "X5 (G05)",
+  "mfgYear": 2019,
+  "vin": "WBACV6108L9B00346",
+  "mileageKm": 83639,
+  "koreaPriceMan": 5190,
+  "priceUSD": 53788,
+  "photos": {
+    "outer": [
+      "/carpicture06/pic4266/42660963_001.jpg",
+      "/carpicture06/pic4266/42660963_002.jpg",
+      "/carpicture06/pic4266/42660963_003.jpg",
+      "/carpicture06/pic4266/42660963_004.jpg",
+      "/carpicture06/pic4266/42660963_005.jpg",
+      "/carpicture06/pic4266/42660963_006.jpg",
+      "/carpicture06/pic4266/42660963_031.jpg",
+      "/carpicture06/pic4266/42660963_032.jpg",
+      "/carpicture06/pic4266/42660963_033.jpg"
+    ],
+    "inner": [
+      "/carpicture06/pic4266/42660963_007.jpg",
+      "/carpicture06/pic4266/42660963_008.jpg",
+      "/carpicture06/pic4266/42660963_009.jpg",
+      "/carpicture06/pic4266/42660963_010.jpg",
+      "/carpicture06/pic4266/42660963_034.jpg",
+      "/carpicture06/pic4266/42660963_035.jpg",
+      "/carpicture06/pic4266/42660963_036.jpg"
+    ]
+  },
+  "history": {
+    "openData": true,
+    "regDate": "2026-09-03T09:25:35.169332",
+    "carNo": "374조5158",
+    "year": "2020",
+    "maker": "BMW",
+    "carKind": "1",
+    "use": "2",
+    "displacement": "2993",
+    "carName": null,
+    "firstDate": "2019-12-30",
+    "fuel": "디젤",
+    "carShape": null,
+    "model": "X5 (G05)",
+    "transmission": null,
+    "carNameCode": null,
+    "myAccidentCnt": 1,
+    "otherAccidentCnt": 0,
+    "ownerChangeCnt": 3,
+    "robberCnt": 0,
+    "robberDate": null,
+    "totalLossCnt": 0,
+    "totalLossDate": null,
+    "floodTotalLossCnt": 0,
+    "floodPartLossCnt": null,
+    "floodDate": null,
+    "government": 0,
+    "business": 0,
+    "loan": 0,
+    "carNoChangeCnt": 0,
+    "myAccidentCost": 1223510,
+    "otherAccidentCost": 0,
+    "carInfoChanges": [
+      {
+        "date": "2019-12-30",
+        "carNo": "374조XXXX"
+      }
+    ],
+    "carInfoUse1s": [
+      "2"
+    ],
+    "carInfoUse2s": [
+      "1"
+    ],
+    "ownerChanges": [
+      "2026-04-16",
+      "2026-04-15",
+      "2024-12-20"
+    ],
+    "notJoinDate1": null,
+    "notJoinDate2": null,
+    "notJoinDate3": null,
+    "notJoinDate4": null,
+    "notJoinDate5": null,
+    "accidentCnt": 1,
+    "accidents": [
+      {
+        "type": "2",
+        "date": "2021-08-14",
+        "insuranceBenefit": 2465800,
+        "partCost": 530720,
+        "laborCost": 173970,
+        "paintingCost": 518820
+      }
+    ]
+  }
+}
