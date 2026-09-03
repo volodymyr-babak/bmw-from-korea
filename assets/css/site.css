@@ -798,6 +798,24 @@ col.hl { background: var(--accent-soft); }
 }
 .acc { font-size: 13px; color: var(--ink-2); }
 .acc-clean { color: var(--yes); }
+.dim { color: var(--ink-2); }
+
+/* Розклад ДТП по датах на сторінці авто: одна дата — один рядок, під нею
+   всі страхові записи цієї події. Саме це показує, чому «різних ДТП»
+   менше, ніж «cases» в Encar. */
+.acc-list {
+  list-style: none;
+  margin: 12px 0 0;
+  padding: 0;
+  font-size: 13.5px;
+  max-width: 68ch;
+}
+.acc-list li {
+  padding: 5px 0;
+  border-top: 1px solid var(--rule);
+  color: var(--ink-2);
+}
+.acc-list li:first-child { border-top: 0; }
 
 .model-tag {
   font-family: "IBM Plex Sans Condensed", sans-serif;

@@ -321,14 +321,69 @@
   },
   "koreaPriceMan": 6350,
   "history": {
+    "openData": true,
+    "regDate": "2026-01-13T13:52:10.81216",
+    "carNo": "126누6898",
+    "year": "2021",
+    "maker": "BMW",
+    "carKind": "1",
+    "use": "2",
+    "displacement": "2993",
+    "carName": null,
+    "firstDate": "2021-04-21",
+    "fuel": "디젤",
+    "carShape": "SUV",
+    "model": "X5 (G05)",
+    "transmission": null,
+    "carNameCode": null,
     "myAccidentCnt": 1,
-    "myAccidentCost": 2065160,
     "otherAccidentCnt": 0,
-    "otherAccidentCost": 0,
     "ownerChangeCnt": 2,
-    "totalLoss": null,
-    "flood": null,
-    "robber": null
+    "robberCnt": 0,
+    "robberDate": null,
+    "totalLossCnt": 0,
+    "totalLossDate": null,
+    "floodTotalLossCnt": 0,
+    "floodPartLossCnt": null,
+    "floodDate": null,
+    "government": 0,
+    "business": 0,
+    "loan": 0,
+    "carNoChangeCnt": 0,
+    "myAccidentCost": 2065160,
+    "otherAccidentCost": 0,
+    "carInfoChanges": [
+      {
+        "date": "2021-04-21",
+        "carNo": "126누XXXX"
+      }
+    ],
+    "carInfoUse1s": [
+      "2"
+    ],
+    "carInfoUse2s": [
+      "1"
+    ],
+    "ownerChanges": [
+      "2025-11-19",
+      "2025-11-17"
+    ],
+    "notJoinDate1": null,
+    "notJoinDate2": null,
+    "notJoinDate3": null,
+    "notJoinDate4": null,
+    "notJoinDate5": null,
+    "accidentCnt": 1,
+    "accidents": [
+      {
+        "type": "2",
+        "date": "2025-09-17",
+        "insuranceBenefit": 2100000,
+        "partCost": 1521960,
+        "laborCost": 195590,
+        "paintingCost": 347610
+      }
+    ]
   },
   "sellerText": "차량에 관심을 가지고 찾아주셔 감사드립니다.\n\n엔카 제휴 상사 에스원 모터스 손창연 대표 입니다.\n\n\n본 차량은 엔카에서 촬영한 100% 실매물 차량입니다. (진단차량은 허위매물이 있을수 없습니다.)\n\n\n★최저가 금액이 아닐 수 있지만 차량 상태는 최상이라고 자부 합니다.★\n\n★타상사, 딜러차량이 아닌 직접 매입한 차량만 판매하고있습니다.★\n\n★타시고 계신 차량 좋은 금액으로 매입도 가능 합니다.★\n\n24시간 언제든 상담이 가능하며 전화 문의 주시면 친절하고 상세한 답변 드리도록 하겠습니다.\n채팅 문의는 알림이 잘 뜨지않아 가급적 전화문의로 주시면 빠른 답변 드릴수있도록 하겠습니다.\n\n연중무휴 야간 출고도 가능하며 바쁜 일상에 시간이 없으신분들을 위하여 비대면 탁송거래 가능합니다. \n내방하셔 천천히 차량검수 및 서류확인 하신후 구매하시는게 가장 좋으나, 비대면 거래시 원하시는 검수내용 확인 후 출고 도와드리고 있습니다.\n\n\n● 차량 설명● \n\n▶차량설명 \n\n\n-사고여부: 완전무사고       \n-차    종 :  BMW X5 (G05) xDrive 30d M 스포츠\n-연    식 :  21년 04월식\n-색    상 :  카본블랙\n\n-주행거리 : 42,063km\n\n-내 / 외관 : 실내,실외 모두 매우 깨끗합니다.\n\n-상태 및 특징  :  1인신조 차량으로 전 차주분이 관리하시면서 타시던 비흡연 완전무사고차량입니다.\n                          색상도 카본블랙 컬러에 실내는 블랙컬러로 고급스럽고 매력적인 느낌입니다.\n                          운전은 혼자 하시던 차량이고 사진으로 보시다시피 병적인 관리로 내 외관 모두 신차급으로 깨끗하고\n                          키로수도 연식대비 정말 좋은 상태이며 옵션도 매우 다양한 1인신조 완전무사고 차량입니다.\n\n\n●차량 구매시&할부●\n\n- 저희 매물은 절대 허위매물없는 100% 실매물 차량임을 보증해드리겠습니다.\n  (사진이나 영상으로도 확인 가능합니다.)\n\n- 성능기록부 및 계약서 내용 상세히 고지 후 판매, 주행거리 조작이나 서류 이상 시 100% 환불조치\n\n- 필요 서류는 전화 통화나 문자로 자세하게 안내 드리겠습니다.\n\n- 할부금리 3.9% ~(신용에 따라 다름)\n\n- ★차량 전액할부 & 카드 & 현금 모두 가능합니다.★\n  \n\n●타신던 차량 판매시●\n- 매입에 있어서 매입금액을 최우선으로 생각합니다.\n\n- 전지역 어디든 편하신 시간에 무료출장 가능합니다.\n\n- 현장에서 당일 차대금 지급 가능합니다.\n  (차량 계약 후 5분 이내 명의 계좌로 바로 송금)\n\n- 빠른 명의 이전으로 깔끔한 사후 처리 하겠습니다.\n\n- 필요 서류는 전화 통화나 문자로 자세하게 안내 드리겠습니다.\n\n- 타시던 차량 매입&폐차 모두 가능합니다.(자세한 사항은 문의 주시면 정확하게 안내 드립니다.)\n\n ●방문하시는 방법●\n\n- 지하철 이용하시면 송내역에서 픽업 가능합니다. \n- 자가용 이용하시는 고객님께서는 네비로 ★부천시 원미구 신상로 25(DY카랜드)★검색하셔서 와주시고 \n  자세한 사무실 위치는 통화나 문자로 자세하게 안내 드리겠습니다.",
   "sellerFacts": [

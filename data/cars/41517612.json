@@ -320,14 +320,61 @@
   },
   "koreaPriceMan": 5690,
   "history": {
+    "openData": true,
+    "regDate": "2026-02-01T11:35:15.338191",
+    "carNo": "129마5995",
+    "year": "2020",
+    "maker": "BMW",
+    "carKind": "1",
+    "use": "2",
+    "displacement": "2993",
+    "carName": null,
+    "firstDate": "2019-10-31",
+    "fuel": "디젤",
+    "carShape": null,
+    "model": "X5 (G05)",
+    "transmission": null,
+    "carNameCode": null,
     "myAccidentCnt": 0,
-    "myAccidentCost": 0,
     "otherAccidentCnt": 0,
-    "otherAccidentCost": 0,
     "ownerChangeCnt": 3,
-    "totalLoss": null,
-    "flood": null,
-    "robber": null
+    "robberCnt": 0,
+    "robberDate": null,
+    "totalLossCnt": 0,
+    "totalLossDate": null,
+    "floodTotalLossCnt": 0,
+    "floodPartLossCnt": null,
+    "floodDate": null,
+    "government": 0,
+    "business": 0,
+    "loan": 0,
+    "carNoChangeCnt": 0,
+    "myAccidentCost": 0,
+    "otherAccidentCost": 0,
+    "carInfoChanges": [
+      {
+        "date": "2019-10-31",
+        "carNo": "129마XXXX"
+      }
+    ],
+    "carInfoUse1s": [
+      "2"
+    ],
+    "carInfoUse2s": [
+      "1"
+    ],
+    "ownerChanges": [
+      "2022-05-09",
+      "2022-01-07",
+      "2021-01-29"
+    ],
+    "notJoinDate1": null,
+    "notJoinDate2": null,
+    "notJoinDate3": null,
+    "notJoinDate4": null,
+    "notJoinDate5": null,
+    "accidentCnt": 0,
+    "accidents": []
   },
   "sellerText": "▶ 고객님의 입장에서 한 번 더 생각하겠습니다.\n차량 하나하나 꼼꼼하게 확인하여 안심하고 타실 수 있는 최상급 차량만 소개해드립니다.\n\n▶ 엔카진단 완벽 검증 차량\n차량 상태와 이력을 직접 확인하셨으며, 언제든 편하게 문의 및 상담받으실 수 있습니다.\n\n━━━━━━━━━━━━━━━━━━\n\n■ 차량 핵심 정보\n차종: BMW X5 (G05) xDrive 30d M 스포츠\n\n연식: 2019년식\n\n주행거리: 86,000 km (연식 대비 짧고 깔끔하게 관리)\n\n색상: 인기 높은 화이트\n\n사고유무: 무사고 (엔카 진단 완료)\n\n차량상태: 실내·외관 신차급 관리 / 비흡연 / 즉시 출고 가능\n\n━━━━━━━━━━━━━━━━━━\n\n■ 차량 상세 설명\n인기 및 선호도가 가장 높은 BMW X5 xDrive30d M 스포츠 모델입니다.\n\n세련된 디자인 & 풍부한 공간: 깔끔한 화이트 바디에 M 스포티 감성이 더해진 모델로, 넓은 실내 공간과 최고의 승차감을 자랑합니다.\n\n철저한 차량 관리: 실내외 가죽 및 도장면 모두 최상의 상태를 유지하고 있으며, 직접 확인하시면 더욱 만족하실 차량입니다.\n\n꼼꼼한 상태 점검: 방문 시 외관과 실내는 물론 엔진룸 누유 여부, 타이어 트레드, 각종 편의/안전 옵션 작동 상태까지 현장에서 솔직하게 모두 확인시켜 드립니다.\n\n궁금하신 점은 아주 작은 것이라도 편하게 물어보세요!\n\n━━━━━━━━━━━━━━━━━━\n\n■ 주요 옵션 안내\n[외관 & 드라이빙]\n\nM 스포츠 패키지 / 알루미늄 휠 / 듀얼 파노라마 선루프 / 전동 접이식 사이드미러\n\n[실내 & 시트]\n\n고급 가죽 시트 / 전좌석 열선시트 / 앞좌석 통풍시트 / 전동 및 메모리 시트\n\n[안전 & 주행 보조]\n\nABS / 다단 에어백 system / 스마트키 / 후방 및 주차 감지센서 / HID 헤드라이트\n\n[편의 & 인포테인먼트]\n\n풀오토 에어컨 / 순정 내비게이션 / 후방카메라 / 블루투스 / 하이패스 룸미러\n\n(※ 상세 옵션 및 차량 사양은 방문 시 실차를 기준으로 한 번 더 안내해드립니다.)\n\n━━━━━━━━━━━━━━━━━━\n\n■ 할부 / 대차(타시던 차) 상담\n맞춤형 중고차 할부: 고객님의 상황에 맞춰 최저 금리와 합리적인 월 납입금을 안내해 드립니다. (실제 금리는 금융사 심사에 따라 달라질 수 있습니다.)\n\n기존 차량 대차 가능: 현재 운행 중이신 차량도 최상의 시세로 확인 후 차액 대차 상담을 도와드립니다.\n\n━━━━━━━━━━━━━━━━━━\n\n■ 매장 안내 및 방문 방법\n위치: 대구광역시 달서구 장동 42번지 (가람모터스)\n\n안내 사항: 멀리서 방문하시는 고객님의 헛걸음을 방지하기 위해, 방문 전 반드시 전화 연락을 부탁드립니다. 차량 준비 및 매물 유무를 미리 확인해 드리겠습니다.\n\n━━━━━━━━━━━━━━━━━━\n\n■ 약속드립니다\n중고차는 사진과 글보다 직접 눈으로 확인하고 시운전해보시는 것이 가장 정확합니다.\n\n차량의 장점뿐만 아니라 확인하셔야 할 부분까지 솔직하고 투명하게 안내해 드리겠습니다. 무리한 구매 강요 없이, 고객님께서 충분히 만족하실 수 있는 현명한 선택을 돕겠습니다.\n\n언제든 편하게 문의해주세요. 감사합니다!",
   "sellerFacts": [

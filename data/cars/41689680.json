@@ -19,14 +19,66 @@
   },
   "koreaPriceMan": 6550,
   "history": {
+    "openData": true,
+    "regDate": "2026-02-25T17:20:29.043291",
+    "carNo": "221서6620",
+    "year": "2022",
+    "maker": "BMW",
+    "carKind": "1",
+    "use": "2",
+    "displacement": "2993",
+    "carName": null,
+    "firstDate": "2022-02-15",
+    "fuel": "디젤",
+    "carShape": "SUV",
+    "model": "X5 (G05)",
+    "transmission": null,
+    "carNameCode": null,
     "myAccidentCnt": 1,
-    "myAccidentCost": 0,
     "otherAccidentCnt": 0,
-    "otherAccidentCost": 0,
     "ownerChangeCnt": 0,
-    "totalLoss": null,
-    "flood": null,
-    "robber": null
+    "robberCnt": 0,
+    "robberDate": null,
+    "totalLossCnt": 0,
+    "totalLossDate": null,
+    "floodTotalLossCnt": 0,
+    "floodPartLossCnt": null,
+    "floodDate": null,
+    "government": 0,
+    "business": 0,
+    "loan": 0,
+    "carNoChangeCnt": 0,
+    "myAccidentCost": 0,
+    "otherAccidentCost": 0,
+    "carInfoChanges": [
+      {
+        "date": "2022-02-15",
+        "carNo": "221서XXXX"
+      }
+    ],
+    "carInfoUse1s": [
+      "2"
+    ],
+    "carInfoUse2s": [
+      "1"
+    ],
+    "ownerChanges": [],
+    "notJoinDate1": "202510~202512",
+    "notJoinDate2": null,
+    "notJoinDate3": null,
+    "notJoinDate4": null,
+    "notJoinDate5": null,
+    "accidentCnt": 1,
+    "accidents": [
+      {
+        "type": "2",
+        "date": "2026-02-09",
+        "insuranceBenefit": 0,
+        "partCost": 0,
+        "laborCost": 0,
+        "paintingCost": 0
+      }
+    ]
   },
   "model": "X5 (G05)",
   "mileageKm": 54959,

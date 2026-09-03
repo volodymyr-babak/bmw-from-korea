@@ -21,14 +21,59 @@
     "code": null
   },
   "history": {
+    "openData": true,
+    "regDate": "2026-06-01T17:00:57.814362",
+    "carNo": "382어4767",
+    "year": "2020",
+    "maker": "BMW",
+    "carKind": "1",
+    "use": "2",
+    "displacement": "2993",
+    "carName": null,
+    "firstDate": "2020-09-21",
+    "fuel": "디젤",
+    "carShape": null,
+    "model": "X5 (G05)",
+    "transmission": null,
+    "carNameCode": null,
     "myAccidentCnt": 0,
-    "myAccidentCost": 0,
     "otherAccidentCnt": 0,
-    "otherAccidentCost": 0,
     "ownerChangeCnt": 1,
-    "totalLoss": null,
-    "flood": null,
-    "robber": null
+    "robberCnt": 0,
+    "robberDate": null,
+    "totalLossCnt": 0,
+    "totalLossDate": null,
+    "floodTotalLossCnt": 0,
+    "floodPartLossCnt": null,
+    "floodDate": null,
+    "government": 0,
+    "business": 0,
+    "loan": 0,
+    "carNoChangeCnt": 0,
+    "myAccidentCost": 0,
+    "otherAccidentCost": 0,
+    "carInfoChanges": [
+      {
+        "date": "2020-09-21",
+        "carNo": "382어XXXX"
+      }
+    ],
+    "carInfoUse1s": [
+      "2"
+    ],
+    "carInfoUse2s": [
+      "1"
+    ],
+    "ownerChanges": [
+      "2026-05-27"
+    ],
+    "notJoinDate1": null,
+    "notJoinDate2": null,
+    "notJoinDate3": null,
+    "notJoinDate4": null,
+    "notJoinDate5": null,
+    "accidentCnt": 0,
+    "accidents": []
   },
   "keyFeatures": {
     "air": true,

@@ -320,14 +320,66 @@
   },
   "koreaPriceMan": 4790,
   "history": {
+    "openData": true,
+    "regDate": "2026-07-28T14:09:26.434611",
+    "carNo": "123가8271",
+    "year": "2021",
+    "maker": "BMW",
+    "carKind": "1",
+    "use": "2",
+    "displacement": "2993",
+    "carName": null,
+    "firstDate": "2021-08-04",
+    "fuel": "디젤",
+    "carShape": "SUV",
+    "model": "X5 (G05)",
+    "transmission": null,
+    "carNameCode": null,
     "myAccidentCnt": 1,
-    "myAccidentCost": 2623556,
     "otherAccidentCnt": 0,
-    "otherAccidentCost": 0,
     "ownerChangeCnt": 0,
-    "totalLoss": null,
-    "flood": null,
-    "robber": null
+    "robberCnt": 0,
+    "robberDate": null,
+    "totalLossCnt": 0,
+    "totalLossDate": null,
+    "floodTotalLossCnt": 0,
+    "floodPartLossCnt": null,
+    "floodDate": null,
+    "government": 0,
+    "business": 0,
+    "loan": 0,
+    "carNoChangeCnt": 0,
+    "myAccidentCost": 2623556,
+    "otherAccidentCost": 0,
+    "carInfoChanges": [
+      {
+        "date": "2021-08-04",
+        "carNo": "123가XXXX"
+      }
+    ],
+    "carInfoUse1s": [
+      "2"
+    ],
+    "carInfoUse2s": [
+      "1"
+    ],
+    "ownerChanges": [],
+    "notJoinDate1": null,
+    "notJoinDate2": null,
+    "notJoinDate3": null,
+    "notJoinDate4": null,
+    "notJoinDate5": null,
+    "accidentCnt": 1,
+    "accidents": [
+      {
+        "type": "2",
+        "date": "2021-09-10",
+        "insuranceBenefit": 5052000,
+        "partCost": 468822,
+        "laborCost": 1033327,
+        "paintingCost": 1121407
+      }
+    ]
   },
   "sellerText": "◆  프리미엄 중고차 사업부 ◆\r\n\r\n\r\n우선 차량에 관심을 가져주셔서 감사드립니다. 무사고차량과 짧은주행거리 1인 신조차량을 우선으로 \r\n\r\n양질의 중고차만을 공급 받아 성능정검 및 보증을 통한 직접 판매를 진행하고 있습니다. \r\n\r\n현재 고객님께서 보시는차량은 100% 실매물임을 약속드리며 IM캐피탈 프리미엄 중고사업부 부산점에서\r\n \r\n차량을 확인 하실 수 있습니다. \r\n\r\n가장 좋은 방법은 차량의 실물을 직접 확인 하시고 담당자인 저와 얘기및 견해를 듣고 판단하는 것이 좋다고 생각합니다.\r\n\r\n 중고차라는것이 새차는 아니지만 최대한 새차에 가깝게 고객분들이 가져가실수 있도록 상품화 과정을 거치도록 더 노력하겠습니다.\r\n\r\n◆ 차  량  설  명 ◆\r\n\r\n   - 차량명 : BMW X5 30d MSP\r\n\r\n   - 최초 등록일 : 2021년 8월 4일\r\n\r\n   - 색상 : 외장-블랙/ 내장 : 블랙시트\r\n\r\n   - 주행거리 : 91728 km\r\n \r\n   - 특이 사항 :  -현금차량  \r\n                       -정식출고\r\n                       - 고급스럽고  어두운 블랙바디&블랙시트\r\n                       -깔끔하게 관리된 내/외관 보유\r\n                       - 3000CC 6기통 브랜드 프리미엄 준대형급 SUV 패밀리카\r\n                       -옵션으로 네비/HUD/어라운드뷰/파노라마/전동트렁크/열선통풍전동메모리 시트등..\r\n                       - 1인신조 상품화단계\r\n \r\n\r\n   - 판매  : 현금 가능\r\n              \r\n   \r\n\r\n\r\n \r\n\r\n\r\n------------------------------------------------------------------------\r\n \r\n※ IM캐피탈 프리미엄 중고차 전시장  안내\r\n\r\n   ▶ 부산전시장 : 부산광역시 해운대구 반송로 513번길 10 원파크  2층 219호 \r\n\r\n   ▶ 본사 : 경기도 고양시 일산동구 백마로 495, IM캐피탈 전시장\r\n\r\n   ▶ 일산전시장 : 경기도 고양시 일산동구 백마로478, M38호(일산 풍동 오토갤러리) \r\n\r\n   ▶ 천안전시장 : 충정남도 천안시 서북구 번영로 533 , 304호",
   "sellerFacts": [

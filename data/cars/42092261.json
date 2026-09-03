@@ -21,14 +21,74 @@
     "code": "MCHF"
   },
   "history": {
+    "openData": true,
+    "regDate": "2026-05-23T08:48:16.430808",
+    "carNo": "333라1184",
+    "year": "2020",
+    "maker": "BMW",
+    "carKind": "1",
+    "use": "2",
+    "displacement": "2993",
+    "carName": null,
+    "firstDate": "2019-12-27",
+    "fuel": "디젤",
+    "carShape": null,
+    "model": "X5 (G05)",
+    "transmission": null,
+    "carNameCode": null,
     "myAccidentCnt": 2,
-    "myAccidentCost": 4092920,
     "otherAccidentCnt": 0,
-    "otherAccidentCost": 0,
     "ownerChangeCnt": 0,
-    "totalLoss": null,
-    "flood": null,
-    "robber": null
+    "robberCnt": 0,
+    "robberDate": null,
+    "totalLossCnt": 0,
+    "totalLossDate": null,
+    "floodTotalLossCnt": 0,
+    "floodPartLossCnt": null,
+    "floodDate": null,
+    "government": 0,
+    "business": 0,
+    "loan": 0,
+    "carNoChangeCnt": 0,
+    "myAccidentCost": 4092920,
+    "otherAccidentCost": 0,
+    "carInfoChanges": [
+      {
+        "date": "2019-12-27",
+        "carNo": "333라XXXX"
+      }
+    ],
+    "carInfoUse1s": [
+      "2"
+    ],
+    "carInfoUse2s": [
+      "1"
+    ],
+    "ownerChanges": [],
+    "notJoinDate1": null,
+    "notJoinDate2": null,
+    "notJoinDate3": null,
+    "notJoinDate4": null,
+    "notJoinDate5": null,
+    "accidentCnt": 2,
+    "accidents": [
+      {
+        "type": "2",
+        "date": "2024-01-06",
+        "insuranceBenefit": 2410500,
+        "partCost": 841400,
+        "laborCost": 104720,
+        "paintingCost": 520000
+      },
+      {
+        "type": "2",
+        "date": "2021-10-28",
+        "insuranceBenefit": 4157260,
+        "partCost": 1792900,
+        "laborCost": 195040,
+        "paintingCost": 638860
+      }
+    ]
   },
   "keyFeatures": {
     "air": true,

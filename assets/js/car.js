@@ -275,15 +275,55 @@ function panelHistory(d) {
       ['Ремонт іншим за рахунок цього авто', h.otherAccidentCnt
         ? `<span class="num">${h.otherAccidentCnt}</span> на <span class="num">${krw(h.otherAccidentCost || 0)}</span>`
         : 'не було'],
+      ['Різних ДТП', incidentCount(h) == null
+        ? '<span class="dim">детальних записів немає</span>'
+        : (incidentCount(h)
+          ? `<span class="num">${incidentCount(h)}</span> — за унікальними датами, `
+            + `страхових записів <span class="num">${(h.accidents || []).length}</span>`
+          : '<span class="feat-yes">не було</span>')],
       ['Змін власника', `<span class="num">${h.ownerChangeCnt}</span>`],
       ['Списання / потоп', h.totalLoss || h.flood
         ? '<b>є позначка — не брати</b>'
         : '<span class="feat-yes">чисто</span>'],
     ])}
+    ${incidentList(h)}
     <p class="note">${clean
       ? 'За виплатами страховика авто без ремонтів.'
       : `Виплати на власний ремонт — ${krwM(h.myAccidentCost || 0)}, це нижче за поріг 5 млн ₩, який ми тримаємо.`}</p>
   </section>`;
+}
+
+/** Кількість РІЗНИХ ДТП: Encar рахує страхові записи, а одне ДТП дає два,
+ *  якщо виплата йшла і власнику, і потерпілій стороні. Тому — унікальні дати. */
+function incidentCount(h) {
+  if (!h.accidents) return null;
+  return new Set(h.accidents.map((a) => a.date).filter(Boolean)).size;
+}
+
+const ACC_TYPE = {
+  1: 'своя страховка',
+  2: 'страховка іншої сторони',
+  3: 'шкода іншому авто',
+};
+
+/** Розклад по датах — щоб було видно, чому ДТП менше, ніж «cases» в Encar. */
+function incidentList(h) {
+  const acc = h.accidents || [];
+  if (!acc.length) return '';
+  const byDate = new Map();
+  for (const a of acc) {
+    if (!a.date) continue;
+    if (!byDate.has(a.date)) byDate.set(a.date, []);
+    byDate.get(a.date).push(a);
+  }
+  const rows = [...byDate.entries()].sort((x, y) => y[0].localeCompare(x[0])).map(([date, list]) => {
+    const parts = list.map((a) => {
+      const sum = (a.partCost || 0) + (a.laborCost || 0) + (a.paintingCost || 0);
+      return `${ACC_TYPE[a.type] || `тип ${a.type}`} — ${sum ? krw(sum) : 'без суми'}`;
+    }).join('; ');
+    return `<li><span class="num">${date}</span> — ${parts}</li>`;
+  });
+  return `<ul class="acc-list">${rows.join('')}</ul>`;
 }
 
 /** Що пише продавець в описі оголошення — джерело поза API й білд-листом.

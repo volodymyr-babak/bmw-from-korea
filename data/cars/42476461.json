@@ -19,14 +19,90 @@
   },
   "koreaPriceMan": 6390,
   "history": {
+    "openData": true,
+    "regDate": "2026-08-03T12:46:06.202289",
+    "carNo": "265보8307",
+    "year": "2023",
+    "maker": "BMW",
+    "carKind": "1",
+    "use": "2",
+    "displacement": "2993",
+    "carName": null,
+    "firstDate": "2022-11-24",
+    "fuel": "디젤",
+    "carShape": "SUV",
+    "model": "X6 (G06)",
+    "transmission": null,
+    "carNameCode": null,
     "myAccidentCnt": 2,
-    "myAccidentCost": 4474716,
     "otherAccidentCnt": 1,
-    "otherAccidentCost": 1115819,
     "ownerChangeCnt": 1,
-    "totalLoss": null,
-    "flood": null,
-    "robber": null
+    "robberCnt": 0,
+    "robberDate": null,
+    "totalLossCnt": 0,
+    "totalLossDate": null,
+    "floodTotalLossCnt": 0,
+    "floodPartLossCnt": null,
+    "floodDate": null,
+    "government": 0,
+    "business": 0,
+    "loan": 1,
+    "carNoChangeCnt": 1,
+    "myAccidentCost": 4474716,
+    "otherAccidentCost": 1115819,
+    "carInfoChanges": [
+      {
+        "date": "2022-11-24",
+        "carNo": "193호XXXX"
+      },
+      {
+        "date": "2026-07-06",
+        "carNo": "265보XXXX"
+      }
+    ],
+    "carInfoUse1s": [
+      "3",
+      "2"
+    ],
+    "carInfoUse2s": [
+      "1",
+      "1"
+    ],
+    "ownerChanges": [
+      "2026-07-06"
+    ],
+    "notJoinDate1": null,
+    "notJoinDate2": null,
+    "notJoinDate3": null,
+    "notJoinDate4": null,
+    "notJoinDate5": null,
+    "accidentCnt": 3,
+    "accidents": [
+      {
+        "type": "1",
+        "date": "2026-04-04",
+        "insuranceBenefit": 1658000,
+        "partCost": 1608551,
+        "laborCost": 249533,
+        "paintingCost": 433982
+      },
+      {
+        "type": "3",
+        "date": "2025-12-06",
+        "insuranceBenefit": 1200000,
+        "partCost": 0,
+        "laborCost": 700000,
+        "paintingCost": 415819
+      },
+      {
+        "type": "2",
+        "date": "2024-11-28",
+        "insuranceBenefit": 3225540,
+        "partCost": 1485080,
+        "laborCost": 229700,
+        "paintingCost": 467870
+      }
+    ]
   },
   "model": "X6 (G06)",
   "mileageKm": 75662,

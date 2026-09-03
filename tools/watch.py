@@ -128,6 +128,16 @@ def check_existing(index, ch):
                 save(f, d)
                 ch['inspected'].append((car, got))
 
+        # Старі записи зберігали історію обрізаною (8 полів, без `accidents`),
+        # а саме масив із датами дає число УНІКАЛЬНИХ ДТП. Добираємо один раз:
+        # щойно повна історія на місці, запит більше не робиться.
+        if f.exists() and 'accidents' not in (d.get('history') or {}):
+            vid = det.get('vehicleId') or (det.get('manage') or {}).get('dummyVehicleId')
+            code_h, full = encar.record(vid) if vid else ('skip', None)
+            if full and 'accidents' in full:
+                d['history'] = full
+                save(f, d)
+
         ad, spec = det.get('advertisement') or {}, det.get('spec') or {}
         man, mileage = ad.get('price'), spec.get('mileage')
         if not man:
@@ -571,7 +581,7 @@ def report(ch):
                     else f'ремонт {krw_m(acc["costKRW"])}')
             out.append(f'- **{short(car["model"])} {car["year"]}** · {km(car["mileageKm"])} '
                        f'· {"≈" if car.get("priceEstimated") else ""}{usd(car["priceUSD"])} '
-                       f'· {hist} · {acc.get("owners", 0)} власн.  \n  {car_link(car)}')
+                       f'· {hist} · змін власника {acc.get("owners", 0)}  \n  {car_link(car)}')
         out.append('')
     if ch['decoded']:
         out += ['## Декодовано за VIN', '']

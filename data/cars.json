@@ -23,7 +23,8 @@
       "interior": "Vernasca Coffee",
       "accident": {
         "costKRW": 4092920,
-        "owners": 0
+        "owners": 0,
+        "incidents": 2
       },
       "photo": "/carpicture09/pic4209/42091161_001.jpg",
       "keyFeatures": {
@@ -56,7 +57,8 @@
       "decoded": true,
       "accident": {
         "costKRW": 1223510,
-        "owners": 3
+        "owners": 3,
+        "incidents": 1
       },
       "photo": "/carpicture06/pic4266/42660963_001.jpg",
       "exterior": "Mineral White",
@@ -92,7 +94,8 @@
       "decoded": true,
       "accident": {
         "costKRW": 4473292,
-        "owners": 2
+        "owners": 2,
+        "incidents": 3
       },
       "photo": "/carpicture08/pic4228/42284007_001.jpg",
       "exterior": "Carbon Black",
@@ -132,7 +135,8 @@
       "interior": "Vernasca Black",
       "accident": {
         "costKRW": 2623556,
-        "owners": 0
+        "owners": 0,
+        "incidents": 1
       },
       "note": "лазер+soft-close+B&W+вентиляція+48V MHEV, але БЕЗ пневмо (S2VF adaptive M chassis)",
       "photo": "/carpicture04/pic4244/42445415_001.jpg",
@@ -170,7 +174,8 @@
       "interior": "Vernasca Black",
       "accident": {
         "costKRW": 0,
-        "owners": 3
+        "owners": 3,
+        "incidents": 0
       },
       "note": "пневмо+вентиляція+H/K; Individual шкіряна панель S4M5; білий Mineral White; без лазера/soft-close",
       "photo": "/carpicture01/pic4151/41517612_001.jpg",
@@ -207,7 +212,8 @@
       "exterior": "Carbon Black",
       "accident": {
         "costKRW": 0,
-        "owners": 1
+        "owners": 1,
+        "incidents": 2
       },
       "photo": "/carpicture10/pic4240/42405399_001.jpg",
       "interior": "Vernasca Coffee",
@@ -244,7 +250,8 @@
       "exterior": "перловий",
       "accident": {
         "costKRW": 1505024,
-        "owners": 4
+        "owners": 4,
+        "incidents": 1
       },
       "photo": "/carpicture05/pic4255/42554478_001.jpg",
       "interiorUnverified": "чорний — з фото"
@@ -262,7 +269,8 @@
       "exterior": "Arctic Grey",
       "accident": {
         "costKRW": 4593060,
-        "owners": 1
+        "owners": 1,
+        "incidents": 4
       },
       "photo": "/carpicture06/pic4246/42461837_001.jpg",
       "note": "Пневмопідвіски немає — підтверджено білд-листом (S2VF замість S2VR). Натомість Bowers & Wilkins Diamond, лазер, Soft-Close і вентиляція сидінь.",
@@ -298,7 +306,8 @@
       "decoded": true,
       "accident": {
         "costKRW": 0,
-        "owners": 0
+        "owners": 0,
+        "incidents": 0
       },
       "photo": "/carpicture08/pic4258/42585873_001.jpg",
       "exterior": "Mineral White",
@@ -339,7 +348,8 @@
       "interior": "Vernasca Black",
       "accident": {
         "costKRW": 0,
-        "owners": 1
+        "owners": 1,
+        "incidents": 0
       },
       "photo": "/carpicture10/pic4210/42108591_001.jpg",
       "keyFeatures": {
@@ -376,7 +386,8 @@
       "interior": "Vernasca Coffee",
       "accident": {
         "costKRW": 0,
-        "owners": 2
+        "owners": 2,
+        "incidents": 0
       },
       "photo": "/carpicture01/pic4221/42218942_001.jpg",
       "keyFeatures": {
@@ -412,7 +423,8 @@
       "exterior": "Mineral White",
       "accident": {
         "costKRW": 0,
-        "owners": 0
+        "owners": 0,
+        "incidents": 0
       },
       "photo": "/carpicture04/pic4114/41142979_001.jpg",
       "interior": "Merino Coffee",
@@ -446,7 +458,8 @@
       "decoded": true,
       "accident": {
         "costKRW": 220490,
-        "owners": 0
+        "owners": 0,
+        "incidents": 1
       },
       "photo": "/carpicture02/pic4262/42627728_001.jpg",
       "exterior": "Carbon Black",
@@ -483,7 +496,8 @@
       "decoded": true,
       "accident": {
         "costKRW": 4553078,
-        "owners": 0
+        "owners": 0,
+        "incidents": 2
       },
       "photo": "/carpicture03/pic4233/42338596_001.jpg",
       "exterior": "Phytonic Blue",
@@ -522,7 +536,8 @@
       "exterior": "Carbon Black",
       "accident": {
         "costKRW": 0,
-        "owners": 2
+        "owners": 2,
+        "incidents": 2
       },
       "photo": "/carpicture05/pic4225/42251152_001.jpg",
       "interior": "Merino Coffee",
@@ -556,7 +571,8 @@
       "decoded": true,
       "accident": {
         "costKRW": 3446712,
-        "owners": 0
+        "owners": 0,
+        "incidents": 1
       },
       "photo": "/carpicture04/pic4264/42646084_001.jpg",
       "exterior": "Arctic Grey",
@@ -594,7 +610,8 @@
       "exterior": "Carbon Black",
       "accident": {
         "costKRW": 1662954,
-        "owners": 0
+        "owners": 0,
+        "incidents": 1
       },
       "photo": "/carpicture06/pic4136/41368455_001.jpg",
       "interior": "Vernasca Coffee",
@@ -631,7 +648,8 @@
       "exterior": "Mineral White",
       "accident": {
         "costKRW": 4490960,
-        "owners": 1
+        "owners": 1,
+        "incidents": 2
       },
       "photo": "/carpicture06/pic4096/40966656_001.jpg",
       "note": "Міняли капот — продавець пише, що через звичайну вмʼятину, і має фото. Звідси 4,5 млн ₩ виплат.",
@@ -667,7 +685,8 @@
       "decoded": true,
       "accident": {
         "costKRW": 0,
-        "owners": 0
+        "owners": 0,
+        "incidents": 0
       },
       "photo": "/carpicture05/pic4265/42655967_001.jpg",
       "exterior": "Carbon Black",
@@ -707,7 +726,8 @@
       "exterior": "Mineral White",
       "accident": {
         "costKRW": 0,
-        "owners": 1
+        "owners": 1,
+        "incidents": 0
       },
       "photo": "/carpicture01/pic4241/42415469_002.jpg",
       "interior": "Merino Coffee",
@@ -741,7 +761,8 @@
       "decoded": true,
       "accident": {
         "costKRW": 2137440,
-        "owners": 1
+        "owners": 1,
+        "incidents": 1
       },
       "photo": "/carpicture03/pic4233/42331194_001.jpg",
       "priceEstimated": true,
@@ -782,7 +803,8 @@
       "exterior": "Carbon Black",
       "accident": {
         "costKRW": 4724399,
-        "owners": 1
+        "owners": 1,
+        "incidents": 2
       },
       "photo": "/carpicture04/pic4234/42348555_001.jpg",
       "note": "Пише «без фарбування й замін», а в реєстрі 4,7 млн ₩ виплат — найбільша розбіжність у добірці.",
@@ -819,7 +841,8 @@
       "exterior": "небесно-блакитний",
       "accident": {
         "costKRW": 0,
-        "owners": 0
+        "owners": 0,
+        "incidents": 1
       },
       "note": "Пробіг 26 786 км. VIN Encar не показує. Продавець сам показує єдиний ремонт: верх кришки багажника — зачепили гілку, коли відкривали; є у звіті про стан.",
       "photo": "/carpicture09/pic4209/42094631_001.jpg"
@@ -838,7 +861,8 @@
       "exterior": "Carbon Black",
       "accident": {
         "costKRW": 0,
-        "owners": 2
+        "owners": 2,
+        "incidents": 0
       },
       "photo": "/carpicture02/pic4262/42620687_002.jpg",
       "interior": "Merino Coffee",
@@ -875,7 +899,8 @@
       "exterior": "Carbon Black",
       "accident": {
         "costKRW": 0,
-        "owners": 2
+        "owners": 2,
+        "incidents": 1
       },
       "photo": "/carpicture04/pic4264/42649355_001.jpg",
       "interior": "Merino Coffee",
@@ -912,7 +937,8 @@
       "exterior": "Carbon Black",
       "accident": {
         "costKRW": 0,
-        "owners": 0
+        "owners": 0,
+        "incidents": 0
       },
       "photo": "/carpicture08/pic4258/42585911_001.jpg",
       "interior": "Vernasca Coffee",
@@ -949,7 +975,8 @@
       "interior": "Vernasca Black",
       "accident": {
         "costKRW": 2065160,
-        "owners": 2
+        "owners": 2,
+        "incidents": 1
       },
       "photo": "/carpicture02/pic4132/41328019_001.jpg",
       "keyFeatures": {
@@ -984,7 +1011,8 @@
       "exterior": "Carbon Black",
       "accident": {
         "costKRW": 2199367,
-        "owners": 0
+        "owners": 0,
+        "incidents": 2
       },
       "photo": "/carpicture07/pic4257/42574631_001.jpg",
       "interior": "Merino Coffee",
@@ -1021,7 +1049,8 @@
       "exterior": "Carbon Black",
       "accident": {
         "costKRW": 4474716,
-        "owners": 1
+        "owners": 1,
+        "incidents": 3
       },
       "photo": "/carpicture07/pic4247/42476461_001.jpg",
       "interior": "Merino Coffee",
@@ -1058,7 +1087,8 @@
       "exterior": "Mineral White",
       "accident": {
         "costKRW": 1215969,
-        "owners": 0
+        "owners": 0,
+        "incidents": 1
       },
       "photo": "/carpicture01/pic4161/41616675_001.jpg",
       "interior": "Vernasca Coffee",
@@ -1092,7 +1122,8 @@
       "decoded": true,
       "accident": {
         "costKRW": 2578310,
-        "owners": 2
+        "owners": 2,
+        "incidents": 1
       },
       "photo": "/carpicture04/pic4264/42644431_001.jpg",
       "exterior": "Mineral White",
@@ -1130,7 +1161,8 @@
       "exterior": "Mineral White",
       "accident": {
         "costKRW": 0,
-        "owners": 0
+        "owners": 0,
+        "incidents": 1
       },
       "photo": "/carpicture08/pic4168/41689680_001.jpg",
       "note": "Продавець сам пише про ≈5,7 млн ₩ на заміну крила — виплата ще не в реєстрі Encar, тому наш поріг 5 млн ₩ її не побачив.",
@@ -1168,7 +1200,8 @@
       "interior": "Vernasca Coffee",
       "accident": {
         "costKRW": 0,
-        "owners": 0
+        "owners": 0,
+        "incidents": 0
       },
       "note": "лазер+soft-close+48V MHEV; без вентиляції/H&K",
       "photo": "/carpicture03/pic4143/41437048_001.jpg",
@@ -1204,7 +1237,8 @@
       "exterior": "Carbon Black",
       "accident": {
         "costKRW": 2736290,
-        "owners": 0
+        "owners": 0,
+        "incidents": 1
       },
       "photo": "/carpicture05/pic4145/41456161_001.jpg",
       "interior": "Vernasca Coffee",

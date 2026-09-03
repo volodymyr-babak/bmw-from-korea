@@ -19,14 +19,71 @@
   },
   "koreaPriceMan": 5790,
   "history": {
+    "openData": true,
+    "regDate": "2026-08-14T14:55:44.40156",
+    "carNo": "128도8970",
+    "year": "2020",
+    "maker": "BMW",
+    "carKind": "1",
+    "use": "2",
+    "displacement": "2993",
+    "carName": null,
+    "firstDate": "2019-10-30",
+    "fuel": "디젤",
+    "carShape": "SUV 5도어",
+    "model": "X5 (G05)",
+    "transmission": null,
+    "carNameCode": null,
     "myAccidentCnt": 1,
-    "myAccidentCost": 1505024,
     "otherAccidentCnt": 0,
-    "otherAccidentCost": 0,
     "ownerChangeCnt": 4,
-    "totalLoss": null,
-    "flood": null,
-    "robber": null
+    "robberCnt": 0,
+    "robberDate": null,
+    "totalLossCnt": 0,
+    "totalLossDate": null,
+    "floodTotalLossCnt": 0,
+    "floodPartLossCnt": null,
+    "floodDate": null,
+    "government": 0,
+    "business": 0,
+    "loan": 0,
+    "carNoChangeCnt": 0,
+    "myAccidentCost": 1505024,
+    "otherAccidentCost": 0,
+    "carInfoChanges": [
+      {
+        "date": "2019-10-30",
+        "carNo": "128도XXXX"
+      }
+    ],
+    "carInfoUse1s": [
+      "2"
+    ],
+    "carInfoUse2s": [
+      "1"
+    ],
+    "ownerChanges": [
+      "2026-01-19",
+      "2021-07-16",
+      "2021-06-07",
+      "2021-06-01"
+    ],
+    "notJoinDate1": "202601~202605",
+    "notJoinDate2": null,
+    "notJoinDate3": null,
+    "notJoinDate4": null,
+    "notJoinDate5": null,
+    "accidentCnt": 1,
+    "accidents": [
+      {
+        "type": "2",
+        "date": "2021-08-14",
+        "insuranceBenefit": 1984000,
+        "partCost": 194200,
+        "laborCost": 579000,
+        "paintingCost": 731824
+      }
+    ]
   },
   "model": "X5 (G05)",
   "mileageKm": 87922,

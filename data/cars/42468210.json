@@ -25,14 +25,92 @@
   },
   "koreaPriceMan": 5100,
   "history": {
+    "openData": true,
+    "regDate": "2026-07-31T14:05:22.010817",
+    "carNo": "291주5892",
+    "year": "2021",
+    "maker": "BMW",
+    "carKind": "1",
+    "use": "2",
+    "displacement": "2993",
+    "carName": null,
+    "firstDate": "2021-08-30",
+    "fuel": "디젤",
+    "carShape": "SUV",
+    "model": "X5 (G05)",
+    "transmission": null,
+    "carNameCode": null,
     "myAccidentCnt": 2,
-    "myAccidentCost": 4593060,
     "otherAccidentCnt": 2,
-    "otherAccidentCost": 2089420,
     "ownerChangeCnt": 1,
-    "totalLoss": null,
-    "flood": null,
-    "robber": null
+    "robberCnt": 0,
+    "robberDate": null,
+    "totalLossCnt": 0,
+    "totalLossDate": null,
+    "floodTotalLossCnt": 0,
+    "floodPartLossCnt": null,
+    "floodDate": null,
+    "government": 0,
+    "business": 0,
+    "loan": 0,
+    "carNoChangeCnt": 0,
+    "myAccidentCost": 4593060,
+    "otherAccidentCost": 2089420,
+    "carInfoChanges": [
+      {
+        "date": "2021-08-30",
+        "carNo": "291주XXXX"
+      }
+    ],
+    "carInfoUse1s": [
+      "2"
+    ],
+    "carInfoUse2s": [
+      "1"
+    ],
+    "ownerChanges": [
+      "2026-07-09"
+    ],
+    "notJoinDate1": null,
+    "notJoinDate2": null,
+    "notJoinDate3": null,
+    "notJoinDate4": null,
+    "notJoinDate5": null,
+    "accidentCnt": 4,
+    "accidents": [
+      {
+        "type": "1",
+        "date": "2026-01-25",
+        "insuranceBenefit": 1823000,
+        "partCost": 2071000,
+        "laborCost": 0,
+        "paintingCost": 0
+      },
+      {
+        "type": "3",
+        "date": "2025-08-19",
+        "insuranceBenefit": 742000,
+        "partCost": 0,
+        "laborCost": 0,
+        "paintingCost": 0
+      },
+      {
+        "type": "2",
+        "date": "2024-01-22",
+        "insuranceBenefit": 3121800,
+        "partCost": 0,
+        "laborCost": 1988997,
+        "paintingCost": 533063
+      },
+      {
+        "type": "3",
+        "date": "2023-09-06",
+        "insuranceBenefit": 2089600,
+        "partCost": 429550,
+        "laborCost": 281450,
+        "paintingCost": 636420
+      }
+    ]
   },
   "model": "X5 (G05)",
   "mileageKm": 109176,

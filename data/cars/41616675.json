@@ -19,14 +19,66 @@
   },
   "koreaPriceMan": 6500,
   "history": {
+    "openData": true,
+    "regDate": "2026-02-23T09:41:08.693874",
+    "carNo": "100우5365",
+    "year": "2022",
+    "maker": "BMW",
+    "carKind": "1",
+    "use": "2",
+    "displacement": "2993",
+    "carName": null,
+    "firstDate": "2022-02-28",
+    "fuel": "디젤",
+    "carShape": "SUV",
+    "model": "X6 (G06)",
+    "transmission": null,
+    "carNameCode": null,
     "myAccidentCnt": 1,
-    "myAccidentCost": 1215969,
     "otherAccidentCnt": 0,
-    "otherAccidentCost": 0,
     "ownerChangeCnt": 0,
-    "totalLoss": null,
-    "flood": null,
-    "robber": null
+    "robberCnt": 0,
+    "robberDate": null,
+    "totalLossCnt": 0,
+    "totalLossDate": null,
+    "floodTotalLossCnt": 0,
+    "floodPartLossCnt": null,
+    "floodDate": null,
+    "government": 0,
+    "business": 0,
+    "loan": 0,
+    "carNoChangeCnt": 0,
+    "myAccidentCost": 1215969,
+    "otherAccidentCost": 0,
+    "carInfoChanges": [
+      {
+        "date": "2022-02-28",
+        "carNo": "100우XXXX"
+      }
+    ],
+    "carInfoUse1s": [
+      "2"
+    ],
+    "carInfoUse2s": [
+      "1"
+    ],
+    "ownerChanges": [],
+    "notJoinDate1": null,
+    "notJoinDate2": null,
+    "notJoinDate3": null,
+    "notJoinDate4": null,
+    "notJoinDate5": null,
+    "accidentCnt": 1,
+    "accidents": [
+      {
+        "type": "2",
+        "date": "2024-04-01",
+        "insuranceBenefit": 1547089,
+        "partCost": 320000,
+        "laborCost": 507000,
+        "paintingCost": 388969
+      }
+    ]
   },
   "model": "X6 (G06)",
   "mileageKm": 54000,

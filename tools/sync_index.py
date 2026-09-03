@@ -35,6 +35,26 @@ def frame_no(path: str) -> int:
 OPTIONAL_FEATURES = ["bw"]
 
 
+def incidents(history):
+    """Скільки РІЗНИХ ДТП пережило авто (None — детальних записів немає).
+
+    `accidentCnt` в Encar — це число страхових ЗАПИСІВ, а не подій: одне ДТП
+    дає два записи, якщо виплата йшла і власнику (내차피해), і потерпілій
+    стороні (상대차피해). Приклад `42287839`: 5 записів, але дат лише три
+    (2025-07-08, 2020-08-18, 2019-11-14) — тобто три ДТП, а не п'ять.
+    Тому рахуємо унікальні дати по всіх типах записів (`type` 1 — своя
+    страховка, 2 — чужа, 3 — шкода іншому авто).
+
+    ⚠️ Два справді різні ДТП в один день зіллються в одне. Трапляється рідко,
+    і помилка йде в бік «менше», тож у сумнівних випадках дивитись сам список
+    дат на сторінці авто.
+    """
+    acc = history.get("accidents")
+    if acc is None:
+        return None
+    return len({a.get("date") for a in acc if a.get("date")})
+
+
 def main() -> int:
     index = json.loads(INDEX.read_text(encoding="utf-8"))
     changed, problems = [], []
@@ -81,6 +101,9 @@ def main() -> int:
         if h and not h.get("http"):
             car["accident"] = {"costKRW": h.get("myAccidentCost") or 0,
                                "owners": h.get("ownerChangeCnt") or 0}
+            inc = incidents(h)
+            if inc is not None:
+                car["accident"]["incidents"] = inc
 
         # Пневмопідвіска зі слів продавця — для недекодованих це єдине джерело
         # (у каталозі опцій Encar її немає, а ретрофіт нереальний). Щойно є
