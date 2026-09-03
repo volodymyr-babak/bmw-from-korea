@@ -207,7 +207,7 @@ BAD_USAGE = ('прокат', 'таксі', 'комерційне')
 
 
 def reject_reason(det, hist, vins_taken, cars, model, year, man, bad_trim=None,
-                  insp=None, bad_usage_vins=None, bad_light=None):
+                  insp=None, bad_usage_vins=None, bad_light=None, bad_air=None):
     kw_inspection = {'insp': insp}
     ad = det.get('advertisement') or {}
     if ad.get('salesStatus') or ad.get('price') == 9999:
@@ -225,8 +225,9 @@ def reject_reason(det, hist, vins_taken, cars, model, year, man, bad_trim=None,
     # перевиставляють під новим listingId, а минуле авто не змінюється.
     if vin and vin in (bad_usage_vins or {}):
         return f'було в статусі «{bad_usage_vins[vin]}»', vin
-    if vin and vin in (bad_light or {}):
-        return 'базові фари — без адаптиву/лазера', vin
+    for store in (bad_light or {}, bad_air or {}):
+        if vin and vin in store:
+            return store[vin], vin
     # Кольору салону в API немає, але продавці пишуть його в описі — і опис
     # збігається з білд-листом там, де є обидва. Відсіваємо тут, до mdecoder.
     colour, ok, _ = trim.seat_colour(((det.get('contents') or {}).get('text') or ''))
@@ -262,6 +263,7 @@ def find_new(index, state, ch):
     bad_trim = state.get('interiorRejected') or {}
     bad_usage_vins = state.get('usageRejected') or {}
     bad_light = state.get('lightRejected') or {}
+    bad_air = state.get('airRejected') or {}
 
     # дублі варто перепитати: близнюк міг продатись і місце звільнилось
     for lid in [k for k, v in rejected.items()
@@ -301,7 +303,7 @@ def find_new(index, state, ch):
 
             why, vin = reject_reason(det, hist, vins_taken, index['cars'],
                                      model, year, int(man), bad_trim, insp,
-                                     bad_usage_vins, bad_light)
+                                     bad_usage_vins, bad_light, bad_air)
             if why:
                 rejected[lid] = {'reason': why, 'vin': vin, 'at': today()}
                 continue
@@ -492,30 +494,52 @@ def outvin_try(car, state, ch) -> bool:
     return True
 
 
-def prune_no_adaptive(index, state, ch):
-    """Базові фари — стоп-фактор (рішення користувача 2026-09-03).
+# Жорсткі вимоги до комплектації, які перевіряються ЛИШЕ за білд-листом.
+# `test` повертає True, якщо авто вимогу проходить.
+HARD_FEATURES = [
+    {
+        'store': 'lightRejected',
+        'tag': 'базові фари',
+        'why': 'базові фари — немає ні адаптивного LED (S552), ні лазера (S5AZ)',
+        'test': lambda kf: bool(kf.get('laser') or kf.get('led')),
+    },
+    {
+        'store': 'airRejected',
+        'tag': 'без пневмопідвіски',
+        'why': 'без пневмопідвіски — S2VF Adaptive M chassis замість S2VR',
+        'test': lambda kf: bool(kf.get('air')),
+    },
+]
 
-    «Немає адаптиву» = у білд-листі немає ні `S552` Adaptive LED, ні `S5AZ`
-    Laserlight. Базові LED на M Sport ідуть стандартно й окремим кодом не
-    виписуються, тож перекреслений слот `light` означає саме «не адаптивні».
-    Причина — нічні поїздки українськими дорогами.
 
-    Перевіряємо ТІЛЬКИ декодованих і тільки коли `keyFeatures` уже є: у
-    недекодованих це невідомо, а правило проєкту — «де сумнів, авто лишаємо».
-    Прохід іде по всьому списку щоразу, тому ловить і білд-листи, що з'явились
-    повз watch.py (`oemnav.py`, `bimmer.py`, ручна вставка).
+def prune_by_spec(index, state, ch):
+    """Відсів за комплектацією: адаптивні фари (03.09) і пневмопідвіска (03.09).
+
+    Обидві вимоги — від профілю їзди в Україні. Фари: нічні виїзди по області.
+    Пневмо: **M-підвіска `S2VF` сидить приблизно на 10 мм нижче**, і це не
+    налаштовується, тоді як пневмо тримає штатну висоту й піднімається ще.
+    Ретрофіт нереальний ($6000–10 000), тож це властивість авто назавжди.
+
+    Перевіряємо ТІЛЬКИ декодованих і лише коли `keyFeatures` уже є: у
+    недекодованих ознака невідома, а правило проєкту — «де сумнів, авто
+    лишаємо». Прохід іде по всьому списку щоразу, тому ловить і білд-листи,
+    що з'явились повз watch.py (`oemnav.py`, `bimmer.py`, ручна вставка).
+
+    ⚠️ `airSeller` (пневмо зі слів продавця) тут НЕ використовуємо: опис
+    збігся з білд-листом 3 із 3 разів, але вибірка замала, щоб викидати
+    авто зі списку за словами дилера. Прибирає лише білд-лист.
     """
-    bad = state.setdefault('lightRejected', {})
     rejected = state.setdefault('rejected', {})
     keep = []
     for car in index['cars']:
         kf = car.get('keyFeatures')
-        if car.get('decoded') and kf and not kf.get('laser') and not kf.get('led'):
-            ch['sold'].append((car, 'базові фари — немає ні адаптивного LED (S552), '
-                                    'ні лазера (S5AZ)'))
+        fail = next((r for r in HARD_FEATURES
+                     if car.get('decoded') and kf and not r['test'](kf)), None)
+        if fail:
+            ch['sold'].append((car, fail['why']))
             if car.get('vin'):
-                bad[car['vin']] = 'базові фари'
-            rejected[car['listingId']] = {'reason': 'базові фари',
+                state.setdefault(fail['store'], {})[car['vin']] = fail['tag']
+            rejected[car['listingId']] = {'reason': fail['tag'],
                                           'vin': car.get('vin'), 'at': today()}
             continue
         keep.append(car)
@@ -534,7 +558,7 @@ def apply_decode(car, res, ch):
     d = load(f, {'listingId': car['listingId']})
     d['options'] = res.options
     d['keyFeatures'] = mdecoder.key_features([(o['code'], o['desc']) for o in res.options])
-    car['keyFeatures'] = d['keyFeatures']      # щоб prune_no_adaptive побачив їх одразу
+    car['keyFeatures'] = d['keyFeatures']      # щоб prune_by_spec побачив їх одразу
     if res.paint:
         d['exterior'] = {'name': res.paint, 'german': res.paint, 'code': res.paint_code}
     if res.trim:
@@ -681,7 +705,7 @@ def main():
     # Список у листі: що лишилось без білд-листа, найцікавіше згори. Сам по собі
     # він листа НЕ шле (`touched` його не враховує) — їде разом зі справжніми змінами.
     # Без VIN декодувати нічим, тому такі — у кінець списку, а не за ціною.
-    prune_no_adaptive(index, state, ch)
+    prune_by_spec(index, state, ch)
     ch['pending'] = sorted((c for c in index['cars'] if not c.get('decoded')),
                            key=lambda c: (not c.get('vin'), promise(c)))
 

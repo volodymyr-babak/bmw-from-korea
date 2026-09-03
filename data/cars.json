@@ -4,8 +4,8 @@
     "model": "BMW X5 (G05) / X6 (G06) xDrive30d M Sport",
     "criteria": "X5 (G05) і X6 (G06) · 2019–2022 виготовлення · ≤110000 км · M Sport · дизель 30d лише · ДТП ≤5 млн ₩ власний · під ключ ≤ $70000 · салон чорний/кавовий · без лізингу/айворі/cognac/Tacora Red/45e/40i/40d/M50 · без прокатної/таксі історії (звіт інспекції)",
     "customs": "P (USD) by year 2019:25000 2020:36000 2021:40500 2022:43000; age=2025-year; duty=0.10P; excise=75*3.0*age*1.1648; vat=0.20(P+duty+excise); pens=0.05P; oblik=pens+124; ship=3700; svc=1000; korea=price_만*10000/1372",
-    "count": 34,
-    "decodedCount": 32,
+    "count": 23,
+    "decodedCount": 21,
     "customsNote": "Мінімальна митна вартість P звірена для X5. Для X6 узято ту саму таблицю, тому ціна під ключ X6 — оцінка (реально очікувати +$1000…2000)."
   },
   "cars": [
@@ -123,45 +123,6 @@
     },
     {
       "rank": 4,
-      "listingId": "42445415",
-      "model": "X5 (G05)",
-      "year": 2021,
-      "mileageKm": 91728,
-      "koreaPriceMan": 4790,
-      "priceUSD": 55980,
-      "vin": "WBAJU8107M9H04994",
-      "decoded": true,
-      "exterior": "Carbon Black",
-      "interior": "Vernasca Black",
-      "accident": {
-        "costKRW": 2623556,
-        "owners": 0,
-        "incidents": 1
-      },
-      "note": "лазер+soft-close+B&W+вентиляція+48V MHEV, але БЕЗ пневмо (S2VF adaptive M chassis)",
-      "photo": "/carpicture04/pic4244/42445415_001.jpg",
-      "keyFeatures": {
-        "air": false,
-        "laser": true,
-        "led": false,
-        "soft": true,
-        "vent": true,
-        "hk": false,
-        "pano": true,
-        "skylounge": false,
-        "mhev": true,
-        "acc": true,
-        "park": true,
-        "comfort": true,
-        "seatheat": true,
-        "wheelheat": true,
-        "climate4": true,
-        "exhaust": true,
-        "bw": true
-      }
-    },
-    {
-      "rank": 5,
       "listingId": "41517612",
       "model": "X5 (G05)",
       "year": 2019,
@@ -199,46 +160,7 @@
       }
     },
     {
-      "rank": 6,
-      "listingId": "42405951",
-      "model": "X6 (G06)",
-      "year": 2021,
-      "mileageKm": 100882,
-      "koreaPriceMan": 5080,
-      "priceUSD": 58093,
-      "priceEstimated": true,
-      "vin": "WBAGT8108M9H53103",
-      "decoded": true,
-      "exterior": "Carbon Black",
-      "accident": {
-        "costKRW": 0,
-        "owners": 1,
-        "incidents": 2
-      },
-      "photo": "/carpicture10/pic4240/42405399_001.jpg",
-      "interior": "Vernasca Coffee",
-      "keyFeatures": {
-        "air": false,
-        "laser": true,
-        "led": false,
-        "soft": true,
-        "vent": true,
-        "hk": false,
-        "pano": true,
-        "skylounge": false,
-        "mhev": true,
-        "acc": true,
-        "park": true,
-        "comfort": true,
-        "seatheat": true,
-        "wheelheat": true,
-        "climate4": true,
-        "exhaust": true,
-        "bw": true
-      }
-    },
-    {
-      "rank": 7,
+      "rank": 5,
       "listingId": "42554478",
       "model": "X5 (G05)",
       "year": 2019,
@@ -257,84 +179,7 @@
       "interiorUnverified": "чорний — з фото"
     },
     {
-      "rank": 8,
-      "listingId": "42468210",
-      "model": "X5 (G05)",
-      "year": 2021,
-      "mileageKm": 109176,
-      "koreaPriceMan": 5100,
-      "priceUSD": 58239,
-      "vin": "WBAJU8101M9H27574",
-      "decoded": true,
-      "exterior": "Arctic Grey",
-      "accident": {
-        "costKRW": 4593060,
-        "owners": 1,
-        "incidents": 4
-      },
-      "photo": "/carpicture06/pic4246/42461837_001.jpg",
-      "note": "Пневмопідвіски немає — підтверджено білд-листом (S2VF замість S2VR). Натомість Bowers & Wilkins Diamond, лазер, Soft-Close і вентиляція сидінь.",
-      "interior": "Vernasca Black",
-      "keyFeatures": {
-        "air": false,
-        "laser": true,
-        "led": false,
-        "soft": true,
-        "vent": true,
-        "hk": false,
-        "pano": true,
-        "skylounge": false,
-        "mhev": true,
-        "acc": true,
-        "park": true,
-        "comfort": true,
-        "seatheat": true,
-        "wheelheat": true,
-        "climate4": true,
-        "exhaust": true,
-        "bw": true
-      }
-    },
-    {
-      "listingId": "42585873",
-      "model": "X5 (G05)",
-      "year": 2021,
-      "mileageKm": 91683,
-      "koreaPriceMan": 5390,
-      "priceUSD": 60353,
-      "vin": "WBAJU8105M9G78640",
-      "decoded": true,
-      "accident": {
-        "costKRW": 0,
-        "owners": 0,
-        "incidents": 0
-      },
-      "photo": "/carpicture08/pic4258/42585873_001.jpg",
-      "exterior": "Mineral White",
-      "rank": 9,
-      "interior": "Vernasca Coffee",
-      "keyFeatures": {
-        "air": false,
-        "laser": true,
-        "led": false,
-        "soft": true,
-        "vent": true,
-        "hk": false,
-        "pano": true,
-        "skylounge": false,
-        "mhev": true,
-        "acc": true,
-        "park": true,
-        "comfort": true,
-        "seatheat": true,
-        "wheelheat": true,
-        "climate4": true,
-        "exhaust": true,
-        "bw": true
-      }
-    },
-    {
-      "rank": 10,
+      "rank": 6,
       "listingId": "42112799",
       "model": "X5 (G05)",
       "year": 2020,
@@ -372,7 +217,7 @@
       }
     },
     {
-      "rank": 11,
+      "rank": 7,
       "listingId": "42218942",
       "model": "X5 (G05)",
       "year": 2019,
@@ -410,7 +255,7 @@
       }
     },
     {
-      "rank": 12,
+      "rank": 8,
       "listingId": "41142979",
       "model": "X6 (G06)",
       "year": 2022,
@@ -448,44 +293,6 @@
       }
     },
     {
-      "listingId": "42627728",
-      "model": "X5 (G05)",
-      "year": 2021,
-      "mileageKm": 66916,
-      "koreaPriceMan": 5650,
-      "priceUSD": 62248,
-      "vin": "WBAJU8105M9H56351",
-      "decoded": true,
-      "accident": {
-        "costKRW": 220490,
-        "owners": 0,
-        "incidents": 1
-      },
-      "photo": "/carpicture02/pic4262/42627728_001.jpg",
-      "exterior": "Carbon Black",
-      "rank": 13,
-      "interior": "Vernasca Coffee",
-      "keyFeatures": {
-        "air": false,
-        "laser": true,
-        "led": false,
-        "soft": true,
-        "vent": true,
-        "hk": false,
-        "pano": true,
-        "skylounge": false,
-        "mhev": true,
-        "acc": true,
-        "park": true,
-        "comfort": true,
-        "seatheat": true,
-        "wheelheat": true,
-        "climate4": true,
-        "exhaust": true,
-        "bw": true
-      }
-    },
-    {
       "listingId": "42348688",
       "model": "X5 (G05)",
       "year": 2021,
@@ -501,7 +308,7 @@
       },
       "photo": "/carpicture03/pic4233/42338596_001.jpg",
       "exterior": "Phytonic Blue",
-      "rank": 14,
+      "rank": 9,
       "interior": "Vernasca Canberrabeige",
       "keyFeatures": {
         "air": true,
@@ -510,44 +317,6 @@
         "soft": false,
         "vent": true,
         "hk": true,
-        "pano": true,
-        "skylounge": false,
-        "mhev": true,
-        "acc": true,
-        "park": true,
-        "comfort": true,
-        "seatheat": true,
-        "wheelheat": true,
-        "climate4": true,
-        "exhaust": true
-      }
-    },
-    {
-      "rank": 15,
-      "listingId": "42257052",
-      "model": "X6 (G06)",
-      "year": 2022,
-      "mileageKm": 81513,
-      "koreaPriceMan": 5780,
-      "priceUSD": 63805,
-      "priceEstimated": true,
-      "vin": "WBAGT8107N9L42838",
-      "decoded": true,
-      "exterior": "Carbon Black",
-      "accident": {
-        "costKRW": 0,
-        "owners": 2,
-        "incidents": 2
-      },
-      "photo": "/carpicture05/pic4225/42251152_001.jpg",
-      "interior": "Merino Coffee",
-      "keyFeatures": {
-        "air": false,
-        "laser": true,
-        "led": false,
-        "soft": true,
-        "vent": true,
-        "hk": false,
         "pano": true,
         "skylounge": false,
         "mhev": true,
@@ -576,7 +345,7 @@
       },
       "photo": "/carpicture04/pic4264/42646084_001.jpg",
       "exterior": "Arctic Grey",
-      "rank": 16,
+      "rank": 10,
       "interior": "Vernasca Coffee",
       "keyFeatures": {
         "air": true,
@@ -598,7 +367,7 @@
       }
     },
     {
-      "rank": 17,
+      "rank": 11,
       "listingId": "41368455",
       "model": "X5 (G05)",
       "year": 2021,
@@ -635,46 +404,6 @@
       }
     },
     {
-      "rank": 18,
-      "listingId": "40966656",
-      "model": "X6 (G06)",
-      "year": 2021,
-      "mileageKm": 48657,
-      "koreaPriceMan": 5980,
-      "priceUSD": 64653,
-      "priceEstimated": true,
-      "vin": "WBAGT8101M9H35011",
-      "decoded": true,
-      "exterior": "Mineral White",
-      "accident": {
-        "costKRW": 4490960,
-        "owners": 1,
-        "incidents": 2
-      },
-      "photo": "/carpicture06/pic4096/40966656_001.jpg",
-      "note": "Міняли капот — продавець пише, що через звичайну вмʼятину, і має фото. Звідси 4,5 млн ₩ виплат.",
-      "interior": "Vernasca Coffee",
-      "keyFeatures": {
-        "air": false,
-        "laser": true,
-        "led": false,
-        "soft": true,
-        "vent": true,
-        "hk": false,
-        "pano": true,
-        "skylounge": false,
-        "mhev": true,
-        "acc": true,
-        "park": true,
-        "comfort": true,
-        "seatheat": true,
-        "wheelheat": true,
-        "climate4": true,
-        "exhaust": true,
-        "bw": true
-      }
-    },
-    {
       "listingId": "42655967",
       "model": "X5 (G05)",
       "year": 2022,
@@ -690,7 +419,7 @@
       },
       "photo": "/carpicture05/pic4265/42655967_001.jpg",
       "exterior": "Carbon Black",
-      "rank": 19,
+      "rank": 12,
       "interior": "Merino Coffee",
       "keyFeatures": {
         "air": true,
@@ -713,123 +442,7 @@
       "note": "пневмо + лазер + вентиляція + 48V, шкіра Merino Coffee (тир вище за Vernasca). Але аудіо базове S676 (не H/K), без soft-close і без акустичного скла. Диски 21\" (S1XN) — на наших дорогах це мінус."
     },
     {
-      "rank": 20,
-      "listingId": "42415471",
-      "model": "X6 (G06)",
-      "year": 2022,
-      "mileageKm": 82832,
-      "koreaPriceMan": 5980,
-      "priceUSD": 65263,
-      "priceEstimated": true,
-      "vin": "WBAGT8102N9L68098",
-      "decoded": true,
-      "exterior": "Mineral White",
-      "accident": {
-        "costKRW": 0,
-        "owners": 1,
-        "incidents": 0
-      },
-      "photo": "/carpicture01/pic4241/42415469_002.jpg",
-      "interior": "Merino Coffee",
-      "keyFeatures": {
-        "air": false,
-        "laser": true,
-        "led": false,
-        "soft": true,
-        "vent": true,
-        "hk": false,
-        "pano": true,
-        "skylounge": false,
-        "mhev": true,
-        "acc": true,
-        "park": true,
-        "comfort": true,
-        "seatheat": true,
-        "wheelheat": true,
-        "climate4": true,
-        "exhaust": true
-      }
-    },
-    {
-      "listingId": "42340650",
-      "model": "X6 (G06)",
-      "year": 2021,
-      "mileageKm": 70977,
-      "koreaPriceMan": 6100,
-      "priceUSD": 65528,
-      "vin": "WBAGT8104M9H08255",
-      "decoded": true,
-      "accident": {
-        "costKRW": 2137440,
-        "owners": 1,
-        "incidents": 1
-      },
-      "photo": "/carpicture03/pic4233/42331194_001.jpg",
-      "priceEstimated": true,
-      "exterior": "Mineral White",
-      "rank": 21,
-      "interior": "Vernasca Canberrabeige",
-      "keyFeatures": {
-        "air": false,
-        "laser": true,
-        "led": false,
-        "soft": true,
-        "vent": true,
-        "hk": false,
-        "pano": true,
-        "skylounge": false,
-        "mhev": true,
-        "acc": true,
-        "park": true,
-        "comfort": true,
-        "seatheat": true,
-        "wheelheat": true,
-        "climate4": true,
-        "exhaust": true,
-        "bw": true
-      }
-    },
-    {
-      "rank": 22,
-      "listingId": "42349824",
-      "model": "X6 (G06)",
-      "year": 2022,
-      "mileageKm": 85581,
-      "koreaPriceMan": 6050,
-      "priceUSD": 65773,
-      "priceEstimated": true,
-      "vin": "WBAGT8106N9L42863",
-      "decoded": true,
-      "exterior": "Carbon Black",
-      "accident": {
-        "costKRW": 4724399,
-        "owners": 1,
-        "incidents": 2
-      },
-      "photo": "/carpicture04/pic4234/42348555_001.jpg",
-      "note": "Пише «без фарбування й замін», а в реєстрі 4,7 млн ₩ виплат — найбільша розбіжність у добірці.",
-      "interior": "Merino Coffee",
-      "keyFeatures": {
-        "air": false,
-        "laser": true,
-        "led": false,
-        "soft": true,
-        "vent": true,
-        "hk": false,
-        "pano": true,
-        "skylounge": false,
-        "mhev": true,
-        "acc": true,
-        "park": true,
-        "comfort": true,
-        "seatheat": true,
-        "wheelheat": true,
-        "climate4": true,
-        "exhaust": true
-      }
-    },
-    {
-      "rank": 23,
+      "rank": 13,
       "listingId": "42094631",
       "model": "X5 (G05)",
       "year": 2020,
@@ -848,7 +461,7 @@
       "photo": "/carpicture09/pic4209/42094631_001.jpg"
     },
     {
-      "rank": 24,
+      "rank": 14,
       "listingId": "42631623",
       "model": "X6 (G06)",
       "year": 2021,
@@ -886,7 +499,7 @@
       }
     },
     {
-      "rank": 25,
+      "rank": 15,
       "listingId": "42650455",
       "model": "X6 (G06)",
       "year": 2022,
@@ -924,7 +537,7 @@
       }
     },
     {
-      "rank": 26,
+      "rank": 16,
       "listingId": "42585911",
       "model": "X6 (G06)",
       "year": 2022,
@@ -962,7 +575,7 @@
       }
     },
     {
-      "rank": 27,
+      "rank": 17,
       "listingId": "41334762",
       "model": "X5 (G05)",
       "year": 2021,
@@ -999,7 +612,7 @@
       }
     },
     {
-      "rank": 28,
+      "rank": 18,
       "listingId": "42574631",
       "model": "X5 (G05)",
       "year": 2021,
@@ -1038,7 +651,7 @@
       "note": "Еталон комплектації: закриті всі 14 слотів рядка опцій — пневмо, лазер, Soft-Close, вентиляція сидінь, Harman/Kardon, панорама, 48V, ACC, паркування, Comfort Access, підігрів сидінь і керма, 4-зона, M-вихлоп. Шкіра Merino Coffee (тир вище за Vernasca), Carbon Black, 0 змін власника. З таким набором у добірці ще лише 42631623. Мінуси: ціна майже під стелею і 2 різні ДТП."
     },
     {
-      "rank": 29,
+      "rank": 19,
       "listingId": "42476461",
       "model": "X6 (G06)",
       "year": 2022,
@@ -1076,7 +689,7 @@
       }
     },
     {
-      "rank": 30,
+      "rank": 20,
       "listingId": "41616675",
       "model": "X6 (G06)",
       "year": 2022,
@@ -1129,7 +742,7 @@
       },
       "photo": "/carpicture04/pic4264/42644431_001.jpg",
       "exterior": "Mineral White",
-      "rank": 31,
+      "rank": 21,
       "interior": "Vernasca Coffee",
       "keyFeatures": {
         "air": true,
@@ -1151,7 +764,7 @@
       }
     },
     {
-      "rank": 32,
+      "rank": 22,
       "listingId": "41689680",
       "model": "X5 (G05)",
       "year": 2022,
@@ -1189,7 +802,7 @@
       }
     },
     {
-      "rank": 33,
+      "rank": 23,
       "listingId": "41437048",
       "model": "X5 (G05)",
       "year": 2022,
@@ -1224,44 +837,6 @@
         "wheelheat": true,
         "climate4": true,
         "exhaust": true
-      }
-    },
-    {
-      "rank": 34,
-      "listingId": "41456161",
-      "model": "X5 (G05)",
-      "year": 2021,
-      "mileageKm": 64567,
-      "koreaPriceMan": 6660,
-      "priceUSD": 69609,
-      "vin": "WBAJU810XM9H99843",
-      "decoded": true,
-      "exterior": "Carbon Black",
-      "accident": {
-        "costKRW": 2736290,
-        "owners": 0,
-        "incidents": 1
-      },
-      "photo": "/carpicture05/pic4145/41456161_001.jpg",
-      "interior": "Vernasca Coffee",
-      "keyFeatures": {
-        "air": false,
-        "laser": true,
-        "led": false,
-        "soft": true,
-        "vent": true,
-        "hk": false,
-        "pano": true,
-        "skylounge": false,
-        "mhev": true,
-        "acc": true,
-        "park": true,
-        "comfort": true,
-        "seatheat": true,
-        "wheelheat": true,
-        "climate4": true,
-        "exhaust": true,
-        "bw": true
       }
     }
   ]
