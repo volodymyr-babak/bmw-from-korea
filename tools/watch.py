@@ -100,6 +100,13 @@ def check_existing(index, ch):
             ch['sold'].append((car, why))
             continue
 
+        # Детальний файл читають ВСІ блоки нижче, тож відкриваємо його один
+        # раз і тут: `f`/`d` мусять існувати незалежно від того, чи підхопився
+        # новий VIN. Інакше перше ж авто з уже відомим VIN валить прохід
+        # (`UnboundLocalError`) — так і сталося 03.09, 28 проходів наосліп.
+        f = CARS / f'{lid}.json'
+        d = load(f, {}) or {}
+
         # VIN в Encar то з'являється, то зникає. Якщо його ще не було —
         # забираємо: без VIN авто неможливо декодувати й перевірити салон.
         # Наявний VIN ніколи не перетираємо значенням None.
@@ -107,9 +114,7 @@ def check_existing(index, ch):
             (det.get('contents') or {}).get('text') or '', car['year'])
         if vin and not car.get('vin'):
             car['vin'] = vin
-            f = CARS / f'{lid}.json'
             if f.exists():
-                d = load(f, {}) or {}
                 d['vin'] = vin
                 save(f, d)
             ch['vins'].append(car)
@@ -124,8 +129,6 @@ def check_existing(index, ch):
 
         # Звіт про стан видається один раз, тому тягнемо лише за відсутності —
         # щогодини перепитувати 45 разів немає сенсу.
-        f = CARS / f'{lid}.json'
-        d = load(f, {}) or {}
         if f.exists() and 'inspection' not in d:
             vid = det.get('vehicleId') or (det.get('manage') or {}).get('dummyVehicleId')
             got = fetch_inspection(vid, (det.get('spec') or {}).get('mileage'))
