@@ -1,4 +1,4 @@
-# Encar: зміна ціни 4
+# Encar: проблем 11
 
 ## Чекають на білд-лист за VIN
 
@@ -9,15 +9,18 @@
 - **X5 2019** · 87 922 км · $58 161 · **VIN невідомий**  
   [лот 42554478](https://volodymyr-babak.github.io/bmw-from-korea/car.html?id=42554478) · [Encar](https://fem.encar.com/cars/detail/42554478)
 
-## Змінилась ціна або пробіг
+## Потрібна увага
 
-- **X5 2019** · $61 368 → **$61 004**  
-  [лот 42218942](https://volodymyr-babak.github.io/bmw-from-korea/car.html?id=42218942) · [Encar](https://fem.encar.com/cars/detail/42218942)
-- **X5 2022** · $64 673 → **$65 256**  
-  [лот 42655967](https://volodymyr-babak.github.io/bmw-from-korea/car.html?id=42655967) · [Encar](https://fem.encar.com/cars/detail/42655967)
-- **X5 2021** · $67 568 → **$67 350**  
-  [лот 42574631](https://volodymyr-babak.github.io/bmw-from-korea/car.html?id=42574631) · [Encar](https://fem.encar.com/cars/detail/42574631)
-- **X5 2022** · $69 563 → **$68 106**  
-  [лот 41437048](https://volodymyr-babak.github.io/bmw-from-korea/car.html?id=41437048) · [Encar](https://fem.encar.com/cars/detail/41437048)
+- 42218942: деталь недоступна (HTTP 407) — лишаю у списку
+- 42112799: деталь недоступна (HTTP 407) — лишаю у списку
+- 42348688: деталь недоступна (HTTP 407) — лишаю у списку
+- 42646084: деталь недоступна (HTTP 407) — лишаю у списку
+- 42650455: деталь недоступна (HTTP 407) — лишаю у списку
+- 42585911: деталь недоступна (HTTP 407) — лишаю у списку
+- 41334762: деталь недоступна (HTTP 407) — лишаю у списку
+- 42574631: деталь недоступна (HTTP 407) — лишаю у списку
+- 41437048: деталь недоступна (HTTP 407) — лишаю у списку
+- пошук X5 (G05): пошук X5 (G05): HTTP 407
+- пошук X6 (G06): пошук X6 (G06): HTTP 407
 
-Список: https://volodymyr-babak.github.io/bmw-from-korea/  ·  перевірено 2026-09-04 15:37
+Список: https://volodymyr-babak.github.io/bmw-from-korea/  ·  перевірено 2026-09-04 18:29
