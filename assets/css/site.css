@@ -83,7 +83,7 @@ a:hover { text-decoration-thickness: 2px; }
 
 /* Моноширинні цифри: розряди відділені нерозривним пробілом, а в monospace
    він завширшки з символ — тому підтягуємо, щоб «52 327» не читалось як два числа. */
-.num, .amount, .calc td:last-child, .calc th:last-child {
+.num, .amount, .amount-usd {
   font-family: "IBM Plex Mono", ui-monospace, monospace;
   font-variant-numeric: tabular-nums;
   word-spacing: -0.32em;
@@ -312,7 +312,7 @@ a:hover { text-decoration-thickness: 2px; }
    бачити, про яке саме авто рядок */
 col.c-rank  { width: 58px; }
 col.c-car   { width: 190px; }
-col.c-price { width: 104px; }
+col.c-price { width: 132px; }
 
 .grid .c-rank {
   position: sticky;
@@ -329,6 +329,9 @@ col.c-price { width: 104px; }
 .grid thead th.c-car,
 .grid thead th.c-price { z-index: 4; }
 .grid thead th.c-rank button { padding-left: 24px; }
+/* Заголовки — слова, а не числа: підтягнутий word-spacing з .num зліпив би
+   «Ціна в Кореї» в одне слово. */
+.grid thead th { word-spacing: normal; }
 
 /* На вузькому екрані трьох липких колонок задорого — лишаємо № і авто */
 @media (max-width: 780px) {
@@ -374,9 +377,17 @@ col.hl { background: var(--accent-soft); }
 .c-num { text-align: right; white-space: nowrap; }
 .c-price { white-space: nowrap; }
 .c-price .amount {
+  display: block;
   font-size: 15px;
   font-weight: 500;
   letter-spacing: -0.01em;
+}
+/* Долари — довідка до корейської ціни, тому дрібним і другим рядком */
+.c-price .amount-usd {
+  display: block;
+  font-size: 12.5px;
+  font-weight: 400;
+  color: var(--ink-3);
 }
 .c-color { min-width: 132px; }
 .c-finish { min-width: 104px; }
@@ -589,35 +600,6 @@ col.hl { background: var(--accent-soft); }
 }
 .rows dt { color: var(--ink-2); }
 .rows dd { margin: 0; }
-
-.calc {
-  width: 100%;
-  border-collapse: collapse;
-  font-size: 14px;
-}
-.calc th, .calc td {
-  text-align: left;
-  padding: 7px 0;
-  border-bottom: 1px solid var(--rule);
-  vertical-align: baseline;
-}
-.calc td:last-child, .calc th:last-child {
-  text-align: right;
-  font-family: "IBM Plex Mono", monospace;
-  font-variant-numeric: tabular-nums;
-  white-space: nowrap;
-}
-.calc .calc-note {
-  font-size: 12.5px;
-  color: var(--ink-3);
-  display: block;
-}
-.calc tfoot td {
-  border-bottom: 0;
-  border-top: 2px solid var(--ink);
-  font-weight: 500;
-  padding-top: 9px;
-}
 
 .note {
   font-size: 13.5px;

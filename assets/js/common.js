@@ -1,54 +1,8 @@
-/* Спільне: формула розмитнення, форматери, тема, ключові опції */
+/* Спільне: форматери, тема, ключові опції */
 
+/** Курс для перерахунку корейської ціни в долари. Ціни в оголошеннях —
+ *  у 만원 (1만원 = 10 000 ₩), долари показуємо як довідку. */
 export const KRW_PER_USD = 1372;
-export const EUR_USD = 1.1648;
-export const EXCISE_RATE_EUR = 75;      // €/л дизель
-export const ENGINE_L = 3.0;            // митниця бере 2993 см³ → 3.0 л
-export const AGE_BASE = 2025;
-export const SHIPPING = 3700;
-export const SERVICE = 1000;
-export const CERT_REG = 124;            // сертифікація $79 + реєстрація $45
-export const BUDGET_CAP = 70000;
-
-/** Фіксована мінімальна митна вартість P (USD) за роком виготовлення */
-export const MIN_CUSTOMS_VALUE = { 2019: 25000, 2020: 36000, 2021: 40500, 2022: 43000 };
-
-const r = (x) => Math.floor(x + 0.5);
-
-/**
- * Розкладає ціну «під ключ» на складові.
- * Мита рахуються від фіксованої P за роком, а не від корейської ціни.
- * Якщо відома корейська ціна (в 만원) — вартість авто беремо з неї,
- * інакше виводимо як залишок: car = total - усі збори.
- */
-export function breakdown(year, totalUSD, koreaPriceMan) {
-  const P = MIN_CUSTOMS_VALUE[year];
-  if (!P) return null;
-  const age = AGE_BASE - year;
-  const duty = 0.1 * P;
-  const excise = EXCISE_RATE_EUR * ENGINE_L * age * EUR_USD;
-  const vat = 0.2 * (P + duty + excise);
-  const pension = 0.05 * P;
-  const customs = r(duty) + r(excise) + r(vat);
-  const registration = r(pension) + CERT_REG;
-  const fees = customs + registration + SHIPPING + SERVICE;
-  const car = koreaPriceMan ? r(koreaPriceMan * 10000 / KRW_PER_USD) : totalUSD - fees;
-  return {
-    P, age,
-    car,
-    carKRW: koreaPriceMan ? koreaPriceMan * 10000 : car * KRW_PER_USD,
-    duty: r(duty),
-    excise: r(excise),
-    vat: r(vat),
-    customs,
-    pension: r(pension),
-    registration,
-    shipping: SHIPPING,
-    service: SERVICE,
-    fees,
-    total: car + fees,
-  };
-}
 
 const NBSP = ' ';
 
@@ -62,6 +16,13 @@ export const km = (n) => group(n) + NBSP + 'км';
 export const krw = (n) => group(n) + NBSP + '₩';
 /** 49894000 → "49,9 млн ₩" */
 export const krwM = (n) => (n / 1e6).toFixed(1).replace('.', ',') + NBSP + 'млн' + NBSP + '₩';
+
+/** 6380 (만원) → "6 380 만원" — рівно те число, що стоїть в оголошенні Encar */
+export const man = (n) => group(n) + NBSP + '만원';
+/** 6380 (만원) → 46501 — корейська ціна в доларах за курсом KRW_PER_USD */
+export const manToUSD = (n) => Math.round(n * 10000 / KRW_PER_USD);
+/** 6380 → "≈ $46 501" — довідка до корейської ціни, тому зі знаком приблизності */
+export const manUSD = (n) => '≈' + NBSP + usd(manToUSD(n));
 
 /** Ключові опції — однаковий набір і порядок усюди.
  *  Слоти light, audio і roof адаптивні: показують найвищий тир, який реально є
