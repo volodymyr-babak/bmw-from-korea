@@ -7,6 +7,10 @@
   3. пробує декодувати VIN найперспективніших авто через mdecoder;
   4. якщо щось змінилось — пише data/last-change.md, комітить і пушить.
 
+Якщо прохід упав — падіння теж їде листом (див. `crash_report`). Інакше
+поломка виглядає точно як «нових авто немає», і моніторингу немає доти,
+доки хтось не заглянув у лог: так у нас пропало 28 проходів 03–04.09.
+
 Лист приходить не звідси: push у data/last-change.md запускає
 .github/workflows/notify.yml, який створює issue від github-actions[bot].
 Автор issue — бот, а не ти, тому GitHub надсилає тобі листа (про власні дії
@@ -21,6 +25,7 @@ import pathlib
 import shutil
 import subprocess
 import sys
+import traceback
 from datetime import datetime, timezone
 
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
@@ -676,8 +681,8 @@ def git(*args, check=True):
                           capture_output=True, text=True, check=check)
 
 
-def publish(title):
-    git('add', 'data')
+def publish(title, paths=('data',)):
+    git('add', *paths)
     if not git('diff', '--cached', '--quiet', check=False).returncode:
         return 'нічого комітити'
     git('commit', '-m', f'chore: {title}\n\nАвтоматично — tools/watch.py')
@@ -766,5 +771,70 @@ def append_md(path, body):
         f.write('\n---\n\n' + body + '\n')
 
 
+def blind_since() -> str:
+    """Скільки часу минуло з останнього успішного проходу."""
+    stamp = (load(STATE, {}) or {}).get('lastRun')
+    if not stamp:
+        return 'невідомо, коли прохід вдавався останній раз'
+    try:
+        was = datetime.fromisoformat(stamp)
+    except ValueError:
+        return f'останній успішний прохід: {stamp}'
+    hours = (datetime.now(timezone.utc) - was.astimezone(timezone.utc)).total_seconds() / 3600
+    return f'останній успішний прохід — {stamp} ({hours:.0f} год тому)'
+
+
+def crash_report(exc: Exception):
+    """Звіт про падіння проходу.
+
+    Сам факт падіння мусить приїхати листом. Без цього поломка нічим не
+    відрізняється від «на Encar нічого нового»: тиха тиша в пошті, а список
+    тим часом не перевіряється взагалі.
+    """
+    title = f'⛔ watch.py упав: {type(exc).__name__}'
+    tail = traceback.format_exc().strip().split('\n')[-24:]
+    return title, '\n'.join([
+        f'# {title}',
+        '',
+        '**Прохід не дійшов до кінця — списку цього разу НЕ перевірено.**',
+        'Ні продані, ні нові авто не пораховані. Поки це не полагоджено,',
+        'відсутність листів не означає, що на Encar нічого не з\'явилось.',
+        '',
+        f'Причина: `{exc}`',
+        '',
+        f'Тривога: {blind_since()}.',
+        '',
+        '## Трейсбек',
+        '',
+        '```',
+        *tail,
+        '```',
+        '',
+        'Лог усіх проходів: `~/.cache/bmw-watch.log` на машині з кроном.',
+        f'Список: {SITE}/  ·  упало {datetime.now().strftime("%Y-%m-%d %H:%M")}',
+    ])
+
+
 if __name__ == '__main__':
-    main()
+    try:
+        main()
+    except Exception as exc:  # noqa: BLE001 — падіння мусить долетіти листом
+        title, body = crash_report(exc)
+        print(body, file=sys.stderr)
+        # Той самий трейсбек щогодини — це та сама невирішена поломка, а не
+        # нова: публікуємо один раз, як і зі звичайним звітом.
+        if '--dry-run' in sys.argv:
+            pass
+        elif same_as_last(body):
+            print('той самий трейсбек, що минулого разу — не публікую', file=sys.stderr)
+        else:
+            try:
+                save_md(LAST, body)
+                append_md(LOG, body)
+                # Комітимо ЛИШЕ звіти: дані могли лишитись напівзаписаними,
+                # і тягнути їх у репозиторій разом із падінням не варто.
+                print(publish(title, ('data/last-change.md', 'data/watch-log.md')),
+                      file=sys.stderr)
+            except Exception as pub:  # noqa: BLE001 — не маскувати вихідну помилку
+                print(f'звіт про падіння не опублікувався: {pub}', file=sys.stderr)
+        raise
