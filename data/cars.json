@@ -1,10 +1,10 @@
 {
   "meta": {
-    "updated": "2026-09-04",
+    "updated": "2026-09-05",
     "model": "BMW X5 (G05) / X6 (G06) xDrive30d M Sport",
     "criteria": "X5 (G05) і X6 (G06) · 2019–2022 виготовлення · ≤110000 км · M Sport · дизель 30d лише · ДТП ≤5 млн ₩ власний · під ключ ≤ $70000 · салон чорний/кавовий · без лізингу/айворі/cognac/Tacora Red/45e/40i/40d/M50 · без прокатної/таксі історії (звіт інспекції)",
     "customs": "P (USD) by year 2019:25000 2020:36000 2021:40500 2022:43000; age=2025-year; duty=0.10P; excise=75*3.0*age*1.1648; vat=0.20(P+duty+excise); pens=0.05P; oblik=pens+124; ship=3700; svc=1000; korea=price_만*10000/1372",
-    "count": 23,
+    "count": 24,
     "decodedCount": 21,
     "customsNote": "Мінімальна митна вартість P звірена для X5. Для X6 узято ту саму таблицю, тому ціна під ключ X6 — оцінка (реально очікувати +$1000…2000)."
   },
@@ -195,7 +195,26 @@
       "interiorUnverified": "чорний — з фото"
     },
     {
-      "rank": 6,
+      "listingId": "42678772",
+      "model": "X6 (G06)",
+      "year": 2021,
+      "mileageKm": 89977,
+      "koreaPriceMan": 5400,
+      "priceUSD": 60426,
+      "vin": null,
+      "decoded": false,
+      "accident": {
+        "costKRW": 0,
+        "owners": 1,
+        "incidents": 0
+      },
+      "photo": "/carpicture07/pic4267/42678772_001.jpg",
+      "priceEstimated": true,
+      "exterior": "коричневий",
+      "rank": 6
+    },
+    {
+      "rank": 7,
       "listingId": "42218942",
       "model": "X5 (G05)",
       "year": 2019,
@@ -237,7 +256,7 @@
       }
     },
     {
-      "rank": 7,
+      "rank": 8,
       "listingId": "42112799",
       "model": "X5 (G05)",
       "year": 2020,
@@ -279,7 +298,7 @@
       }
     },
     {
-      "rank": 8,
+      "rank": 9,
       "listingId": "41142979",
       "model": "X6 (G06)",
       "year": 2022,
@@ -336,7 +355,7 @@
       },
       "photo": "/carpicture03/pic4233/42338596_001.jpg",
       "exterior": "Phytonic Blue",
-      "rank": 9,
+      "rank": 10,
       "interior": "Vernasca Canberrabeige",
       "keyFeatures": {
         "air": true,
@@ -377,7 +396,7 @@
       },
       "photo": "/carpicture04/pic4264/42646084_001.jpg",
       "exterior": "Arctic Grey",
-      "rank": 10,
+      "rank": 11,
       "interior": "Vernasca Coffee",
       "keyFeatures": {
         "air": true,
@@ -403,7 +422,7 @@
       }
     },
     {
-      "rank": 11,
+      "rank": 12,
       "listingId": "41368455",
       "model": "X5 (G05)",
       "year": 2021,
@@ -459,7 +478,7 @@
       },
       "photo": "/carpicture05/pic4265/42655967_001.jpg",
       "exterior": "Carbon Black",
-      "rank": 12,
+      "rank": 13,
       "interior": "Merino Coffee",
       "keyFeatures": {
         "air": true,
@@ -486,7 +505,7 @@
       }
     },
     {
-      "rank": 13,
+      "rank": 14,
       "listingId": "42094631",
       "model": "X5 (G05)",
       "year": 2020,
@@ -505,7 +524,7 @@
       "photo": "/carpicture09/pic4209/42094631_001.jpg"
     },
     {
-      "rank": 14,
+      "rank": 15,
       "listingId": "42631623",
       "model": "X6 (G06)",
       "year": 2021,
@@ -547,7 +566,7 @@
       }
     },
     {
-      "rank": 15,
+      "rank": 16,
       "listingId": "42650455",
       "model": "X6 (G06)",
       "year": 2022,
@@ -589,7 +608,7 @@
       }
     },
     {
-      "rank": 16,
+      "rank": 17,
       "listingId": "42585911",
       "model": "X6 (G06)",
       "year": 2022,
@@ -631,7 +650,7 @@
       }
     },
     {
-      "rank": 17,
+      "rank": 18,
       "listingId": "41334762",
       "model": "X5 (G05)",
       "year": 2021,
@@ -672,7 +691,7 @@
       }
     },
     {
-      "rank": 18,
+      "rank": 19,
       "listingId": "42574631",
       "model": "X5 (G05)",
       "year": 2021,
@@ -715,7 +734,7 @@
       }
     },
     {
-      "rank": 19,
+      "rank": 20,
       "listingId": "41437048",
       "model": "X5 (G05)",
       "year": 2022,
@@ -757,7 +776,7 @@
       }
     },
     {
-      "rank": 20,
+      "rank": 21,
       "listingId": "42476461",
       "model": "X6 (G06)",
       "year": 2022,
@@ -799,7 +818,7 @@
       }
     },
     {
-      "rank": 21,
+      "rank": 22,
       "listingId": "41616675",
       "model": "X6 (G06)",
       "year": 2022,
@@ -856,7 +875,7 @@
       },
       "photo": "/carpicture04/pic4264/42644431_001.jpg",
       "exterior": "Mineral White",
-      "rank": 22,
+      "rank": 23,
       "interior": "Vernasca Coffee",
       "keyFeatures": {
         "air": true,
@@ -882,7 +901,7 @@
       }
     },
     {
-      "rank": 23,
+      "rank": 24,
       "listingId": "41689680",
       "model": "X5 (G05)",
       "year": 2022,
