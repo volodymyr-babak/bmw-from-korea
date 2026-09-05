@@ -735,6 +735,48 @@
     },
     {
       "rank": 20,
+      "listingId": "41616675",
+      "model": "X6 (G06)",
+      "year": 2022,
+      "mileageKm": 54000,
+      "koreaPriceMan": 6350,
+      "priceUSD": 67960,
+      "priceEstimated": true,
+      "vin": "WBAGT8103N9J99452",
+      "decoded": true,
+      "exterior": "Mineral White",
+      "accident": {
+        "costKRW": 1215969,
+        "owners": 0,
+        "incidents": 1
+      },
+      "photo": "/carpicture01/pic4161/41616675_001.jpg",
+      "interior": "Vernasca Coffee",
+      "keyFeatures": {
+        "air": true,
+        "laser": true,
+        "led": false,
+        "soft": true,
+        "vent": false,
+        "hk": false,
+        "pano": true,
+        "skylounge": true,
+        "mhev": true,
+        "acc": true,
+        "park": true,
+        "comfort": true,
+        "seatheat": true,
+        "wheelheat": true,
+        "climate4": true,
+        "exhaust": true
+      },
+      "trimFinish": {
+        "code": "S4KM",
+        "en": "Interior trim finishers aluminium mesh effect dark"
+      }
+    },
+    {
+      "rank": 21,
       "listingId": "41437048",
       "model": "X5 (G05)",
       "year": 2022,
@@ -776,7 +818,7 @@
       }
     },
     {
-      "rank": 21,
+      "rank": 22,
       "listingId": "42476461",
       "model": "X6 (G06)",
       "year": 2022,
@@ -803,48 +845,6 @@
         "hk": true,
         "pano": true,
         "skylounge": false,
-        "mhev": true,
-        "acc": true,
-        "park": true,
-        "comfort": true,
-        "seatheat": true,
-        "wheelheat": true,
-        "climate4": true,
-        "exhaust": true
-      },
-      "trimFinish": {
-        "code": "S4KM",
-        "en": "Interior trim finishers aluminium mesh effect dark"
-      }
-    },
-    {
-      "rank": 22,
-      "listingId": "41616675",
-      "model": "X6 (G06)",
-      "year": 2022,
-      "mileageKm": 54000,
-      "koreaPriceMan": 6500,
-      "priceUSD": 69053,
-      "priceEstimated": true,
-      "vin": "WBAGT8103N9J99452",
-      "decoded": true,
-      "exterior": "Mineral White",
-      "accident": {
-        "costKRW": 1215969,
-        "owners": 0,
-        "incidents": 1
-      },
-      "photo": "/carpicture01/pic4161/41616675_001.jpg",
-      "interior": "Vernasca Coffee",
-      "keyFeatures": {
-        "air": true,
-        "laser": true,
-        "led": false,
-        "soft": true,
-        "vent": false,
-        "hk": false,
-        "pano": true,
-        "skylounge": true,
         "mhev": true,
         "acc": true,
         "park": true,
