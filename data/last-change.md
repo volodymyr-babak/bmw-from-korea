@@ -13,7 +13,7 @@
 
 ## Змінилась ціна або пробіг
 
-- **X6 2022** · $69 053 → **$67 960**  
-  [лот 41616675](https://volodymyr-babak.github.io/bmw-from-korea/car.html?id=41616675) · [Encar](https://fem.encar.com/cars/detail/41616675)
+- **X5 2019** · $53 788 → **$55 246**  
+  [лот 42287839](https://volodymyr-babak.github.io/bmw-from-korea/car.html?id=42287839) · [Encar](https://fem.encar.com/cars/detail/42287839)
 
-Список: https://volodymyr-babak.github.io/bmw-from-korea/  ·  перевірено 2026-09-05 14:17
+Список: https://volodymyr-babak.github.io/bmw-from-korea/  ·  перевірено 2026-09-07 05:17
