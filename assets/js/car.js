@@ -35,7 +35,7 @@ async function init() {
     if (res.ok) detail = await res.json();
   } catch (e) { /* показуємо те, що є в індексі */ }
 
-  document.title = `${summary.year} Ranger Wildtrak · ${man(summary.koreaPriceMan)} — Ranger з Кореї`;
+  document.title = `${summary.year} Ranger ${summary.trim || ''} · ${man(summary.koreaPriceMan)} — Ranger з Кореї`;
   renderHead(summary, detail, index.meta);
   renderBody(summary, detail);
   wireGallery(summary, detail);
@@ -56,7 +56,7 @@ function renderHead(c, d, meta) {
     : '<span class="amount-note">Ціни в оголошенні немає — дивитись на Encar.</span>';
   const gen = c.gen ? ` · ${esc(genLabel(c.gen))}` : '';
   $('#head').innerHTML = `
-    <h1 class="detail-title">Ford Ranger Wildtrak 2.0${gen}<br>${c.year} року, <span class="num">${km(c.mileageKm)}</span>${badge}</h1>
+    <h1 class="detail-title">Ford Ranger ${esc(c.trim || '')} 2.0${gen}<br>${c.year} року, <span class="num">${km(c.mileageKm)}</span>${badge}</h1>
     <p class="detail-price">${priceLine}</p>
     <p class="detail-actions">
       <a class="btn" href="${encarUrl(c.listingId)}" rel="noopener noreferrer" target="_blank">Відкрити оголошення на Encar</a>
@@ -87,7 +87,7 @@ function shotsOf(d) {
 function gallery(c, d) {
   const shots = shotsOf(d);
   if (!shots.length) return '';
-  const alt = `Ranger Wildtrak ${c.year}, лот ${c.listingId}`;
+  const alt = `Ranger ${c.trim || ''} ${c.year}, лот ${c.listingId}`;
   const strip = shots.map((s, i) => `<li><button type="button" data-i="${i}"
       aria-current="${i === 0}" aria-label="Фото ${i + 1} — ${s.kind}"><img loading="lazy" decoding="async"
       src="${photoUrl(s.path, 'thumb')}" alt="" width="280" height="158"></button></li>`).join('');
@@ -132,6 +132,7 @@ function panelIdentity(c, d) {
   const pairs = [
     ['VIN', c.vin ? `<span class="num">${esc(c.vin)}</span>` : 'відсутній в Encar'],
     ['Лот на Encar', `<span class="num">${esc(c.listingId)}</span>`],
+    ['Комплектація', c.trim ? esc(c.trim) : null],
     ['Покоління', c.gen ? esc(genLabel(c.gen)) + (d && d.encarModel ? ` <span class="opt-en">${esc(d.encarModel)}</span>` : '') : null],
     ['Рік виготовлення', `<span class="num">${c.year}</span>`],
     ['Модельний рік (연식)', d && d.formYear ? `<span class="num">${esc(d.formYear)}</span>` : null],

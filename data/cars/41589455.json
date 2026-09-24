@@ -1,0 +1,112 @@
+{
+  "listingId": "41589455",
+  "encarUrl": "https://fem.encar.com/cars/detail/41589455",
+  "model": "Ranger",
+  "trim": "Raptor",
+  "gen": 4,
+  "mfgYear": 2023,
+  "encarModel": "레인저 4세대",
+  "formYear": "2023",
+  "vin": "6FPFXXMX2PPL49353",
+  "mileageKm": 35125,
+  "koreaPriceMan": 5990,
+  "colorName": "쥐색",
+  "photos": {
+    "outer": [
+      "/carpicture08/pic4158/41586774_001.jpg",
+      "/carpicture08/pic4158/41586774_002.jpg",
+      "/carpicture08/pic4158/41586774_003.jpg",
+      "/carpicture08/pic4158/41586774_004.jpg",
+      "/carpicture08/pic4158/41586774_005.jpg",
+      "/carpicture08/pic4158/41586774_006.jpg"
+    ],
+    "inner": [
+      "/carpicture08/pic4158/41586774_007.jpg",
+      "/carpicture08/pic4158/41586774_008.jpg",
+      "/carpicture08/pic4158/41586774_009.jpg",
+      "/carpicture08/pic4158/41586774_010.jpg"
+    ]
+  },
+  "history": {
+    "openData": true,
+    "regDate": "2026-03-03T09:48:14.052373",
+    "carNo": "811노5167",
+    "year": "2023",
+    "maker": "포드",
+    "carKind": "3",
+    "use": "2",
+    "displacement": "1996",
+    "carName": null,
+    "firstDate": "2024-03-08",
+    "fuel": "디젤",
+    "carShape": "픽업트럭",
+    "model": null,
+    "transmission": null,
+    "carNameCode": null,
+    "myAccidentCnt": 1,
+    "otherAccidentCnt": 0,
+    "ownerChangeCnt": 0,
+    "robberCnt": 0,
+    "robberDate": null,
+    "totalLossCnt": 0,
+    "totalLossDate": null,
+    "floodTotalLossCnt": 0,
+    "floodPartLossCnt": null,
+    "floodDate": null,
+    "government": 0,
+    "business": 0,
+    "loan": 0,
+    "carNoChangeCnt": 0,
+    "myAccidentCost": 2558658,
+    "otherAccidentCost": 0,
+    "carInfoChanges": [
+      {
+        "date": "2024-03-08",
+        "carNo": "811노XXXX"
+      }
+    ],
+    "carInfoUse1s": [
+      "2"
+    ],
+    "carInfoUse2s": [
+      "3"
+    ],
+    "ownerChanges": [],
+    "notJoinDate1": null,
+    "notJoinDate2": null,
+    "notJoinDate3": null,
+    "notJoinDate4": null,
+    "notJoinDate5": null,
+    "accidentCnt": 1,
+    "accidents": [
+      {
+        "type": "2",
+        "date": "2025-06-09",
+        "insuranceBenefit": 4756240,
+        "partCost": 2264420,
+        "laborCost": 150282,
+        "paintingCost": 143956
+      }
+    ]
+  },
+  "sellerText": "▶ 안녕하십니까 \n    부산 사직 오토랜드 순수자동차 대표 김승수 입니다. \n    약15년간 벤츠를 비롯한 럭셔리 수입 신차 판매 경험과 전문금융 에이전트 운영 경험을 바탕으로 \n    차량 구매의 전문적인 노하우로 최적의 차량을 최고의 방법으로 구매하실수 있도록 도와드리겠습니다. \n    항상 진실된 마음으로 정직한 매물을 소개하고 정직하게 판매 하는 순수자동차가 되겠습니다. \n\n\n▶차량설명 \n-차      종 : 포드 레인저 랩터\n-연      식 : 2023년 (24년 등록)\n-색      상 : 회색\n-주행거리 : 3만키로 \n-사고여부 : 완전무사고  (도장없음)\n-내 / 외관 : 실내외 깨끗 , 전차주 관리 완벽\n- 1인신조 차량\n\n\n\n\n\n  \n  \n----------------------기타---------------------------------\n\n▶문의방법 \n-연락주시면 친절하고 상세하게 설명을 드리도록 하겠습니다. 전화가 부재중일시 문자를 남겨주시면 확인후 전화드리겠습니다. \n-차량은 부산 사직오토랜드에서  보실 수 있어요. \n\n▶구매방법 \n\n현금, 리스, 할부, 모두 가능하시며, 카드결제도 가능(수수료 고객 부담 )\n\n▶오시는길 \n-부산 연제구 경기장로21 사직오토랜드 2단지 301호\n 부산 사직동에서 초읍으로 넘어가는 길, 부산의료원 맞은편,",
+  "inspection": {
+    "accident": false,
+    "simpleRepair": false,
+    "waterlog": false,
+    "tuning": false,
+    "usage": [],
+    "serious": [],
+    "panels": [],
+    "date": "20260623",
+    "mileage": 35130,
+    "recall": true,
+    "comment": "비금속(FRP 플라스틱)의 탈부착 가능 부품은 점검사항에서 제외되며 중고차 특성 상 부분적인 판금,도색 및 차량의 노후화에 따른 자연스러운 부식이 있을 수 있습니다. 기능상 영향없는 감각적 손해(소음/진동/냄새/외관/작동감각 등) 보증제외."
+  },
+  "inspectionFacts": [
+    {
+      "kind": "plus",
+      "text": "Звіт інспекції чистий: ні замін панелей, ні кузовного, ні комерційної історії."
+    }
+  ]
+}

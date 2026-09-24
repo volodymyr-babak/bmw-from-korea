@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
-"""Доглядач за добіркою Ford Ranger Wildtrak на Encar.
+"""Доглядач за добіркою Ford Ranger 4-го покоління на Encar.
 
 Що робить за один прохід:
   1. перевіряє кожне авто зі списку — продано / знято / змінилась ціна чи пробіг;
-  2. шукає нові оголошення під критерії (Wildtrak, виготовлення 2022+, звичайний
-     продаж) і додає їх з історією ДТП і звітом інспекції;
+  2. шукає нові оголошення під критерії (Ranger 4세대, будь-яка комплектація,
+     звичайний продаж) і додає їх з історією ДТП і звітом інспекції;
   3. якщо щось змінилось — пише data/last-change.md, комітить і пушить.
 
 Комплектацію за VIN тут НЕ декодуємо — за рішенням користувача 2026-09-24 у
@@ -38,15 +38,13 @@ STATE = REPO / 'data' / 'watch-state.json'
 LAST = REPO / 'data' / 'last-change.md'
 LOG = REPO / 'data' / 'watch-log.md'
 
-YEAR_FROM = 2022
-
 SITE = 'https://volodymyr-babak.github.io/bmw-from-korea'
 
 EMPTY_INDEX = {
     'meta': {
-        'model': 'Ford Ranger Wildtrak',
-        'criteria': 'Ranger Wildtrak · виготовлення 2022+ · звичайний продаж (без лізингу '
-                    'й оренди) · без списання / потопу · дублі зведені за VIN',
+        'model': 'Ford Ranger, 4 покоління',
+        'criteria': 'Ranger 4 пок. (레인저 4세대, 2023+) · будь-яка комплектація · звичайний '
+                    'продаж (без лізингу й оренди) · без списання / потопу · дублі зведені за VIN',
         'updated': None, 'count': 0,
     },
     'cars': [],
@@ -76,8 +74,7 @@ def krw_m(n):
 
 
 def label(car):
-    gen = f' · {car["gen"]} пок.' if car.get('gen') else ''
-    return f'Ranger Wildtrak {car["year"]}{gen}'
+    return f'Ranger {car.get("trim") or ""} {car["year"]}'.replace('  ', ' ')
 
 
 def vehicle_id(det):
@@ -217,18 +214,25 @@ def find_new(index, state, ch):
         rejected.pop(lid)
 
     try:
-        listings, _ = encar.search(YEAR_FROM)
+        listings, _ = encar.search()
     except RuntimeError as e:
         ch['problems'].append(f'пошук: {e}')
         return
 
+    by_id = {c['listingId']: c for c in index['cars']}
     for x in listings:
         lid = str(x['Id'])
+        # Комплектацію видно лише в пошуку (BadgeDetail), у деталі її немає —
+        # тому добираємо її і для вже відомих авто, якщо раніше не записали.
+        if lid in known and not by_id[lid].get('trim'):
+            by_id[lid]['trim'] = encar.trim(x.get('BadgeDetail'))
+            f = CARS / f'{lid}.json'
+            d = load(f, {}) or {}
+            d['trim'] = by_id[lid]['trim']
+            save(f, d)
         if lid in known or lid in rejected:
             continue
         year = int(x['Year']) // 100
-        if year < YEAR_FROM:
-            continue
         price = x.get('Price')
         if not price:
             continue
@@ -248,7 +252,7 @@ def find_new(index, state, ch):
             continue
 
         gen = encar.generation(x.get('Model'))
-        car = build_car(lid, gen, year, price, det, hist, insp)
+        car = build_car(lid, gen, year, price, det, hist, insp, encar.trim(x.get('BadgeDetail')))
         index['cars'].append(car)
         known.add(lid)
         if vin:
@@ -267,11 +271,11 @@ def fetch_inspection(vehicle_id_, mileage_ad=None):
     return inspect_report.normalise(payload, mileage_ad)
 
 
-def build_car(lid, gen, year, price, det, hist, insp=None):
+def build_car(lid, gen, year, price, det, hist, insp=None, trim_=None):
     spec = det.get('spec') or {}
     ph = encar.photos(det)
     car = {
-        'listingId': lid, 'model': 'Ranger Wildtrak', 'gen': gen, 'year': year,
+        'listingId': lid, 'model': 'Ranger', 'trim': trim_, 'gen': gen, 'year': year,
         'mileageKm': spec.get('mileage'), 'koreaPriceMan': price,
         'vin': det.get('vin'),
         'accident': {'costKRW': (hist or {}).get('myAccidentCost') or 0,
@@ -297,7 +301,8 @@ def build_detail(lid, gen, year, price, det, hist, insp=None, listing=None):
     return {
         'listingId': lid,
         'encarUrl': f'https://fem.encar.com/cars/detail/{lid}',
-        'model': 'Ranger Wildtrak', 'gen': gen, 'mfgYear': year,
+        'model': 'Ranger', 'trim': encar.trim((listing or {}).get('BadgeDetail')),
+        'gen': gen, 'mfgYear': year,
         'encarModel': (listing or {}).get('Model'),
         'formYear': (listing or {}).get('FormYear'),
         'vin': det.get('vin'),

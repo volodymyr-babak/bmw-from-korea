@@ -59,6 +59,8 @@ def main() -> int:
             car["vin"] = detail["vin"]
         if detail.get("gen") and not car.get("gen"):
             car["gen"] = detail["gen"]
+        if detail.get("trim"):
+            car["trim"] = detail["trim"]
 
         photos = detail.get("photos") or {}
         shots = photos.get("outer") or photos.get("inner") or []

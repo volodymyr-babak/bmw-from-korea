@@ -31,7 +31,11 @@ FINAL_CODES = {'200', '400', '404'}
 # BadgeDetail, Year і SellType — тільки ТОП-РІВНЕМ, усередині дають 400.
 MANUFACTURER = '포드'
 MODEL_GROUP = '레인저'
-BADGE_DETAIL = '와일드트랙'
+MODEL = '레인저 4세대'
+
+# Комплектація з `BadgeDetail` Encar → як показуємо в себе. У 4-му поколінні
+# на Encar є лише ці дві (перевірено 2026-09-24: 40 лотів, інших немає).
+TRIMS = {'와일드트랙': 'Wildtrak', '랩터': 'Raptor'}
 
 # Покоління з поля `Model` Encar → як показуємо в себе
 GENERATIONS = {'레인저 3세대': 3, '레인저 4세대': 4}
@@ -76,18 +80,16 @@ def record(vehicle_id):
     return get_json(RECORD.format(vehicle_id))
 
 
-def _query(year_from: int) -> str:
+def _query() -> str:
     return (f'(And.Hidden.N._.(C.CarType.A._.(C.Manufacturer.{MANUFACTURER}._.'
-            f'ModelGroup.{MODEL_GROUP}.))'
-            f'_.Year.range({year_from}00..).'
-            f'_.SellType.일반.'
-            f'_.BadgeDetail.{BADGE_DETAIL}.)')
+            f'(C.ModelGroup.{MODEL_GROUP}._.Model.{MODEL}.)))'
+            f'_.SellType.일반.)')
 
 
-def search(year_from: int, page_size: int = 20, hard_cap: int = 600):
-    """Усі оголошення Ranger Wildtrak від року `year_from` (виготовлення).
+def search(page_size: int = 20, hard_cap: int = 600):
+    """Усі оголошення Ranger 4-го покоління, будь-яка комплектація.
     Повертає (список, Count). Лізинг і оренда відсіяні сервером (SellType.일반)."""
-    q = urllib.parse.quote(_query(year_from), safe='')
+    q = urllib.parse.quote(_query(), safe='')
     out, offset, total = [], 0, None
     while True:
         url = f'{SEARCH}?count=true&q={q}&sr=%7CModifiedDate%7C{offset}%7C{page_size}'
@@ -100,6 +102,11 @@ def search(year_from: int, page_size: int = 20, hard_cap: int = 600):
         if not page or len(out) >= min(total, hard_cap):
             return out, total
         offset += page_size
+
+
+def trim(badge_detail: str) -> str:
+    """Комплектація з BadgeDetail; незнайома — як є, корейською."""
+    return TRIMS.get((badge_detail or '').strip(), (badge_detail or '').strip() or '?')
 
 
 def generation(model_name: str):

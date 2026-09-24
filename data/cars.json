@@ -3,121 +3,9 @@
     "model": "Ford Ranger Wildtrak",
     "criteria": "Ranger Wildtrak · виготовлення 2022+ · звичайний продаж (без лізингу й оренди) · без списання / потопу · дублі зведені за VIN",
     "updated": "2026-09-24",
-    "count": 14
+    "count": 23
   },
   "cars": [
-    {
-      "listingId": "42547957",
-      "model": "Ranger Wildtrak",
-      "gen": 3,
-      "year": 2022,
-      "mileageKm": 59341,
-      "koreaPriceMan": 2850,
-      "vin": "6FPPXXMJ2NNJ14586",
-      "accident": {
-        "costKRW": 6363646,
-        "owners": 0,
-        "incidents": 1
-      },
-      "photo": "/carpicture04/pic4254/42545880_001.jpg",
-      "rank": 1
-    },
-    {
-      "listingId": "42666576",
-      "model": "Ranger Wildtrak",
-      "gen": 3,
-      "year": 2023,
-      "mileageKm": 76389,
-      "koreaPriceMan": 2900,
-      "vin": null,
-      "accident": {
-        "costKRW": 0,
-        "owners": 0,
-        "incidents": 0
-      },
-      "photo": "/carpicture06/pic4266/42666576_001.jpg",
-      "rank": 2
-    },
-    {
-      "listingId": "42647989",
-      "model": "Ranger Wildtrak",
-      "gen": 3,
-      "year": 2022,
-      "mileageKm": 58834,
-      "koreaPriceMan": 3090,
-      "vin": "6FPPXXMJ2NNJ16300",
-      "accident": {
-        "costKRW": 5159072,
-        "owners": 1,
-        "incidents": 1
-      },
-      "photo": "/carpicture03/pic4263/42638726_001.jpg",
-      "rank": 3
-    },
-    {
-      "listingId": "42617569",
-      "model": "Ranger Wildtrak",
-      "gen": 3,
-      "year": 2022,
-      "mileageKm": 50328,
-      "koreaPriceMan": 3190,
-      "vin": "6FPPXXMJ2NNS86534",
-      "accident": {
-        "costKRW": 0,
-        "owners": 3,
-        "incidents": 0
-      },
-      "photo": "/carpicture01/pic4261/42613194_001.jpg",
-      "rank": 4
-    },
-    {
-      "listingId": "42724437",
-      "model": "Ranger Wildtrak",
-      "gen": 3,
-      "year": 2022,
-      "mileageKm": 43000,
-      "koreaPriceMan": 3200,
-      "vin": null,
-      "accident": {
-        "costKRW": 1992000,
-        "owners": 2,
-        "incidents": 2
-      },
-      "photo": "/carpicture02/pic4272/42724437_001.jpg",
-      "rank": 5
-    },
-    {
-      "listingId": "42529389",
-      "model": "Ranger Wildtrak",
-      "gen": 3,
-      "year": 2022,
-      "mileageKm": 28003,
-      "koreaPriceMan": 3230,
-      "vin": "6FPPXXMJ2NNB71878",
-      "accident": {
-        "costKRW": 0,
-        "owners": 0,
-        "incidents": 0
-      },
-      "photo": "/carpicture02/pic4252/42525058_001.jpg",
-      "rank": 6
-    },
-    {
-      "listingId": "42264070",
-      "model": "Ranger Wildtrak",
-      "gen": 3,
-      "year": 2022,
-      "mileageKm": 31727,
-      "koreaPriceMan": 3450,
-      "vin": "6FPPXXMJ2NNB71906",
-      "accident": {
-        "costKRW": 0,
-        "owners": 1,
-        "incidents": 0
-      },
-      "photo": "/carpicture06/pic4226/42264070_001.jpg",
-      "rank": 7
-    },
     {
       "listingId": "42616534",
       "model": "Ranger Wildtrak",
@@ -132,7 +20,8 @@
         "incidents": 1
       },
       "photo": "/carpicture01/pic4261/42616534_001.jpg",
-      "rank": 8
+      "rank": 1,
+      "trim": "Wildtrak"
     },
     {
       "listingId": "41554179",
@@ -148,7 +37,8 @@
         "incidents": 0
       },
       "photo": "/carpicture05/pic4155/41554176_002.jpg",
-      "rank": 9
+      "rank": 2,
+      "trim": "Wildtrak"
     },
     {
       "listingId": "42489489",
@@ -164,7 +54,8 @@
         "incidents": 0
       },
       "photo": "/carpicture08/pic4248/42489489_001.jpg",
-      "rank": 10
+      "rank": 3,
+      "trim": "Wildtrak"
     },
     {
       "listingId": "41784574",
@@ -180,7 +71,8 @@
         "incidents": 0
       },
       "photo": "/carpicture08/pic4178/41781928_001.jpg",
-      "rank": 11
+      "rank": 4,
+      "trim": "Wildtrak"
     },
     {
       "listingId": "42771172",
@@ -196,7 +88,8 @@
         "incidents": 0
       },
       "photo": "/carpicture06/pic4276/42764480_002.jpg",
-      "rank": 12
+      "rank": 5,
+      "trim": "Wildtrak"
     },
     {
       "listingId": "42347769",
@@ -212,7 +105,8 @@
         "incidents": 0
       },
       "photo": "/carpicture04/pic4234/42347769_001.jpg",
-      "rank": 13
+      "rank": 6,
+      "trim": "Wildtrak"
     },
     {
       "listingId": "42787437",
@@ -228,7 +122,280 @@
         "incidents": 0
       },
       "photo": "/carpicture08/pic4278/42783011_002.jpg",
+      "rank": 7,
+      "trim": "Wildtrak"
+    },
+    {
+      "listingId": "42738055",
+      "model": "Ranger",
+      "trim": "Raptor",
+      "gen": 4,
+      "year": 2023,
+      "mileageKm": 93019,
+      "koreaPriceMan": 5140,
+      "vin": "6FPFXXMX2PPD37549",
+      "accident": {
+        "costKRW": 0,
+        "owners": 1,
+        "incidents": 1
+      },
+      "photo": "/carpicture02/pic4272/42727558_001.jpg",
+      "rank": 8
+    },
+    {
+      "listingId": "42217289",
+      "model": "Ranger",
+      "trim": "Raptor",
+      "gen": 4,
+      "year": 2023,
+      "mileageKm": 61454,
+      "koreaPriceMan": 5280,
+      "vin": "6FPFXXMX2PPD39027",
+      "accident": {
+        "costKRW": 0,
+        "owners": 5,
+        "incidents": 0
+      },
+      "photo": "/carpicture01/pic4221/42212842_001.jpg",
+      "rank": 9
+    },
+    {
+      "listingId": "42725049",
+      "model": "Ranger",
+      "trim": "Raptor",
+      "gen": 4,
+      "year": 2023,
+      "mileageKm": 71235,
+      "koreaPriceMan": 5500,
+      "vin": "6FPFXXMX2PPL49253",
+      "accident": {
+        "costKRW": 4145847,
+        "owners": 1,
+        "incidents": 1
+      },
+      "photo": "/carpicture02/pic4272/42725049_001.jpg",
+      "rank": 10
+    },
+    {
+      "listingId": "42404833",
+      "model": "Ranger",
+      "trim": "Raptor",
+      "gen": 4,
+      "year": 2023,
+      "mileageKm": 38820,
+      "koreaPriceMan": 5950,
+      "vin": "6FPFXXMX2PPE45514",
+      "accident": {
+        "costKRW": 7703835,
+        "owners": 0,
+        "incidents": 4
+      },
+      "photo": "/carpicture10/pic4240/42404220_001.jpg",
+      "rank": 11
+    },
+    {
+      "listingId": "41589455",
+      "model": "Ranger",
+      "trim": "Raptor",
+      "gen": 4,
+      "year": 2023,
+      "mileageKm": 35125,
+      "koreaPriceMan": 5990,
+      "vin": "6FPFXXMX2PPL49353",
+      "accident": {
+        "costKRW": 2558658,
+        "owners": 0,
+        "incidents": 1
+      },
+      "photo": "/carpicture08/pic4158/41586774_001.jpg",
+      "rank": 12
+    },
+    {
+      "listingId": "41788531",
+      "model": "Ranger",
+      "trim": "Raptor",
+      "gen": 4,
+      "year": 2023,
+      "mileageKm": 32948,
+      "koreaPriceMan": 5990,
+      "vin": "6FPFXXMX2PPD39047",
+      "accident": {
+        "costKRW": 1995000,
+        "owners": 1,
+        "incidents": 1
+      },
+      "photo": "/carpicture07/pic4177/41773768_002.jpg",
+      "rank": 13
+    },
+    {
+      "listingId": "42413183",
+      "model": "Ranger",
+      "trim": "Raptor",
+      "gen": 4,
+      "year": 2023,
+      "mileageKm": 43337,
+      "koreaPriceMan": 5990,
+      "vin": "6FPFXXMX2PPD37538",
+      "accident": {
+        "costKRW": 5320486,
+        "owners": 2,
+        "incidents": 1
+      },
+      "photo": "/carpicture09/pic4239/42399925_001.jpg",
       "rank": 14
+    },
+    {
+      "listingId": "42296024",
+      "model": "Ranger",
+      "trim": "Raptor",
+      "gen": 4,
+      "year": 2023,
+      "mileageKm": 22481,
+      "koreaPriceMan": 6100,
+      "vin": null,
+      "accident": {
+        "costKRW": 0,
+        "owners": 4,
+        "incidents": 0
+      },
+      "photo": "/carpicture09/pic4229/42296024_001.jpg",
+      "rank": 15
+    },
+    {
+      "listingId": "41185656",
+      "model": "Ranger",
+      "trim": "Raptor",
+      "gen": 4,
+      "year": 2024,
+      "mileageKm": 46487,
+      "koreaPriceMan": 6150,
+      "vin": "6FPFXXMX2RRD11741",
+      "accident": {
+        "costKRW": 0,
+        "owners": 0,
+        "incidents": 0
+      },
+      "photo": "/carpicture07/pic4117/41175191_001.jpg",
+      "rank": 16
+    },
+    {
+      "listingId": "42474721",
+      "model": "Ranger",
+      "trim": "Raptor",
+      "gen": 4,
+      "year": 2024,
+      "mileageKm": 25462,
+      "koreaPriceMan": 6189,
+      "vin": "6FPFXXMX2RPT84901",
+      "accident": {
+        "costKRW": 0,
+        "owners": 0,
+        "incidents": 0
+      },
+      "photo": "/carpicture07/pic4247/42473555_001.jpg",
+      "rank": 17
+    },
+    {
+      "listingId": "42402463",
+      "model": "Ranger",
+      "trim": "Raptor",
+      "gen": 4,
+      "year": 2024,
+      "mileageKm": 40628,
+      "koreaPriceMan": 6190,
+      "vin": "6FPFXXMX2RPT84903",
+      "accident": {
+        "costKRW": 0,
+        "owners": 4,
+        "incidents": 0
+      },
+      "photo": "/carpicture10/pic4240/42402460_002.jpg",
+      "rank": 18
+    },
+    {
+      "listingId": "42603738",
+      "model": "Ranger",
+      "trim": "Raptor",
+      "gen": 4,
+      "year": 2024,
+      "mileageKm": 34464,
+      "koreaPriceMan": 6199,
+      "vin": "6FPFXXMX2RRD07943",
+      "accident": {
+        "costKRW": 0,
+        "owners": 0,
+        "incidents": 0
+      },
+      "photo": "/carpicture10/pic4260/42603738_001.jpg",
+      "rank": 19
+    },
+    {
+      "listingId": "42724660",
+      "model": "Ranger",
+      "trim": "Raptor",
+      "gen": 4,
+      "year": 2023,
+      "mileageKm": 24000,
+      "koreaPriceMan": 6220,
+      "vin": null,
+      "accident": {
+        "costKRW": 1178780,
+        "owners": 0,
+        "incidents": 1
+      },
+      "photo": "/carpicture02/pic4272/42724660_001.jpg",
+      "rank": 20
+    },
+    {
+      "listingId": "42621871",
+      "model": "Ranger",
+      "trim": "Raptor",
+      "gen": 4,
+      "year": 2024,
+      "mileageKm": 34278,
+      "koreaPriceMan": 6270,
+      "vin": "6FPFXXMX2RPT84944",
+      "accident": {
+        "costKRW": 0,
+        "owners": 0,
+        "incidents": 0
+      },
+      "photo": "/carpicture02/pic4262/42621871_001.jpg",
+      "rank": 21
+    },
+    {
+      "listingId": "42620909",
+      "model": "Ranger",
+      "trim": "Raptor",
+      "gen": 4,
+      "year": 2024,
+      "mileageKm": 36844,
+      "koreaPriceMan": 6480,
+      "vin": null,
+      "accident": {
+        "costKRW": 0,
+        "owners": 0,
+        "incidents": 1
+      },
+      "photo": "/carpicture02/pic4262/42620909_001.jpg",
+      "rank": 22
+    },
+    {
+      "listingId": "42557143",
+      "model": "Ranger",
+      "trim": "Raptor",
+      "gen": 4,
+      "year": 2023,
+      "mileageKm": 15536,
+      "koreaPriceMan": 6580,
+      "vin": null,
+      "accident": {
+        "costKRW": 0,
+        "owners": 0,
+        "incidents": 0
+      },
+      "photo": "/carpicture05/pic4255/42557143_001.jpg",
+      "rank": 23
     }
   ]
 }

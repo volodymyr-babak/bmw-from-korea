@@ -1,5 +1,5 @@
 import {
-  man, manUSD, km, krwM, encarUrl, MARKS, initTheme, esc, genLabel,
+  man, manUSD, km, krwM, encarUrl, MARKS, initTheme, esc,
 } from './common.js';
 
 const $ = (sel) => document.querySelector(sel);
@@ -14,8 +14,8 @@ const byPrice = (a, b) => a.koreaPriceMan - b.koreaPriceMan || a.listingId.local
 const COLUMNS = [
   { key: 'rank',      label: '№',        cls: 'c-rank num',  sort: byPrice,
     hint: 'Місце за ціною в Кореї' },
-  { key: 'car',       label: 'Авто',     cls: 'c-car',       sort: (a, b) => a.year - b.year || (a.gen || 0) - (b.gen || 0),
-    hint: 'Клік — сортувати за роком виготовлення' },
+  { key: 'car',       label: 'Авто',     cls: 'c-car',       sort: (a, b) => (a.trim || '').localeCompare(b.trim || '') || a.year - b.year,
+    hint: 'Клік — сортувати за комплектацією й роком' },
   { key: 'mileage',   label: 'Пробіг',   cls: 'c-num num',   sort: (a, b) => a.mileageKm - b.mileageKm },
   { key: 'price',     label: 'Ціна в Кореї', cls: 'c-price num', sort: byPrice,
     hint: 'Ціна в оголошенні Encar, у 만원 (1만원 = 10 000 ₩). Долари — довідка за курсом' },
@@ -57,6 +57,7 @@ async function init() {
   meta = data.meta;
   renderFigures(meta, cars);
   fillYears(cars);
+  fillTrims(cars);
   renderHead();
   $('#controls').addEventListener('change', render);
   $('#state').hidden = true;
@@ -69,9 +70,12 @@ function renderFigures(meta, list) {
   const withInc = list.filter((c) => c.accident?.incidents != null);
   const clean = withInc.filter((c) => c.accident.incidents === 0).length;
   const noRepair = list.filter((c) => !c.accident?.costKRW).length;
+  const trims = new Map();
+  for (const c of list) trims.set(c.trim || '?', (trims.get(c.trim || '?') || 0) + 1);
   const updated = new Date(meta.updated).toLocaleDateString('uk-UA', { day: 'numeric', month: 'long', year: 'numeric' });
   $('#figures').innerHTML = [
     ['Кандидатів у списку', `${list.length}`, true],
+    [[...trims.keys()].join(' · '), [...trims.values()].join(' · '), true],
     ['Найдешевше в Кореї', `${man(cheapest)} · ${manUSD(cheapest)}`, true],
     ['Без жодного ДТП', `${clean} з ${withInc.length}`, true],
     ['Без виплат за ремонт', `${noRepair} з ${list.length}`, true],
@@ -86,6 +90,15 @@ function fillYears(list) {
   const years = [...new Set(list.map((c) => c.year))].sort();
   $('#f-year').insertAdjacentHTML('beforeend',
     years.map((y) => `<option value="${y}">${y}</option>`).join(''));
+}
+
+/** Комплектації — з даних, від найчастішої, з лічильником. */
+function fillTrims(list) {
+  const counts = new Map();
+  for (const c of list) counts.set(c.trim || '?', (counts.get(c.trim || '?') || 0) + 1);
+  $('#f-trim').insertAdjacentHTML('beforeend', [...counts.entries()]
+    .sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]))
+    .map(([t, n]) => `<option value="${esc(t)}">тільки ${esc(t)} — ${n}</option>`).join(''));
 }
 
 /* ---- таблиця ---- */
@@ -120,13 +133,13 @@ function renderHead() {
 
 function render() {
   const f = new FormData($('#controls'));
-  const gen = f.get('gen');
+  const trim = f.get('trim');
   const year = f.get('year');
   const maxInc = f.get('incidents') === '' ? null : Number(f.get('incidents'));
   const repair = f.get('repair');
 
   let view = cars.filter((c) =>
-    (!gen || String(c.gen) === gen) &&
+    (!trim || (c.trim || '?') === trim) &&
     (!year || String(c.year) === year) &&
     // Невідоме ховаємо разом із «забагато»: краще недобрати кандидата, ніж
     // показати як чисте авто, ДТП якого ми просто не рахували.
@@ -167,7 +180,7 @@ function row(c, isCheapest) {
   return `<tr>
     <td class="c-rank num">${String(c.rank).padStart(2, '0')}</td>
     <th class="c-car" scope="row">
-      <a class="car-link" href="${href}"><span class="model-tag">${esc(genLabel(c.gen))}</span>${c.year}</a>${badges}
+      <a class="car-link" href="${href}"><span class="model-tag">${esc(c.trim || 'Ranger')}</span>${c.year}</a>${badges}
       <span class="c-car-meta">лот <span class="num">${esc(c.listingId)}</span> ·
         <a href="${encarUrl(c.listingId)}" rel="noopener noreferrer" target="_blank">Encar&nbsp;↗</a>
         ${c.vin ? `<br>VIN <span class="num">${esc(c.vin)}</span>` : '<br>VIN відсутній в Encar'}</span>

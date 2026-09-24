@@ -1,0 +1,103 @@
+{
+  "listingId": "42621871",
+  "encarUrl": "https://fem.encar.com/cars/detail/42621871",
+  "model": "Ranger",
+  "trim": "Raptor",
+  "gen": 4,
+  "mfgYear": 2024,
+  "encarModel": "레인저 4세대",
+  "formYear": "2024",
+  "vin": "6FPFXXMX2RPT84944",
+  "mileageKm": 34278,
+  "koreaPriceMan": 6270,
+  "colorName": "검정색",
+  "photos": {
+    "outer": [
+      "/carpicture02/pic4262/42621871_001.jpg",
+      "/carpicture02/pic4262/42621871_002.jpg",
+      "/carpicture02/pic4262/42621871_003.jpg",
+      "/carpicture02/pic4262/42621871_004.jpg",
+      "/carpicture02/pic4262/42621871_005.jpg",
+      "/carpicture02/pic4262/42621871_006.jpg"
+    ],
+    "inner": [
+      "/carpicture02/pic4262/42621871_007.jpg",
+      "/carpicture02/pic4262/42621871_008.jpg",
+      "/carpicture02/pic4262/42621871_009.jpg",
+      "/carpicture02/pic4262/42621871_010.jpg"
+    ]
+  },
+  "history": {
+    "openData": true,
+    "regDate": "2026-08-26T13:50:09.207562",
+    "carNo": "846두6539",
+    "year": "2024",
+    "maker": "포드",
+    "carKind": "3",
+    "use": "2",
+    "displacement": "1996",
+    "carName": null,
+    "firstDate": "2024-01-05",
+    "fuel": "디젤",
+    "carShape": "픽업트럭",
+    "model": null,
+    "transmission": null,
+    "carNameCode": null,
+    "myAccidentCnt": 0,
+    "otherAccidentCnt": 0,
+    "ownerChangeCnt": 0,
+    "robberCnt": 0,
+    "robberDate": null,
+    "totalLossCnt": 0,
+    "totalLossDate": null,
+    "floodTotalLossCnt": 0,
+    "floodPartLossCnt": null,
+    "floodDate": null,
+    "government": 0,
+    "business": 0,
+    "loan": 0,
+    "carNoChangeCnt": 0,
+    "myAccidentCost": 0,
+    "otherAccidentCost": 0,
+    "carInfoChanges": [
+      {
+        "date": "2024-01-05",
+        "carNo": "846두XXXX"
+      }
+    ],
+    "carInfoUse1s": [
+      "2"
+    ],
+    "carInfoUse2s": [
+      "3"
+    ],
+    "ownerChanges": [],
+    "notJoinDate1": null,
+    "notJoinDate2": null,
+    "notJoinDate3": null,
+    "notJoinDate4": null,
+    "notJoinDate5": null,
+    "accidentCnt": 0,
+    "accidents": []
+  },
+  "sellerText": "No paint , Tax invoice 100% , Key 2ea\n\n▶ 판매자 소개\n저는 랜드로버를 포함한 수입 4륜구동 차량\n희소 4륜모델, 픽업트럭, 오프로드튜닝 차량만을 전문으로 취급하는 딜러 정현호 라고 합니다.\n20년이 넘는 기간동안 수입SUV 만 취급해왔습니다.\n\n판매중인 차량과 판매했었던 차량들은 PC 버전이나 PC로 확인 가능합니다.\n\n----------------------------------------------------------------------------------\n\n▶ 위 차량은 상사매입차량으로 용인 오토허브매장에 항시 전시되어 있습니다.\n▶ 오토허브 전시장은 100% 실내전시장으로 365일 쾌적한 환경에서 차량을 보실 수 있습니다.\n▶ 차량대금 및 매도비를 제외한 어떠한 수수료도 요구하지 않습니다.\n\n\n2024년 1월식  포드 레인저 2.0 랩터 모델을 판매합니다.\n\n》  1인 신조\n》  슬라이딩 토네우 커버 장착\n》  여유있는 무상AS 기간 ( 5년/10만km )\n》  무사고 도색無 - 도막측정 완료 / 보험이력無\n\n▶ 본 차량상태..\n-  무사고\n-  1인 신조\n-  신차가 7,990만원\n-  1년 자동차세 28,500원\n-  세금계산서 100% 발행으로 사업자 부가세 환급 가능\n\n\n---------------------------  찾아 오시는 길  ---------------------------\n주소 :  경기도 용인시 중부대로 242 , 오토허브 A동 S348호 그랜드모터스 ( 주 )\n\n경부고속도로 수원,신갈 I.C 출구나온후 300m 왼쪽으로 보입니다.\n고속버스 : 신갈오거리 정류장하차 건너편 도요타전시장 택시이용 (기본요금 ) - 픽업가능\n지하철 : 수인분당선 청명역하차 1번출구 택시이용 ( 기본요금 ) - 픽업가능\n",
+  "inspection": {
+    "accident": false,
+    "simpleRepair": false,
+    "waterlog": false,
+    "tuning": false,
+    "usage": [],
+    "serious": [],
+    "panels": [],
+    "date": "20260826",
+    "mileage": 34275,
+    "recall": true,
+    "comment": "비금속 또는 탈부착 가능한 부품은 점검사항에서 제외되며 중고차 특성상 부분적인 판금도색은 있을 수 있습니다."
+  },
+  "inspectionFacts": [
+    {
+      "kind": "plus",
+      "text": "Звіт інспекції чистий: ні замін панелей, ні кузовного, ні комерційної історії."
+    }
+  ]
+}
