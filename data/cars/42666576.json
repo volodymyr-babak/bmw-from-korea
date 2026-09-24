@@ -1,0 +1,84 @@
+{
+  "listingId": "42666576",
+  "encarUrl": "https://fem.encar.com/cars/detail/42666576",
+  "model": "Ranger Wildtrak",
+  "gen": 3,
+  "mfgYear": 2023,
+  "encarModel": "레인저 3세대",
+  "formYear": "2023",
+  "vin": null,
+  "mileageKm": 76389,
+  "koreaPriceMan": 2900,
+  "colorName": "검정색",
+  "photos": {
+    "outer": [
+      "/carpicture06/pic4266/42666576_001.jpg",
+      "/carpicture06/pic4266/42666576_002.jpg",
+      "/carpicture06/pic4266/42666576_003.jpg",
+      "/carpicture06/pic4266/42666576_004.jpg",
+      "/carpicture06/pic4266/42666576_005.jpg",
+      "/carpicture06/pic4266/42666576_006.jpg"
+    ],
+    "inner": []
+  },
+  "history": {
+    "openData": true,
+    "regDate": "2026-08-14T09:43:26.033538",
+    "carNo": "846로1515",
+    "year": "2022",
+    "maker": "포드",
+    "carKind": "3",
+    "use": "2",
+    "displacement": "1996",
+    "carName": null,
+    "firstDate": "2023-02-10",
+    "fuel": "디젤",
+    "carShape": "픽업트럭",
+    "model": null,
+    "transmission": null,
+    "carNameCode": null,
+    "myAccidentCnt": 0,
+    "otherAccidentCnt": 0,
+    "ownerChangeCnt": 0,
+    "robberCnt": 0,
+    "robberDate": null,
+    "totalLossCnt": 0,
+    "totalLossDate": null,
+    "floodTotalLossCnt": 0,
+    "floodPartLossCnt": null,
+    "floodDate": null,
+    "government": 0,
+    "business": 0,
+    "loan": 0,
+    "carNoChangeCnt": 1,
+    "myAccidentCost": 0,
+    "otherAccidentCost": 0,
+    "carInfoChanges": [
+      {
+        "date": "2023-02-10",
+        "carNo": "816어XXXX"
+      },
+      {
+        "date": "2025-07-25",
+        "carNo": "846로XXXX"
+      }
+    ],
+    "carInfoUse1s": [
+      "2",
+      "2"
+    ],
+    "carInfoUse2s": [
+      "3",
+      "3"
+    ],
+    "ownerChanges": [],
+    "notJoinDate1": null,
+    "notJoinDate2": null,
+    "notJoinDate3": null,
+    "notJoinDate4": null,
+    "notJoinDate5": null,
+    "accidentCnt": 0,
+    "accidents": []
+  },
+  "sellerText": "▶차량설명\n- 사고유무 : 무사고\n- 관리상태 : 평범\n- 내/외관 : 깨끗\n- 튜닝정보 : 없음\n\n▶차주정보 \n- 구입방법 :신차구매\n- 판매이유 : 신차구매\n- 운행용도 : 자가용\n\n▶문의방법 \n전화"
+}

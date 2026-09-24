@@ -21,12 +21,20 @@ PHOTO_BASE = 'https://ci.encar.com'
 
 FINAL_CODES = {'200', '400', '404'}
 
-# Серверні фільтри Encar, які точно працюють (перевірено 2026-09-02).
-# Badge мусить бути ТОП-РІВНЕМ: усередині ModelGroup дає 400.
-MODELS = {
-    'X5 (G05)': {'group': 'X5', 'model': 'X5 (G05)', 'badge': 'xDrive 30d M 스포츠'},
-    'X6 (G06)': {'group': 'X6', 'model': 'X6 (G06)', 'badge': 'xDrive30d M 스포츠'},
-}
+# Серверні фільтри Encar (перевірено 2026-09-24). Ford Ranger в Encar:
+# Manufacturer `포드`, ModelGroup `레인저`, Model — `레인저 3세대` (T6, 2019–2022)
+# або `레인저 4세대` (2023+); Badge = двигун `2.0`, а комплектація лежить у
+# BadgeDetail: `와일드트랙` (Wildtrak) / `랩터` (Raptor).
+# Пастки синтаксису: `Model` усередині ModelGroup обов'язковий ЛИШЕ у формі
+# `(C.ModelGroup.X._.Model.Y.)`; щоб узяти всі покоління разом, ModelGroup
+# пишеться без вкладеного C.: `(C.Manufacturer.포드._.ModelGroup.레인저.)`.
+# BadgeDetail, Year і SellType — тільки ТОП-РІВНЕМ, усередині дають 400.
+MANUFACTURER = '포드'
+MODEL_GROUP = '레인저'
+BADGE_DETAIL = '와일드트랙'
+
+# Покоління з поля `Model` Encar → як показуємо в себе
+GENERATIONS = {'레인저 3세대': 3, '레인저 4세대': 4}
 
 
 def get(url: str, tries: int = 8, pause: float = 1.2):
@@ -68,35 +76,35 @@ def record(vehicle_id):
     return get_json(RECORD.format(vehicle_id))
 
 
-def _query(m: dict, year_from: int, year_to: int, max_km: int, max_man: int) -> str:
-    group = (f'(C.CarType.A._.(C.Manufacturer.BMW._.'
-             f'(C.ModelGroup.{m["group"]}._.Model.{m["model"]}.)))')
-    return (f'(And.Hidden.N._.{group}'
-            f'_.Year.range({year_from}00..{year_to}99).'
-            f'_.Mileage.range(..{max_km}).'
-            f'_.Price.range(..{max_man}).'
+def _query(year_from: int) -> str:
+    return (f'(And.Hidden.N._.(C.CarType.A._.(C.Manufacturer.{MANUFACTURER}._.'
+            f'ModelGroup.{MODEL_GROUP}.))'
+            f'_.Year.range({year_from}00..).'
             f'_.SellType.일반.'
-            f'_.FuelType.디젤.'
-            f'_.Badge.{m["badge"]}.)')
+            f'_.BadgeDetail.{BADGE_DETAIL}.)')
 
 
-def search(model_name: str, year_from: int, year_to: int, max_km: int, max_man: int,
-           page_size: int = 20, hard_cap: int = 600):
-    """Усі оголошення моделі під серверні фільтри. Повертає (список, Count)."""
-    m = MODELS[model_name]
-    q = urllib.parse.quote(_query(m, year_from, year_to, max_km, max_man), safe='')
+def search(year_from: int, page_size: int = 20, hard_cap: int = 600):
+    """Усі оголошення Ranger Wildtrak від року `year_from` (виготовлення).
+    Повертає (список, Count). Лізинг і оренда відсіяні сервером (SellType.일반)."""
+    q = urllib.parse.quote(_query(year_from), safe='')
     out, offset, total = [], 0, None
     while True:
         url = f'{SEARCH}?count=true&q={q}&sr=%7CModifiedDate%7C{offset}%7C{page_size}'
         code, d = get_json(url)
         if code != '200' or not d:
-            raise RuntimeError(f'пошук {model_name}: HTTP {code}')
+            raise RuntimeError(f'пошук Ranger: HTTP {code}')
         total = d.get('Count', 0)
         page = d.get('SearchResults') or []
         out += page
         if not page or len(out) >= min(total, hard_cap):
             return out, total
         offset += page_size
+
+
+def generation(model_name: str):
+    """3 або 4 з `Model` Encar; None — незнайоме покоління."""
+    return GENERATIONS.get((model_name or '').strip())
 
 
 def frame_no(path: str) -> int:
