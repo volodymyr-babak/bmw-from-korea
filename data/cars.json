@@ -4,7 +4,7 @@
     "model": "BMW X6 (G06) xDrive30d / xDrive40d M Sport",
     "criteria": "X6 (G06) · 2019–2022 виготовлення · ≤110000 км · M Sport · дизель 30d або 40d · ДТП ≤5 млн ₩ власний · під ключ ≤ $70000 · будь-який колір кузова й салону · пневмо S2VR · адаптивні фари S552/S5AZ · без лізингу/45e/40i/M50i/M50d · без прокатної/таксі історії (звіт інспекції)",
     "customs": "P (USD) by year 2019:25000 2020:36000 2021:40500 2022:43000; age=2025-year; duty=0.10P; excise=75*3.0*age*1.1648; vat=0.20(P+duty+excise); pens=0.05P; oblik=pens+124; ship=3700; svc=1000; korea=price_만*10000/1372",
-    "count": 18,
+    "count": 19,
     "decodedCount": 3,
     "customsNote": "Мінімальна митна вартість P звірена для X5. Для X6 узято ту саму таблицю, тому ціна під ключ X6 — оцінка (реально очікувати +$1000…2000)."
   },
@@ -255,6 +255,26 @@
       "engine": "30d"
     },
     {
+      "listingId": "42555064",
+      "model": "X6 (G06)",
+      "year": 2020,
+      "mileageKm": 55881,
+      "koreaPriceMan": 5990,
+      "priceUSD": 63375,
+      "vin": "WBATC6102L9D61929",
+      "decoded": false,
+      "accident": {
+        "costKRW": 0,
+        "owners": 0,
+        "incidents": 0
+      },
+      "photo": "/carpicture05/pic4255/42552111_001.jpg",
+      "priceEstimated": true,
+      "exterior": "сірий",
+      "engine": "40d",
+      "rank": 12
+    },
+    {
       "listingId": "42791957",
       "model": "X6 (G06)",
       "year": 2020,
@@ -271,11 +291,11 @@
       "photo": "/carpicture09/pic4279/42790023_001.jpg",
       "priceEstimated": true,
       "exterior": "чорний",
-      "rank": 12,
+      "rank": 13,
       "engine": "30d"
     },
     {
-      "rank": 13,
+      "rank": 14,
       "listingId": "42585911",
       "model": "X6 (G06)",
       "year": 2022,
@@ -334,7 +354,7 @@
       "photo": "/carpicture01/pic4271/42716296_001.jpg",
       "priceEstimated": true,
       "exterior": "білий",
-      "rank": 14,
+      "rank": 15,
       "engine": "30d"
     },
     {
@@ -354,11 +374,11 @@
       "photo": "/carpicture10/pic4270/42708107_001.jpg",
       "priceEstimated": true,
       "exterior": "Carbon Black",
-      "rank": 15,
+      "rank": 16,
       "engine": "30d"
     },
     {
-      "rank": 16,
+      "rank": 17,
       "listingId": "42476461",
       "model": "X6 (G06)",
       "year": 2022,
@@ -417,7 +437,7 @@
       "photo": "/carpicture04/pic4274/42741767_001.jpg",
       "priceEstimated": true,
       "exterior": "білий",
-      "rank": 17,
+      "rank": 18,
       "engine": "30d"
     },
     {
@@ -437,7 +457,7 @@
       "photo": "/carpicture10/pic4250/42500550_001.jpg",
       "priceEstimated": true,
       "exterior": "білий",
-      "rank": 18,
+      "rank": 19,
       "engine": "30d"
     }
   ]
