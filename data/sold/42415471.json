@@ -1,0 +1,404 @@
+{
+  "listingId": "42415471",
+  "encarUrl": "https://fem.encar.com/cars/detail/42415471",
+  "photos": {
+    "outer": [
+      "/carpicture01/pic4241/42415469_002.jpg",
+      "/carpicture01/pic4241/42415469_003.jpg",
+      "/carpicture01/pic4241/42415469_004.jpg",
+      "/carpicture01/pic4241/42415469_005.jpg",
+      "/carpicture01/pic4241/42415469_006.jpg",
+      "/carpicture01/pic4241/42415469_031.jpg",
+      "/carpicture01/pic4241/42415469_032.jpg",
+      "/carpicture01/pic4241/42415469_033.jpg"
+    ],
+    "inner": [
+      "/carpicture01/pic4241/42415469_007.jpg",
+      "/carpicture01/pic4241/42415469_008.jpg",
+      "/carpicture01/pic4241/42415469_009.jpg",
+      "/carpicture01/pic4241/42415469_010.jpg",
+      "/carpicture01/pic4241/42415469_034.jpg",
+      "/carpicture01/pic4241/42415469_035.jpg",
+      "/carpicture01/pic4241/42415469_036.jpg"
+    ]
+  },
+  "koreaPriceMan": 5980,
+  "history": {
+    "openData": true,
+    "regDate": "2026-07-23T09:02:17.13765",
+    "carNo": "172무2308",
+    "year": "2022",
+    "maker": "BMW",
+    "carKind": "1",
+    "use": "2",
+    "displacement": "2993",
+    "carName": null,
+    "firstDate": "2022-04-27",
+    "fuel": "디젤",
+    "carShape": "SUV",
+    "model": "X6 (G06)",
+    "transmission": null,
+    "carNameCode": null,
+    "myAccidentCnt": 0,
+    "otherAccidentCnt": 0,
+    "ownerChangeCnt": 1,
+    "robberCnt": 0,
+    "robberDate": null,
+    "totalLossCnt": 0,
+    "totalLossDate": null,
+    "floodTotalLossCnt": 0,
+    "floodPartLossCnt": null,
+    "floodDate": null,
+    "government": 0,
+    "business": 0,
+    "loan": 0,
+    "carNoChangeCnt": 0,
+    "myAccidentCost": 0,
+    "otherAccidentCost": 0,
+    "carInfoChanges": [
+      {
+        "date": "2022-04-27",
+        "carNo": "172무XXXX"
+      }
+    ],
+    "carInfoUse1s": [
+      "2"
+    ],
+    "carInfoUse2s": [
+      "1"
+    ],
+    "ownerChanges": [
+      "2026-07-15"
+    ],
+    "notJoinDate1": null,
+    "notJoinDate2": null,
+    "notJoinDate3": null,
+    "notJoinDate4": null,
+    "notJoinDate5": null,
+    "accidentCnt": 0,
+    "accidents": []
+  },
+  "model": "X6 (G06)",
+  "mileageKm": 82832,
+  "priceUSD": 65263,
+  "priceEstimated": true,
+  "mfgYear": 2022,
+  "vin": "WBAGT8102N9L68098",
+  "sellerText": "안녕하세요. \n서울 강서오토플랙스 예스오토 이상봉 딜러입니다. \n차량에 관심을 가져주셔서 감사합니다. \n현재 고객님께서 보고 계신 차량은 100% 실매물 차량입니다. \n\n◈ 모델명 : BMW X6 xDrive 30d M 스포츠\n\n◈ 차량상태 및 특이사항\n\n  - 내, 외관 깨끗이 관리된 차량\n\n  - 엔카성능, 한국자동차협회 진단 검수 완료\n\n  - 믿을수 있는 매물입니다. \n\n  - 사고여부 : 서울시 지정업체인 오토플렉스성능장에서 받은 \n                 실제 성능점검기록부 첨부하였습니다!\n  - 옵션 : 썬루프, 내비게이션, 후방카메라, 열선시트, 열선핸들\n            등 운행에 필요한 옵션 풍부하게 포함된 차량입니다!\n\n  - 연락주시면 친절하고 상세하게 설명을 드리도록 하겠습니다. \n  - 차량 시승 가능하며 정비업소에서 차량상태 확인도 가능합니다.  \n  - 현재 타고 계신 차량과 교환도 가능하며 할부를 통한 차량구매도 가능합니다.\n\n\n◆◆◆  오시는 길  ◆◆◆\n  - 주소 : 서울 강서구 양천로 390, 301호(강서오토플렉스)\n  - 차량으로 오시는 분은 4층 고객주차장에 주차하시면 됩니다.\n  - 지하철 9호선 양천향교역 5번출구에서 300미터\n  - 지하철 9호선 가양역 10번출구에서 600미터",
+  "sellerFacts": [
+    {
+      "kind": "plus",
+      "text": "Перевірено Encar і Корейською автомобільною асоціацією, звіт про стан додано."
+    },
+    {
+      "kind": "plus",
+      "text": "Дилер дозволяє відвезти авто на діагностику до свого СТО."
+    }
+  ],
+  "inspection": {
+    "accident": false,
+    "simpleRepair": false,
+    "waterlog": false,
+    "tuning": false,
+    "usage": [],
+    "serious": [],
+    "panels": [],
+    "date": "20260716",
+    "mileage": 82816,
+    "recall": false,
+    "comment": "FRP 또는 비금속 탈부착 가능 부품은 점검사항에서 제외되며, 중고차 특성상 부분적인 부식 판금 도색은 있을 수 있습니다./양)휀다조정"
+  },
+  "inspectionFacts": [
+    {
+      "kind": "plus",
+      "text": "Звіт інспекції чистий: ні замін панелей, ні кузовного, ні комерційної історії."
+    }
+  ],
+  "prodDate": "2022-03-04",
+  "engine": "B57P",
+  "power": "210 кВт / 286 к.с. · 650 Нм",
+  "engineNote": "48V mild-hybrid (S1CE) — версія 210 кВт / 286 к.с., потужніша за B57D30O0 (195 кВт / 265 к.с.). Завод Spartanburg, USA.",
+  "exterior": {
+    "name": "Mineral White",
+    "german": "Mineralweiß metallic",
+    "code": "A96"
+  },
+  "interior": {
+    "name": "Merino Coffee",
+    "german": "Leder Merino Coffee",
+    "code": "VAHF"
+  },
+  "options": [
+    {
+      "code": "S1CE",
+      "desc": "Recuperation system (48V mild-hybrid)"
+    },
+    {
+      "code": "S1MA",
+      "desc": "M sports exhaust system"
+    },
+    {
+      "code": "S1XN",
+      "desc": "21\" M light alloy wheels Y-spoke 741 M bicolour, mixed runflat tyres"
+    },
+    {
+      "code": "S212",
+      "desc": "Equipment, brake system country-specific"
+    },
+    {
+      "code": "S258",
+      "desc": "Tyres with runflat properties"
+    },
+    {
+      "code": "S2NH",
+      "desc": "M Sport brake"
+    },
+    {
+      "code": "S2VB",
+      "desc": "Tyre pressure display"
+    },
+    {
+      "code": "S2VF",
+      "desc": "Adaptive M chassis (адаптивні амортизатори, НЕ пневмо)"
+    },
+    {
+      "code": "S2VH",
+      "desc": "Integral Active Steering"
+    },
+    {
+      "code": "S322",
+      "desc": "Comfort access"
+    },
+    {
+      "code": "S323",
+      "desc": "Soft-Close-Automatic system for doors"
+    },
+    {
+      "code": "S337",
+      "desc": "M Sports package"
+    },
+    {
+      "code": "S3AT",
+      "desc": "Roof rails aluminium satinated"
+    },
+    {
+      "code": "S3D0",
+      "desc": "BMW kidney Iconic Glow — temporary deletion, prepared for Remote Software Upgrade"
+    },
+    {
+      "code": "S3DN",
+      "desc": "BMW kidney Iconic Glow"
+    },
+    {
+      "code": "S3DS",
+      "desc": "BMW display key"
+    },
+    {
+      "code": "S3MB",
+      "desc": "Individual Ext. Line, burnished aluminium"
+    },
+    {
+      "code": "S402",
+      "desc": "Panorama glass roof"
+    },
+    {
+      "code": "S423",
+      "desc": "Floor mats velours"
+    },
+    {
+      "code": "S428",
+      "desc": "Warning triangle and first aid kit"
+    },
+    {
+      "code": "S453",
+      "desc": "Climate-controlled (ventilated) seats, front"
+    },
+    {
+      "code": "S456",
+      "desc": "Comfort seat with memory"
+    },
+    {
+      "code": "S4A2",
+      "desc": "Glass application Crafted Clarity"
+    },
+    {
+      "code": "S4FL",
+      "desc": "Travel & Comfort rail system"
+    },
+    {
+      "code": "S4HA",
+      "desc": "Seat heating, front and rear"
+    },
+    {
+      "code": "S4HB",
+      "desc": "Heat comfort package, front"
+    },
+    {
+      "code": "S4KM",
+      "desc": "Interior trim finishers aluminium mesh effect dark"
+    },
+    {
+      "code": "S4NB",
+      "desc": "Automatic climate control, 4-zone"
+    },
+    {
+      "code": "S4T8",
+      "desc": "Outside mirror with auto dip"
+    },
+    {
+      "code": "S4UR",
+      "desc": "Ambient interior light"
+    },
+    {
+      "code": "S548",
+      "desc": "Kilometre speedo"
+    },
+    {
+      "code": "S5AC",
+      "desc": "High-beam assistant"
+    },
+    {
+      "code": "S5AL",
+      "desc": "Active Protection"
+    },
+    {
+      "code": "S5AU",
+      "desc": "Driving assistant professional"
+    },
+    {
+      "code": "S5AV",
+      "desc": "Active Guard"
+    },
+    {
+      "code": "S5AZ",
+      "desc": "BMW Laserlight"
+    },
+    {
+      "code": "S5DN",
+      "desc": "Parking assistance system Plus"
+    },
+    {
+      "code": "S610",
+      "desc": "Head-up display"
+    },
+    {
+      "code": "S676",
+      "desc": "HiFi loudspeaker system (базове, НЕ Harman/Kardon)"
+    },
+    {
+      "code": "S699",
+      "desc": "Area-Code 3 for DVD"
+    },
+    {
+      "code": "S6AE",
+      "desc": "Teleservices"
+    },
+    {
+      "code": "S6AK",
+      "desc": "Connected Drive Services"
+    },
+    {
+      "code": "S6C3",
+      "desc": "Digital professional"
+    },
+    {
+      "code": "S6CP",
+      "desc": "Preparation Apple CarPlay"
+    },
+    {
+      "code": "S6NS",
+      "desc": "Comfort telephony with enhanced Smartphone"
+    },
+    {
+      "code": "S6U3",
+      "desc": "BMW Live operating area Professional"
+    },
+    {
+      "code": "S6U8",
+      "desc": "BMW gesture control"
+    },
+    {
+      "code": "S6UX",
+      "desc": "BMW controller without touch function"
+    },
+    {
+      "code": "S710",
+      "desc": "M leather steering wheel"
+    },
+    {
+      "code": "S715",
+      "desc": "M Aerodynamics package"
+    },
+    {
+      "code": "S775",
+      "desc": "Headlining anthracite"
+    },
+    {
+      "code": "S802",
+      "desc": "National version Korea"
+    },
+    {
+      "code": "S867",
+      "desc": "Language version Korean"
+    },
+    {
+      "code": "S8AF",
+      "desc": "On-board literature, Korean"
+    },
+    {
+      "code": "S8KH",
+      "desc": "Oil service interval 20 000 km / 18 months"
+    },
+    {
+      "code": "S8R9",
+      "desc": "Refrigerant R1234yf"
+    },
+    {
+      "code": "S8S3",
+      "desc": "Automatic locking during starting"
+    },
+    {
+      "code": "S8SX",
+      "desc": "Providersteuerung Telematik"
+    },
+    {
+      "code": "S8TF",
+      "desc": "Active pedestrian protection"
+    },
+    {
+      "code": "S925",
+      "desc": "Shipping protection package"
+    },
+    {
+      "code": "S993",
+      "desc": "Model year code in VIN"
+    },
+    {
+      "code": "S9AA",
+      "desc": "Outer skin protection"
+    }
+  ],
+  "keyFeatures": {
+    "air": false,
+    "laser": true,
+    "led": false,
+    "soft": true,
+    "vent": true,
+    "hk": false,
+    "pano": true,
+    "skylounge": false,
+    "mhev": true,
+    "acc": true,
+    "park": true,
+    "comfort": true,
+    "seatheat": true,
+    "wheelheat": true,
+    "climate4": true,
+    "exhaust": true
+  },
+  "decodeSource": "bimmer.work API",
+  "renders": {
+    "exterior": "assets/renders/WBAGT8102N9L68098-ext.jpg",
+    "interior": "assets/renders/WBAGT8102N9L68098-int.jpg"
+  }
+}

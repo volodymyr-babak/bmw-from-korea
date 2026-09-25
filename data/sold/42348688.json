@@ -1,0 +1,423 @@
+{
+  "listingId": "42348688",
+  "encarUrl": "https://fem.encar.com/cars/detail/42348688",
+  "model": "X5 (G05)",
+  "mfgYear": 2021,
+  "vin": "WBAJU8103M9G49105",
+  "mileageKm": 63640,
+  "koreaPriceMan": 5689,
+  "priceUSD": 62532,
+  "photos": {
+    "outer": [
+      "/carpicture03/pic4233/42338596_001.jpg",
+      "/carpicture03/pic4233/42338596_002.jpg",
+      "/carpicture03/pic4233/42338596_003.jpg",
+      "/carpicture03/pic4233/42338596_004.jpg",
+      "/carpicture03/pic4233/42338596_005.jpg",
+      "/carpicture03/pic4233/42338596_006.jpg",
+      "/carpicture03/pic4233/42338596_031.jpg",
+      "/carpicture03/pic4233/42338596_032.jpg",
+      "/carpicture03/pic4233/42338596_033.jpg"
+    ],
+    "inner": [
+      "/carpicture03/pic4233/42338596_007.jpg",
+      "/carpicture03/pic4233/42338596_008.jpg",
+      "/carpicture03/pic4233/42338596_009.jpg",
+      "/carpicture03/pic4233/42338596_010.jpg",
+      "/carpicture03/pic4233/42338596_034.jpg",
+      "/carpicture03/pic4233/42338596_035.jpg",
+      "/carpicture03/pic4233/42338596_036.jpg"
+    ]
+  },
+  "history": {
+    "openData": true,
+    "regDate": "2026-07-03T18:15:39.456437",
+    "carNo": "199로6177",
+    "year": "2021",
+    "maker": "BMW",
+    "carKind": "1",
+    "use": "2",
+    "displacement": "2993",
+    "carName": null,
+    "firstDate": "2021-05-20",
+    "fuel": "디젤",
+    "carShape": "SUV",
+    "model": "X5 (G05)",
+    "transmission": null,
+    "carNameCode": null,
+    "myAccidentCnt": 2,
+    "otherAccidentCnt": 1,
+    "ownerChangeCnt": 0,
+    "robberCnt": 0,
+    "robberDate": null,
+    "totalLossCnt": 0,
+    "totalLossDate": null,
+    "floodTotalLossCnt": 0,
+    "floodPartLossCnt": null,
+    "floodDate": null,
+    "government": 0,
+    "business": 0,
+    "loan": 0,
+    "carNoChangeCnt": 0,
+    "myAccidentCost": 4553078,
+    "otherAccidentCost": 0,
+    "carInfoChanges": [
+      {
+        "date": "2021-05-20",
+        "carNo": "199로XXXX"
+      }
+    ],
+    "carInfoUse1s": [
+      "2"
+    ],
+    "carInfoUse2s": [
+      "1"
+    ],
+    "ownerChanges": [],
+    "notJoinDate1": null,
+    "notJoinDate2": null,
+    "notJoinDate3": null,
+    "notJoinDate4": null,
+    "notJoinDate5": null,
+    "accidentCnt": 3,
+    "accidents": [
+      {
+        "type": "1",
+        "date": "2026-03-22",
+        "insuranceBenefit": 959300,
+        "partCost": 19400,
+        "laborCost": 646425,
+        "paintingCost": 423681
+      },
+      {
+        "type": "3",
+        "date": "2026-03-22",
+        "insuranceBenefit": 0,
+        "partCost": 0,
+        "laborCost": 0,
+        "paintingCost": 0
+      },
+      {
+        "type": "1",
+        "date": "2022-04-11",
+        "insuranceBenefit": 3298650,
+        "partCost": 2512900,
+        "laborCost": 322834,
+        "paintingCost": 627838
+      }
+    ]
+  },
+  "sellerText": "[BMW X5(4세대) 30d xDrive M 스포츠팩]\n\n★ 100% 실매물 / 도로 시승 가능\n★ 완전무사고/베이지시트/용도없음/1인신조/키2벌\n\n성능보증보험 1+1 가입 차량\n30일 2000km + 30일 2000km\n성능 보험료: 662,860원\n\n★ 365일 24시간 출고 가능\n★ 전국 비대면 탁송 거래 가능\n\n★ 기존 차량도 최고가 매입 상담\n타시던 차량은 대차 또는 매입 가능합니다.\n\n\"꼭 저에게 판매하지 않으셔도 됩니다.\"\n고객님께 가장 유리한 조건을 함께 비교해드리겠습니다.\n\n★ 할부 · 리스 상담\n여러 금융사 비교견적 진행\n최저 금리 조건 안내\n승인 이력이 어려웠던 고객님도 상담 가능\n\n★ 담당 딜러의 약속\n중고차는 결국 누구에게 구매하느냐가 가장 중요합니다.\n사진으로 보이지 않는 부분까지 솔직하게 설명드리고,\n직접 보고 결정하셔도 괜찮습니다.\n부담 없이 문의 주세요.\n\"좋은 차량인지 먼저 판단해드리겠습니다.\"\n\n(주)유케이모터스\n인천 서구 염곡로 52, 엠파크허브 3층 337호",
+  "sellerFacts": [
+    {
+      "kind": "plus",
+      "text": "Два ключі (зі слів продавця)."
+    }
+  ],
+  "inspection": {
+    "accident": false,
+    "simpleRepair": false,
+    "waterlog": false,
+    "tuning": false,
+    "usage": [],
+    "serious": [],
+    "panels": [],
+    "date": "20260701",
+    "mileage": 63638,
+    "recall": false,
+    "comment": "하이브리드 부품 품목 보증확인요, 조)프론트휀더 트렁크리드 교정"
+  },
+  "inspectionFacts": [
+    {
+      "kind": "plus",
+      "text": "Звіт інспекції чистий: ні замін панелей, ні кузовного, ні комерційної історії."
+    }
+  ],
+  "prodDate": "2021-03-20",
+  "engine": "B57",
+  "power": "210 кВт / 286 к.с. · 650 Нм",
+  "engineNote": "48V mild-hybrid (S1CE) — версія 210 кВт / 286 к.с., потужніша за B57D30O0 (195 кВт / 265 к.с.). Завод Spartanburg, USA.",
+  "exterior": {
+    "name": "Phytonic Blue",
+    "german": "Phytonicblau metallic",
+    "code": "C1M"
+  },
+  "interior": {
+    "name": "Vernasca Canberrabeige",
+    "german": "Leder Vernasca Canberrabeige",
+    "code": "MCFY"
+  },
+  "options": [
+    {
+      "code": "S1CE",
+      "desc": "Recuperation system (48V mild-hybrid)"
+    },
+    {
+      "code": "S1MA",
+      "desc": "M sports exhaust system"
+    },
+    {
+      "code": "S1TC",
+      "desc": "20\" light-alloy wheel star spoke 740M"
+    },
+    {
+      "code": "S212",
+      "desc": "Equipment, brake system country-specific"
+    },
+    {
+      "code": "S258",
+      "desc": "Tyres with runflat properties"
+    },
+    {
+      "code": "S2NH",
+      "desc": "M Sport brake"
+    },
+    {
+      "code": "S2TB",
+      "desc": "Sport automatic gearbox"
+    },
+    {
+      "code": "S2VB",
+      "desc": "Tyre pressure display"
+    },
+    {
+      "code": "S2VR",
+      "desc": "Two-axle air suspension"
+    },
+    {
+      "code": "S322",
+      "desc": "Comfort access"
+    },
+    {
+      "code": "S337",
+      "desc": "M Sports package"
+    },
+    {
+      "code": "S3AT",
+      "desc": "Roof rails aluminium satinated"
+    },
+    {
+      "code": "S3DS",
+      "desc": "BMW display key"
+    },
+    {
+      "code": "S3MB",
+      "desc": "Individual Ext. Line, burnished aluminium"
+    },
+    {
+      "code": "S402",
+      "desc": "Panorama glass roof"
+    },
+    {
+      "code": "S418",
+      "desc": "Luggage compartment package"
+    },
+    {
+      "code": "S423",
+      "desc": "Floor mats velours"
+    },
+    {
+      "code": "S428",
+      "desc": "Warning triangle and first aid kit"
+    },
+    {
+      "code": "S453",
+      "desc": "Climate-controlled (ventilated) seats, front"
+    },
+    {
+      "code": "S456",
+      "desc": "Comfort seat with memory"
+    },
+    {
+      "code": "S4A2",
+      "desc": "Glass application Crafted Clarity"
+    },
+    {
+      "code": "S4AW",
+      "desc": "Instrument panel Sensatec"
+    },
+    {
+      "code": "S4HA",
+      "desc": "Seat heating, front and rear"
+    },
+    {
+      "code": "S4HB",
+      "desc": "Heat comfort package, front"
+    },
+    {
+      "code": "S4KK",
+      "desc": "Interior trim finishers aluminium tetragon"
+    },
+    {
+      "code": "S4NB",
+      "desc": "Automatic climate control, 4-zone"
+    },
+    {
+      "code": "S4T8",
+      "desc": "Outside mirror with auto dip"
+    },
+    {
+      "code": "S4UR",
+      "desc": "Ambient interior light"
+    },
+    {
+      "code": "S548",
+      "desc": "Kilometre speedo"
+    },
+    {
+      "code": "S552",
+      "desc": "Adaptive LED headlight"
+    },
+    {
+      "code": "S5A1",
+      "desc": "LED Fog lights"
+    },
+    {
+      "code": "S5AC",
+      "desc": "High-beam assistant"
+    },
+    {
+      "code": "S5AL",
+      "desc": "Active Protection"
+    },
+    {
+      "code": "S5AU",
+      "desc": "Driving assistant professional"
+    },
+    {
+      "code": "S5AV",
+      "desc": "Active Guard"
+    },
+    {
+      "code": "S5DN",
+      "desc": "Parking assistance system Plus"
+    },
+    {
+      "code": "S610",
+      "desc": "Head-up display"
+    },
+    {
+      "code": "S688",
+      "desc": "Harman/Kardon surround sound system"
+    },
+    {
+      "code": "S699",
+      "desc": "Area-Code 3 for DVD"
+    },
+    {
+      "code": "S6AC",
+      "desc": "Intelligent emergency call"
+    },
+    {
+      "code": "S6AE",
+      "desc": "Teleservices"
+    },
+    {
+      "code": "S6AK",
+      "desc": "Connected Drive Services"
+    },
+    {
+      "code": "S6C3",
+      "desc": "Digital professional"
+    },
+    {
+      "code": "S6CP",
+      "desc": "Preparation Apple CarPlay"
+    },
+    {
+      "code": "S6NV",
+      "desc": "Telephony with wireless charging"
+    },
+    {
+      "code": "S6U3",
+      "desc": "BMW Live operating area Professional"
+    },
+    {
+      "code": "S6U8",
+      "desc": "BMW gesture control"
+    },
+    {
+      "code": "S710",
+      "desc": "M leather steering wheel"
+    },
+    {
+      "code": "S715",
+      "desc": "M Aerodynamics package"
+    },
+    {
+      "code": "S775",
+      "desc": "Headlining anthracite"
+    },
+    {
+      "code": "S802",
+      "desc": "National version Korea"
+    },
+    {
+      "code": "S867",
+      "desc": "Language version Korean"
+    },
+    {
+      "code": "S8AF",
+      "desc": "On-board literature, Korean"
+    },
+    {
+      "code": "S8KH",
+      "desc": "Oil service interval 20 000 km / 18 months"
+    },
+    {
+      "code": "S8R9",
+      "desc": "Refrigerant R1234yf"
+    },
+    {
+      "code": "S8S3",
+      "desc": "Automatic locking during starting"
+    },
+    {
+      "code": "S8SX",
+      "desc": "Providersteuerung Telematik"
+    },
+    {
+      "code": "S8TF",
+      "desc": "Active pedestrian protection"
+    },
+    {
+      "code": "S925",
+      "desc": "Shipping protection package"
+    },
+    {
+      "code": "S993",
+      "desc": "Model year code in VIN"
+    },
+    {
+      "code": "S9AA",
+      "desc": "Outer skin protection"
+    },
+    {
+      "code": "S9WL",
+      "desc": "Grouping WLTP"
+    }
+  ],
+  "keyFeatures": {
+    "air": true,
+    "laser": false,
+    "led": true,
+    "soft": false,
+    "vent": true,
+    "hk": true,
+    "pano": true,
+    "skylounge": false,
+    "mhev": true,
+    "acc": true,
+    "park": true,
+    "comfort": true,
+    "seatheat": true,
+    "wheelheat": true,
+    "climate4": true,
+    "exhaust": true
+  },
+  "decodeSource": "bimmer.work API",
+  "renders": {
+    "exterior": "assets/renders/WBAJU8103M9G49105-ext.jpg",
+    "interior": "assets/renders/WBAJU8103M9G49105-int.jpg"
+  }
+}

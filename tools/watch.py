@@ -1,54 +1,61 @@
 #!/usr/bin/env python3
-"""Доглядач за добіркою Ford Ranger 4-го покоління на Encar.
+"""Щогодинний доглядач за добіркою на Encar.
 
 Що робить за один прохід:
-  1. перевіряє кожне авто зі списку — продано / знято / змінилась ціна чи пробіг;
-  2. шукає нові оголошення під критерії (Ranger 4세대, будь-яка комплектація,
-     звичайний продаж) і додає їх з історією ДТП і звітом інспекції;
-  3. якщо щось змінилось — пише data/last-change.md, комітить і пушить.
-
-Комплектацію за VIN тут НЕ декодуємо — за рішенням користувача 2026-09-24 у
-списку лише рік, пробіг, ціна в Кореї, кількість ДТП, зміни власника й ремонт.
+  1. перевіряє кожне авто зі списку — продано / знято / змінилась ціна;
+  2. шукає нові оголошення під критерії й додає ті, що пройшли історію ДТП;
+  3. пробує декодувати VIN найперспективніших авто через mdecoder;
+  4. якщо щось змінилось — пише data/last-change.md, комітить і пушить.
 
 Якщо прохід упав — падіння теж їде листом (див. `crash_report`). Інакше
-поломка виглядає точно як «нових авто немає».
+поломка виглядає точно як «нових авто немає», і моніторингу немає доти,
+доки хтось не заглянув у лог: так у нас пропало 28 проходів 03–04.09.
 
 Лист приходить не звідси: push у data/last-change.md запускає
 .github/workflows/notify.yml, який створює issue від github-actions[bot].
+Автор issue — бот, а не ти, тому GitHub надсилає тобі листа (про власні дії
+він листів не надсилає).
 
-Запуск:  python3 tools/watch.py [--dry-run] [--no-publish]
+Запуск:  python3 tools/watch.py [--dry-run] [--no-decode] [--decode N]
 """
 import argparse
 import json
+import os
 import pathlib
+import shutil
 import subprocess
 import sys
 import traceback
 from datetime import datetime, timezone
 
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
+import customs
 import encar
+import mdecoder
+import outvin
+import trim
+import seller
 import inspection as inspect_report
 import sync_index
 
 REPO = pathlib.Path(__file__).resolve().parent.parent
 INDEX = REPO / 'data' / 'cars.json'
 CARS = REPO / 'data' / 'cars'
+SOLD = REPO / 'data' / 'sold'
+RAW = REPO / 'data' / 'mdecoder-raw'
 STATE = REPO / 'data' / 'watch-state.json'
 LAST = REPO / 'data' / 'last-change.md'
 LOG = REPO / 'data' / 'watch-log.md'
 
-SITE = 'https://volodymyr-babak.github.io/bmw-from-korea'
+YEAR_FROM, YEAR_TO = 2019, 2022
+MAX_KM = 110_000
+MAX_ACCIDENT_KRW = 5_000_000
+DECODE_PER_RUN = 3
+# ⚠️ Платний фолбек: КОЖЕН запит коштує грошей, пакет невеликий.
+# Тому строго один VIN за прохід і лише коли безкоштовний mdecoder не дав нічого.
+OUTVIN_PER_RUN = 1
 
-EMPTY_INDEX = {
-    'meta': {
-        'model': 'Ford Ranger, 4 покоління',
-        'criteria': 'Ranger 4 пок. (레인저 4세대, 2023+) · будь-яка комплектація · звичайний '
-                    'продаж (без лізингу й оренди) · без списання / потопу · дублі зведені за VIN',
-        'updated': None, 'count': 0,
-    },
-    'cars': [],
-}
+SITE = 'https://volodymyr-babak.github.io/bmw-from-korea'
 
 
 def load(path, default):
@@ -61,31 +68,26 @@ def save(path, data):
     path.write_text(json.dumps(data, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
 
 
-def man(n):
-    return f'{round(n):,}'.replace(',', ' ') + '만원'
+def usd(n):
+    return '$' + f'{round(n):,}'.replace(',', ' ')
 
 
 def km(n):
-    return f'{round(n or 0):,}'.replace(',', ' ') + ' км'
+    return f'{round(n):,}'.replace(',', ' ') + ' км'
 
 
 def krw_m(n):
     return f'{n / 1e6:.1f}'.replace('.', ',') + ' млн ₩'
 
 
-def label(car):
-    return f'Ranger {car.get("trim") or ""} {car["year"]}'.replace('  ', ' ')
-
-
-def vehicle_id(det):
-    """⚠️ vehicleId ≠ listingId у більшості лотів — брати з деталі."""
-    return det.get('vehicleId') or (det.get('manage') or {}).get('dummyVehicleId')
+def short(model):
+    return 'X5' if model.startswith('X5') else 'X6'
 
 
 # ---------------------------------------------------------------- 1. продані
 
 def check_existing(index, ch):
-    """Прибирає продані, оновлює ціну й пробіг живих, добирає VIN і звіт."""
+    """Прибирає продані, оновлює ціну й пробіг живих."""
     keep = []
     for car in index['cars']:
         lid = car['listingId']
@@ -103,20 +105,37 @@ def check_existing(index, ch):
             ch['sold'].append((car, why))
             continue
 
+        # Детальний файл читають ВСІ блоки нижче, тож відкриваємо його один
+        # раз і тут: `f`/`d` мусять існувати незалежно від того, чи підхопився
+        # новий VIN. Інакше перше ж авто з уже відомим VIN валить прохід
+        # (`UnboundLocalError`) — так і сталося 03.09, 28 проходів наосліп.
         f = CARS / f'{lid}.json'
         d = load(f, {}) or {}
 
-        # VIN в Encar то з'являється, то зникає — наявний ніколи не перетираємо None.
-        vin = det.get('vin')
+        # VIN в Encar то з'являється, то зникає. Якщо його ще не було —
+        # забираємо: без VIN авто неможливо декодувати й перевірити салон.
+        # Наявний VIN ніколи не перетираємо значенням None.
+        vin = det.get('vin') or seller.vin_from_text(
+            (det.get('contents') or {}).get('text') or '', car['year'])
         if vin and not car.get('vin'):
             car['vin'] = vin
-            d['vin'] = vin
-            save(f, d)
+            if f.exists():
+                d['vin'] = vin
+                save(f, d)
             ch['vins'].append(car)
 
-        vid = vehicle_id(det)
-        # Звіт про стан видається один раз, тому тягнемо лише за відсутності.
+        # VIN буває відомий індексу (відновлений зі звіту інспекції, скану чи
+        # тексту), але відсутній у деталі — бо деталь будувалась тоді, коли
+        # Encar його не віддавав. Сторінка авто читає саме деталь, тож без
+        # цього вона брехала б «VIN відсутній». Лікуємо в один бік: індекс → деталь.
+        if car.get('vin') and f.exists() and not d.get('vin'):
+            d['vin'] = car['vin']
+            save(f, d)
+
+        # Звіт про стан видається один раз, тому тягнемо лише за відсутності —
+        # щогодини перепитувати 45 разів немає сенсу.
         if f.exists() and 'inspection' not in d:
+            vid = det.get('vehicleId') or (det.get('manage') or {}).get('dummyVehicleId')
             got = fetch_inspection(vid, (det.get('spec') or {}).get('mileage'))
             if got:
                 d['inspection'] = got
@@ -125,36 +144,47 @@ def check_existing(index, ch):
                 save(f, d)
                 ch['inspected'].append((car, got))
 
-        # Історія без масиву `accidents` — обрізана; добираємо один раз.
+        # Старі записи зберігали історію обрізаною (8 полів, без `accidents`),
+        # а саме масив із датами дає число УНІКАЛЬНИХ ДТП. Добираємо один раз:
+        # щойно повна історія на місці, запит більше не робиться.
         if f.exists() and 'accidents' not in (d.get('history') or {}):
-            _, full = encar.record(vid) if vid else ('skip', None)
+            vid = det.get('vehicleId') or (det.get('manage') or {}).get('dummyVehicleId')
+            code_h, full = encar.record(vid) if vid else ('skip', None)
             if full and 'accidents' in full:
                 d['history'] = full
                 save(f, d)
 
         ad, spec = det.get('advertisement') or {}, det.get('spec') or {}
-        price, mileage = ad.get('price'), spec.get('mileage')
-        if not price:
+        man, mileage = ad.get('price'), spec.get('mileage')
+        if not man:
             keep.append(car)
             continue
 
-        if price != car['koreaPriceMan'] or mileage != car['mileageKm']:
-            ch['changed'].append((car, car['koreaPriceMan'], price, car['mileageKm'], mileage))
-            car['koreaPriceMan'] = price
-            d['koreaPriceMan'] = price
-            if mileage:
-                car['mileageKm'] = mileage
-                d['mileageKm'] = mileage
-            if f.exists():
-                save(f, d)
+        new_price = customs.landed(car['year'], man)
+        if new_price > customs.BUDGET_CAP:
+            ch['sold'].append((car, f'ціна зросла до {man}만 = {usd(new_price)} — вже понад стелю'))
+            continue
+
+        if new_price != car['priceUSD'] or mileage != car['mileageKm']:
+            ch['changed'].append((car, car['priceUSD'], new_price, car['mileageKm'], mileage))
+        car['koreaPriceMan'] = man
+        car['priceUSD'] = new_price
+        if mileage:
+            car['mileageKm'] = mileage
         keep.append(car)
 
     index['cars'] = keep
 
 
 def retire(car):
+    """Прибрати авто зі списку: білд-лист — в архів, решту — видалити."""
     f = CARS / f'{car["listingId"]}.json'
-    if f.exists():
+    if not f.exists():
+        return
+    if (load(f, {}) or {}).get('options'):
+        SOLD.mkdir(exist_ok=True)
+        shutil.move(str(f), str(SOLD / f.name))
+    else:
         f.unlink()
 
 
@@ -167,38 +197,65 @@ def retire(car):
 # практично неможливо, а пропустити близнюка гірше, ніж показати його двічі.
 TWIN_KM = 1000
 
+# --dry-run: find_new() пише деталь нового лота одразу, тож без прапорця
+# «сухий» прохід лишав у data/cars/ файли авто, яких немає в індексі.
+DRY_RUN = False
 
-def is_twin(cars, year, price, mileage):
+
+def is_twin(cars, model, year, man, mileage):
     for c in cars:
-        if (c['year'] == year and c.get('koreaPriceMan') == price
+        if (c['model'] == model and c['year'] == year
+                and c.get('koreaPriceMan') == man
                 and c.get('mileageKm') and mileage
                 and abs(c['mileageKm'] - mileage) <= TWIN_KM):
             return c['listingId']
     return None
 
 
-def reject_reason(det, hist, vins_taken, cars, year, price, insp=None):
-    """Чому лот НЕ береться, або (None, vin). Критерії свідомо м'які:
-    рік/комплектацію/тип продажу фільтрує сервер, а ДТП, ремонт і власників
-    ми показуємо в таблиці, а не відсіюємо. Прибираємо лише те, що не
-    розглядатиметься ніколи: списання, потоп, викрадення, дублі."""
+# Прокат/таксі/комерційне минуле — стоп-фактор із 2026-09-02: в Україні воно
+# помітно б'є по ліквідності при перепродажі. Видно лише у звіті інспекції
+# (`usageChangeTypes`), в оголошенні й у решті API цього немає.
+BAD_USAGE = ('прокат', 'таксі', 'комерційне')
+
+
+def reject_reason(det, hist, vins_taken, cars, model, year, man,
+                  insp=None, bad_usage_vins=None, bad_light=None, bad_air=None):
+    kw_inspection = {'insp': insp}
     ad = det.get('advertisement') or {}
     if ad.get('salesStatus') or ad.get('price') == 9999:
         return 'уже продається за контрактом', None
     vin = det.get('vin')
     if vin and vin in vins_taken:
         return 'дубль за VIN', vin
+    # За кольором кузова й салону НЕ відсіюємо (рішення 2026-09-25): до того
+    # тут вилітали Tacora Red / Ivory за фото й cognac за описом або VIN.
+    # Запасний шлях: якщо звіту інспекції немає, ловимо за VIN — той самий лот
+    # перевиставляють під новим listingId, а минуле авто не змінюється.
+    if vin and vin in (bad_usage_vins or {}):
+        return f'було в статусі «{bad_usage_vins[vin]}»', vin
+    for store in (bad_light or {}, bad_air or {}):
+        if vin and vin in store:
+            return store[vin], vin
     if not vin:
-        twin = is_twin(cars, year, price, (det.get('spec') or {}).get('mileage'))
+        twin = is_twin(cars, model, year, man, (det.get('spec') or {}).get('mileage'))
         if twin:
             return f'дубль без VIN — те саме авто, що лот {twin}', None
     if hist is None:
         return 'історія недоступна', vin
     if hist.get('totalLoss') or hist.get('flood') or hist.get('robber'):
         return 'списання / потоп / викрадення', vin
+    # Той самий запобіжник із другого джерела: державний звіт про стан.
+    # `record` API інколи ще не має того, що інспекція вже зафіксувала.
+    insp = kw_inspection.get('insp')
     if insp and (insp.get('serious') or insp.get('waterlog')):
         why = ', '.join(insp.get('serious') or []) or 'потоп'
         return f'звіт інспекції: {why}', vin
+    used = [u for u in (insp or {}).get('usage') or [] if u in BAD_USAGE]
+    if used:
+        return f'звіт інспекції: було в статусі «{", ".join(used)}»', vin
+    cost = hist.get('myAccidentCost') or 0
+    if cost > MAX_ACCIDENT_KRW:
+        return f'власний ремонт {krw_m(cost)}', vin
     return None, vin
 
 
@@ -206,6 +263,9 @@ def find_new(index, state, ch):
     known = {c['listingId'] for c in index['cars']}
     rejected = state.setdefault('rejected', {})
     vins_taken = {c['vin'] for c in index['cars'] if c.get('vin')}
+    bad_usage_vins = state.get('usageRejected') or {}
+    bad_light = state.get('lightRejected') or {}
+    bad_air = state.get('airRejected') or {}
 
     # дублі варто перепитати: близнюк міг продатись і місце звільнилось
     for lid in [k for k, v in rejected.items()
@@ -213,76 +273,110 @@ def find_new(index, state, ch):
                 or str(v.get('reason', '')).startswith('дубль без VIN')]:
         rejected.pop(lid)
 
-    try:
-        listings, _ = encar.search()
-    except RuntimeError as e:
-        ch['problems'].append(f'пошук: {e}')
+    for model in encar.MODELS:
+        try:
+            listings, _ = encar.search(model, YEAR_FROM, YEAR_TO, MAX_KM,
+                                       customs.SEARCH_PRICE_CAP_MAN)
+        except RuntimeError as e:
+            ch['problems'].append(f'пошук {model}: {e}')
+            continue
+
+        for x in listings:
+            lid = str(x['Id'])
+            if lid in known or lid in rejected:
+                continue
+            year = int(x['Year']) // 100
+            if not (YEAR_FROM <= year <= YEAR_TO):
+                continue
+            man = x.get('Price')
+            if not man:
+                continue
+            price = customs.landed(year, int(man))
+            if price > customs.BUDGET_CAP:
+                continue
+
+            code, det = encar.detail(lid)
+            if code != '200' or not det:
+                ch['problems'].append(f'{lid}: новий лот, але деталь HTTP {code}')
+                continue
+            vid = det.get('vehicleId') or (det.get('manage') or {}).get('dummyVehicleId')
+            _, hist = encar.record(vid) if vid else ('404', None)
+            insp = fetch_inspection(vid, (det.get('spec') or {}).get('mileage'))
+
+            why, vin = reject_reason(det, hist, vins_taken, index['cars'],
+                                     model, year, int(man), insp,
+                                     bad_usage_vins, bad_light, bad_air)
+            if why:
+                rejected[lid] = {'reason': why, 'vin': vin, 'at': today()}
+                continue
+
+            car = build_car(lid, model, year, int(man), price, det, hist, insp)
+            index['cars'].append(car)
+            known.add(lid)
+            if vin:
+                vins_taken.add(vin)
+            detail = build_detail(lid, model, year, int(man), price, det, hist, insp)
+            restore_sheet(car, detail)
+            if not DRY_RUN:
+                save(CARS / f'{lid}.json', detail)
+            ch['new'].append(car)
+
+
+def restore_sheet(car, detail):
+    """Білд-лист із `data/sold/` за VIN — щоб повернуте авто не декодувати вдруге.
+
+    Архів тримає все, що колись прибрали (продані, відсіяні за салоном до
+    25.09), а декодери дефіцитні. Лот перевиставляють під новим listingId,
+    тож шукаємо саме за VIN.
+    """
+    vin = car.get('vin')
+    if not vin or not SOLD.exists():
         return
-
-    by_id = {c['listingId']: c for c in index['cars']}
-    for x in listings:
-        lid = str(x['Id'])
-        # Комплектацію видно лише в пошуку (BadgeDetail), у деталі її немає —
-        # тому добираємо її і для вже відомих авто, якщо раніше не записали.
-        if lid in known and not by_id[lid].get('trim'):
-            by_id[lid]['trim'] = encar.trim(x.get('BadgeDetail'))
-            f = CARS / f'{lid}.json'
-            d = load(f, {}) or {}
-            d['trim'] = by_id[lid]['trim']
-            save(f, d)
-        if lid in known or lid in rejected:
-            continue
-        year = int(x['Year']) // 100
-        price = x.get('Price')
-        if not price:
-            continue
-        price = int(price)
-
-        code, det = encar.detail(lid)
-        if code != '200' or not det:
-            ch['problems'].append(f'{lid}: новий лот, але деталь HTTP {code}')
-            continue
-        vid = vehicle_id(det)
-        _, hist = encar.record(vid) if vid else ('404', None)
-        insp = fetch_inspection(vid, (det.get('spec') or {}).get('mileage'))
-
-        why, vin = reject_reason(det, hist, vins_taken, index['cars'], year, price, insp)
-        if why:
-            rejected[lid] = {'reason': why, 'vin': vin, 'at': today()}
-            continue
-
-        gen = encar.generation(x.get('Model'))
-        car = build_car(lid, gen, year, price, det, hist, insp, encar.trim(x.get('BadgeDetail')))
-        index['cars'].append(car)
-        known.add(lid)
-        if vin:
-            vins_taken.add(vin)
-        save(CARS / f'{lid}.json', build_detail(lid, gen, year, price, det, hist, insp, x))
-        ch['new'].append(car)
+    for f in SOLD.glob('*.json'):
+        old = load(f, {})
+        if old.get('vin') == vin and old.get('options'):
+            for k in ('options', 'keyFeatures', 'exterior', 'interior', 'renders',
+                      'decodeSource', 'trimFinish'):
+                if k in old:
+                    detail[k] = old[k]
+            car['decoded'] = True
+            if old.get('keyFeatures'):
+                car['keyFeatures'] = old['keyFeatures']
+            return
 
 
-def fetch_inspection(vehicle_id_, mileage_ad=None):
+def fetch_inspection(vehicle_id, mileage_ad=None):
     """Нормалізований звіт про стан або None, якщо Encar його не має."""
-    if not vehicle_id_:
+    if not vehicle_id:
         return None
-    code, payload = encar.inspection(vehicle_id_)
+    code, payload = encar.inspection(vehicle_id)
     if code != '200' or not payload:
         return None
     return inspect_report.normalise(payload, mileage_ad)
 
 
-def build_car(lid, gen, year, price, det, hist, insp=None, trim_=None):
+def build_car(lid, model, year, man, price, det, hist, insp=None):
     spec = det.get('spec') or {}
     ph = encar.photos(det)
     car = {
-        'listingId': lid, 'model': 'Ranger', 'trim': trim_, 'gen': gen, 'year': year,
-        'mileageKm': spec.get('mileage'), 'koreaPriceMan': price,
-        'vin': det.get('vin'),
+        'listingId': lid, 'model': model, 'year': year,
+        'mileageKm': spec.get('mileage'), 'koreaPriceMan': man, 'priceUSD': price,
+        'vin': det.get('vin') or seller.vin_from_text(
+            (det.get('contents') or {}).get('text') or '', year),
+        'decoded': False,
         'accident': {'costKRW': (hist or {}).get('myAccidentCost') or 0,
-                     'owners': (hist or {}).get('ownerChangeCnt') or 0,
-                     'incidents': sync_index.incidents(hist or {})},
+                     'owners': (hist or {}).get('ownerChangeCnt') or 0},
         'photo': (ph['outer'] or ph['inner'] or [None])[0],
     }
+    if not model.startswith('X5'):
+        car['priceEstimated'] = True
+    lab = exterior_label(spec.get('colorName'), spec.get('customColor'))
+    if lab:
+        car['exterior'] = lab
+    # Салон зі слів продавця: краще, ніж нічого, поки не знято білд-лист.
+    colour, _, _ = trim.seat_colour(((det.get('contents') or {}).get('text') or ''))
+    if colour:
+        car['interiorUnverified'] = f'{colour} — з опису'
     # Прапорці зі звіту показуються прямо в списку — прокат і ДТП каркаса
     # надто важливі, щоб чекати, поки хтось відкриє картку.
     flags = list((insp or {}).get('usage') or []) + list((insp or {}).get('serious') or [])
@@ -293,32 +387,215 @@ def build_car(lid, gen, year, price, det, hist, insp=None, trim_=None):
     return car
 
 
-def build_detail(lid, gen, year, price, det, hist, insp=None, listing=None):
-    # Сирий текст оголошення зберігаємо: там буває те, чого немає в API
-    # (ключі, протектор, гарантія, визнані кузовні роботи).
+def build_detail(lid, model, year, man, price, det, hist, insp=None):
+    # Сирий текст оголошення зберігаємо назавжди: у ньому лежить те, чого немає
+    # в API (ключі, протектор, продовжена гарантія, визнані кузовні роботи), і
+    # перечитати його руками можна вже без запитів до Encar.
     text = (det.get('contents') or {}).get('text') or ''
-    spec = det.get('spec') or {}
+    auto = seller.facts(text)
     return {
         'listingId': lid,
         'encarUrl': f'https://fem.encar.com/cars/detail/{lid}',
-        'model': 'Ranger', 'trim': encar.trim((listing or {}).get('BadgeDetail')),
-        'gen': gen, 'mfgYear': year,
-        'encarModel': (listing or {}).get('Model'),
-        'formYear': (listing or {}).get('FormYear'),
-        'vin': det.get('vin'),
-        'mileageKm': spec.get('mileage'),
-        'koreaPriceMan': price,
-        'colorName': spec.get('colorName'),
+        'model': model, 'mfgYear': year,
+        'vin': det.get('vin') or seller.vin_from_text(text, year),
+        'mileageKm': (det.get('spec') or {}).get('mileage'),
+        'koreaPriceMan': man, 'priceUSD': price,
+        **({'priceEstimated': True} if not model.startswith('X5') else {}),
         'photos': encar.photos(det),
         'history': hist,
         **({'sellerText': text} if text.strip() else {}),
+        **({'sellerFacts': auto} if auto else {}),
         **({'inspection': insp} if insp else {}),
         **({'inspectionFacts': [{'kind': k, 'text': t}
                                 for k, t in inspect_report.facts(insp)]} if insp else {}),
     }
 
 
-# ------------------------------------------------------------------- 3. звіт
+KO_COLOR = {'흰색': 'білий', '검정색': 'чорний', '청색': 'синій', '쥐색': 'сірий',
+            '진주색': 'перловий', '은색': 'срібний', '회색': 'сірий', '갈색': 'коричневий',
+            '남색': 'темно-синій', '하늘색': 'небесно-блакитний', '연금색': 'бронзовий'}
+KO_CUSTOM = {'카본블랙': 'Carbon Black', '카본 블랙': 'Carbon Black', '416': 'Carbon Black',
+             '아크틱그레이': 'Arctic Grey', '네이비': 'Navy',
+             '맨하탄': 'Manhattan', '미네랄화이트': 'Mineral White',
+             '미네랄 화이트': 'Mineral White', '피토닉블루': 'Phytonic Blue'}
+
+
+def exterior_label(color_name, custom):
+    if custom and KO_CUSTOM.get(custom.strip()):
+        return KO_CUSTOM[custom.strip()]
+    return KO_COLOR.get(color_name, color_name)
+
+
+# ------------------------------------------------------------- 3. декодування
+
+def promise(car):
+    """Чим менше, тим цікавіше декодувати: ціна, пробіг, ДТП, власники, вік."""
+    acc = car.get('accident') or {}
+    return (car['priceUSD'] / 1000
+            + (car.get('mileageKm') or 0) / 10000
+            + (acc.get('costKRW') or 0) / 1e6
+            + (acc.get('owners') or 0) * 0.5
+            - (car['year'] - YEAR_FROM) * 1.5)
+
+
+def decode_batch(index, state, ch, limit):
+    md = state.setdefault('mdecoder', {'quotaExhaustedOn': None, 'decoded': {}, 'failed': {}})
+    # Раніше тут стояв добовий локдаун: побачили ліміт — і до кінця доби не пробували.
+    # Це помилка, бо ліміт mdecoder рахується ПО IP, а egress у нас спільна
+    # (91.225.165.251; звідти ж Encar періодично віддає 407, а bimmer.work — 429).
+    # Тобто квоту з'їдають інші користувачі тієї самої адреси, і вікно, коли вона
+    # вільна, ловиться лише спробою. Тому пробуємо ЩОПРОХОДУ, а `quotaExhaustedOn`
+    # лишається просто відміткою «коли востаннє бачили ліміт».
+    if limit <= 0:
+        return
+
+    todo = sorted(
+        (c for c in index['cars']
+         if not c.get('decoded') and c.get('vin') and c['vin'] not in md['failed']),
+        key=promise)
+    if not todo:
+        return
+
+    for car in todo[:limit]:
+        res = mdecoder.decode(car['vin'])
+        if res.status == 'quota':
+            md['quotaExhaustedOn'] = today()
+            md['quotaSeenAt'] = datetime.now().strftime('%Y-%m-%d %H:%M')
+            ch['notes'].append('mdecoder: ліміт на IP зайнятий — спробую знову наступного проходу')
+            break
+        if res.status in ('http', 'shell'):
+            ch['problems'].append(f'{car["listingId"]}: mdecoder — {res.note}')
+            continue
+        if res.status == 'unparsed':
+            path = keep_raw(res)
+            md['failed'][car['vin']] = {'reason': res.note, 'raw': str(path), 'at': today()}
+            ch['problems'].append(
+                f'{car["listingId"]}: mdecoder відповів, але розмітка не збіглась '
+                f'({res.note}). Сирий HTML: `{path.relative_to(REPO)}` — треба доробити парсер')
+            continue
+
+        apply_decode(car, res, ch)
+        md['decoded'][car['vin']] = today()
+        if res.status == 'partial':
+            path = keep_raw(res)
+            ch['problems'].append(
+                f'{car["listingId"]}: опції зчитано, але {res.note}. '
+                f'Сирий HTML: `{path.relative_to(REPO)}`')
+
+    # Другий варіант — платний outvin.com, і тільки для того, що mdecoder не подужав.
+    left = [c for c in todo if not c.get('decoded')]
+    for car in left[:OUTVIN_PER_RUN]:
+        outvin_try(car, state, ch)
+
+
+def outvin_try(car, state, ch) -> bool:
+    """Один ПЛАТНИЙ декод. Кредити рахуємо в стані, щоб не палити їх наосліп."""
+    ov = state.setdefault('outvin', {'available': None, 'decoded': {}, 'failed': {}})
+    auth = os.environ.get('OUTVIN_AUTH')
+    if not auth:
+        ch['notes'].append('outvin: OUTVIN_AUTH не заданий — платний фолбек вимкнено')
+        return False
+    if ov.get('available') == 0:
+        ch['notes'].append('outvin: кредити скінчились')
+        return False
+    vin = car['vin']
+    if vin in ov['failed'] or vin in ov['decoded']:
+        return False
+    try:
+        payload = outvin.fetch(vin, auth)
+    except outvin.OutvinError as e:
+        ov['failed'][vin] = {'reason': str(e), 'at': today()}
+        ch['problems'].append(f'{car["listingId"]}: outvin — {e}')
+        return False
+
+    ov['available'] = payload.get('available_requests')
+    ov['decoded'][vin] = today()
+    _, built = outvin.apply(vin, payload, car['listingId'])
+    car['decoded'] = True
+    car['keyFeatures'] = built['keyFeatures']
+    ch['decoded'].append((car, mdecoder.Result(
+        'ok', vin, options=built['options'],
+        paint=built['exterior']['german'], paint_code=built['exterior']['code'],
+        trim=built['interior']['name'], trim_code=built['interior']['code'])))
+    ch['notes'].append(f'outvin: витрачено 1 платний запит, лишилось {ov["available"]}')
+    return True
+
+
+# Жорсткі вимоги до комплектації, які перевіряються ЛИШЕ за білд-листом.
+# `test` повертає True, якщо авто вимогу проходить.
+HARD_FEATURES = [
+    {
+        'store': 'lightRejected',
+        'tag': 'базові фари',
+        'why': 'базові фари — немає ні адаптивного LED (S552), ні лазера (S5AZ)',
+        'test': lambda kf: bool(kf.get('laser') or kf.get('led')),
+    },
+    {
+        'store': 'airRejected',
+        'tag': 'без пневмопідвіски',
+        'why': 'без пневмопідвіски — S2VF Adaptive M chassis замість S2VR',
+        'test': lambda kf: bool(kf.get('air')),
+    },
+]
+
+
+def prune_by_spec(index, state, ch):
+    """Відсів за комплектацією: адаптивні фари (03.09) і пневмопідвіска (03.09).
+
+    Обидві вимоги — від профілю їзди в Україні. Фари: нічні виїзди по області.
+    Пневмо: **M-підвіска `S2VF` сидить приблизно на 10 мм нижче**, і це не
+    налаштовується, тоді як пневмо тримає штатну висоту й піднімається ще.
+    Ретрофіт нереальний ($6000–10 000), тож це властивість авто назавжди.
+
+    Перевіряємо ТІЛЬКИ декодованих і лише коли `keyFeatures` уже є: у
+    недекодованих ознака невідома, а правило проєкту — «де сумнів, авто
+    лишаємо». Прохід іде по всьому списку щоразу, тому ловить і білд-листи,
+    що з'явились повз watch.py (`oemnav.py`, `bimmer.py`, ручна вставка).
+
+    ⚠️ `airSeller` (пневмо зі слів продавця) тут НЕ використовуємо: опис
+    збігся з білд-листом 3 із 3 разів, але вибірка замала, щоб викидати
+    авто зі списку за словами дилера. Прибирає лише білд-лист.
+    """
+    rejected = state.setdefault('rejected', {})
+    keep = []
+    for car in index['cars']:
+        kf = car.get('keyFeatures')
+        fail = next((r for r in HARD_FEATURES
+                     if car.get('decoded') and kf and not r['test'](kf)), None)
+        if fail:
+            ch['sold'].append((car, fail['why']))
+            if car.get('vin'):
+                state.setdefault(fail['store'], {})[car['vin']] = fail['tag']
+            rejected[car['listingId']] = {'reason': fail['tag'],
+                                          'vin': car.get('vin'), 'at': today()}
+            continue
+        keep.append(car)
+    index['cars'] = keep
+
+
+def keep_raw(res):
+    RAW.mkdir(exist_ok=True)
+    path = RAW / f'{res.vin}.html'
+    path.write_text(res.html, encoding='utf-8')
+    return path
+
+
+def apply_decode(car, res, ch):
+    f = CARS / f'{car["listingId"]}.json'
+    d = load(f, {'listingId': car['listingId']})
+    d['options'] = res.options
+    d['keyFeatures'] = mdecoder.key_features([(o['code'], o['desc']) for o in res.options])
+    car['keyFeatures'] = d['keyFeatures']      # щоб prune_by_spec побачив їх одразу
+    if res.paint:
+        d['exterior'] = {'name': res.paint, 'german': res.paint, 'code': res.paint_code}
+    if res.trim:
+        d['interior'] = {'name': res.trim, 'german': res.trim, 'code': res.trim_code}
+    save(f, d)
+    car['decoded'] = True
+    ch['decoded'].append((car, res))
+
+
+# ------------------------------------------------------------------- 4. звіт
 
 def today():
     return datetime.now().strftime('%Y-%m-%d')
@@ -336,6 +613,8 @@ def report(ch):
         head.append(f'продано {n["sold"]}')
     if n['new']:
         head.append(f'нових {n["new"]}')
+    if n['decoded']:
+        head.append(f'декодовано {n["decoded"]}')
     if n['changed']:
         head.append(f'зміна ціни {n["changed"]}')
     if n['vins']:
@@ -350,8 +629,8 @@ def report(ch):
     if ch['sold']:
         out += ['## Прибрано зі списку', '']
         for car, why in ch['sold']:
-            out.append(f'- **{label(car)}** · {km(car["mileageKm"])} '
-                       f'· було {man(car["koreaPriceMan"])} — {why}  \n  {car_link(car)}')
+            out.append(f'- **{short(car["model"])} {car["year"]}** · {km(car["mileageKm"])} '
+                       f'· було {usd(car["priceUSD"])} — {why}  \n  {car_link(car)}')
         out.append('')
     if ch['new']:
         out += ['## Нові кандидати', '']
@@ -359,17 +638,34 @@ def report(ch):
             acc = car.get('accident') or {}
             hist = ('без ремонтів' if not acc.get('costKRW')
                     else f'ремонт {krw_m(acc["costKRW"])}')
-            inc = acc.get('incidents')
-            inc_s = 'ДТП —' if inc is None else f'ДТП {inc}'
-            flags = f' · ⚠ {", ".join(car["flags"])}' if car.get('flags') else ''
-            out.append(f'- **{label(car)}** · {km(car["mileageKm"])} '
-                       f'· {man(car["koreaPriceMan"])} · {inc_s} · {hist} '
-                       f'· змін власника {acc.get("owners", 0)}{flags}  \n  {car_link(car)}')
+            out.append(f'- **{short(car["model"])} {car["year"]}** · {km(car["mileageKm"])} '
+                       f'· {"≈" if car.get("priceEstimated") else ""}{usd(car["priceUSD"])} '
+                       f'· {hist} · змін власника {acc.get("owners", 0)}  \n  {car_link(car)}')
+        out.append('')
+    if ch['decoded']:
+        out += ['## Декодовано за VIN', '']
+        for car, res in ch['decoded']:
+            kf = mdecoder.key_features([(o['code'], o['desc']) for o in res.options])
+            have = ', '.join(k for k, v in kf.items() if v) or 'нічого з ключових'
+            out.append(f'- **{short(car["model"])} {car["year"]}** · {car["vin"]} — '
+                       f'салон **{res.trim or "не розпізнано"}**, кузов {res.paint or "?"}; '
+                       f'{len(res.options)} опцій; є: {have}  \n  {car_link(car)}')
         out.append('')
     if ch['vins']:
-        out += ['## З\'явився VIN', '']
+        out += ['## З\'явився VIN — можна декодувати', '']
         for car in ch['vins']:
-            out.append(f'- **{label(car)}** · VIN `{car["vin"]}`  \n  {car_link(car)}')
+            out.append(f'- **{short(car["model"])} {car["year"]}** · {km(car["mileageKm"])} '
+                       f'· {usd(car["priceUSD"])} · VIN `{car["vin"]}`  \n  {car_link(car)}')
+        out.append('')
+    if ch['pending']:
+        out += ['## Чекають на білд-лист за VIN', '',
+                'Спершу найцікавіші. Декодувати руками: '
+                'oemnavigations.com/pages/vin-decoder-app (2 VIN/добу), далі '
+                '`python3 tools/oemnav.py <share-url> --write`.', '']
+        for car in ch['pending']:
+            vin = f'`{car["vin"]}`' if car.get('vin') else '**VIN невідомий**'
+            out.append(f'- **{short(car["model"])} {car["year"]}** · {km(car["mileageKm"])} '
+                       f'· {usd(car["priceUSD"])} · {vin}  \n  {car_link(car)}')
         out.append('')
     if ch['inspected']:
         out += ['## Додано звіт про стан', '']
@@ -378,7 +674,7 @@ def report(ch):
             if insp.get('accident'):
                 bits.append('ДТП каркаса')
             bits += [f"{p['part']} — {p['status']}" for p in insp.get('panels') or []]
-            out.append(f'- **{label(car)}** · {man(car["koreaPriceMan"])} — '
+            out.append(f'- **{short(car["model"])} {car["year"]}** · {usd(car["priceUSD"])} — '
                        f'{", ".join(bits) if bits else "звіт чистий"}  \n  {car_link(car)}')
         out.append('')
     if ch['changed']:
@@ -386,10 +682,10 @@ def report(ch):
         for car, old_p, new_p, old_km, new_km in ch['changed']:
             bits = []
             if old_p != new_p:
-                bits.append(f'{man(old_p)} → **{man(new_p)}**')
+                bits.append(f'{usd(old_p)} → **{usd(new_p)}**')
             if old_km != new_km:
                 bits.append(f'{km(old_km)} → {km(new_km)}')
-            out.append(f'- **{label(car)}** · {" · ".join(bits)}  \n  {car_link(car)}')
+            out.append(f'- **{short(car["model"])} {car["year"]}** · {" · ".join(bits)}  \n  {car_link(car)}')
         out.append('')
     if ch['notes']:
         out += ['## Примітки', ''] + [f'- {t}' for t in ch['notes']] + ['']
@@ -419,20 +715,30 @@ def publish(title, paths=('data',)):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('--dry-run', action='store_true', help='нічого не писати й не пушити')
-    ap.add_argument('--no-publish', action='store_true',
-                    help='записати дані, але не комітити й не пушити')
+    ap.add_argument('--no-decode', action='store_true')
+    ap.add_argument('--decode', type=int, default=DECODE_PER_RUN)
     a = ap.parse_args()
+    global DRY_RUN
+    DRY_RUN = a.dry_run
 
-    index = load(INDEX, None) or EMPTY_INDEX
+    index = load(INDEX, None)
+    if index is None:
+        sys.exit('немає data/cars.json')
     state = load(STATE, {})
-    ch = {'sold': [], 'new': [], 'changed': [], 'vins': [],
-          'inspected': [], 'problems': [], 'notes': []}
+    ch = {'sold': [], 'new': [], 'decoded': [], 'changed': [], 'vins': [],
+          'inspected': [], 'problems': [], 'notes': [], 'pending': []}
 
-    CARS.mkdir(exist_ok=True)
     check_existing(index, ch)
     find_new(index, state, ch)
+    decode_batch(index, state, ch, 0 if a.no_decode else a.decode)
+    # Список у листі: що лишилось без білд-листа, найцікавіше згори. Сам по собі
+    # він листа НЕ шле (`touched` його не враховує) — їде разом зі справжніми змінами.
+    # Без VIN декодувати нічим, тому такі — у кінець списку, а не за ціною.
+    prune_by_spec(index, state, ch)
+    ch['pending'] = sorted((c for c in index['cars'] if not c.get('decoded')),
+                           key=lambda c: (not c.get('vin'), promise(c)))
 
-    index['cars'].sort(key=lambda c: (c['koreaPriceMan'], c['listingId']))
+    index['cars'].sort(key=lambda c: c['priceUSD'])
     for i, c in enumerate(index['cars'], 1):
         c['rank'] = i
     index['meta']['updated'] = today()
@@ -440,7 +746,7 @@ def main():
     state['lastRun'] = datetime.now(timezone.utc).astimezone().isoformat(timespec='seconds')
 
     title, body = report(ch)
-    touched = any(ch[k] for k in ('sold', 'new', 'changed'))
+    touched = any(ch[k] for k in ('sold', 'new', 'decoded', 'changed'))
 
     if a.dry_run:
         print(body)
@@ -455,19 +761,19 @@ def main():
 
     if touched or ch['problems']:
         if same_as_last(body):
-            # Однаковий звіт = та сама невирішена проблема; не спамимо щогодини.
+            # Реальні зміни не повторюються (продане зникає, нове додається один
+            # раз), тому однаковий звіт означає ту саму невирішену проблему.
+            # Не пушимо — інакше issue приходив би щогодини.
             print('звіт не змінився з минулого разу — не публікую')
         else:
             save_md(LAST, body)
             append_md(LOG, body)
-            if a.no_publish:
-                print('[no-publish] звіт записано, коміту немає')
-            else:
-                print(publish(title))
+            print(publish(title))
     print(title)
 
 
 def strip_stamp(body: str) -> str:
+    """Звіт без останнього рядка з часом перевірки."""
     return '\n'.join(body.rstrip().split('\n')[:-1]).rstrip()
 
 
@@ -487,6 +793,7 @@ def append_md(path, body):
 
 
 def blind_since() -> str:
+    """Скільки часу минуло з останнього успішного проходу."""
     stamp = (load(STATE, {}) or {}).get('lastRun')
     if not stamp:
         return 'невідомо, коли прохід вдавався останній раз'
@@ -499,16 +806,31 @@ def blind_since() -> str:
 
 
 def crash_report(exc: Exception):
-    """Падіння мусить приїхати листом — інакше воно нічим не відрізняється
-    від «на Encar нічого нового»."""
+    """Звіт про падіння проходу.
+
+    Сам факт падіння мусить приїхати листом. Без цього поломка нічим не
+    відрізняється від «на Encar нічого нового»: тиха тиша в пошті, а список
+    тим часом не перевіряється взагалі.
+    """
     title = f'⛔ watch.py упав: {type(exc).__name__}'
     tail = traceback.format_exc().strip().split('\n')[-24:]
     return title, '\n'.join([
-        f'# {title}', '',
-        '**Прохід не дійшов до кінця — списку цього разу НЕ перевірено.**', '',
-        f'Причина: `{exc}`', '',
-        f'Тривога: {blind_since()}.', '',
-        '## Трейсбек', '', '```', *tail, '```', '',
+        f'# {title}',
+        '',
+        '**Прохід не дійшов до кінця — списку цього разу НЕ перевірено.**',
+        'Ні продані, ні нові авто не пораховані. Поки це не полагоджено,',
+        'відсутність листів не означає, що на Encar нічого не з\'явилось.',
+        '',
+        f'Причина: `{exc}`',
+        '',
+        f'Тривога: {blind_since()}.',
+        '',
+        '## Трейсбек',
+        '',
+        '```',
+        *tail,
+        '```',
+        '',
         'Лог усіх проходів: `~/.cache/bmw-watch.log` на машині з кроном.',
         f'Список: {SITE}/  ·  упало {datetime.now().strftime("%Y-%m-%d %H:%M")}',
     ])
@@ -520,7 +842,9 @@ if __name__ == '__main__':
     except Exception as exc:  # noqa: BLE001 — падіння мусить долетіти листом
         title, body = crash_report(exc)
         print(body, file=sys.stderr)
-        if '--dry-run' in sys.argv or '--no-publish' in sys.argv:
+        # Той самий трейсбек щогодини — це та сама невирішена поломка, а не
+        # нова: публікуємо один раз, як і зі звичайним звітом.
+        if '--dry-run' in sys.argv:
             pass
         elif same_as_last(body):
             print('той самий трейсбек, що минулого разу — не публікую', file=sys.stderr)
@@ -528,8 +852,10 @@ if __name__ == '__main__':
             try:
                 save_md(LAST, body)
                 append_md(LOG, body)
+                # Комітимо ЛИШЕ звіти: дані могли лишитись напівзаписаними,
+                # і тягнути їх у репозиторій разом із падінням не варто.
                 print(publish(title, ('data/last-change.md', 'data/watch-log.md')),
                       file=sys.stderr)
-            except Exception as pub:  # noqa: BLE001
+            except Exception as pub:  # noqa: BLE001 — не маскувати вихідну помилку
                 print(f'звіт про падіння не опублікувався: {pub}', file=sys.stderr)
         raise

@@ -1,0 +1,96 @@
+{
+  "listingId": "42546821",
+  "encarUrl": "https://fem.encar.com/cars/detail/42546821",
+  "model": "X5 (G05)",
+  "mfgYear": 2021,
+  "vin": null,
+  "mileageKm": 63514,
+  "koreaPriceMan": 6380,
+  "priceUSD": 67568,
+  "photos": {
+    "outer": [
+      "/carpicture04/pic4254/42546821_001.jpg",
+      "/carpicture04/pic4254/42546821_002.jpg",
+      "/carpicture04/pic4254/42546821_003.jpg",
+      "/carpicture04/pic4254/42546821_004.jpg",
+      "/carpicture04/pic4254/42546821_005.jpg",
+      "/carpicture04/pic4254/42546821_006.jpg"
+    ],
+    "inner": [
+      "/carpicture04/pic4254/42546821_007.jpg",
+      "/carpicture04/pic4254/42546821_008.jpg",
+      "/carpicture04/pic4254/42546821_009.jpg",
+      "/carpicture04/pic4254/42546821_010.jpg"
+    ]
+  },
+  "history": {
+    "openData": true,
+    "regDate": "2026-08-13T15:41:45.573282",
+    "carNo": "142노4521",
+    "year": "2022",
+    "maker": "BMW",
+    "carKind": "1",
+    "use": "2",
+    "displacement": "2993",
+    "carName": null,
+    "firstDate": "2021-10-20",
+    "fuel": "하이브리드",
+    "carShape": "SUV",
+    "model": "X5 (G05)",
+    "transmission": null,
+    "carNameCode": null,
+    "myAccidentCnt": 1,
+    "otherAccidentCnt": 1,
+    "ownerChangeCnt": 0,
+    "robberCnt": 0,
+    "robberDate": null,
+    "totalLossCnt": 0,
+    "totalLossDate": null,
+    "floodTotalLossCnt": 0,
+    "floodPartLossCnt": null,
+    "floodDate": null,
+    "government": 0,
+    "business": 0,
+    "loan": 0,
+    "carNoChangeCnt": 0,
+    "myAccidentCost": 2199367,
+    "otherAccidentCost": 2058207,
+    "carInfoChanges": [
+      {
+        "date": "2021-10-20",
+        "carNo": "142노XXXX"
+      }
+    ],
+    "carInfoUse1s": [
+      "2"
+    ],
+    "carInfoUse2s": [
+      "1"
+    ],
+    "ownerChanges": [],
+    "notJoinDate1": null,
+    "notJoinDate2": null,
+    "notJoinDate3": null,
+    "notJoinDate4": null,
+    "notJoinDate5": null,
+    "accidentCnt": 2,
+    "accidents": [
+      {
+        "type": "3",
+        "date": "2024-11-15",
+        "insuranceBenefit": 2610000,
+        "partCost": 1351387,
+        "laborCost": 111820,
+        "paintingCost": 595000
+      },
+      {
+        "type": "1",
+        "date": "2023-11-08",
+        "insuranceBenefit": 1920000,
+        "partCost": 1963800,
+        "laborCost": 235567,
+        "paintingCost": 0
+      }
+    ]
+  }
+}

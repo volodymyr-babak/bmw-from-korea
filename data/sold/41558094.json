@@ -1,0 +1,342 @@
+{
+  "listingId": "41558094",
+  "encarUrl": "https://fem.encar.com/cars/detail/41558094",
+  "photos": {
+    "outer": [
+      "/carpicture05/pic4155/41555850_001.jpg",
+      "/carpicture05/pic4155/41555850_002.jpg",
+      "/carpicture05/pic4155/41555850_003.jpg",
+      "/carpicture05/pic4155/41555850_004.jpg",
+      "/carpicture05/pic4155/41555850_005.jpg",
+      "/carpicture05/pic4155/41555850_006.jpg"
+    ],
+    "inner": [
+      "/carpicture05/pic4155/41555850_007.jpg",
+      "/carpicture05/pic4155/41555850_008.jpg",
+      "/carpicture05/pic4155/41555850_009.jpg",
+      "/carpicture05/pic4155/41555850_010.jpg"
+    ]
+  },
+  "koreaPriceMan": 5790,
+  "history": {
+    "myAccidentCnt": 1,
+    "myAccidentCost": 911580,
+    "otherAccidentCnt": 0,
+    "otherAccidentCost": 0,
+    "ownerChangeCnt": 0,
+    "totalLoss": null,
+    "flood": null,
+    "robber": null
+  },
+  "model": "X6 (G06)",
+  "mileageKm": 64067,
+  "priceUSD": 61917,
+  "priceEstimated": true,
+  "mfgYear": 2020,
+  "vin": "WBAGT8105M9D98682",
+  "sellerText": "★ 24시간 친절상담/ 최저금리 전액할부 가능★\n-.어댑티브 크루즈/ 브라운시트 / 휠복원완료\n-. no paint  tax 100%  Key 2ea  Made 2020.10\n-. 세이프티6(6개월/10,000km) 보증\n\n- 현재 차량은  차량 정비는 물론이고. 외관.내관 상태 매우 깔끔합니다.\n\n- 성능 점검 내역 30일 / 2000KM 보증해드립니다.\n\n- 제가 보여드리는 절대 허위 매물이 없음을 알려드립니다.\n\n  ※대차 매입도 가능합니다. 편안하게 연락주세요^^※\n\n◆차량설명◆\n\n▶ 사고여부 : 완전 무사고(성능기록부 참조)\n\n▶ 차      종 : BMW X6(3세대) 30d xDrive M 스포츠팩\n\n▶ 연      식 : 2021년식 (2020년 11월 26일 최초등록일)\n\n▶ 색      상 : 카본블랙\n\n▶ 주행거리 : 64,074 Km\n\n\n▶오시는방법 \n\n-네비 게이션 검색 : 수원 오토컬렉션(경기 수원시 권선구 서둔동 79-9)\n\n-대중교통 이용시 : 지하철 수원역(1호선) 으로 방문주시면 픽업가능합니다.",
+  "sellerFacts": [
+    {
+      "kind": "plus",
+      "text": "Диски відреставровано, два ключі, без фарбування."
+    },
+    {
+      "kind": "plus",
+      "text": "Гарантія Safety6: 6 місяців або 10 000 км."
+    },
+    {
+      "kind": "info",
+      "text": "Адаптивний круїз і коричневий салон — зі слів продавця."
+    }
+  ],
+  "inspection": {
+    "accident": false,
+    "simpleRepair": false,
+    "waterlog": false,
+    "tuning": false,
+    "usage": [],
+    "serious": [],
+    "panels": [],
+    "date": "20260220",
+    "mileage": 64064,
+    "recall": true,
+    "comment": "우앞문 손상/정비이력있음/내차피해-1회 (911,580원)/비금속(FRP),크로스멤버 볼트체결방식 또는 탈부착 가능한 부품은 점검사항에서 제외되며 중고차 특성상 판금 도장 부식은 있을 수 있고 경미한 판금 및 도장은 표기치 않음/국민 257601-04-211425 비엠모터스"
+  },
+  "inspectionFacts": [
+    {
+      "kind": "plus",
+      "text": "Звіт інспекції чистий: ні замін панелей, ні кузовного, ні комерційної історії."
+    }
+  ],
+  "prodDate": "2020-08-19",
+  "engine": "B57D30O2",
+  "power": "210 кВт / 286 к.с. · 650 Нм",
+  "engineNote": "48V mild-hybrid (S1CE) — версія 210 кВт / 286 к.с., потужніша за B57D30O0 (195 кВт / 265 к.с.). Випуск 19.08.2020, але це вже модельний рік 2021 (VIN: M) — тобто авто 2020 року виготовлення з новішим двигуном. Завод Spartanburg, США.",
+  "exterior": {
+    "name": "Carbon Black",
+    "german": "Carbonschwarz Metallic",
+    "code": "416"
+  },
+  "interior": {
+    "name": "Vernasca Coffee",
+    "german": "Leder Vernasca Coffee",
+    "code": "MCHF"
+  },
+  "options": [
+    {
+      "code": "S1CE",
+      "desc": "Recuperation system (48V mild-hybrid)"
+    },
+    {
+      "code": "S1MA",
+      "desc": "M sports exhaust system"
+    },
+    {
+      "code": "S1XN",
+      "desc": "21\" light-alloy wheel Y-spoke 741M bicolor, mixed runflat tyres"
+    },
+    {
+      "code": "S212",
+      "desc": "Equipment, brake system country-specific"
+    },
+    {
+      "code": "S258",
+      "desc": "Tyres with runflat properties"
+    },
+    {
+      "code": "S2NH",
+      "desc": "M Sport brake"
+    },
+    {
+      "code": "S2VB",
+      "desc": "Tyre pressure display"
+    },
+    {
+      "code": "S2VR",
+      "desc": "Two-axle air suspension"
+    },
+    {
+      "code": "S322",
+      "desc": "Comfort access"
+    },
+    {
+      "code": "S337",
+      "desc": "M Sports package"
+    },
+    {
+      "code": "S3AT",
+      "desc": "Roof rails aluminium satinated"
+    },
+    {
+      "code": "S3DN",
+      "desc": "BMW kidney Iconic Glow"
+    },
+    {
+      "code": "S3DS",
+      "desc": "BMW display key"
+    },
+    {
+      "code": "S3MB",
+      "desc": "Individual Ext. Line, burnished aluminium"
+    },
+    {
+      "code": "S402",
+      "desc": "Panorama glass roof"
+    },
+    {
+      "code": "S423",
+      "desc": "Floor mats velours"
+    },
+    {
+      "code": "S428",
+      "desc": "Warning triangle and first aid kit"
+    },
+    {
+      "code": "S453",
+      "desc": "Climate-controlled (ventilated) seats, front"
+    },
+    {
+      "code": "S456",
+      "desc": "Comfort seat with memory"
+    },
+    {
+      "code": "S4A2",
+      "desc": "Glass application Crafted Clarity"
+    },
+    {
+      "code": "S4HA",
+      "desc": "Seat heating, front and rear"
+    },
+    {
+      "code": "S4HB",
+      "desc": "Heat comfort package, front"
+    },
+    {
+      "code": "S4KM",
+      "desc": "Interior trim finishers aluminium mesh effect dark"
+    },
+    {
+      "code": "S4NB",
+      "desc": "Automatic climate control, 4-zone"
+    },
+    {
+      "code": "S4T8",
+      "desc": "Outside mirror with auto dip"
+    },
+    {
+      "code": "S4UR",
+      "desc": "Ambient interior light"
+    },
+    {
+      "code": "S548",
+      "desc": "Kilometre speedo"
+    },
+    {
+      "code": "S5A1",
+      "desc": "LED Fog lights"
+    },
+    {
+      "code": "S5AC",
+      "desc": "High-beam assistant"
+    },
+    {
+      "code": "S5AL",
+      "desc": "Active Protection"
+    },
+    {
+      "code": "S5AU",
+      "desc": "Driving assistant professional"
+    },
+    {
+      "code": "S5AV",
+      "desc": "Active Guard"
+    },
+    {
+      "code": "S5DN",
+      "desc": "Parking assistance system Plus"
+    },
+    {
+      "code": "S610",
+      "desc": "Head-up display"
+    },
+    {
+      "code": "S688",
+      "desc": "Harman/Kardon surround sound system"
+    },
+    {
+      "code": "S699",
+      "desc": "Area-Code 3 for DVD"
+    },
+    {
+      "code": "S6AE",
+      "desc": "Teleservices"
+    },
+    {
+      "code": "S6AK",
+      "desc": "Connected Drive Services"
+    },
+    {
+      "code": "S6C3",
+      "desc": "Digital professional"
+    },
+    {
+      "code": "S6CP",
+      "desc": "Preparation Apple CarPlay"
+    },
+    {
+      "code": "S6NV",
+      "desc": "Telephony with wireless charging"
+    },
+    {
+      "code": "S6U3",
+      "desc": "BMW Live operating area Professional"
+    },
+    {
+      "code": "S6U8",
+      "desc": "BMW gesture control"
+    },
+    {
+      "code": "S710",
+      "desc": "M leather steering wheel"
+    },
+    {
+      "code": "S715",
+      "desc": "M Aerodynamics package"
+    },
+    {
+      "code": "S775",
+      "desc": "Headlining anthracite"
+    },
+    {
+      "code": "S802",
+      "desc": "National version Korea"
+    },
+    {
+      "code": "S867",
+      "desc": "Language version Korean"
+    },
+    {
+      "code": "S8AF",
+      "desc": "On-board literature, Korean"
+    },
+    {
+      "code": "S8KH",
+      "desc": "Oil service interval 20 000 km / 18 months"
+    },
+    {
+      "code": "S8R9",
+      "desc": "Refrigerant R1234yf"
+    },
+    {
+      "code": "S8S3",
+      "desc": "Automatic locking during starting"
+    },
+    {
+      "code": "S8SX",
+      "desc": "Providersteuerung Telematik"
+    },
+    {
+      "code": "S8TF",
+      "desc": "Active pedestrian protection"
+    },
+    {
+      "code": "S925",
+      "desc": "Shipping protection package"
+    },
+    {
+      "code": "S993",
+      "desc": "Model year code in VIN"
+    },
+    {
+      "code": "S9AA",
+      "desc": "Outer skin protection"
+    },
+    {
+      "code": "S9WL",
+      "desc": "Grouping WLTP"
+    }
+  ],
+  "keyFeatures": {
+    "air": true,
+    "laser": false,
+    "led": false,
+    "soft": false,
+    "vent": true,
+    "hk": true,
+    "pano": true,
+    "skylounge": false,
+    "mhev": true,
+    "acc": true,
+    "park": true,
+    "comfort": true,
+    "seatheat": true,
+    "wheelheat": true,
+    "climate4": true,
+    "exhaust": true
+  },
+  "decodeSource": "bimmer.work (вставлено користувачем 2026-09-02)",
+  "renders": {
+    "exterior": "assets/renders/WBAGT8105M9D98682-ext.jpg",
+    "interior": "assets/renders/WBAGT8105M9D98682-int.jpg"
+  }
+}

@@ -216,6 +216,7 @@ a:hover { text-decoration-thickness: 2px; }
   min-width: 148px;
 }
 
+
 .tally {
   margin-left: auto;
   padding-bottom: 7px;
@@ -353,6 +354,16 @@ col.hl { background: var(--accent-soft); }
 .car-link:hover { text-decoration: underline; text-decoration-color: var(--accent); }
 .model-tag { margin-right: 6px; }
 
+/* 48V — не галочка в ряду опцій, а ознака іншого двигуна, тому стоїть біля року */
+.tag-mhev {
+  margin-left: 6px;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--yes);
+  vertical-align: 1px;
+}
+
 .c-car-meta {
   display: block;
   margin-top: 2px;
@@ -378,8 +389,15 @@ col.hl { background: var(--accent-soft); }
   font-weight: 400;
   color: var(--ink-3);
 }
+.c-color { min-width: 132px; }
+.c-finish { min-width: 104px; }
+.c-feat { text-align: center; width: 34px; }
 .c-note { min-width: 240px; max-width: 320px; color: var(--ink-2); font-size: 12.5px; line-height: 1.45; }
 
+.cell-yes { color: var(--yes); }
+.cell-yes sup { font-size: 9px; }
+.cell-no { color: var(--no); }
+.cell-unknown { color: var(--ink-3); }
 .grid .empty { padding: 20px 0; color: var(--ink-2); }
 
 .grid-legend {
@@ -402,7 +420,65 @@ col.hl { background: var(--accent-soft); }
   white-space: nowrap;
 }
 
+/* Квадратик кольору біля назви — фарба кузова й оббивка. Відтінки знято
+   з рендерів bimmer.work; невідомий колір штрихуємо, а не вигадуємо. */
+.swatch {
+  display: inline-block;
+  width: 11px;
+  height: 11px;
+  margin-right: 5px;
+  vertical-align: baseline;
+  background: var(--swatch, transparent);
+  /* напівпрозора рамка читається і на папері, і на темному тлі — інакше
+     Carbon Black зникає в темній темі, а Mineral White у світлій */
+  border: 1px solid rgba(128, 128, 128, 0.6);
+}
+.swatch-unknown {
+  background: repeating-linear-gradient(45deg, var(--rule) 0 2px, transparent 2px 4px);
+}
+
+/* Планка салону: схема мотиву й матеріалу, а не фото деталі. Рамка
+   напівпрозора з тієї ж причини, що й у квадратика кольору — Piano Black
+   інакше зникає в темній темі. */
+.tstrip {
+  display: block;
+  border: 1px solid rgba(128, 128, 128, 0.55);
+}
+.tstrip-unknown {
+  background: repeating-linear-gradient(45deg, var(--rule) 0 3px, transparent 3px 6px);
+}
+.finish-cell {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.finish-cell .tstrip-cell { width: 34px; flex: none; }
+.finish-cell > span { font-size: 12.5px; color: var(--ink-2); }
+
+.finish-figure {
+  margin: 14px 0 0;
+}
+.finish-figure figcaption {
+  margin-top: 6px;
+  font-size: 12.5px;
+  line-height: 1.5;
+  color: var(--ink-2);
+}
+.finish-figure figcaption b { font-weight: 500; color: var(--ink); }
+
+.feats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3px 12px;
+  font-size: 12.5px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.feats li { white-space: nowrap; }
 .feat-yes { color: var(--yes); }
+.feat-no { color: var(--no); text-decoration: line-through; text-decoration-thickness: 1px; }
+.feat-unknown { font-size: 12.5px; color: var(--ink-3); font-style: italic; }
 
 /* ---------- detail page ---------- */
 
@@ -489,6 +565,32 @@ col.hl { background: var(--accent-soft); }
   border-top: 1px solid var(--rule);
 }
 
+/* Рендери заводської конфігурації за VIN — кузов і салон поруч */
+.renders {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 16px;
+  margin: 4px 0 10px;
+}
+.renders figure {
+  margin: 0;
+  border: 1px solid var(--rule);
+  background: #fff;
+}
+.renders img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.renders figcaption {
+  padding: 6px 8px;
+  font-size: 12.5px;
+  color: var(--ink-2);
+  border-top: 1px solid var(--rule);
+  background: var(--sheet);
+}
+.renders figcaption b { font-weight: 500; color: var(--ink); }
+
 .rows {
   margin: 0;
   display: grid;
@@ -504,6 +606,16 @@ col.hl { background: var(--accent-soft); }
   color: var(--ink-2);
   margin: 12px 0 0;
   max-width: 68ch;
+}
+
+.feature-grid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 8px 20px;
+  font-size: 14px;
 }
 
 .badge-warn {
@@ -546,22 +658,34 @@ col.hl { background: var(--accent-soft); }
 .fact-minus { color: var(--ink); }
 .fact-info { color: var(--ink-2); }
 
+.opt-group { margin: 0 0 22px; break-inside: avoid; }
+.opt-group h3 {
+  font-family: "IBM Plex Sans Condensed", sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  margin: 0 0 8px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid var(--rule);
+}
+.opt-list { list-style: none; margin: 0; padding: 0; }
+.opt-list li {
+  display: grid;
+  grid-template-columns: 62px 1fr;
+  gap: 10px;
+  padding: 3px 0;
+  font-size: 13.5px;
+}
+.opt-list code {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 12.5px;
+  color: var(--ink-3);
+  padding-top: 1px;
+}
+.opt-list .opt-key { font-weight: 500; }
+.opt-list .opt-key code { color: var(--accent); }
 .opt-en { color: var(--ink-3); font-size: 12.5px; }
 
-.seller-text summary {
-  cursor: pointer;
-  font-size: 14px;
-  color: var(--accent);
-}
-.seller-text pre {
-  margin: 12px 0 0;
-  padding: 12px 14px;
-  border: 1px solid var(--rule);
-  background: var(--sheet);
-  font: 13px/1.5 "IBM Plex Sans", sans-serif;
-  white-space: pre-wrap;
-  max-width: 78ch;
-}
+.opt-columns { columns: 2; column-gap: 44px; }
 
 .pending {
   border: 1px solid var(--rule-strong);
@@ -587,6 +711,7 @@ col.hl { background: var(--accent-soft); }
 }
 
 @media (max-width: 900px) {
+  .opt-columns { columns: 1; }
   .figures > div { padding-right: 18px; margin-right: 18px; }
 }
 
@@ -630,6 +755,7 @@ col.hl { background: var(--accent-soft); }
   margin: 0 0 8px;
   color: var(--ink-2);
 }
+
 
 /* ---------- фото ---------- */
 

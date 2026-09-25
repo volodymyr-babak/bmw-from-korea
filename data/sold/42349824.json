@@ -1,0 +1,424 @@
+{
+  "listingId": "42349824",
+  "encarUrl": "https://fem.encar.com/cars/detail/42349824",
+  "photos": {
+    "outer": [
+      "/carpicture04/pic4234/42348555_001.jpg",
+      "/carpicture04/pic4234/42348555_002.jpg",
+      "/carpicture04/pic4234/42348555_003.jpg",
+      "/carpicture04/pic4234/42348555_004.jpg",
+      "/carpicture04/pic4234/42348555_005.jpg",
+      "/carpicture04/pic4234/42348555_006.jpg",
+      "/carpicture04/pic4234/42348555_031.jpg",
+      "/carpicture04/pic4234/42348555_032.jpg",
+      "/carpicture04/pic4234/42348555_033.jpg"
+    ],
+    "inner": [
+      "/carpicture04/pic4234/42348555_007.jpg",
+      "/carpicture04/pic4234/42348555_008.jpg",
+      "/carpicture04/pic4234/42348555_009.jpg",
+      "/carpicture04/pic4234/42348555_010.jpg",
+      "/carpicture04/pic4234/42348555_034.jpg",
+      "/carpicture04/pic4234/42348555_035.jpg",
+      "/carpicture04/pic4234/42348555_036.jpg"
+    ]
+  },
+  "koreaPriceMan": 6090,
+  "history": {
+    "openData": true,
+    "regDate": "2026-07-10T13:32:17.030533",
+    "carNo": "323머1294",
+    "year": "2022",
+    "maker": "BMW",
+    "carKind": "1",
+    "use": "2",
+    "displacement": "2993",
+    "carName": null,
+    "firstDate": "2022-05-12",
+    "fuel": "디젤",
+    "carShape": "SUV",
+    "model": "X6 (G06)",
+    "transmission": null,
+    "carNameCode": null,
+    "myAccidentCnt": 2,
+    "otherAccidentCnt": 0,
+    "ownerChangeCnt": 1,
+    "robberCnt": 0,
+    "robberDate": null,
+    "totalLossCnt": 0,
+    "totalLossDate": null,
+    "floodTotalLossCnt": 0,
+    "floodPartLossCnt": null,
+    "floodDate": null,
+    "government": 0,
+    "business": 0,
+    "loan": 0,
+    "carNoChangeCnt": 1,
+    "myAccidentCost": 4724399,
+    "otherAccidentCost": 0,
+    "carInfoChanges": [
+      {
+        "date": "2022-05-12",
+        "carNo": "392서XXXX"
+      },
+      {
+        "date": "2026-07-07",
+        "carNo": "323머XXXX"
+      }
+    ],
+    "carInfoUse1s": [
+      "2",
+      "2"
+    ],
+    "carInfoUse2s": [
+      "1",
+      "1"
+    ],
+    "ownerChanges": [
+      "2026-07-07"
+    ],
+    "notJoinDate1": null,
+    "notJoinDate2": null,
+    "notJoinDate3": null,
+    "notJoinDate4": null,
+    "notJoinDate5": null,
+    "accidentCnt": 2,
+    "accidents": [
+      {
+        "type": "2",
+        "date": "2026-04-06",
+        "insuranceBenefit": 3392760,
+        "partCost": 2029919,
+        "laborCost": 216699,
+        "paintingCost": 78436
+      },
+      {
+        "type": "2",
+        "date": "2023-06-27",
+        "insuranceBenefit": 3181000,
+        "partCost": 1486000,
+        "laborCost": 285948,
+        "paintingCost": 627397
+      }
+    ]
+  },
+  "model": "X6 (G06)",
+  "mileageKm": 85581,
+  "priceUSD": 66065,
+  "priceEstimated": true,
+  "mfgYear": 2022,
+  "vin": "WBAGT8106N9L42863",
+  "sellerText": "제가 광고하는 차량은 직접 매입하여 판매하는 차량으로 문제가 될 만한 차량은 \n\n매입하지 않습니다.\n\n실내전시장이라 날씨와 시간 상관없이 차량 보실수있으며 \n\n매입후 가지고와서 연식에 맞춰 문제있는부분은 수리하고 정비하여 판매하지만\n\n혹여나 제가 모르고 있던부분이나 부족한게 있다면 수긍하여 네고해드리겠습니다.\n\n혹여나 방문이 어렵거나 거리가 먼 분은 저를 믿고 계약금을 걸어주시면 \n\n전국어디든 고객님이 계신곳까지 방문드리겠습니다.\n\n\n차량정보\n\n신차출고후 한분이 타시던 차량입니다\n\n도색/교환없는 무사고 차량입니다 \n\n6개월1만키로 보증해드립닌다,\n\nNO PAINT__TAX100%\n\n할부/리스/카드/현금결제  모두 가능합니다",
+  "sellerFacts": [
+    {
+      "kind": "minus",
+      "text": "Пише «без фарбування й замін, без ДТП», а в реєстрі 4,7 млн ₩ власних виплат — найбільша розбіжність у добірці."
+    },
+    {
+      "kind": "plus",
+      "text": "Гарантія 6 місяців / 10 000 км, один власник від нового."
+    }
+  ],
+  "inspection": {
+    "accident": false,
+    "simpleRepair": false,
+    "waterlog": false,
+    "tuning": false,
+    "usage": [],
+    "serious": [],
+    "panels": [],
+    "date": "20260622",
+    "mileage": 85577,
+    "recall": false,
+    "comment": "정비이력있음/보험이력있음/비금속(FRP),크로스멤버 볼트체결방식 또는 탈부착 가능한 부품은 점검사항에서 제외되며 중고차 특성상 판금 도장 부식은 있을 수 있고 경미한 판금 및 도장은 표기치 않음/국민 257601-04-211425 비엠모터스"
+  },
+  "inspectionFacts": [
+    {
+      "kind": "plus",
+      "text": "Звіт інспекції чистий: ні замін панелей, ні кузовного, ні комерційної історії."
+    }
+  ],
+  "prodDate": "2022-02-11",
+  "engine": "B57P",
+  "power": "210 кВт / 286 к.с. · 650 Нм",
+  "engineNote": "48V mild-hybrid (S1CE) — версія 210 кВт / 286 к.с., потужніша за B57D30O0 (195 кВт / 265 к.с.). Завод Spartanburg, USA.",
+  "exterior": {
+    "name": "Carbon Black",
+    "german": "Carbonschwarz Metallic",
+    "code": "416"
+  },
+  "interior": {
+    "name": "Merino Coffee",
+    "german": "Leder Merino Coffee",
+    "code": "VAHF"
+  },
+  "options": [
+    {
+      "code": "S1CE",
+      "desc": "Recuperation system (48V mild-hybrid)"
+    },
+    {
+      "code": "S1MA",
+      "desc": "M sports exhaust system"
+    },
+    {
+      "code": "S1XN",
+      "desc": "21\" M light alloy wheels Y-spoke 741 M bicolour, mixed runflat tyres"
+    },
+    {
+      "code": "S212",
+      "desc": "Equipment, brake system country-specific"
+    },
+    {
+      "code": "S258",
+      "desc": "Tyres with runflat properties"
+    },
+    {
+      "code": "S2NH",
+      "desc": "M Sport brake"
+    },
+    {
+      "code": "S2VB",
+      "desc": "Tyre pressure display"
+    },
+    {
+      "code": "S2VF",
+      "desc": "Adaptive M chassis (адаптивні амортизатори, НЕ пневмо)"
+    },
+    {
+      "code": "S2VH",
+      "desc": "Integral Active Steering"
+    },
+    {
+      "code": "S322",
+      "desc": "Comfort access"
+    },
+    {
+      "code": "S323",
+      "desc": "Soft-Close-Automatic system for doors"
+    },
+    {
+      "code": "S337",
+      "desc": "M Sports package"
+    },
+    {
+      "code": "S3AT",
+      "desc": "Roof rails aluminium satinated"
+    },
+    {
+      "code": "S3D0",
+      "desc": "BMW kidney Iconic Glow — temporary deletion, prepared for Remote Software Upgrade"
+    },
+    {
+      "code": "S3DN",
+      "desc": "BMW kidney Iconic Glow"
+    },
+    {
+      "code": "S3DS",
+      "desc": "BMW display key"
+    },
+    {
+      "code": "S3MB",
+      "desc": "Individual Ext. Line, burnished aluminium"
+    },
+    {
+      "code": "S402",
+      "desc": "Panorama glass roof"
+    },
+    {
+      "code": "S423",
+      "desc": "Floor mats velours"
+    },
+    {
+      "code": "S428",
+      "desc": "Warning triangle and first aid kit"
+    },
+    {
+      "code": "S453",
+      "desc": "Climate-controlled (ventilated) seats, front"
+    },
+    {
+      "code": "S456",
+      "desc": "Comfort seat with memory"
+    },
+    {
+      "code": "S4A2",
+      "desc": "Glass application Crafted Clarity"
+    },
+    {
+      "code": "S4FL",
+      "desc": "Travel & Comfort rail system"
+    },
+    {
+      "code": "S4HA",
+      "desc": "Seat heating, front and rear"
+    },
+    {
+      "code": "S4HB",
+      "desc": "Heat comfort package, front"
+    },
+    {
+      "code": "S4KM",
+      "desc": "Interior trim finishers aluminium mesh effect dark"
+    },
+    {
+      "code": "S4NB",
+      "desc": "Automatic climate control, 4-zone"
+    },
+    {
+      "code": "S4T8",
+      "desc": "Outside mirror with auto dip"
+    },
+    {
+      "code": "S4UR",
+      "desc": "Ambient interior light"
+    },
+    {
+      "code": "S548",
+      "desc": "Kilometre speedo"
+    },
+    {
+      "code": "S5AC",
+      "desc": "High-beam assistant"
+    },
+    {
+      "code": "S5AL",
+      "desc": "Active Protection"
+    },
+    {
+      "code": "S5AU",
+      "desc": "Driving assistant professional"
+    },
+    {
+      "code": "S5AV",
+      "desc": "Active Guard"
+    },
+    {
+      "code": "S5AZ",
+      "desc": "BMW Laserlight"
+    },
+    {
+      "code": "S5DN",
+      "desc": "Parking assistance system Plus"
+    },
+    {
+      "code": "S610",
+      "desc": "Head-up display"
+    },
+    {
+      "code": "S676",
+      "desc": "HiFi loudspeaker system (базове, НЕ Harman/Kardon)"
+    },
+    {
+      "code": "S699",
+      "desc": "Area-Code 3 for DVD"
+    },
+    {
+      "code": "S6AE",
+      "desc": "Teleservices"
+    },
+    {
+      "code": "S6AK",
+      "desc": "Connected Drive Services"
+    },
+    {
+      "code": "S6C3",
+      "desc": "Digital professional"
+    },
+    {
+      "code": "S6CP",
+      "desc": "Preparation Apple CarPlay"
+    },
+    {
+      "code": "S6NS",
+      "desc": "Comfort telephony with enhanced Smartphone"
+    },
+    {
+      "code": "S6U3",
+      "desc": "BMW Live operating area Professional"
+    },
+    {
+      "code": "S6U8",
+      "desc": "BMW gesture control"
+    },
+    {
+      "code": "S710",
+      "desc": "M leather steering wheel"
+    },
+    {
+      "code": "S715",
+      "desc": "M Aerodynamics package"
+    },
+    {
+      "code": "S775",
+      "desc": "Headlining anthracite"
+    },
+    {
+      "code": "S802",
+      "desc": "National version Korea"
+    },
+    {
+      "code": "S867",
+      "desc": "Language version Korean"
+    },
+    {
+      "code": "S8AF",
+      "desc": "On-board literature, Korean"
+    },
+    {
+      "code": "S8KH",
+      "desc": "Oil service interval 20 000 km / 18 months"
+    },
+    {
+      "code": "S8R9",
+      "desc": "Refrigerant R1234yf"
+    },
+    {
+      "code": "S8S3",
+      "desc": "Automatic locking during starting"
+    },
+    {
+      "code": "S8SX",
+      "desc": "Providersteuerung Telematik"
+    },
+    {
+      "code": "S8TF",
+      "desc": "Active pedestrian protection"
+    },
+    {
+      "code": "S925",
+      "desc": "Shipping protection package"
+    },
+    {
+      "code": "S993",
+      "desc": "Model year code in VIN"
+    },
+    {
+      "code": "S9AA",
+      "desc": "Outer skin protection"
+    }
+  ],
+  "keyFeatures": {
+    "air": false,
+    "laser": true,
+    "led": false,
+    "soft": true,
+    "vent": true,
+    "hk": false,
+    "pano": true,
+    "skylounge": false,
+    "mhev": true,
+    "acc": true,
+    "park": true,
+    "comfort": true,
+    "seatheat": true,
+    "wheelheat": true,
+    "climate4": true,
+    "exhaust": true
+  },
+  "decodeSource": "bimmer.work API",
+  "renders": {
+    "exterior": "assets/renders/WBAGT8106N9L42863-ext.jpg",
+    "interior": "assets/renders/WBAGT8106N9L42863-int.jpg"
+  }
+}

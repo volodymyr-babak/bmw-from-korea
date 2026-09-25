@@ -1,78 +1,335 @@
 
 ---
 
-# Encar: нових 14
+# Encar: нових 8
 
 ## Нові кандидати
 
-- **Ranger Wildtrak 2025 · 4 пок.** · 25 726 км · 4 950만원 · ДТП 0 · без ремонтів · змін власника 1  
-  [лот 42771172](https://volodymyr-babak.github.io/bmw-from-korea/car.html?id=42771172) · [Encar](https://fem.encar.com/cars/detail/42771172)
-- **Ranger Wildtrak 2022 · 3 пок.** · 31 727 км · 3 450만원 · ДТП 0 · без ремонтів · змін власника 1  
-  [лот 42264070](https://volodymyr-babak.github.io/bmw-from-korea/car.html?id=42264070) · [Encar](https://fem.encar.com/cars/detail/42264070)
-- **Ranger Wildtrak 2022 · 3 пок.** · 50 328 км · 3 190만원 · ДТП 0 · без ремонтів · змін власника 3  
-  [лот 42617569](https://volodymyr-babak.github.io/bmw-from-korea/car.html?id=42617569) · [Encar](https://fem.encar.com/cars/detail/42617569)
-- **Ranger Wildtrak 2025 · 4 пок.** · 7 304 км · 5 100만원 · ДТП 0 · без ремонтів · змін власника 0  
-  [лот 42347769](https://volodymyr-babak.github.io/bmw-from-korea/car.html?id=42347769) · [Encar](https://fem.encar.com/cars/detail/42347769)
-- **Ranger Wildtrak 2023 · 4 пок.** · 53 577 км · 4 200만원 · ДТП 0 · без ремонтів · змін власника 3  
-  [лот 41554179](https://volodymyr-babak.github.io/bmw-from-korea/car.html?id=41554179) · [Encar](https://fem.encar.com/cars/detail/41554179)
-- **Ranger Wildtrak 2022 · 3 пок.** · 59 341 км · 2 850만원 · ДТП 1 · ремонт 6,4 млн ₩ · змін власника 0  
-  [лот 42547957](https://volodymyr-babak.github.io/bmw-from-korea/car.html?id=42547957) · [Encar](https://fem.encar.com/cars/detail/42547957)
-- **Ranger Wildtrak 2022 · 3 пок.** · 58 834 км · 3 090만원 · ДТП 1 · ремонт 5,2 млн ₩ · змін власника 1  
-  [лот 42647989](https://volodymyr-babak.github.io/bmw-from-korea/car.html?id=42647989) · [Encar](https://fem.encar.com/cars/detail/42647989)
-- **Ranger Wildtrak 2025 · 4 пок.** · 6 579 км · 5 100만원 · ДТП 0 · без ремонтів · змін власника 0  
-  [лот 42787437](https://volodymyr-babak.github.io/bmw-from-korea/car.html?id=42787437) · [Encar](https://fem.encar.com/cars/detail/42787437)
-- **Ranger Wildtrak 2023 · 4 пок.** · 58 922 км · 4 299만원 · ДТП 0 · без ремонтів · змін власника 1  
-  [лот 42489489](https://volodymyr-babak.github.io/bmw-from-korea/car.html?id=42489489) · [Encar](https://fem.encar.com/cars/detail/42489489)
-- **Ranger Wildtrak 2023 · 4 пок.** · 34 584 км · 3 700만원 · ДТП 1 · ремонт 18,2 млн ₩ · змін власника 1  
-  [лот 42616534](https://volodymyr-babak.github.io/bmw-from-korea/car.html?id=42616534) · [Encar](https://fem.encar.com/cars/detail/42616534)
-- **Ranger Wildtrak 2023 · 4 пок.** · 25 376 км · 4 490만원 · ДТП 0 · без ремонтів · змін власника 0  
-  [лот 41784574](https://volodymyr-babak.github.io/bmw-from-korea/car.html?id=41784574) · [Encar](https://fem.encar.com/cars/detail/41784574)
-- **Ranger Wildtrak 2022 · 3 пок.** · 28 003 км · 3 230만원 · ДТП 0 · без ремонтів · змін власника 0  
-  [лот 42529389](https://volodymyr-babak.github.io/bmw-from-korea/car.html?id=42529389) · [Encar](https://fem.encar.com/cars/detail/42529389)
-- **Ranger Wildtrak 2023 · 3 пок.** · 76 389 км · 2 900만원 · ДТП 0 · без ремонтів · змін власника 0  
-  [лот 42666576](https://volodymyr-babak.github.io/bmw-from-korea/car.html?id=42666576) · [Encar](https://fem.encar.com/cars/detail/42666576)
-- **Ranger Wildtrak 2022 · 3 пок.** · 43 000 км · 3 200만원 · ДТП 2 · ремонт 2,0 млн ₩ · змін власника 2  
-  [лот 42724437](https://volodymyr-babak.github.io/bmw-from-korea/car.html?id=42724437) · [Encar](https://fem.encar.com/cars/detail/42724437)
+- **X5 2019** · 76 015 км · $54 517 · ремонт 4,5 млн ₩ · 2 власн.  
+  [лот 42287839](https://volodymyr-babak.github.io/bmw-from-korea/car.html?id=42287839) · [Encar](https://fem.encar.com/cars/detail/42287839)
+- **X5 2021** · 40 566 км · $69 172 · ремонт 2,6 млн ₩ · 2 власн.  
+  [лот 42644600](https://volodymyr-babak.github.io/bmw-from-korea/car.html?id=42644600) · [Encar](https://fem.encar.com/cars/detail/42644600)
+- **X5 2020** · 22 756 км · $64 177 · ремонт 3,4 млн ₩ · 0 власн.  
+  [лот 42646084](https://volodymyr-babak.github.io/bmw-from-korea/car.html?id=42646084) · [Encar](https://fem.encar.com/cars/detail/42646084)
+- **X5 2019** · 74 730 км · $55 246 · ремонт 2,8 млн ₩ · 2 власн.  
+  [лот 42244757](https://volodymyr-babak.github.io/bmw-from-korea/car.html?id=42244757) · [Encar](https://fem.encar.com/cars/detail/42244757)
+- **X5 2021** · 63 640 км · $62 532 · ремонт 4,6 млн ₩ · 0 власн.  
+  [лот 42348688](https://volodymyr-babak.github.io/bmw-from-korea/car.html?id=42348688) · [Encar](https://fem.encar.com/cars/detail/42348688)
+- **X5 2020** · 79 541 км · $60 459 · без ремонтів · 0 власн.  
+  [лот 42203413](https://volodymyr-babak.github.io/bmw-from-korea/car.html?id=42203413) · [Encar](https://fem.encar.com/cars/detail/42203413)
+- **X5 2021** · 91 683 км · $60 353 · без ремонтів · 0 власн.  
+  [лот 42585873](https://volodymyr-babak.github.io/bmw-from-korea/car.html?id=42585873) · [Encar](https://fem.encar.com/cars/detail/42585873)
+- **X5 2021** · 66 916 км · $62 248 · ремонт 0,2 млн ₩ · 0 власн.  
+  [лот 42627728](https://volodymyr-babak.github.io/bmw-from-korea/car.html?id=42627728) · [Encar](https://fem.encar.com/cars/detail/42627728)
 
-Список: https://volodymyr-babak.github.io/bmw-from-korea/  ·  перевірено 2026-09-24 17:46
+## Примітки
+
+- mdecoder: квоту вичерпано на цьому проході, добираю завтра
+
+Список: https://volodymyr-babak.github.io/bmw-from-korea/  ·  перевірено 2026-09-02 11:10
 
 ---
 
-# Encar: нових 16
+# Encar: зміна ціни 1
+
+## Змінилась ціна або пробіг
+
+- **X6 2022** · $69 053 → **$66 794**  
+  [лот 42650455](https://volodymyr-babak.github.io/bmw-from-korea/car.html?id=42650455) · [Encar](https://fem.encar.com/cars/detail/42650455)
+
+## Примітки
+
+- mdecoder: добова квота вичерпана, наступна спроба завтра
+
+Список: https://volodymyr-babak.github.io/bmw-from-korea/  ·  перевірено 2026-09-02 11:17
+
+---
+
+# Encar: нових 1
 
 ## Нові кандидати
 
-- **Ranger Raptor 2023** · 32 948 км · 5 990만원 · ДТП 1 · ремонт 2,0 млн ₩ · змін власника 1  
-  [лот 41788531](https://volodymyr-babak.github.io/bmw-from-korea/car.html?id=41788531) · [Encar](https://fem.encar.com/cars/detail/41788531)
-- **Ranger Raptor 2023** · 43 337 км · 5 990만원 · ДТП 1 · ремонт 5,3 млн ₩ · змін власника 2  
-  [лот 42413183](https://volodymyr-babak.github.io/bmw-from-korea/car.html?id=42413183) · [Encar](https://fem.encar.com/cars/detail/42413183)
-- **Ranger Raptor 2024** · 46 487 км · 6 150만원 · ДТП 0 · без ремонтів · змін власника 0  
-  [лот 41185656](https://volodymyr-babak.github.io/bmw-from-korea/car.html?id=41185656) · [Encar](https://fem.encar.com/cars/detail/41185656)
-- **Ranger Raptor 2024** · 34 278 км · 6 270만원 · ДТП 0 · без ремонтів · змін власника 0  
-  [лот 42621871](https://volodymyr-babak.github.io/bmw-from-korea/car.html?id=42621871) · [Encar](https://fem.encar.com/cars/detail/42621871)
-- **Ranger Raptor 2023** · 24 000 км · 6 220만원 · ДТП 1 · ремонт 1,2 млн ₩ · змін власника 0  
-  [лот 42724660](https://volodymyr-babak.github.io/bmw-from-korea/car.html?id=42724660) · [Encar](https://fem.encar.com/cars/detail/42724660)
-- **Ranger Raptor 2024** · 34 464 км · 6 199만원 · ДТП 0 · без ремонтів · змін власника 0  
-  [лот 42603738](https://volodymyr-babak.github.io/bmw-from-korea/car.html?id=42603738) · [Encar](https://fem.encar.com/cars/detail/42603738)
-- **Ranger Raptor 2024** · 40 628 км · 6 190만원 · ДТП 0 · без ремонтів · змін власника 4  
-  [лот 42402463](https://volodymyr-babak.github.io/bmw-from-korea/car.html?id=42402463) · [Encar](https://fem.encar.com/cars/detail/42402463)
-- **Ranger Raptor 2024** · 25 462 км · 6 189만원 · ДТП 0 · без ремонтів · змін власника 0  
-  [лот 42474721](https://volodymyr-babak.github.io/bmw-from-korea/car.html?id=42474721) · [Encar](https://fem.encar.com/cars/detail/42474721)
-- **Ranger Raptor 2023** · 61 454 км · 5 280만원 · ДТП 0 · без ремонтів · змін власника 5  
-  [лот 42217289](https://volodymyr-babak.github.io/bmw-from-korea/car.html?id=42217289) · [Encar](https://fem.encar.com/cars/detail/42217289)
-- **Ranger Raptor 2023** · 71 235 км · 5 500만원 · ДТП 1 · ремонт 4,1 млн ₩ · змін власника 1  
-  [лот 42725049](https://volodymyr-babak.github.io/bmw-from-korea/car.html?id=42725049) · [Encar](https://fem.encar.com/cars/detail/42725049)
-- **Ranger Raptor 2023** · 38 820 км · 5 950만원 · ДТП 4 · ремонт 7,7 млн ₩ · змін власника 0  
-  [лот 42404833](https://volodymyr-babak.github.io/bmw-from-korea/car.html?id=42404833) · [Encar](https://fem.encar.com/cars/detail/42404833)
-- **Ranger Raptor 2023** · 35 125 км · 5 990만원 · ДТП 1 · ремонт 2,6 млн ₩ · змін власника 0  
-  [лот 41589455](https://volodymyr-babak.github.io/bmw-from-korea/car.html?id=41589455) · [Encar](https://fem.encar.com/cars/detail/41589455)
-- **Ranger Raptor 2023** · 93 019 км · 5 140만원 · ДТП 1 · без ремонтів · змін власника 1  
-  [лот 42738055](https://volodymyr-babak.github.io/bmw-from-korea/car.html?id=42738055) · [Encar](https://fem.encar.com/cars/detail/42738055)
-- **Ranger Raptor 2023** · 22 481 км · 6 100만원 · ДТП 0 · без ремонтів · змін власника 4  
-  [лот 42296024](https://volodymyr-babak.github.io/bmw-from-korea/car.html?id=42296024) · [Encar](https://fem.encar.com/cars/detail/42296024)
-- **Ranger Raptor 2023** · 15 536 км · 6 580만원 · ДТП 0 · без ремонтів · змін власника 0  
-  [лот 42557143](https://volodymyr-babak.github.io/bmw-from-korea/car.html?id=42557143) · [Encar](https://fem.encar.com/cars/detail/42557143)
-- **Ranger Raptor 2024** · 36 844 км · 6 480만원 · ДТП 1 · без ремонтів · змін власника 0  
-  [лот 42620909](https://volodymyr-babak.github.io/bmw-from-korea/car.html?id=42620909) · [Encar](https://fem.encar.com/cars/detail/42620909)
+- **X5 2019** · 41 921 км · $55 246 · без ремонтів · 1 власн.  
+  [лот 42660021](https://volodymyr-babak.github.io/bmw-from-korea/car.html?id=42660021) · [Encar](https://fem.encar.com/cars/detail/42660021)
 
-Список: https://volodymyr-babak.github.io/bmw-from-korea/  ·  перевірено 2026-09-24 18:12
+## Примітки
+
+- mdecoder: добова квота вичерпана, наступна спроба завтра
+
+Список: https://volodymyr-babak.github.io/bmw-from-korea/  ·  перевірено 2026-09-02 12:17
+
+---
+
+# Encar: нових 1
+
+## Нові кандидати
+
+- **X5 2022** · 79 918 км · $64 673 · без ремонтів · 0 власн.  
+  [лот 42655967](https://volodymyr-babak.github.io/bmw-from-korea/car.html?id=42655967) · [Encar](https://fem.encar.com/cars/detail/42655967)
+
+## Примітки
+
+- mdecoder: добова квота вичерпана, наступна спроба завтра
+
+Список: https://volodymyr-babak.github.io/bmw-from-korea/  ·  перевірено 2026-09-02 15:17
+
+---
+
+# Encar: нових 1 · зміна ціни 1
+
+## Нові кандидати
+
+- **X5 2019** · 83 639 км · $53 788 · ремонт 1,2 млн ₩ · 3 власн.  
+  [лот 42662970](https://volodymyr-babak.github.io/bmw-from-korea/car.html?id=42662970) · [Encar](https://fem.encar.com/cars/detail/42662970)
+
+## Змінилась ціна або пробіг
+
+- **X5 2021** · $65 382 → **$65 017**  
+  [лот 41368455](https://volodymyr-babak.github.io/bmw-from-korea/car.html?id=41368455) · [Encar](https://fem.encar.com/cars/detail/41368455)
+
+## Примітки
+
+- mdecoder: квоту вичерпано на цьому проході, добираю завтра
+
+Список: https://volodymyr-babak.github.io/bmw-from-korea/  ·  перевірено 2026-09-03 04:17
+
+---
+
+# Encar: зміна ціни 2 · звітів про стан 1
+
+## Додано звіт про стан
+
+- **X5 2019** · $53 788 — звіт чистий  
+  [лот 42662970](https://volodymyr-babak.github.io/bmw-from-korea/car.html?id=42662970) · [Encar](https://fem.encar.com/cars/detail/42662970)
+
+## Змінилась ціна або пробіг
+
+- **X5 2021** · $65 017 → **$64 434**  
+  [лот 41368455](https://volodymyr-babak.github.io/bmw-from-korea/car.html?id=41368455) · [Encar](https://fem.encar.com/cars/detail/41368455)
+- **X6 2022** · $66 065 → **$65 773**  
+  [лот 42349824](https://volodymyr-babak.github.io/bmw-from-korea/car.html?id=42349824) · [Encar](https://fem.encar.com/cars/detail/42349824)
+
+## Примітки
+
+- mdecoder: добова квота вичерпана, наступна спроба завтра
+
+Список: https://volodymyr-babak.github.io/bmw-from-korea/  ·  перевірено 2026-09-03 05:17
+
+---
+
+# Encar: зміна ціни 1
+
+## Чекають на білд-лист за VIN
+
+Спершу найцікавіші. Декодувати руками: oemnavigations.com/pages/vin-decoder-app (2 VIN/добу), далі `python3 tools/oemnav.py <share-url> --write`.
+
+- **X5 2020** · 26 786 км · $65 999 · **VIN невідомий**  
+  [лот 42094631](https://volodymyr-babak.github.io/bmw-from-korea/car.html?id=42094631) · [Encar](https://fem.encar.com/cars/detail/42094631)
+- **X5 2019** · 87 922 км · $58 161 · **VIN невідомий**  
+  [лот 42554478](https://volodymyr-babak.github.io/bmw-from-korea/car.html?id=42554478) · [Encar](https://fem.encar.com/cars/detail/42554478)
+
+## Змінилась ціна або пробіг
+
+- **X5 2019** · $54 517 → **$53 788**  
+  [лот 42287839](https://volodymyr-babak.github.io/bmw-from-korea/car.html?id=42287839) · [Encar](https://fem.encar.com/cars/detail/42287839)
+
+## Потрібна увага
+
+- 42405951: деталь недоступна (HTTP 407) — лишаю у списку
+- 42554478: деталь недоступна (HTTP 407) — лишаю у списку
+- 42468210: деталь недоступна (HTTP 407) — лишаю у списку
+- 42112799: деталь недоступна (HTTP 407) — лишаю у списку
+- 42218942: деталь недоступна (HTTP 407) — лишаю у списку
+- 42646084: деталь недоступна (HTTP 407) — лишаю у списку
+- 40966656: деталь недоступна (HTTP 407) — лишаю у списку
+- 42655967: деталь недоступна (HTTP 407) — лишаю у списку
+- 42340650: деталь недоступна (HTTP 407) — лишаю у списку
+- 42349824: деталь недоступна (HTTP 407) — лишаю у списку
+- 42585911: деталь недоступна (HTTP 407) — лишаю у списку
+- 41334762: деталь недоступна (HTTP 407) — лишаю у списку
+- 42574631: деталь недоступна (HTTP 407) — лишаю у списку
+- 42644600: деталь недоступна (HTTP 407) — лишаю у списку
+- 41689680: деталь недоступна (HTTP 407) — лишаю у списку
+- пошук X5 (G05): пошук X5 (G05): HTTP 407
+- пошук X6 (G06): пошук X6 (G06): HTTP 407
+
+Список: https://volodymyr-babak.github.io/bmw-from-korea/  ·  перевірено 2026-09-03 10:34
+
+---
+
+# Encar: зміна ціни 4
+
+## Чекають на білд-лист за VIN
+
+Спершу найцікавіші. Декодувати руками: oemnavigations.com/pages/vin-decoder-app (2 VIN/добу), далі `python3 tools/oemnav.py <share-url> --write`.
+
+- **X5 2020** · 26 786 км · $65 999 · **VIN невідомий**  
+  [лот 42094631](https://volodymyr-babak.github.io/bmw-from-korea/car.html?id=42094631) · [Encar](https://fem.encar.com/cars/detail/42094631)
+- **X5 2019** · 87 922 км · $58 161 · **VIN невідомий**  
+  [лот 42554478](https://volodymyr-babak.github.io/bmw-from-korea/car.html?id=42554478) · [Encar](https://fem.encar.com/cars/detail/42554478)
+
+## Змінилась ціна або пробіг
+
+- **X5 2019** · $61 368 → **$61 004**  
+  [лот 42218942](https://volodymyr-babak.github.io/bmw-from-korea/car.html?id=42218942) · [Encar](https://fem.encar.com/cars/detail/42218942)
+- **X5 2022** · $64 673 → **$65 256**  
+  [лот 42655967](https://volodymyr-babak.github.io/bmw-from-korea/car.html?id=42655967) · [Encar](https://fem.encar.com/cars/detail/42655967)
+- **X5 2021** · $67 568 → **$67 350**  
+  [лот 42574631](https://volodymyr-babak.github.io/bmw-from-korea/car.html?id=42574631) · [Encar](https://fem.encar.com/cars/detail/42574631)
+- **X5 2022** · $69 563 → **$68 106**  
+  [лот 41437048](https://volodymyr-babak.github.io/bmw-from-korea/car.html?id=41437048) · [Encar](https://fem.encar.com/cars/detail/41437048)
+
+Список: https://volodymyr-babak.github.io/bmw-from-korea/  ·  перевірено 2026-09-04 15:37
+
+---
+
+# Encar: проблем 11
+
+## Чекають на білд-лист за VIN
+
+Спершу найцікавіші. Декодувати руками: oemnavigations.com/pages/vin-decoder-app (2 VIN/добу), далі `python3 tools/oemnav.py <share-url> --write`.
+
+- **X5 2020** · 26 786 км · $65 999 · **VIN невідомий**  
+  [лот 42094631](https://volodymyr-babak.github.io/bmw-from-korea/car.html?id=42094631) · [Encar](https://fem.encar.com/cars/detail/42094631)
+- **X5 2019** · 87 922 км · $58 161 · **VIN невідомий**  
+  [лот 42554478](https://volodymyr-babak.github.io/bmw-from-korea/car.html?id=42554478) · [Encar](https://fem.encar.com/cars/detail/42554478)
+
+## Потрібна увага
+
+- 42218942: деталь недоступна (HTTP 407) — лишаю у списку
+- 42112799: деталь недоступна (HTTP 407) — лишаю у списку
+- 42348688: деталь недоступна (HTTP 407) — лишаю у списку
+- 42646084: деталь недоступна (HTTP 407) — лишаю у списку
+- 42650455: деталь недоступна (HTTP 407) — лишаю у списку
+- 42585911: деталь недоступна (HTTP 407) — лишаю у списку
+- 41334762: деталь недоступна (HTTP 407) — лишаю у списку
+- 42574631: деталь недоступна (HTTP 407) — лишаю у списку
+- 41437048: деталь недоступна (HTTP 407) — лишаю у списку
+- пошук X5 (G05): пошук X5 (G05): HTTP 407
+- пошук X6 (G06): пошук X6 (G06): HTTP 407
+
+Список: https://volodymyr-babak.github.io/bmw-from-korea/  ·  перевірено 2026-09-04 18:29
+
+---
+
+# Encar: нових 1
+
+## Нові кандидати
+
+- **X6 2021** · 89 977 км · ≈$60 426 · без ремонтів · змін власника 1  
+  [лот 42678772](https://volodymyr-babak.github.io/bmw-from-korea/car.html?id=42678772) · [Encar](https://fem.encar.com/cars/detail/42678772)
+
+## Чекають на білд-лист за VIN
+
+Спершу найцікавіші. Декодувати руками: oemnavigations.com/pages/vin-decoder-app (2 VIN/добу), далі `python3 tools/oemnav.py <share-url> --write`.
+
+- **X6 2021** · 89 977 км · $60 426 · **VIN невідомий**  
+  [лот 42678772](https://volodymyr-babak.github.io/bmw-from-korea/car.html?id=42678772) · [Encar](https://fem.encar.com/cars/detail/42678772)
+- **X5 2020** · 26 786 км · $65 999 · **VIN невідомий**  
+  [лот 42094631](https://volodymyr-babak.github.io/bmw-from-korea/car.html?id=42094631) · [Encar](https://fem.encar.com/cars/detail/42094631)
+- **X5 2019** · 87 922 км · $58 161 · **VIN невідомий**  
+  [лот 42554478](https://volodymyr-babak.github.io/bmw-from-korea/car.html?id=42554478) · [Encar](https://fem.encar.com/cars/detail/42554478)
+
+Список: https://volodymyr-babak.github.io/bmw-from-korea/  ·  перевірено 2026-09-05 06:17
+
+---
+
+# Encar: зміна ціни 1
+
+## Чекають на білд-лист за VIN
+
+Спершу найцікавіші. Декодувати руками: oemnavigations.com/pages/vin-decoder-app (2 VIN/добу), далі `python3 tools/oemnav.py <share-url> --write`.
+
+- **X6 2021** · 89 977 км · $60 426 · **VIN невідомий**  
+  [лот 42678772](https://volodymyr-babak.github.io/bmw-from-korea/car.html?id=42678772) · [Encar](https://fem.encar.com/cars/detail/42678772)
+- **X5 2020** · 26 786 км · $65 999 · **VIN невідомий**  
+  [лот 42094631](https://volodymyr-babak.github.io/bmw-from-korea/car.html?id=42094631) · [Encar](https://fem.encar.com/cars/detail/42094631)
+- **X5 2019** · 87 922 км · $58 161 · **VIN невідомий**  
+  [лот 42554478](https://volodymyr-babak.github.io/bmw-from-korea/car.html?id=42554478) · [Encar](https://fem.encar.com/cars/detail/42554478)
+
+## Змінилась ціна або пробіг
+
+- **X6 2022** · $62 122 → **$61 757**  
+  [лот 41142979](https://volodymyr-babak.github.io/bmw-from-korea/car.html?id=41142979) · [Encar](https://fem.encar.com/cars/detail/41142979)
+
+Список: https://volodymyr-babak.github.io/bmw-from-korea/  ·  перевірено 2026-09-05 07:17
+
+---
+
+# Encar: зміна ціни 1
+
+## Чекають на білд-лист за VIN
+
+Спершу найцікавіші. Декодувати руками: oemnavigations.com/pages/vin-decoder-app (2 VIN/добу), далі `python3 tools/oemnav.py <share-url> --write`.
+
+- **X6 2021** · 89 977 км · $60 426 · **VIN невідомий**  
+  [лот 42678772](https://volodymyr-babak.github.io/bmw-from-korea/car.html?id=42678772) · [Encar](https://fem.encar.com/cars/detail/42678772)
+- **X5 2020** · 26 786 км · $65 999 · **VIN невідомий**  
+  [лот 42094631](https://volodymyr-babak.github.io/bmw-from-korea/car.html?id=42094631) · [Encar](https://fem.encar.com/cars/detail/42094631)
+- **X5 2019** · 87 922 км · $58 161 · **VIN невідомий**  
+  [лот 42554478](https://volodymyr-babak.github.io/bmw-from-korea/car.html?id=42554478) · [Encar](https://fem.encar.com/cars/detail/42554478)
+
+## Змінилась ціна або пробіг
+
+- **X6 2022** · $69 053 → **$67 960**  
+  [лот 41616675](https://volodymyr-babak.github.io/bmw-from-korea/car.html?id=41616675) · [Encar](https://fem.encar.com/cars/detail/41616675)
+
+Список: https://volodymyr-babak.github.io/bmw-from-korea/  ·  перевірено 2026-09-05 14:17
+
+---
+
+# Encar: зміна ціни 1
+
+## Чекають на білд-лист за VIN
+
+Спершу найцікавіші. Декодувати руками: oemnavigations.com/pages/vin-decoder-app (2 VIN/добу), далі `python3 tools/oemnav.py <share-url> --write`.
+
+- **X6 2021** · 89 977 км · $60 426 · **VIN невідомий**  
+  [лот 42678772](https://volodymyr-babak.github.io/bmw-from-korea/car.html?id=42678772) · [Encar](https://fem.encar.com/cars/detail/42678772)
+- **X5 2020** · 26 786 км · $65 999 · **VIN невідомий**  
+  [лот 42094631](https://volodymyr-babak.github.io/bmw-from-korea/car.html?id=42094631) · [Encar](https://fem.encar.com/cars/detail/42094631)
+- **X5 2019** · 87 922 км · $58 161 · **VIN невідомий**  
+  [лот 42554478](https://volodymyr-babak.github.io/bmw-from-korea/car.html?id=42554478) · [Encar](https://fem.encar.com/cars/detail/42554478)
+
+## Змінилась ціна або пробіг
+
+- **X5 2019** · $53 788 → **$55 246**  
+  [лот 42287839](https://volodymyr-babak.github.io/bmw-from-korea/car.html?id=42287839) · [Encar](https://fem.encar.com/cars/detail/42287839)
+
+Список: https://volodymyr-babak.github.io/bmw-from-korea/  ·  перевірено 2026-09-07 05:17
+
+---
+
+# Encar: зміна ціни 1
+
+## Чекають на білд-лист за VIN
+
+Спершу найцікавіші. Декодувати руками: oemnavigations.com/pages/vin-decoder-app (2 VIN/добу), далі `python3 tools/oemnav.py <share-url> --write`.
+
+- **X6 2021** · 89 977 км · $60 426 · **VIN невідомий**  
+  [лот 42678772](https://volodymyr-babak.github.io/bmw-from-korea/car.html?id=42678772) · [Encar](https://fem.encar.com/cars/detail/42678772)
+- **X5 2020** · 26 786 км · $65 999 · **VIN невідомий**  
+  [лот 42094631](https://volodymyr-babak.github.io/bmw-from-korea/car.html?id=42094631) · [Encar](https://fem.encar.com/cars/detail/42094631)
+- **X5 2019** · 87 922 км · $58 161 · **VIN невідомий**  
+  [лот 42554478](https://volodymyr-babak.github.io/bmw-from-korea/car.html?id=42554478) · [Encar](https://fem.encar.com/cars/detail/42554478)
+
+## Змінилась ціна або пробіг
+
+- **X5 2021** · $64 434 → **$63 924**  
+  [лот 41368455](https://volodymyr-babak.github.io/bmw-from-korea/car.html?id=41368455) · [Encar](https://fem.encar.com/cars/detail/41368455)
+
+## Потрібна увага
+
+- 42678772: деталь недоступна (HTTP 407) — лишаю у списку
+- 42112799: деталь недоступна (HTTP 407) — лишаю у списку
+- 41142979: деталь недоступна (HTTP 407) — лишаю у списку
+- 42348688: деталь недоступна (HTTP 407) — лишаю у списку
+- 42631623: деталь недоступна (HTTP 407) — лишаю у списку
+- 42585911: деталь недоступна (HTTP 407) — лишаю у списку
+- 41334762: деталь недоступна (HTTP 407) — лишаю у списку
+- 42574631: деталь недоступна (HTTP 407) — лишаю у списку
+- 41437048: деталь недоступна (HTTP 407) — лишаю у списку
+- пошук X5 (G05): пошук X5 (G05): HTTP 407
+- пошук X6 (G06): пошук X6 (G06): HTTP 407
+
+Список: https://volodymyr-babak.github.io/bmw-from-korea/  ·  перевірено 2026-09-07 08:30

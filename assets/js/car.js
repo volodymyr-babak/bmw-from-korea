@@ -1,6 +1,9 @@
 import {
-  man, manUSD, km, krw, krwM, encarUrl, MARKS, photoUrl, initTheme, esc, KRW_PER_USD, genLabel,
+  man, manUSD, km, krw, krwM, KEY_FEATURES, featureState, encarUrl, MARKS, photoUrl,
+  initTheme, esc, swatch, KRW_PER_USD,
 } from './common.js';
+import { groupOptions } from './options.js';
+import { trimStrip, trimSpec, trimName } from './trims.js';
 
 const $ = (sel) => document.querySelector(sel);
 const id = new URLSearchParams(location.search).get('id');
@@ -28,14 +31,16 @@ async function init() {
     return;
   }
 
-  // детальний файл є в кожного авто: фото, історія, звіт інспекції, текст оголошення
+  // детальний файл є в кожного авто: фото, історія, корейська ціна;
+  // у декодованих там ще й повний білд-лист
   let detail = null;
   try {
     const res = await fetch(`data/cars/${id}.json`, { cache: 'no-cache' });
     if (res.ok) detail = await res.json();
   } catch (e) { /* показуємо те, що є в індексі */ }
 
-  document.title = `${summary.year} Ranger ${summary.trim || ''} · ${man(summary.koreaPriceMan)} — Ranger з Кореї`;
+  const short = summary.model.startsWith('X5') ? 'X5' : 'X6';
+  document.title = `${summary.year} ${short} xDrive30d · ${man(summary.koreaPriceMan)} — X6 з Кореї`;
   renderHead(summary, detail, index.meta);
   renderBody(summary, detail);
   wireGallery(summary, detail);
@@ -49,14 +54,15 @@ function fail(html) {
 
 function renderHead(c, d, meta) {
   const badge = c.mark ? `<span class="badge">${esc(MARKS[c.mark] || c.mark)}</span>` : '';
+  // Ціна — та сама, що в оголошенні: 만원. Долари поруч довідкою за курсом,
+  // бо вся решта грошей у проєкті (ремонт, виплати) вимірюється в ₩.
   const priceLine = c.koreaPriceMan
     ? `<span class="amount">${man(c.koreaPriceMan)}</span>
       <span class="amount-note">ціна в оголошенні на Encar · ${
-        manUSD(c.koreaPriceMan)} за курсом ${KRW_PER_USD} ₩/$</span>`
+        manUSD(c.koreaPriceMan)} за курсом ${KRW_PER_USD}\u00a0₩/$</span>`
     : '<span class="amount-note">Ціни в оголошенні немає — дивитись на Encar.</span>';
-  const gen = c.gen ? ` · ${esc(genLabel(c.gen))}` : '';
   $('#head').innerHTML = `
-    <h1 class="detail-title">Ford Ranger ${esc(c.trim || '')} 2.0${gen}<br>${c.year} року, <span class="num">${km(c.mileageKm)}</span>${badge}</h1>
+    <h1 class="detail-title">BMW ${esc(c.model)} xDrive30d M Sport<br>${c.year} року, <span class="num">${km(c.mileageKm)}</span>${badge}</h1>
     <p class="detail-price">${priceLine}</p>
     <p class="detail-actions">
       <a class="btn" href="${encarUrl(c.listingId)}" rel="noopener noreferrer" target="_blank">Відкрити оголошення на Encar</a>
@@ -67,27 +73,48 @@ function renderHead(c, d, meta) {
 function renderBody(c, d) {
   $('#body').innerHTML = `
     ${gallery(c, d)}
+    ${panelRenders(c, d)}
     <div class="panels">
-      <div class="panel-col">${panelIdentity(c, d)}</div>
-      <div class="panel-col">${panelHistory(d)}</div>
+      <div class="panel-col">${panelIdentity(c, d)}${panelHistory(d)}</div>
+      <div class="panel-col">${panelFeatures(c, d)}</div>
     </div>
     ${panelInspection(c, d)}
-    ${panelSeller(c, d)}`;
+    ${panelSeller(c, d)}
+    ${panelOptions(c, d)}`;
 }
 
-function shotsOf(d) {
-  const ph = (d && d.photos) || {};
-  return [
-    ...(ph.outer || []).map((p) => ({ path: p, kind: 'кузов' })),
-    ...(ph.inner || []).map((p) => ({ path: p, kind: 'салон' })),
-  ];
+/** Рендери заводської конфігурації за VIN — еталон кольору кузова й салону.
+ *  Саме вони знімають питання «кава чи cognac», якого не бере ні фото з
+ *  оголошення, ні метрика відтінку. Джерело — API bimmer.work. */
+function panelRenders(c, d) {
+  const r = (d && d.renders) || null;
+  if (!r || (!r.exterior && !r.interior)) return '';
+  const shots = [
+    [r.exterior, 'Кузов', d.exterior && d.exterior.name],
+    [r.interior, 'Салон', d.interior && d.interior.name],
+  ].filter(([src]) => src);
+  return `<section class="panel panel-wide"><h2>Заводська конфігурація за VIN</h2>
+    <div class="renders">${shots.map(([src, kind, name]) => `<figure>
+      <img loading="lazy" decoding="async" src="${esc(src)}" width="1000" height="600"
+        alt="${esc(kind)} — заводський рендер за VIN ${esc(c.vin || '')}">
+      <figcaption>${esc(kind)}${name ? ` · <b>${esc(name)}</b>` : ''}</figcaption>
+    </figure>`).join('')}</div>
+    <p class="note">Рендер BMW за VIN, не фото цього авто: показує саме ту фарбу
+      й оббивку, які стоять у білд-листі. Пробіг, стан і доукомплектацію дивитись
+      на фото з оголошення вище.</p>
+  </section>`;
 }
 
 /** Фото з оголошення: велике + смужка мініатюр (кузов, потім салон) */
 function gallery(c, d) {
-  const shots = shotsOf(d);
+  const ph = (d && d.photos) || {};
+  const shots = [
+    ...(ph.outer || []).map((p) => ({ path: p, kind: 'кузов' })),
+    ...(ph.inner || []).map((p) => ({ path: p, kind: 'салон' })),
+  ];
   if (!shots.length) return '';
-  const alt = `Ranger ${c.trim || ''} ${c.year}, лот ${c.listingId}`;
+  const short = c.model.startsWith('X5') ? 'X5' : 'X6';
+  const alt = `${short} ${c.year}, лот ${c.listingId}`;
   const strip = shots.map((s, i) => `<li><button type="button" data-i="${i}"
       aria-current="${i === 0}" aria-label="Фото ${i + 1} — ${s.kind}"><img loading="lazy" decoding="async"
       src="${photoUrl(s.path, 'thumb')}" alt="" width="280" height="158"></button></li>`).join('');
@@ -102,7 +129,11 @@ function gallery(c, d) {
 function wireGallery(c, d) {
   const strip = $('.strip');
   if (!strip) return;
-  const shots = shotsOf(d);
+  const ph = (d && d.photos) || {};
+  const shots = [
+    ...(ph.outer || []).map((p) => ({ path: p, kind: 'кузов' })),
+    ...(ph.inner || []).map((p) => ({ path: p, kind: 'салон' })),
+  ];
   strip.addEventListener('click', (ev) => {
     const btn = ev.target.closest('button[data-i]');
     if (!btn) return;
@@ -121,26 +152,107 @@ function rows(pairs) {
     .join('')}</dl>`;
 }
 
-const KO_COLOR = {
-  '흰색': 'білий', '검정색': 'чорний', '청색': 'синій', '쥐색': 'сірий', '회색': 'сірий',
-  '진주색': 'перловий', '은색': 'срібний', '갈색': 'коричневий', '남색': 'темно-синій',
-  '주황색': 'помаранчевий', '빨간색': 'червоний', '녹색': 'зелений', '연금색': 'бронзовий',
-  '하늘색': 'небесно-блакитний', '기타': 'інший',
-};
+function colorLine(side, kind = null) {
+  if (!side || !side.name) return null;
+  const bits = [`${kind ? swatch(side, kind) : ''}<b>${esc(side.name)}</b>`];
+  if (side.code) bits.push(`<span class="num">${esc(side.code)}</span>`);
+  if (side.german) bits.push(`<span class="opt-en">${esc(side.german)}</span>`);
+  return bits.join(' · ');
+}
 
 function panelIdentity(c, d) {
   const pairs = [
     ['VIN', c.vin ? `<span class="num">${esc(c.vin)}</span>` : 'відсутній в Encar'],
     ['Лот на Encar', `<span class="num">${esc(c.listingId)}</span>`],
-    ['Комплектація', c.trim ? esc(c.trim) : null],
-    ['Покоління', c.gen ? esc(genLabel(c.gen)) + (d && d.encarModel ? ` <span class="opt-en">${esc(d.encarModel)}</span>` : '') : null],
     ['Рік виготовлення', `<span class="num">${c.year}</span>`],
-    ['Модельний рік (연식)', d && d.formYear ? `<span class="num">${esc(d.formYear)}</span>` : null],
     ['Пробіг', `<span class="num">${km(c.mileageKm)}</span>`],
-    ['Колір кузова', d && d.colorName ? esc(KO_COLOR[d.colorName] || d.colorName) : null],
   ];
+  if (d) {
+    if (d.prodDate) pairs.push(['Дата випуску', `<span class="num">${esc(d.prodDate)}</span>`]);
+    if (d.modelYear) pairs.push(['Модельний рік', `<span class="num">${d.modelYear}</span>`]);
+    if (d.engine) pairs.push(['Двигун', `<span class="num">${esc(d.engine)}</span>${d.power ? ` · ${esc(d.power)}` : ''}`]);
+  }
+  // назви BMW беремо з білд-листа; поки його немає — корейський колір з оголошення
+  pairs.push(['Колір кузова', colorLine(d && d.exterior, 'paint')
+    || (c.exterior ? `${swatch(c.exterior)}<b>${esc(c.exterior)}</b>` : null)]);
+  // Пріоритет: білд-лист за VIN → колір з індексу → опис продавця (він збігається
+  // з VIN там, де є обидва, але це все ж слова продавця, тому позначаємо).
+  pairs.push(['Салон', colorLine(d && d.interior, 'trim')
+    || (c.interior ? `${swatch(c.interior, 'trim')}<b>${esc(c.interior)}</b>` : null)
+    || (c.interiorUnverified
+      ? `${swatch(c.interiorUnverified, 'trim')}<b>${esc(c.interiorUnverified)}</b>`
+        + ' <span class="feat-unknown">— не підтверджено за VIN</span>'
+      : '<span class="feat-unknown">уточнюється за VIN</span>')]);
+  pairs.push(['Планки салону', finishLine(c, d)]);
+  const note = d && d.engineNote ? `<p class="note">${esc(d.engineNote)}</p>` : '';
+  return `<section class="panel"><h2>Що це за авто</h2>${rows(pairs)}${finishFigure(c, d)}${note}</section>`;
+}
+
+/** Планка салону — рядок у таблиці фактів. Джерело лише білд-лист: у фото
+ *  оголошення вставку майже не спіймати, а продавці про неї не пишуть. */
+function finishLine(c, d) {
+  const f = c.trimFinish || finishFromOptions(d);
+  if (!f) return '<span class="feat-unknown">уточнюється за VIN</span>';
+  const spec = trimSpec(f);
+  const bits = [`<b>${esc(trimName(f))}</b>`, `<span class="num">${esc(f.code)}</span>`];
+  if (spec && f.en) bits.push(`<span class="opt-en">${esc(f.en)}</span>`);
+  return bits.join(' · ');
+}
+
+/** Індекс може відставати від деталі (білд-лист щойно вставили руками) —
+ *  тоді беремо планку прямо з опцій. */
+function finishFromOptions(d) {
+  const codes = ['S4KK', 'S4KM', 'S4KP', 'S4KR', 'S4KT', 'S4ML', 'S4MC'];
+  for (const o of (d && d.options) || []) {
+    if (codes.includes(o.code) || /interior trim finish|trim finishers/i.test(o.desc || '')) {
+      return { code: o.code, en: o.desc || '' };
+    }
+  }
+  return null;
+}
+
+/** Візуал планки: схема мотиву й матеріалу, а не фото деталі. Підпис це
+ *  проговорює — за правилом проєкту вигадане зображення не має видаватись
+ *  за знімок конкретного авто. */
+function finishFigure(c, d) {
+  const f = c.trimFinish || finishFromOptions(d);
+  if (!f) return '';
+  const spec = trimSpec(f);
+  return `<figure class="finish-figure">
+    ${trimStrip(f, { h: 40 })}
+    <figcaption>${spec
+      ? `Мотив і матеріал вставки — <b>${esc(spec.family)}</b>, схематично. `
+      : 'Мотив цієї планки в каталозі сайту ще не описаний. '
+      }Планка стоїть на панелі приладів, дверях і центральному тунелі; на фото
+      з оголошення її ракурсом майже не спіймати, тому єдине джерело — білд-лист за VIN.</figcaption>
+  </figure>`;
+}
+
+function panelFeatures(c, d) {
+  const kf = (d && d.keyFeatures) || c.keyFeatures;
+  // Нотатка потрібна саме тоді, коли опцій ще немає — там і живуть спостереження
+  // з фото, тож вона рендериться в обох гілках.
   const note = c.note ? `<p class="note">${esc(c.note)}</p>` : '';
-  return `<section class="panel"><h2>Що це за авто</h2>${rows(pairs)}${note}</section>`;
+  if (!kf) {
+    // Пневмо — єдина опція, яку варто показати й без білд-листа: вона важлива
+    // для комфорту, ретрофіт нереальний, а продавці про неї часто пишуть.
+    const air = d && typeof d.airSeller === 'boolean' ? d.airSeller : null;
+    const airLine = air === null ? '' : `<p class="note"><b>Пневмопідвіска ${air
+      ? 'є' : 'немає'}</b> — зі слів продавця, не підтверджено білд-листом за VIN.
+      Ретрофіт нереальний ($6000–10 000), тож це властивість авто назавжди.</p>`;
+    return `<section class="panel"><h2>Ключові опції</h2>
+      <p class="pending">Комплектація ще не розшифрована. ${c.vin
+        ? 'VIN є — потрібно прогнати білд-лист BMW, і опції зʼявляться тут.'
+        : 'Encar для цього лота VIN не показує, тому білд-лист поки не зняти — доглядач перевіряє щогодини.'}</p>
+      ${airLine}${note}</section>`;
+  }
+  const items = KEY_FEATURES.map((f) => {
+    const { has, long } = featureState(kf, f);
+    return `<li class="${has ? 'feat-yes' : 'feat-no'}">${has ? '✓ ' : ''}${esc(long)}</li>`;
+  }).join('');
+  return `<section class="panel"><h2>Ключові опції</h2>
+    <ul class="feature-grid">${items}</ul>
+    ${note}</section>`;
 }
 
 /** «1 звернення · 2 звернення · 5 звернень» */
@@ -160,7 +272,6 @@ function panelHistory(d) {
       <p class="pending">Виписку з корейського реєстру для цього лота ще не знято.</p></section>`;
   }
   const clean = !h.myAccidentCnt && !h.otherAccidentCnt;
-  const inc = incidentCount(h);
   return `<section class="panel"><h2>Історія</h2>
     ${rows([
       ['Власний ремонт', h.myAccidentCnt
@@ -169,22 +280,21 @@ function panelHistory(d) {
       ['Ремонт іншим за рахунок цього авто', h.otherAccidentCnt
         ? `<span class="num">${h.otherAccidentCnt}</span> на <span class="num">${krw(h.otherAccidentCost || 0)}</span>`
         : 'не було'],
-      ['Різних ДТП', inc == null
+      ['Різних ДТП', incidentCount(h) == null
         ? '<span class="dim">детальних записів немає</span>'
-        : (inc
-          ? `<span class="num">${inc}</span> — за унікальними датами, `
+        : (incidentCount(h)
+          ? `<span class="num">${incidentCount(h)}</span> — за унікальними датами, `
             + `страхових записів <span class="num">${(h.accidents || []).length}</span>`
           : '<span class="feat-yes">не було</span>')],
       ['Змін власника', `<span class="num">${h.ownerChangeCnt}</span>`],
-      ['Перша реєстрація', h.firstDate ? `<span class="num">${esc(h.firstDate)}</span>` : null],
-      ['Списання / потоп', h.totalLossCnt || h.floodTotalLossCnt || h.floodPartLossCnt
+      ['Списання / потоп', h.totalLoss || h.flood
         ? '<b>є позначка — не брати</b>'
         : '<span class="feat-yes">чисто</span>'],
     ])}
     ${incidentList(h)}
     <p class="note">${clean
       ? 'За виплатами страховика авто без ремонтів.'
-      : `Виплати на власний ремонт — ${krwM(h.myAccidentCost || 0)}.`}</p>
+      : `Виплати на власний ремонт — ${krwM(h.myAccidentCost || 0)}, це нижче за поріг 5 млн ₩, який ми тримаємо.`}</p>
   </section>`;
 }
 
@@ -211,16 +321,18 @@ function incidentList(h) {
     if (!byDate.has(a.date)) byDate.set(a.date, []);
     byDate.get(a.date).push(a);
   }
-  const items = [...byDate.entries()].sort((x, y) => y[0].localeCompare(x[0])).map(([date, list]) => {
+  const rows = [...byDate.entries()].sort((x, y) => y[0].localeCompare(x[0])).map(([date, list]) => {
     const parts = list.map((a) => {
       const sum = (a.partCost || 0) + (a.laborCost || 0) + (a.paintingCost || 0);
       return `${ACC_TYPE[a.type] || `тип ${a.type}`} — ${sum ? krw(sum) : 'без суми'}`;
     }).join('; ');
     return `<li><span class="num">${date}</span> — ${parts}</li>`;
   });
-  return `<ul class="acc-list">${items.join('')}</ul>`;
+  return `<ul class="acc-list">${rows.join('')}</ul>`;
 }
 
+/** Що пише продавець в описі оголошення — джерело поза API й білд-листом.
+ *  kind: plus (аргумент за) · minus (насторожує) · info (просто факт). */
 const SELLER_MARK = { plus: '+', minus: '!', info: '·' };
 
 function factsList(fs) {
@@ -228,6 +340,17 @@ function factsList(fs) {
     const kind = SELLER_MARK[f.kind] ? f.kind : 'info';
     return `<li class="fact fact-${kind}"><span class="fact-mark" aria-hidden="true">${SELLER_MARK[kind]}</span>${esc(f.text)}</li>`;
   }).join('');
+}
+
+function panelSeller(c, d) {
+  const fs = (d && d.sellerFacts) || [];
+  if (!fs.length) return '';
+  return `<section class="panel panel-wide"><h2>Що пише продавець</h2>
+    <ul class="facts">${factsList(fs)}</ul>
+    <p class="note">Це слова продавця з опису на Encar, а не перевірені дані. Корисне саме
+      тим, що частину цього немає ні в API, ні в білд-листі за VIN — ключі, залишок протектора,
+      продовжена гарантія, визнані кузовні роботи. Розбіжності з реєстром виплат позначені «!».</p>
+  </section>`;
 }
 
 /** Державний звіт про стан (성능점검기록부) — найтвердіше джерело в добірці. */
@@ -251,20 +374,27 @@ function panelInspection(c, d) {
     ${meta ? `<p class="note">${esc(meta)}.</p>` : ''}
     ${insp.comment ? `<p class="note note-quote">Коментар інспектора: «${esc(insp.comment)}»</p>` : ''}
     <p class="note">Це державний звіт про стан (성능점검기록부), а не слова продавця. Заміна
-      накладних деталей — капота, крил, дверей, борта — у Кореї вважається дрібним
+      накладних деталей — капота, крил, дверей, кришки багажника — у Кореї вважається дрібним
       ремонтом; зварювання каркаса це вже інша розмова, і саме через нього стоїть позначка
       «ДТП каркаса».</p>
   </section>`;
 }
 
-/** Сирий текст оголошення — корейською, згорнутий. Там буває те, чого немає
- *  в API: ключі, протектор, гарантія, визнані кузовні роботи. */
-function panelSeller(c, d) {
-  const text = d && d.sellerText;
-  if (!text || !text.trim()) return '';
-  return `<section class="panel panel-wide"><h2>Що пише продавець</h2>
-    <details class="seller-text"><summary>Показати текст оголошення (корейською)</summary>
-      <pre>${esc(text.trim())}</pre></details>
-    <p class="note">Це слова продавця з опису на Encar, а не перевірені дані.</p>
-  </section>`;
+function panelOptions(c, d) {
+  if (!d || !d.options) {
+    return `<section class="panel panel-wide"><h2>Повна комплектація за VIN</h2>
+      <p class="pending">Білд-лист ще не знято.${c.vin
+        ? ` VIN <span class="num">${esc(c.vin)}</span> — можна декодувати на mdecoder.com.`
+        : ' VIN для цього лота Encar не показує.'}</p></section>`;
+  }
+  const groups = groupOptions(d.options).map((g) => `
+    <div class="opt-group">
+      <h3>${esc(g.title)}</h3>
+      <ul class="opt-list">${g.items.map((o) => `
+        <li class="${o.key ? 'opt-key' : ''}"><code>${esc(o.code)}</code>
+          <span>${esc(o.uk || o.en)}${o.uk ? `<br><span class="opt-en">${esc(o.en)}</span>` : ''}</span>
+        </li>`).join('')}</ul>
+    </div>`).join('');
+  return `<section class="panel panel-wide"><h2>Повна комплектація за VIN — ${d.options.length} позицій</h2>
+    <div class="opt-columns">${groups}</div></section>`;
 }

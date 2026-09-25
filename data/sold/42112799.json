@@ -1,0 +1,392 @@
+{
+  "listingId": "42112799",
+  "vin": "WBACV6100L9D26073",
+  "encarUrl": "https://fem.encar.com/cars/detail/42112799",
+  "model": "X5 (G05)",
+  "prodDate": "2020-06-17",
+  "mfgYear": 2020,
+  "engine": "B57O",
+  "power": "195 kW / 265 hp",
+  "mileageKm": 58728,
+  "priceUSD": 61188,
+  "mark": "hero",
+  "exterior": {
+    "name": "Carbon Black",
+    "german": "carbon-schwarz",
+    "code": "416"
+  },
+  "interior": {
+    "name": "Vernasca Black",
+    "german": "Leather Vernasca black",
+    "code": null
+  },
+  "history": {
+    "openData": true,
+    "regDate": "2026-06-01T17:00:57.814362",
+    "carNo": "382어4767",
+    "year": "2020",
+    "maker": "BMW",
+    "carKind": "1",
+    "use": "2",
+    "displacement": "2993",
+    "carName": null,
+    "firstDate": "2020-09-21",
+    "fuel": "디젤",
+    "carShape": null,
+    "model": "X5 (G05)",
+    "transmission": null,
+    "carNameCode": null,
+    "myAccidentCnt": 0,
+    "otherAccidentCnt": 0,
+    "ownerChangeCnt": 1,
+    "robberCnt": 0,
+    "robberDate": null,
+    "totalLossCnt": 0,
+    "totalLossDate": null,
+    "floodTotalLossCnt": 0,
+    "floodPartLossCnt": null,
+    "floodDate": null,
+    "government": 0,
+    "business": 0,
+    "loan": 0,
+    "carNoChangeCnt": 0,
+    "myAccidentCost": 0,
+    "otherAccidentCost": 0,
+    "carInfoChanges": [
+      {
+        "date": "2020-09-21",
+        "carNo": "382어XXXX"
+      }
+    ],
+    "carInfoUse1s": [
+      "2"
+    ],
+    "carInfoUse2s": [
+      "1"
+    ],
+    "ownerChanges": [
+      "2026-05-27"
+    ],
+    "notJoinDate1": null,
+    "notJoinDate2": null,
+    "notJoinDate3": null,
+    "notJoinDate4": null,
+    "notJoinDate5": null,
+    "accidentCnt": 0,
+    "accidents": []
+  },
+  "keyFeatures": {
+    "air": true,
+    "laser": false,
+    "led": true,
+    "soft": false,
+    "vent": true,
+    "hk": true,
+    "pano": true,
+    "skylounge": false,
+    "mhev": false,
+    "acc": true,
+    "park": true,
+    "comfort": true,
+    "seatheat": true,
+    "wheelheat": true,
+    "climate4": true,
+    "exhaust": true
+  },
+  "options": [
+    {
+      "code": "S337",
+      "desc": "M Sports package"
+    },
+    {
+      "code": "S710",
+      "desc": "M leather steering wheel"
+    },
+    {
+      "code": "S715",
+      "desc": "M Aerodynamics package"
+    },
+    {
+      "code": "S402",
+      "desc": "Panorama glass roof"
+    },
+    {
+      "code": "S418",
+      "desc": "Luggage compartment package"
+    },
+    {
+      "code": "S423",
+      "desc": "Floor mats velours"
+    },
+    {
+      "code": "S428",
+      "desc": "Warning triangle and first aid kit"
+    },
+    {
+      "code": "S453",
+      "desc": "Climate-controlled (ventilated) seats, front"
+    },
+    {
+      "code": "S456",
+      "desc": "Comfort seat with memory"
+    },
+    {
+      "code": "S4A2",
+      "desc": "Glass application Crafted Clarity"
+    },
+    {
+      "code": "S4AW",
+      "desc": "Instrument panel Sensatec"
+    },
+    {
+      "code": "S4HA",
+      "desc": "Seat heating, front and rear"
+    },
+    {
+      "code": "S4HB",
+      "desc": "Heat comfort package, front"
+    },
+    {
+      "code": "S4KK",
+      "desc": "Interior trim finishers aluminium tetragon"
+    },
+    {
+      "code": "S4NB",
+      "desc": "Automatic climate control, 4-zone"
+    },
+    {
+      "code": "S4T8",
+      "desc": "Outside mirror with auto dip"
+    },
+    {
+      "code": "S4UR",
+      "desc": "Ambient interior light"
+    },
+    {
+      "code": "S610",
+      "desc": "Head-up display"
+    },
+    {
+      "code": "S688",
+      "desc": "Harman/Kardon surround sound system"
+    },
+    {
+      "code": "S699",
+      "desc": "Area-Code 3 for DVD"
+    },
+    {
+      "code": "S6AC",
+      "desc": "Intelligent emergency call"
+    },
+    {
+      "code": "S6AE",
+      "desc": "Teleservices"
+    },
+    {
+      "code": "S6AK",
+      "desc": "Connected Drive Services"
+    },
+    {
+      "code": "S6C3",
+      "desc": "Connected Package Professional"
+    },
+    {
+      "code": "S6CP",
+      "desc": "Preparation Apple CarPlay"
+    },
+    {
+      "code": "S6NV",
+      "desc": "Telephony with wireless charging"
+    },
+    {
+      "code": "S6U3",
+      "desc": "BMW Live operating area Professional"
+    },
+    {
+      "code": "S6U8",
+      "desc": "BMW gesture control"
+    },
+    {
+      "code": "S6UH",
+      "desc": "Traffic Information"
+    },
+    {
+      "code": "S548",
+      "desc": "Kilometre speedo"
+    },
+    {
+      "code": "S552",
+      "desc": "Adaptive LED headlight"
+    },
+    {
+      "code": "S5A1",
+      "desc": "LED Fog lights"
+    },
+    {
+      "code": "S5AC",
+      "desc": "High-beam assistant"
+    },
+    {
+      "code": "S5AL",
+      "desc": "Active Protection"
+    },
+    {
+      "code": "S5AU",
+      "desc": "Driving assistant professional"
+    },
+    {
+      "code": "S5AV",
+      "desc": "Active Guard"
+    },
+    {
+      "code": "S5DN",
+      "desc": "Parking assistance system Plus"
+    },
+    {
+      "code": "S212",
+      "desc": "Equipment, brake system country-specific"
+    },
+    {
+      "code": "S258",
+      "desc": "Tyres with runflat properties"
+    },
+    {
+      "code": "S2NH",
+      "desc": "M Sport brake"
+    },
+    {
+      "code": "S2TB",
+      "desc": "Sport automatic gearbox"
+    },
+    {
+      "code": "S2VB",
+      "desc": "Tyre pressure display"
+    },
+    {
+      "code": "S2VR",
+      "desc": "Two-axle air suspension"
+    },
+    {
+      "code": "S322",
+      "desc": "Comfort access"
+    },
+    {
+      "code": "S3AT",
+      "desc": "Roof rails aluminium satinated"
+    },
+    {
+      "code": "S3DS",
+      "desc": "BMW display key"
+    },
+    {
+      "code": "S3MB",
+      "desc": "Individual Ext. Line, burnished aluminium"
+    },
+    {
+      "code": "S775",
+      "desc": "Headlining anthracite"
+    },
+    {
+      "code": "S802",
+      "desc": "National version Korea"
+    },
+    {
+      "code": "S867",
+      "desc": "Language version Korean"
+    },
+    {
+      "code": "S8AF",
+      "desc": "On-board literature, Korean"
+    },
+    {
+      "code": "S8R9",
+      "desc": "Refrigerant R1234yf"
+    },
+    {
+      "code": "S8S3",
+      "desc": "Automatic locking during starting"
+    },
+    {
+      "code": "S8SX",
+      "desc": "Providersteuerung Telematik"
+    },
+    {
+      "code": "S8TF",
+      "desc": "Active pedestrian protection"
+    },
+    {
+      "code": "S1MA",
+      "desc": "M sports exhaust system"
+    },
+    {
+      "code": "S1TC",
+      "desc": "20\" light-alloy wheel star spoke 740M"
+    },
+    {
+      "code": "S9AA",
+      "desc": "Outer skin protection"
+    },
+    {
+      "code": "S993",
+      "desc": "Model year code in VIN"
+    },
+    {
+      "code": "SA090",
+      "desc": "90 Ah AGM battery"
+    }
+  ],
+  "photos": {
+    "outer": [
+      "/carpicture10/pic4210/42108591_001.jpg",
+      "/carpicture10/pic4210/42108591_002.jpg",
+      "/carpicture10/pic4210/42108591_003.jpg",
+      "/carpicture10/pic4210/42108591_004.jpg",
+      "/carpicture10/pic4210/42108591_005.jpg",
+      "/carpicture10/pic4210/42108591_006.jpg",
+      "/carpicture10/pic4210/42108591_031.jpg",
+      "/carpicture10/pic4210/42108591_032.jpg",
+      "/carpicture10/pic4210/42108591_033.jpg"
+    ],
+    "inner": [
+      "/carpicture10/pic4210/42108591_007.jpg",
+      "/carpicture10/pic4210/42108591_008.jpg",
+      "/carpicture10/pic4210/42108591_009.jpg",
+      "/carpicture10/pic4210/42108591_010.jpg",
+      "/carpicture10/pic4210/42108591_034.jpg",
+      "/carpicture10/pic4210/42108591_035.jpg",
+      "/carpicture10/pic4210/42108591_036.jpg"
+    ]
+  },
+  "koreaPriceMan": 5690,
+  "sellerText": "2020.06\n\nNO PAINT\n\nTAX 100%\n\nKEY 2EA\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n안녕하세요 로얄모터스 대표 이민철 입니다.\n\n로얄모터스에서 직접 매입한 차량만 판매합니다.\n\n연평균 판매댓수 1000대 이상 \n\n실차주와 거래함으로 취등록세 매도비 성능보험료 외에 알선수수료 및 기타 부대비용 없습니다.\n\n- 경기도 수원시 권선구 권선로 308-5 도이치오토월드 478호\n\n\n★ 전액할부부터 당일출고 및 토요일  일요일 공휴일 24시간 출고가능 ★\n★ 전액할부부터 당일출고 및 토요일 , 일요일 공휴일 24시간 출고가능 ★\n★ 전액할부부터 당일출고 및 토요일 , 일요일 공휴일 24시간 출고가능 ★\n\n\n\n################################################\n\n\n직접 매입한 차량만 올리는 실차주로써 허위매물일시 차량가액 200% 보상하겠습니다.\n\n보고 계신 차량은 '로얄모터스'에서 직접 매입 관리중인 차량입니다.\n\n성능기록부 및 보험이력 모두 고지한차량만 올리고있습니다.\n\n현금영수증 또는 세금계산서 차량가액 100% 발급해드리고있습니다.\n\n실차주 이므로 가격 또한 저렴하며 시운전  출장판매 또한 가능합니다.\n\n\n################################################\n\n\n\n\n\n\n \n \n - 연락주시면 친절하고 상세하게 설명을 드리도록 하겠습니다. 전화가 부재중일시 문자를 남겨주시면 확인후 전화드리겠습니다.\n\n\n - 차량은 경기도 수원시 도이치오토월드 에서 보실 수 있습니다.\n\n \n - 차량 시승도 가능하며 차량성능점검기록부 확인 가능합니다.\n\n\n - 현재 타고계신 차량과 대차도 가능합니다.\n\n\n - 1금융권 대출 신한마이카 협력업체\n\n\n - 차량대금 + 이전비 + 보험료 + 여유자금 전액할부 가능합니다.\n\n \n - 출장판매 가능합니다 자세한사항은 유선문의 부탁드립니다.\n\n\n- 경기도 수원시 권선구 권선로 308-5 도이치오토월드 478호\n\n\n  #### 타시던차량 매입가능하며 할부진행시 신용에 따라 저금리로 안내해드리겠습니다. ####",
+  "sellerFacts": [
+    {
+      "kind": "plus",
+      "text": "Без жодного фарбування, два ключі."
+    }
+  ],
+  "inspection": {
+    "accident": false,
+    "simpleRepair": false,
+    "waterlog": false,
+    "tuning": false,
+    "usage": [],
+    "serious": [],
+    "panels": [],
+    "date": "20260526",
+    "mileage": 58197,
+    "recall": true,
+    "comment": "운)휀다조정 / 중고차 특성상 부분적인 판금 도색은 있을 수 있습니다. 국토부 통합이력과 점검내용이 상이할 수 있습니다."
+  },
+  "inspectionFacts": [
+    {
+      "kind": "plus",
+      "text": "Звіт інспекції чистий: ні замін панелей, ні кузовного, ні комерційної історії."
+    }
+  ],
+  "decodeSource": "mdecoder.com",
+  "renders": {
+    "exterior": "assets/renders/WBACV6100L9D26073-ext.jpg",
+    "interior": "assets/renders/WBACV6100L9D26073-int.jpg"
+  }
+}
