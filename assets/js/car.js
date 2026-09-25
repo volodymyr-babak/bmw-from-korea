@@ -40,7 +40,7 @@ async function init() {
   } catch (e) { /* показуємо те, що є в індексі */ }
 
   const short = summary.model.startsWith('X5') ? 'X5' : 'X6';
-  document.title = `${summary.year} ${short} xDrive30d · ${man(summary.koreaPriceMan)} — X6 з Кореї`;
+  document.title = `${summary.year} ${short} xDrive${summary.engine || '30d'} · ${man(summary.koreaPriceMan)} — X6 з Кореї`;
   renderHead(summary, detail, index.meta);
   renderBody(summary, detail);
   wireGallery(summary, detail);
@@ -62,7 +62,7 @@ function renderHead(c, d, meta) {
         manUSD(c.koreaPriceMan)} за курсом ${KRW_PER_USD}\u00a0₩/$</span>`
     : '<span class="amount-note">Ціни в оголошенні немає — дивитись на Encar.</span>';
   $('#head').innerHTML = `
-    <h1 class="detail-title">BMW ${esc(c.model)} xDrive30d M Sport<br>${c.year} року, <span class="num">${km(c.mileageKm)}</span>${badge}</h1>
+    <h1 class="detail-title">BMW ${esc(c.model)} xDrive${esc(c.engine || '30d')} M Sport<br>${c.year} року, <span class="num">${km(c.mileageKm)}</span>${badge}</h1>
     <p class="detail-price">${priceLine}</p>
     <p class="detail-actions">
       <a class="btn" href="${encarUrl(c.listingId)}" rel="noopener noreferrer" target="_blank">Відкрити оголошення на Encar</a>

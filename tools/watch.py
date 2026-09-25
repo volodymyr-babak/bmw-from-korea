@@ -311,11 +311,13 @@ def find_new(index, state, ch):
                 continue
 
             car = build_car(lid, model, year, int(man), price, det, hist, insp)
+            car['engine'] = encar.engine(x.get('Badge'))
             index['cars'].append(car)
             known.add(lid)
             if vin:
                 vins_taken.add(vin)
             detail = build_detail(lid, model, year, int(man), price, det, hist, insp)
+            detail['engine'] = car['engine']
             restore_sheet(car, detail)
             if not DRY_RUN:
                 save(CARS / f'{lid}.json', detail)

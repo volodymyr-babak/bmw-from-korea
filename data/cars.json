@@ -1,8 +1,8 @@
 {
   "meta": {
     "updated": "2026-09-25",
-    "model": "BMW X6 (G06) xDrive30d M Sport",
-    "criteria": "X6 (G06) · 2019–2022 виготовлення · ≤110000 км · M Sport · дизель 30d лише · ДТП ≤5 млн ₩ власний · під ключ ≤ $70000 · будь-який колір кузова й салону · пневмо S2VR · адаптивні фари S552/S5AZ · без лізингу/45e/40i/40d/M50 · без прокатної/таксі історії (звіт інспекції)",
+    "model": "BMW X6 (G06) xDrive30d / xDrive40d M Sport",
+    "criteria": "X6 (G06) · 2019–2022 виготовлення · ≤110000 км · M Sport · дизель 30d або 40d · ДТП ≤5 млн ₩ власний · під ключ ≤ $70000 · будь-який колір кузова й салону · пневмо S2VR · адаптивні фари S552/S5AZ · без лізингу/45e/40i/M50i/M50d · без прокатної/таксі історії (звіт інспекції)",
     "customs": "P (USD) by year 2019:25000 2020:36000 2021:40500 2022:43000; age=2025-year; duty=0.10P; excise=75*3.0*age*1.1648; vat=0.20(P+duty+excise); pens=0.05P; oblik=pens+124; ship=3700; svc=1000; korea=price_만*10000/1372",
     "count": 18,
     "decodedCount": 3,
@@ -26,7 +26,8 @@
       "photo": "/carpicture02/pic4272/42729565_001.jpg",
       "priceEstimated": true,
       "exterior": "синій",
-      "rank": 1
+      "rank": 1,
+      "engine": "30d"
     },
     {
       "listingId": "42761070",
@@ -45,7 +46,8 @@
       "photo": "/carpicture05/pic4275/42757512_002.jpg",
       "priceEstimated": true,
       "exterior": "чорний",
-      "rank": 2
+      "rank": 2,
+      "engine": "30d"
     },
     {
       "listingId": "41503700",
@@ -64,7 +66,8 @@
       "photo": "/carpicture09/pic4149/41499771_001.jpg",
       "priceEstimated": true,
       "exterior": "Carbon Black",
-      "rank": 3
+      "rank": 3,
+      "engine": "30d"
     },
     {
       "listingId": "42047529",
@@ -83,7 +86,8 @@
       "photo": "/carpicture04/pic4204/42047282_001.jpg",
       "priceEstimated": true,
       "exterior": "Carbon Black",
-      "rank": 4
+      "rank": 4,
+      "engine": "30d"
     },
     {
       "listingId": "41962836",
@@ -102,7 +106,8 @@
       "photo": "/carpicture06/pic4196/41960599_001.jpg",
       "priceEstimated": true,
       "exterior": "сірий",
-      "rank": 5
+      "rank": 5,
+      "engine": "30d"
     },
     {
       "listingId": "42190131",
@@ -122,7 +127,8 @@
       "priceEstimated": true,
       "exterior": "Carbon Black",
       "interiorUnverified": "червоний — з опису",
-      "rank": 6
+      "rank": 6,
+      "engine": "30d"
     },
     {
       "listingId": "42718008",
@@ -141,7 +147,8 @@
       "photo": "/carpicture01/pic4271/42710395_001.jpg",
       "priceEstimated": true,
       "exterior": "бронзовий",
-      "rank": 7
+      "rank": 7,
+      "engine": "30d"
     },
     {
       "listingId": "42755306",
@@ -160,7 +167,8 @@
       "photo": "/carpicture05/pic4275/42755306_001.jpg",
       "priceEstimated": true,
       "exterior": "은하색",
-      "rank": 8
+      "rank": 8,
+      "engine": "30d"
     },
     {
       "listingId": "42750586",
@@ -179,7 +187,8 @@
       "photo": "/carpicture05/pic4275/42750586_001.jpg",
       "priceEstimated": true,
       "exterior": "Carbon Black",
-      "rank": 9
+      "rank": 9,
+      "engine": "30d"
     },
     {
       "rank": 10,
@@ -221,7 +230,8 @@
       "trimFinish": {
         "code": "S4KM",
         "en": "Interior trim finishers aluminium mesh effect dark"
-      }
+      },
+      "engine": "30d"
     },
     {
       "listingId": "42569192",
@@ -241,7 +251,8 @@
       "priceEstimated": true,
       "exterior": "синій",
       "interiorUnverified": "червоний — з опису",
-      "rank": 11
+      "rank": 11,
+      "engine": "30d"
     },
     {
       "listingId": "42791957",
@@ -260,7 +271,8 @@
       "photo": "/carpicture09/pic4279/42790023_001.jpg",
       "priceEstimated": true,
       "exterior": "чорний",
-      "rank": 12
+      "rank": 12,
+      "engine": "30d"
     },
     {
       "rank": 13,
@@ -302,7 +314,8 @@
       "trimFinish": {
         "code": "S4KM",
         "en": "Interior trim finishers aluminium mesh effect dark"
-      }
+      },
+      "engine": "30d"
     },
     {
       "listingId": "42716296",
@@ -321,7 +334,8 @@
       "photo": "/carpicture01/pic4271/42716296_001.jpg",
       "priceEstimated": true,
       "exterior": "білий",
-      "rank": 14
+      "rank": 14,
+      "engine": "30d"
     },
     {
       "listingId": "42719968",
@@ -340,7 +354,8 @@
       "photo": "/carpicture10/pic4270/42708107_001.jpg",
       "priceEstimated": true,
       "exterior": "Carbon Black",
-      "rank": 15
+      "rank": 15,
+      "engine": "30d"
     },
     {
       "rank": 16,
@@ -382,7 +397,8 @@
       "trimFinish": {
         "code": "S4KM",
         "en": "Interior trim finishers aluminium mesh effect dark"
-      }
+      },
+      "engine": "30d"
     },
     {
       "listingId": "42754050",
@@ -401,7 +417,8 @@
       "photo": "/carpicture04/pic4274/42741767_001.jpg",
       "priceEstimated": true,
       "exterior": "білий",
-      "rank": 17
+      "rank": 17,
+      "engine": "30d"
     },
     {
       "listingId": "42500550",
@@ -420,7 +437,8 @@
       "photo": "/carpicture10/pic4250/42500550_001.jpg",
       "priceEstimated": true,
       "exterior": "білий",
-      "rank": 18
+      "rank": 18,
+      "engine": "30d"
     }
   ]
 }

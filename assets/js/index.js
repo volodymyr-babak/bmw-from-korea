@@ -289,7 +289,7 @@ function row(c, isCheapest) {
   return `<tr>
     <td class="c-rank num">${String(c.rankModel ?? c.rank).padStart(2, '0')}</td>
     <th class="c-car" scope="row">
-      <a class="car-link" href="${href}"><span class="model-tag">${short}</span>${c.year}</a>${
+      <a class="car-link" href="${href}"><span class="model-tag">${short} ${esc(c.engine || '30d')}</span>${c.year}</a>${
         mhevTag(c)}${badges}
       <span class="c-car-meta">лот <span class="num">${esc(c.listingId)}</span> ·
         <a href="${encarUrl(c.listingId)}" rel="noopener noreferrer" target="_blank">Encar&nbsp;↗</a>
@@ -320,7 +320,7 @@ function mhevTag(c) {
     return '<span class="tag-mhev" title="48V mild-hybrid — невідомо, білд-листа за VIN ще немає">?</span>';
   }
   return c.keyFeatures?.mhev
-    ? '<span class="tag-mhev" title="48V mild-hybrid (S1CE) — 210 кВт / 286 к.с. проти 195 кВт / 265 к.с. без нього">48V</span>'
+    ? '<span class="tag-mhev" title="48V mild-hybrid (S1CE): у 30d — 210 кВт / 286 к.с. проти 195 / 265 без нього; у 40d — 250 кВт / 340 к.с.">48V</span>'
     : '';
 }
 

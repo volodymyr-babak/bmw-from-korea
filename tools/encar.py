@@ -25,9 +25,22 @@ FINAL_CODES = {'200', '400', '404'}
 # Badge мусить бути ТОП-РІВНЕМ: усередині ModelGroup дає 400.
 # З 2026-09-25 — лише X6 (X5 куплено); X5 можна повернути одним рядком:
 # 'X5 (G05)': {'group': 'X5', 'model': 'X5 (G05)', 'badge': 'xDrive 30d M 스포츠'}.
+# 40d додано 2026-09-25 (рішення користувача: «тільки 30d або 40d»). У 40d на Encar три
+# бейджі M Sport: звичайний, «온라인 익스클루시브» (онлайн-серія, їх більшість) і «프로».
+# M50d і xLine не беремо. Бензин (40i, M50i) відсікає FuelType.디젤.
 MODELS = {
-    'X6 (G06)': {'group': 'X6', 'model': 'X6 (G06)', 'badge': 'xDrive30d M 스포츠'},
+    'X6 (G06)': {'group': 'X6', 'model': 'X6 (G06)', 'badges': [
+        'xDrive30d M 스포츠',
+        'xDrive40d M 스포츠', 'xDrive40d M 스포츠 온라인 익스클루시브', 'xDrive40d M 스포츠 프로',
+    ]},
 }
+
+
+def engine(badge: str) -> str:
+    """'xDrive40d M 스포츠 프로' → '40d'."""
+    import re
+    m = re.search(r'(\d\d[di])', badge or '')
+    return m.group(1) if m else '30d'
 
 
 def get(url: str, tries: int = 8, pause: float = 1.2):
@@ -69,7 +82,7 @@ def record(vehicle_id):
     return get_json(RECORD.format(vehicle_id))
 
 
-def _query(m: dict, year_from: int, year_to: int, max_km: int, max_man: int) -> str:
+def _query(m: dict, badge: str, year_from: int, year_to: int, max_km: int, max_man: int) -> str:
     group = (f'(C.CarType.A._.(C.Manufacturer.BMW._.'
              f'(C.ModelGroup.{m["group"]}._.Model.{m["model"]}.)))')
     return (f'(And.Hidden.N._.{group}'
@@ -78,26 +91,32 @@ def _query(m: dict, year_from: int, year_to: int, max_km: int, max_man: int) -> 
             f'_.Price.range(..{max_man}).'
             f'_.SellType.일반.'
             f'_.FuelType.디젤.'
-            f'_.Badge.{m["badge"]}.)')
+            f'_.Badge.{badge}.)')
 
 
 def search(model_name: str, year_from: int, year_to: int, max_km: int, max_man: int,
            page_size: int = 20, hard_cap: int = 600):
     """Усі оголошення моделі під серверні фільтри. Повертає (список, Count)."""
     m = MODELS[model_name]
-    q = urllib.parse.quote(_query(m, year_from, year_to, max_km, max_man), safe='')
-    out, offset, total = [], 0, None
-    while True:
-        url = f'{SEARCH}?count=true&q={q}&sr=%7CModifiedDate%7C{offset}%7C{page_size}'
-        code, d = get_json(url)
-        if code != '200' or not d:
-            raise RuntimeError(f'пошук {model_name}: HTTP {code}')
-        total = d.get('Count', 0)
-        page = d.get('SearchResults') or []
-        out += page
-        if not page or len(out) >= min(total, hard_cap):
-            return out, total
-        offset += page_size
+    out, total = [], 0
+    # Badge у запиті лише один, тож кожен бейдж — окремий пошук.
+    for badge in m['badges']:
+        q = urllib.parse.quote(_query(m, badge, year_from, year_to, max_km, max_man), safe='')
+        got, offset = [], 0
+        while True:
+            url = f'{SEARCH}?count=true&q={q}&sr=%7CModifiedDate%7C{offset}%7C{page_size}'
+            code, d = get_json(url)
+            if code != '200' or not d:
+                raise RuntimeError(f'пошук {model_name} / {badge}: HTTP {code}')
+            n = d.get('Count', 0)
+            page = d.get('SearchResults') or []
+            got += page
+            if not page or len(got) >= min(n, hard_cap):
+                break
+            offset += page_size
+        out += got
+        total += n
+    return out, total
 
 
 def frame_no(path: str) -> int:
