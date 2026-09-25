@@ -1,0 +1,106 @@
+{
+  "listingId": "42754050",
+  "encarUrl": "https://fem.encar.com/cars/detail/42754050",
+  "model": "X6 (G06)",
+  "mfgYear": 2022,
+  "vin": "WBAGT8108N9N12821",
+  "mileageKm": 53344,
+  "koreaPriceMan": 6500,
+  "priceUSD": 69053,
+  "priceEstimated": true,
+  "photos": {
+    "outer": [
+      "/carpicture04/pic4274/42741767_001.jpg",
+      "/carpicture04/pic4274/42741767_002.jpg",
+      "/carpicture04/pic4274/42741767_003.jpg",
+      "/carpicture04/pic4274/42741767_004.jpg",
+      "/carpicture04/pic4274/42741767_005.jpg",
+      "/carpicture04/pic4274/42741767_006.jpg",
+      "/carpicture04/pic4274/42741767_031.jpg",
+      "/carpicture04/pic4274/42741767_032.jpg",
+      "/carpicture04/pic4274/42741767_033.jpg"
+    ],
+    "inner": [
+      "/carpicture04/pic4274/42741767_007.jpg",
+      "/carpicture04/pic4274/42741767_008.jpg",
+      "/carpicture04/pic4274/42741767_009.jpg",
+      "/carpicture04/pic4274/42741767_010.jpg",
+      "/carpicture04/pic4274/42741767_034.jpg",
+      "/carpicture04/pic4274/42741767_035.jpg",
+      "/carpicture04/pic4274/42741767_036.jpg"
+    ]
+  },
+  "history": {
+    "openData": true,
+    "regDate": "2026-09-15T18:30:09.243439",
+    "carNo": "323라8561",
+    "year": "2022",
+    "maker": "BMW",
+    "carKind": "1",
+    "use": "2",
+    "displacement": "2993",
+    "carName": null,
+    "firstDate": "2022-09-23",
+    "fuel": "디젤",
+    "carShape": "SUV",
+    "model": "X6 (G06)",
+    "transmission": null,
+    "carNameCode": null,
+    "myAccidentCnt": 0,
+    "otherAccidentCnt": 0,
+    "ownerChangeCnt": 0,
+    "robberCnt": 0,
+    "robberDate": null,
+    "totalLossCnt": 0,
+    "totalLossDate": null,
+    "floodTotalLossCnt": 0,
+    "floodPartLossCnt": null,
+    "floodDate": null,
+    "government": 0,
+    "business": 0,
+    "loan": 0,
+    "carNoChangeCnt": 0,
+    "myAccidentCost": 0,
+    "otherAccidentCost": 0,
+    "carInfoChanges": [
+      {
+        "date": "2022-09-23",
+        "carNo": "323라XXXX"
+      }
+    ],
+    "carInfoUse1s": [
+      "2"
+    ],
+    "carInfoUse2s": [
+      "1"
+    ],
+    "ownerChanges": [],
+    "notJoinDate1": null,
+    "notJoinDate2": null,
+    "notJoinDate3": null,
+    "notJoinDate4": null,
+    "notJoinDate5": null,
+    "accidentCnt": 0,
+    "accidents": []
+  },
+  "sellerText": "---------------------------------------------------------------------------------------------------\n---------------------------------------------------------------------------------------------------\n\n\n안녕하세요. 중고차 전문딜러 차카 김희창 실장입니다. \n\n제가 올린 차량들은 직접방문하여 차량의 관리상태 확인 , 차량 히스토리 확인 , 3~40분의 충분한 차량 검수 후 \n\n수요가 있다는 판단이 든다면 매입을 하게 됩니다.\n\n항상 차량판매 후 문제가 되지 않을 차량들로 매입하려고 노력하고 마진이 충분한 차량은 현장네고도 가능하니\n\n많은 관심과 문의 바랍니다.\n\n\n---------------------------------------------------------------------------------------------------\n---------------------------------------------------------------------------------------------------",
+  "inspection": {
+    "accident": false,
+    "simpleRepair": false,
+    "waterlog": false,
+    "tuning": false,
+    "usage": [],
+    "serious": [],
+    "panels": [],
+    "date": "20260915",
+    "mileage": 53336,
+    "recall": false,
+    "comment": "정비이력있음/비금속(FRP),크로스멤버 볼트체결방식 또는 탈부착 가능한 부품은 점검사항에서 제외되며 중고차 특성상 판금 도장 부식은 있을 수 있고 경미한 판금 및 도장은 표기치 않음《성능보험 신한EZ손해보험 접수처 : 1644-3933》 / 《책임보증 수수료 입금계좌 : 신한 140-015-639182 (주)아이엠오토랩》"
+  },
+  "inspectionFacts": [
+    {
+      "kind": "plus",
+      "text": "Звіт інспекції чистий: ні замін панелей, ні кузовного, ні комерційної історії."
+    }
+  ]
+}

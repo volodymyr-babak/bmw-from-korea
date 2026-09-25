@@ -1,0 +1,128 @@
+{
+  "listingId": "41962836",
+  "encarUrl": "https://fem.encar.com/cars/detail/41962836",
+  "model": "X6 (G06)",
+  "mfgYear": 2020,
+  "vin": "WBAGT2105L9B43171",
+  "mileageKm": 87139,
+  "koreaPriceMan": 5450,
+  "priceUSD": 59439,
+  "priceEstimated": true,
+  "photos": {
+    "outer": [
+      "/carpicture06/pic4196/41960599_001.jpg",
+      "/carpicture06/pic4196/41960599_002.jpg",
+      "/carpicture06/pic4196/41960599_003.jpg",
+      "/carpicture06/pic4196/41960599_004.jpg",
+      "/carpicture06/pic4196/41960599_005.jpg",
+      "/carpicture06/pic4196/41960599_006.jpg",
+      "/carpicture06/pic4196/41960599_031.jpg",
+      "/carpicture06/pic4196/41960599_032.jpg",
+      "/carpicture06/pic4196/41960599_033.jpg"
+    ],
+    "inner": [
+      "/carpicture06/pic4196/41960599_007.jpg",
+      "/carpicture06/pic4196/41960599_008.jpg",
+      "/carpicture06/pic4196/41960599_009.jpg",
+      "/carpicture06/pic4196/41960599_010.jpg",
+      "/carpicture06/pic4196/41960599_034.jpg",
+      "/carpicture06/pic4196/41960599_035.jpg",
+      "/carpicture06/pic4196/41960599_036.jpg"
+    ]
+  },
+  "history": {
+    "openData": true,
+    "regDate": "2026-09-23T01:29:05.6532",
+    "carNo": "113루5200",
+    "year": "2020",
+    "maker": "BMW",
+    "carKind": "1",
+    "use": "2",
+    "displacement": "2993",
+    "carName": null,
+    "firstDate": "2020-01-31",
+    "fuel": "디젤",
+    "carShape": null,
+    "model": null,
+    "transmission": null,
+    "carNameCode": null,
+    "myAccidentCnt": 1,
+    "otherAccidentCnt": 0,
+    "ownerChangeCnt": 2,
+    "robberCnt": 0,
+    "robberDate": null,
+    "totalLossCnt": 0,
+    "totalLossDate": null,
+    "floodTotalLossCnt": 0,
+    "floodPartLossCnt": null,
+    "floodDate": null,
+    "government": 0,
+    "business": 0,
+    "loan": 0,
+    "carNoChangeCnt": 0,
+    "myAccidentCost": 2713180,
+    "otherAccidentCost": 0,
+    "carInfoChanges": [
+      {
+        "date": "2020-01-31",
+        "carNo": "113루XXXX"
+      }
+    ],
+    "carInfoUse1s": [
+      "2"
+    ],
+    "carInfoUse2s": [
+      "1"
+    ],
+    "ownerChanges": [
+      "2026-03-25",
+      "2026-02-12"
+    ],
+    "notJoinDate1": "202603~202607",
+    "notJoinDate2": null,
+    "notJoinDate3": null,
+    "notJoinDate4": null,
+    "notJoinDate5": null,
+    "accidentCnt": 1,
+    "accidents": [
+      {
+        "type": "2",
+        "date": "2020-11-10",
+        "insuranceBenefit": 4717000,
+        "partCost": 1560890,
+        "laborCost": 386100,
+        "paintingCost": 766190
+      }
+    ]
+  },
+  "sellerText": "■완전무사고\n\n■성능보증가능\n\n■내비게이션\n\n■서라운드뷰\n\n■헤드업 디스플레이\n\n■전동트렁크\n\n■하만카돈 사운드시스템\n\n■에어 서스펜션\n\n■액티브 크루즈 컨트롤\n\n■크리스탈 기어노브\n\n■앞좌석 통풍시트\n\n■파노라마선루프\n\n■사운드배기작업\n\n■차키 2EA\n--------------------------------------------------------------------------------------------------------------------------------\n안녕하세요!!\n경남 최대규모 kc월드카프라자 \"재운모터스\" 김진수 팀장 입니다.\n\n신뢰와 열정으로 영업하고 있습니다. (창원은 허위매물이 없기로 유명합니다^^)\n\n창원 마산 회원구 무역로 79 kc월드프라자  \n\n*경남최대규모*\n\n마트형 백화점식 중고차 실내매장 (램프구간 통한 편안하고 쉬운 시운전가능)   \n\n허위매물 침수차량 , 성능고지조작, 키로수조작 일체 없습니다.\n\n헛걸음 하실 일은 절대 없을겁니다\n\n24시간 언제든 상담 가능 하오니 편하게 연락 부탁드립니다!!^^\n\n*차량구매시 부대비용 \n\n1. 차량 대금\n \n2. 취득세\n\n3. 매도비용\n\n4. 1개월2천키로 성능보증보험료",
+  "sellerFacts": [
+    {
+      "kind": "plus",
+      "text": "Два ключі (зі слів продавця)."
+    },
+    {
+      "kind": "plus",
+      "text": "Пневмопідвіска є (зі слів продавця)."
+    }
+  ],
+  "inspection": {
+    "accident": false,
+    "simpleRepair": false,
+    "waterlog": false,
+    "tuning": false,
+    "usage": [],
+    "serious": [],
+    "panels": [],
+    "date": "20260504",
+    "mileage": 87121,
+    "recall": false,
+    "comment": null
+  },
+  "inspectionFacts": [
+    {
+      "kind": "plus",
+      "text": "Звіт інспекції чистий: ні замін панелей, ні кузовного, ні комерційної історії."
+    }
+  ]
+}

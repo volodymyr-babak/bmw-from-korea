@@ -1,0 +1,108 @@
+{
+  "listingId": "42791957",
+  "encarUrl": "https://fem.encar.com/cars/detail/42791957",
+  "model": "X6 (G06)",
+  "mfgYear": 2020,
+  "vin": "WBAGT2105L9C99839",
+  "mileageKm": 26865,
+  "koreaPriceMan": 6290,
+  "priceUSD": 65561,
+  "priceEstimated": true,
+  "photos": {
+    "outer": [
+      "/carpicture09/pic4279/42790023_001.jpg",
+      "/carpicture09/pic4279/42790023_002.jpg",
+      "/carpicture09/pic4279/42790023_003.jpg",
+      "/carpicture09/pic4279/42790023_004.jpg",
+      "/carpicture09/pic4279/42790023_005.jpg",
+      "/carpicture09/pic4279/42790023_006.jpg",
+      "/carpicture09/pic4279/42790023_031.jpg",
+      "/carpicture09/pic4279/42790023_032.jpg",
+      "/carpicture09/pic4279/42790023_033.jpg"
+    ],
+    "inner": [
+      "/carpicture09/pic4279/42790023_007.jpg",
+      "/carpicture09/pic4279/42790023_008.jpg",
+      "/carpicture09/pic4279/42790023_009.jpg",
+      "/carpicture09/pic4279/42790023_010.jpg",
+      "/carpicture09/pic4279/42790023_034.jpg",
+      "/carpicture09/pic4279/42790023_035.jpg",
+      "/carpicture09/pic4279/42790023_036.jpg"
+    ]
+  },
+  "history": {
+    "openData": true,
+    "regDate": "2026-09-23T15:19:54.300767",
+    "carNo": "316러9207",
+    "year": "2020",
+    "maker": "BMW",
+    "carKind": "1",
+    "use": "2",
+    "displacement": "2993",
+    "carName": null,
+    "firstDate": "2020-07-21",
+    "fuel": "디젤",
+    "carShape": null,
+    "model": "X6 (G06)",
+    "transmission": null,
+    "carNameCode": null,
+    "myAccidentCnt": 0,
+    "otherAccidentCnt": 0,
+    "ownerChangeCnt": 2,
+    "robberCnt": 0,
+    "robberDate": null,
+    "totalLossCnt": 0,
+    "totalLossDate": null,
+    "floodTotalLossCnt": 0,
+    "floodPartLossCnt": null,
+    "floodDate": null,
+    "government": 0,
+    "business": 0,
+    "loan": 0,
+    "carNoChangeCnt": 0,
+    "myAccidentCost": 0,
+    "otherAccidentCost": 0,
+    "carInfoChanges": [
+      {
+        "date": "2020-07-21",
+        "carNo": "316러XXXX"
+      }
+    ],
+    "carInfoUse1s": [
+      "2"
+    ],
+    "carInfoUse2s": [
+      "1"
+    ],
+    "ownerChanges": [
+      "2026-09-18",
+      "2023-08-03"
+    ],
+    "notJoinDate1": "202606~202607",
+    "notJoinDate2": null,
+    "notJoinDate3": null,
+    "notJoinDate4": null,
+    "notJoinDate5": null,
+    "accidentCnt": 0,
+    "accidents": []
+  },
+  "inspection": {
+    "accident": false,
+    "simpleRepair": false,
+    "waterlog": false,
+    "tuning": false,
+    "usage": [],
+    "serious": [],
+    "panels": [],
+    "date": "20260918",
+    "mileage": 26819,
+    "recall": true,
+    "comment": "비금속(FRP 플라스틱)의 탈부착 가능 부품은 점검사항에서 제외되며 중고차 특성 상 부분적인 판금,도색 및 차량의 노후화에 따른 자연스러운 부식이 있을 수 있습니다. 기능상 영향없는 감각적 손해(소음/진동/냄새/외관/작동감각 등) 보증제외."
+  },
+  "inspectionFacts": [
+    {
+      "kind": "plus",
+      "text": "Звіт інспекції чистий: ні замін панелей, ні кузовного, ні комерційної історії."
+    }
+  ]
+}

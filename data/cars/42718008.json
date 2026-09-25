@@ -1,0 +1,116 @@
+{
+  "listingId": "42718008",
+  "encarUrl": "https://fem.encar.com/cars/detail/42718008",
+  "model": "X6 (G06)",
+  "mfgYear": 2021,
+  "vin": "WBAGT8100M9H15865",
+  "mileageKm": 92487,
+  "koreaPriceMan": 5380,
+  "priceUSD": 60280,
+  "priceEstimated": true,
+  "photos": {
+    "outer": [
+      "/carpicture01/pic4271/42710395_001.jpg",
+      "/carpicture01/pic4271/42710395_002.jpg",
+      "/carpicture01/pic4271/42710395_003.jpg",
+      "/carpicture01/pic4271/42710395_004.jpg",
+      "/carpicture01/pic4271/42710395_005.jpg",
+      "/carpicture01/pic4271/42710395_006.jpg",
+      "/carpicture01/pic4271/42710395_031.jpg",
+      "/carpicture01/pic4271/42710395_032.jpg",
+      "/carpicture01/pic4271/42710395_033.jpg"
+    ],
+    "inner": [
+      "/carpicture01/pic4271/42710395_007.jpg",
+      "/carpicture01/pic4271/42710395_008.jpg",
+      "/carpicture01/pic4271/42710395_009.jpg",
+      "/carpicture01/pic4271/42710395_010.jpg",
+      "/carpicture01/pic4271/42710395_034.jpg",
+      "/carpicture01/pic4271/42710395_035.jpg",
+      "/carpicture01/pic4271/42710395_036.jpg"
+    ]
+  },
+  "history": {
+    "openData": true,
+    "regDate": "2026-08-29T10:24:38.466875",
+    "carNo": "386고6341",
+    "year": "2021",
+    "maker": "BMW",
+    "carKind": "1",
+    "use": "2",
+    "displacement": "2993",
+    "carName": null,
+    "firstDate": "2021-08-18",
+    "fuel": "디젤",
+    "carShape": "SUV",
+    "model": "X6 (G06)",
+    "transmission": null,
+    "carNameCode": null,
+    "myAccidentCnt": 1,
+    "otherAccidentCnt": 0,
+    "ownerChangeCnt": 1,
+    "robberCnt": 0,
+    "robberDate": null,
+    "totalLossCnt": 0,
+    "totalLossDate": null,
+    "floodTotalLossCnt": 0,
+    "floodPartLossCnt": null,
+    "floodDate": null,
+    "government": 0,
+    "business": 0,
+    "loan": 0,
+    "carNoChangeCnt": 0,
+    "myAccidentCost": 3837470,
+    "otherAccidentCost": 0,
+    "carInfoChanges": [
+      {
+        "date": "2021-08-18",
+        "carNo": "386고XXXX"
+      }
+    ],
+    "carInfoUse1s": [
+      "2"
+    ],
+    "carInfoUse2s": [
+      "1"
+    ],
+    "ownerChanges": [
+      "2026-08-24"
+    ],
+    "notJoinDate1": null,
+    "notJoinDate2": null,
+    "notJoinDate3": null,
+    "notJoinDate4": null,
+    "notJoinDate5": null,
+    "accidentCnt": 1,
+    "accidents": [
+      {
+        "type": "2",
+        "date": "2023-09-08",
+        "insuranceBenefit": 5228850,
+        "partCost": 2935400,
+        "laborCost": 283660,
+        "paintingCost": 618410
+      }
+    ]
+  },
+  "inspection": {
+    "accident": false,
+    "simpleRepair": false,
+    "waterlog": false,
+    "tuning": false,
+    "usage": [],
+    "serious": [],
+    "panels": [],
+    "date": "20260907",
+    "mileage": 92467,
+    "recall": true,
+    "comment": "단순판금 및 도장여부(마스킹자국,도막차이,페인트방청흔적,내판 용접봉자국,판금 면처리불량,이색도장불량 등 내용)와 볼트체결 가능한 골격의 판결여부는 체크하지 않음/보험이력(내차피해) 有 1회 (3,837,470원)   /정비이력 有    [신한EZ손보:1644-3933]"
+  },
+  "inspectionFacts": [
+    {
+      "kind": "plus",
+      "text": "Звіт інспекції чистий: ні замін панелей, ні кузовного, ні комерційної історії."
+    }
+  ]
+}

@@ -1,0 +1,115 @@
+{
+  "listingId": "42755306",
+  "encarUrl": "https://fem.encar.com/cars/detail/42755306",
+  "model": "X6 (G06)",
+  "mfgYear": 2021,
+  "vin": null,
+  "mileageKm": 71448,
+  "koreaPriceMan": 5390,
+  "priceUSD": 60353,
+  "priceEstimated": true,
+  "photos": {
+    "outer": [
+      "/carpicture05/pic4275/42755306_001.jpg",
+      "/carpicture05/pic4275/42755306_002.jpg",
+      "/carpicture05/pic4275/42755306_003.jpg",
+      "/carpicture05/pic4275/42755306_004.jpg",
+      "/carpicture05/pic4275/42755306_005.jpg",
+      "/carpicture05/pic4275/42755306_006.jpg"
+    ],
+    "inner": [
+      "/carpicture05/pic4275/42755306_007.jpg",
+      "/carpicture05/pic4275/42755306_008.jpg",
+      "/carpicture05/pic4275/42755306_009.jpg",
+      "/carpicture05/pic4275/42755306_010.jpg"
+    ]
+  },
+  "history": {
+    "openData": true,
+    "regDate": "2026-09-17T15:08:13.533999",
+    "carNo": "158머8908",
+    "year": "2021",
+    "maker": "BMW",
+    "carKind": "1",
+    "use": "2",
+    "displacement": "2993",
+    "carName": null,
+    "firstDate": "2021-08-26",
+    "fuel": "디젤",
+    "carShape": "SUV",
+    "model": "X6 (G06)",
+    "transmission": null,
+    "carNameCode": null,
+    "myAccidentCnt": 1,
+    "otherAccidentCnt": 0,
+    "ownerChangeCnt": 0,
+    "robberCnt": 0,
+    "robberDate": null,
+    "totalLossCnt": 0,
+    "totalLossDate": null,
+    "floodTotalLossCnt": 0,
+    "floodPartLossCnt": null,
+    "floodDate": null,
+    "government": 0,
+    "business": 0,
+    "loan": 0,
+    "carNoChangeCnt": 0,
+    "myAccidentCost": 0,
+    "otherAccidentCost": 0,
+    "carInfoChanges": [
+      {
+        "date": "2021-08-26",
+        "carNo": "158머XXXX"
+      }
+    ],
+    "carInfoUse1s": [
+      "2"
+    ],
+    "carInfoUse2s": [
+      "1"
+    ],
+    "ownerChanges": [],
+    "notJoinDate1": null,
+    "notJoinDate2": null,
+    "notJoinDate3": null,
+    "notJoinDate4": null,
+    "notJoinDate5": null,
+    "accidentCnt": 1,
+    "accidents": [
+      {
+        "type": "1",
+        "date": "2026-06-30",
+        "insuranceBenefit": 0,
+        "partCost": 0,
+        "laborCost": 0,
+        "paintingCost": 0
+      }
+    ]
+  },
+  "sellerText": "★★★★★★★★NO PAINT  TAX 100% , KEY 3EA , B&W SPEAKER , Soft Close Door★★★★★★★★ Laser Headlight\n★★★★★★★★NO PAINT , TAX 100% , KEY 3EA , B&W SPEAKER , Soft Close Door★★★★★★★★ Laser Headlight\n★★★★★★★★NO PAINT , TAX 100% , KEY 3EA , B&W SPEAKER , Soft Close Door★★★★★★★★ Laser Headlight\n★★★★★★★★NO PAINT , TAX 100% , KEY 3EA , B&W SPEAKER , Soft Close Door★★★★★★★★ Laser Headlight",
+  "sellerFacts": [
+    {
+      "kind": "plus",
+      "text": "Три ключі (зі слів продавця)."
+    }
+  ],
+  "inspection": {
+    "accident": false,
+    "simpleRepair": false,
+    "waterlog": false,
+    "tuning": false,
+    "usage": [],
+    "serious": [],
+    "panels": [],
+    "date": "20260916",
+    "mileage": 71448,
+    "recall": true,
+    "comment": "보험료 469,480 원 / 비금속(FRP 플라스틱)의 탈부착 가능 부품은 점검사항에서 제외되며 중고차 특성 상 부분적인 판금,도색 및 차량의 노후화에 따른 자연스러운 부식이 있을 수 있습니다. 기능상 영향없는 감각적 손해(소음/진동/냄새/외관/작동감각 등) 보증제외. 배출가스 미측정."
+  },
+  "inspectionFacts": [
+    {
+      "kind": "plus",
+      "text": "Звіт інспекції чистий: ні замін панелей, ні кузовного, ні комерційної історії."
+    }
+  ]
+}

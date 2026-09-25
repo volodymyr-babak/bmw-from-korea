@@ -1,35 +1,188 @@
 {
   "meta": {
-    "updated": "2026-09-07",
+    "updated": "2026-09-25",
     "model": "BMW X6 (G06) xDrive30d M Sport",
     "criteria": "X6 (G06) · 2019–2022 виготовлення · ≤110000 км · M Sport · дизель 30d лише · ДТП ≤5 млн ₩ власний · під ключ ≤ $70000 · будь-який колір кузова й салону · пневмо S2VR · адаптивні фари S552/S5AZ · без лізингу/45e/40i/40d/M50 · без прокатної/таксі історії (звіт інспекції)",
     "customs": "P (USD) by year 2019:25000 2020:36000 2021:40500 2022:43000; age=2025-year; duty=0.10P; excise=75*3.0*age*1.1648; vat=0.20(P+duty+excise); pens=0.05P; oblik=pens+124; ship=3700; svc=1000; korea=price_만*10000/1372",
-    "count": 7,
-    "decodedCount": 21,
+    "count": 18,
+    "decodedCount": 3,
     "customsNote": "Мінімальна митна вартість P звірена для X5. Для X6 узято ту саму таблицю, тому ціна під ключ X6 — оцінка (реально очікувати +$1000…2000)."
   },
   "cars": [
     {
-      "listingId": "42678772",
+      "listingId": "42729565",
+      "model": "X6 (G06)",
+      "year": 2020,
+      "mileageKm": 72302,
+      "koreaPriceMan": 4850,
+      "priceUSD": 55066,
+      "vin": null,
+      "decoded": false,
+      "accident": {
+        "costKRW": 3430950,
+        "owners": 4,
+        "incidents": 2
+      },
+      "photo": "/carpicture02/pic4272/42729565_001.jpg",
+      "priceEstimated": true,
+      "exterior": "синій",
+      "rank": 1
+    },
+    {
+      "listingId": "42761070",
       "model": "X6 (G06)",
       "year": 2021,
-      "mileageKm": 89977,
-      "koreaPriceMan": 5400,
-      "priceUSD": 60426,
-      "vin": null,
+      "mileageKm": 107375,
+      "koreaPriceMan": 4850,
+      "priceUSD": 56417,
+      "vin": "WBAGT8102M9G96543",
+      "decoded": false,
+      "accident": {
+        "costKRW": 4724047,
+        "owners": 2,
+        "incidents": 2
+      },
+      "photo": "/carpicture05/pic4275/42757512_002.jpg",
+      "priceEstimated": true,
+      "exterior": "чорний",
+      "rank": 2
+    },
+    {
+      "listingId": "41503700",
+      "model": "X6 (G06)",
+      "year": 2021,
+      "mileageKm": 81371,
+      "koreaPriceMan": 5199,
+      "priceUSD": 58961,
+      "vin": "WBAGT8105M9G08438",
+      "decoded": false,
+      "accident": {
+        "costKRW": 2376400,
+        "owners": 1,
+        "incidents": 3
+      },
+      "photo": "/carpicture09/pic4149/41499771_001.jpg",
+      "priceEstimated": true,
+      "exterior": "Carbon Black",
+      "rank": 3
+    },
+    {
+      "listingId": "42047529",
+      "model": "X6 (G06)",
+      "year": 2021,
+      "mileageKm": 99995,
+      "koreaPriceMan": 5250,
+      "priceUSD": 59332,
+      "vin": "WBAGT8104M9F77425",
       "decoded": false,
       "accident": {
         "costKRW": 0,
         "owners": 1,
         "incidents": 0
       },
-      "photo": "/carpicture07/pic4267/42678772_001.jpg",
+      "photo": "/carpicture04/pic4204/42047282_001.jpg",
       "priceEstimated": true,
-      "exterior": "коричневий",
+      "exterior": "Carbon Black",
+      "rank": 4
+    },
+    {
+      "listingId": "41962836",
+      "model": "X6 (G06)",
+      "year": 2020,
+      "mileageKm": 87139,
+      "koreaPriceMan": 5450,
+      "priceUSD": 59439,
+      "vin": "WBAGT2105L9B43171",
+      "decoded": false,
+      "accident": {
+        "costKRW": 2713180,
+        "owners": 2,
+        "incidents": 1
+      },
+      "photo": "/carpicture06/pic4196/41960599_001.jpg",
+      "priceEstimated": true,
+      "exterior": "сірий",
+      "rank": 5
+    },
+    {
+      "listingId": "42190131",
+      "model": "X6 (G06)",
+      "year": 2021,
+      "mileageKm": 105649,
+      "koreaPriceMan": 5290,
+      "priceUSD": 59624,
+      "vin": null,
+      "decoded": false,
+      "accident": {
+        "costKRW": 0,
+        "owners": 3,
+        "incidents": 0
+      },
+      "photo": "/carpicture09/pic4219/42190131_001.jpg",
+      "priceEstimated": true,
+      "exterior": "Carbon Black",
+      "interiorUnverified": "червоний — з опису",
       "rank": 6
     },
     {
-      "rank": 9,
+      "listingId": "42718008",
+      "model": "X6 (G06)",
+      "year": 2021,
+      "mileageKm": 92487,
+      "koreaPriceMan": 5380,
+      "priceUSD": 60280,
+      "vin": "WBAGT8100M9H15865",
+      "decoded": false,
+      "accident": {
+        "costKRW": 3837470,
+        "owners": 1,
+        "incidents": 1
+      },
+      "photo": "/carpicture01/pic4271/42710395_001.jpg",
+      "priceEstimated": true,
+      "exterior": "бронзовий",
+      "rank": 7
+    },
+    {
+      "listingId": "42755306",
+      "model": "X6 (G06)",
+      "year": 2021,
+      "mileageKm": 71448,
+      "koreaPriceMan": 5390,
+      "priceUSD": 60353,
+      "vin": null,
+      "decoded": false,
+      "accident": {
+        "costKRW": 0,
+        "owners": 0,
+        "incidents": 1
+      },
+      "photo": "/carpicture05/pic4275/42755306_001.jpg",
+      "priceEstimated": true,
+      "exterior": "은하색",
+      "rank": 8
+    },
+    {
+      "listingId": "42750586",
+      "model": "X6 (G06)",
+      "year": 2021,
+      "mileageKm": 97427,
+      "koreaPriceMan": 5580,
+      "priceUSD": 61738,
+      "vin": "WBAGT810XM9H16148",
+      "decoded": false,
+      "accident": {
+        "costKRW": 0,
+        "owners": 1,
+        "incidents": 0
+      },
+      "photo": "/carpicture05/pic4275/42750586_001.jpg",
+      "priceEstimated": true,
+      "exterior": "Carbon Black",
+      "rank": 9
+    },
+    {
+      "rank": 10,
       "listingId": "41142979",
       "model": "X6 (G06)",
       "year": 2022,
@@ -71,97 +224,52 @@
       }
     },
     {
-      "rank": 15,
-      "listingId": "42631623",
+      "listingId": "42569192",
       "model": "X6 (G06)",
       "year": 2021,
-      "mileageKm": 51034,
-      "koreaPriceMan": 6250,
-      "priceUSD": 66621,
+      "mileageKm": 88329,
+      "koreaPriceMan": 5690,
+      "priceUSD": 62539,
+      "vin": "WBAGT8105M9G09198",
+      "decoded": false,
+      "accident": {
+        "costKRW": 0,
+        "owners": 1,
+        "incidents": 1
+      },
+      "photo": "/carpicture06/pic4256/42569192_001.jpg",
       "priceEstimated": true,
-      "vin": "WBAGT8106N9J54344",
-      "decoded": true,
-      "exterior": "Carbon Black",
+      "exterior": "синій",
+      "interiorUnverified": "червоний — з опису",
+      "rank": 11
+    },
+    {
+      "listingId": "42791957",
+      "model": "X6 (G06)",
+      "year": 2020,
+      "mileageKm": 26865,
+      "koreaPriceMan": 6290,
+      "priceUSD": 65561,
+      "vin": "WBAGT2105L9C99839",
+      "decoded": false,
       "accident": {
         "costKRW": 0,
         "owners": 2,
         "incidents": 0
       },
-      "photo": "/carpicture02/pic4262/42620687_002.jpg",
-      "interior": "Merino Coffee",
-      "keyFeatures": {
-        "air": true,
-        "laser": true,
-        "led": false,
-        "soft": true,
-        "vent": true,
-        "hk": true,
-        "pano": true,
-        "skylounge": false,
-        "mhev": true,
-        "acc": true,
-        "park": true,
-        "comfort": true,
-        "seatheat": true,
-        "wheelheat": true,
-        "climate4": true,
-        "exhaust": true
-      },
-      "trimFinish": {
-        "code": "S4KM",
-        "en": "Interior trim finishers aluminium mesh effect dark"
-      }
-    },
-    {
-      "rank": 16,
-      "listingId": "42650455",
-      "model": "X6 (G06)",
-      "year": 2022,
-      "mileageKm": 60299,
-      "koreaPriceMan": 6190,
-      "priceUSD": 66794,
+      "photo": "/carpicture09/pic4279/42790023_001.jpg",
       "priceEstimated": true,
-      "vin": "WBAGT8109N9L82242",
-      "decoded": true,
-      "exterior": "Carbon Black",
-      "accident": {
-        "costKRW": 0,
-        "owners": 2,
-        "incidents": 1
-      },
-      "photo": "/carpicture04/pic4264/42649355_001.jpg",
-      "interior": "Merino Coffee",
-      "keyFeatures": {
-        "air": true,
-        "laser": true,
-        "led": false,
-        "soft": false,
-        "vent": true,
-        "hk": false,
-        "pano": true,
-        "skylounge": false,
-        "mhev": true,
-        "acc": true,
-        "park": true,
-        "comfort": true,
-        "seatheat": true,
-        "wheelheat": true,
-        "climate4": true,
-        "exhaust": true
-      },
-      "trimFinish": {
-        "code": "S4KM",
-        "en": "Interior trim finishers aluminium mesh effect dark"
-      }
+      "exterior": "чорний",
+      "rank": 12
     },
     {
-      "rank": 17,
+      "rank": 13,
       "listingId": "42585911",
       "model": "X6 (G06)",
       "year": 2022,
       "mileageKm": 74299,
-      "koreaPriceMan": 6200,
-      "priceUSD": 66867,
+      "koreaPriceMan": 6100,
+      "priceUSD": 66138,
       "priceEstimated": true,
       "vin": "WBAGT8106N9K47297",
       "decoded": true,
@@ -197,49 +305,45 @@
       }
     },
     {
-      "rank": 20,
-      "listingId": "41616675",
+      "listingId": "42716296",
       "model": "X6 (G06)",
       "year": 2022,
-      "mileageKm": 54000,
-      "koreaPriceMan": 6350,
-      "priceUSD": 67960,
-      "priceEstimated": true,
-      "vin": "WBAGT8103N9J99452",
-      "decoded": true,
-      "exterior": "Mineral White",
+      "mileageKm": 89229,
+      "koreaPriceMan": 6199,
+      "priceUSD": 66859,
+      "vin": "WBAGT8105N9L38108",
+      "decoded": false,
       "accident": {
-        "costKRW": 1215969,
+        "costKRW": 2090910,
+        "owners": 0,
+        "incidents": 3
+      },
+      "photo": "/carpicture01/pic4271/42716296_001.jpg",
+      "priceEstimated": true,
+      "exterior": "білий",
+      "rank": 14
+    },
+    {
+      "listingId": "42719968",
+      "model": "X6 (G06)",
+      "year": 2022,
+      "mileageKm": 95629,
+      "koreaPriceMan": 6250,
+      "priceUSD": 67231,
+      "vin": "WBAGT8103P9N95268",
+      "decoded": false,
+      "accident": {
+        "costKRW": 3351636,
         "owners": 0,
         "incidents": 1
       },
-      "photo": "/carpicture01/pic4161/41616675_001.jpg",
-      "interior": "Vernasca Coffee",
-      "keyFeatures": {
-        "air": true,
-        "laser": true,
-        "led": false,
-        "soft": true,
-        "vent": false,
-        "hk": false,
-        "pano": true,
-        "skylounge": true,
-        "mhev": true,
-        "acc": true,
-        "park": true,
-        "comfort": true,
-        "seatheat": true,
-        "wheelheat": true,
-        "climate4": true,
-        "exhaust": true
-      },
-      "trimFinish": {
-        "code": "S4KM",
-        "en": "Interior trim finishers aluminium mesh effect dark"
-      }
+      "photo": "/carpicture10/pic4270/42708107_001.jpg",
+      "priceEstimated": true,
+      "exterior": "Carbon Black",
+      "rank": 15
     },
     {
-      "rank": 22,
+      "rank": 16,
       "listingId": "42476461",
       "model": "X6 (G06)",
       "year": 2022,
@@ -279,6 +383,44 @@
         "code": "S4KM",
         "en": "Interior trim finishers aluminium mesh effect dark"
       }
+    },
+    {
+      "listingId": "42754050",
+      "model": "X6 (G06)",
+      "year": 2022,
+      "mileageKm": 53344,
+      "koreaPriceMan": 6500,
+      "priceUSD": 69053,
+      "vin": "WBAGT8108N9N12821",
+      "decoded": false,
+      "accident": {
+        "costKRW": 0,
+        "owners": 0,
+        "incidents": 0
+      },
+      "photo": "/carpicture04/pic4274/42741767_001.jpg",
+      "priceEstimated": true,
+      "exterior": "білий",
+      "rank": 17
+    },
+    {
+      "listingId": "42500550",
+      "model": "X6 (G06)",
+      "year": 2022,
+      "mileageKm": 44742,
+      "koreaPriceMan": 6590,
+      "priceUSD": 69709,
+      "vin": "WBAGT8108N9L04678",
+      "decoded": false,
+      "accident": {
+        "costKRW": 2119280,
+        "owners": 2,
+        "incidents": 2
+      },
+      "photo": "/carpicture10/pic4250/42500550_001.jpg",
+      "priceEstimated": true,
+      "exterior": "білий",
+      "rank": 18
     }
   ]
 }
